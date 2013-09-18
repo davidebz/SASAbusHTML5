@@ -1,0 +1,368 @@
+body {
+   margin: 0px;
+   background-color: #FFFFFF;
+   color: #484848;
+   overflow: scroll;
+}
+
+.title-bar {
+   background-color: #ebebeb;
+   text-align: right;
+}
+
+.title-bar>.logo-menu {
+   float: left;
+}
+
+.title-bar>.title {
+   float: left;
+}
+
+.title-bar>.html5logo {
+   float: left;
+   width: 24px;
+}
+
+.title-bar>.beta {
+   float: left;
+   font-weight: bold;
+}
+
+.title-bar>* {
+   margin-top: 2px;
+   margin-right: 4px;
+}
+
+.menu {
+   background-color: #2e2e2e;
+   padding: 0px;
+}
+
+.menu .menu-item {
+   background-image: url('images/layout/menu-item-background.png');
+   height: 32px;
+   width: 125px;
+   font-size: 14px;
+   overflow: hidden;
+   cursor: pointer;
+}
+
+.menu .menu-item>* {
+   float: left;
+   margin-top: 6px;
+   margin-left: 6px;
+}
+
+.bus-trip-detail .prev {
+   color: #AAAAAA;
+}
+
+.bus-trip-detail .current {
+   color: #FF0000;
+}
+
+.bus-trip-detail .next {
+   color: black;
+}
+
+.routing>* {
+   display: block;
+}
+
+.routing>.from>* {
+   display: inline-block;
+}
+
+.routing>.to>* {
+   display: inline-block;
+}
+
+.fragment.routecalc>.content>* {
+   display: block;
+   margin-bottom: 2px;
+}
+
+.label-icons {
+   font-size: 16px;
+   clear: both;
+   height: 36px;
+}
+
+.label-icons>.left>div {
+   display: inline-block;
+}
+
+.label-icons>.right {
+   float: right;
+   padding-right: 4px;
+}
+
+.label-icons>.right>img {
+   display: inline-block;
+   background-color: #FFFFFF;
+   width: 32px;
+   height: 32px;
+   margin-top: 2px;
+   margin-left: 4px;
+}
+
+.row-item {
+   padding: 4px;
+   border-top: solid 1px #888888;
+}
+
+.row-item>.go {
+   top: 0px;
+   float: right;
+}
+
+.map>.controls {
+   background-color: #777777;
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   height: 32px;
+   right: 0px;
+}
+
+.map>.controls>* {
+   float: left;
+   margin-right: 8px;
+}
+
+.map>.mapdiv {
+   background-color: green;
+   position: absolute;
+   top: 32px;
+   left: 0px;
+   bottom: 0px;
+   right: 0px;
+}
+
+.warning-dialog {
+   width: 300px;
+   margin: auto;
+   text-align: center;
+}
+
+.warning-dialog>div {
+   border: 1px solid red;
+   background-color: yellow;
+   margin-top: 2px;
+   margin-bottom: 2px;
+}
+
+.warning-dialog>button {
+   xdisplay: block;
+   width: 300px;
+   margin: auto;
+}
+
+.cover {
+   position: fixed;
+   left: 0px;
+   right: 0px;
+   bottom: 0px;
+   top: 0px;
+   z-index: 999;
+   background-color: #DDDDDD;
+   opacity: 1;
+   -moz-transition: opacity 0.7s;
+   -webkit-transition: opacity 0.7s;
+   -o-transition: opacity 0.7s;
+   transition: opacity 0.7s;
+}
+
+.splash-panel {
+   padding-top: 30px;
+   width: 300px;
+   margin: auto;
+   overflow: hidden;
+}
+
+.splash-panel>* {
+   text-align: center;
+   display: block;
+   margin: auto;
+}
+
+.splash-panel>.html5logo {
+   height: 30px;
+}
+
+.splash-panel>.image-container {
+   width: 225px;
+   height: 200px;
+   position: relative;
+}
+
+.splash-panel>.image-container>img {
+   display: block;
+   width: 225px;
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   -moz-transition: left 0.7s;
+   -webkit-transition: left 0.7s;
+   -o-transition: left 0.7s;
+   transition: left 0.7s;
+}
+
+.sasabus-popup {
+   width: 200px;
+}
+
+.departure-input {
+   margin-top: 16px;
+   margin-bottom: 8px;
+}
+
+.departure-input>input {
+   width: 150px;
+}
+
+.route-result {
+   white-space: nowrap;
+   overflow: hidden;
+}
+
+.main>div {
+   margin: 6px;
+}
+
+body>.about {
+   display: none;
+   position: absolute;
+   top: 32px;
+   left: 50%;
+   margin-left: -130px;
+   width: 260px;
+   background-color: white;
+   padding: 8px;
+   z-index: 2000;
+   border: 1px solid #AAAAAA;
+}
+
+body>.about>button {
+   float: right;
+}
+
+.about>* {
+   display: block;
+   margin-bottom: 8px;
+}
+
+.about>.copyright>* {
+   display: inline-block;
+}
+
+.about>.license>* {
+   display: inline-block;
+}
+
+.about>.third-party-licenses {
+   display: none;
+}
+
+.about>.third-party-licenses>.row {
+   margin-bottom: 8px;
+}
+
+.about>.third-party-licenses>.row>* {
+   display: inline-block;
+}
+
+.it-de-name>.second {
+   font-size: 13px;
+   xfont-style: italic;
+}
+
+.bus-trip-detail .row {
+   padding: 2px;
+   border-top: 1px solid #888888;
+}
+
+.bus-trip-detail .row>.time {
+   float: left;
+}
+
+.bus-trip-detail .row>.it-de-name {
+   margin-left: 54px;
+}
+
+.title-bar>.flags>a {
+   color: black;
+   font-size: 5px;
+   float: right;
+   display: block;
+   width: 28px;
+   height: 28px;
+   text-decoration: none;
+   margin-left: 2px;
+}
+
+.title-bar>.flags>.it {
+   background-image: url('images/Italy.png')
+}
+
+.title-bar>.flags>.de {
+   background-image: url('images/Germany.png')
+}
+
+.title-bar>.flags>.en {
+   background-image: url('images/UnitedKingsom.png')
+}
+
+.it-de-name>.first
+{
+   
+}
+.it-de-name>.first>.favourites-icon
+{
+   float:right;
+}
+.dateBoxPopup
+{
+   background-color:#DDDDDD;
+}
+.dateBoxPopup td
+{
+   border:1px solid #AAAAAA;
+}
+.route-result .bus-name *
+{
+   float:left;
+   margin-right:4px;
+   margin-top:2px;
+}
+.route-result .bus-name
+{
+   height:26px;
+   background-color:#DDDDDD;
+   margin-top:4px;
+}
+.route-result > *
+{
+   clear:both;
+}
+.route-result .down-icon
+{
+   display:block;
+   width:21px;
+   margin:auto;
+}
+.bus-station-search input
+{
+   width:100%;
+}
+
+.sasabus-date-box > *
+{
+   display:inline;
+   vertical-align:middle;
+}
+.sasabus-date-box input
+{
+   width:150px;
+   margin-right:2px;
+}
