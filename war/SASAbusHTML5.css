@@ -131,7 +131,6 @@ body {
 }
 
 .map>.mapdiv {
-   background-color: green;
    position: absolute;
    top: 32px;
    left: 0px;
