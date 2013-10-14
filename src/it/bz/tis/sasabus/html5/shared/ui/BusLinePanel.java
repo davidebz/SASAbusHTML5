@@ -77,6 +77,10 @@ public class BusLinePanel extends DMFlowPanel implements PageChangeHandler
 
       this.add(new DMLabel(I18N.singleton.getLocalizedText("BusStations")));
 
+      DMFlowPanel list = new DMFlowPanel("bus-stations-list");
+
+      this.add(list);
+
       for (final BusStation busStation : sortByCurrentLanguage(busLine.getBusStations()))
       {
          DMClickHandler busStationClick = new DMClickHandler()
@@ -90,7 +94,7 @@ public class BusLinePanel extends DMFlowPanel implements PageChangeHandler
          };
          RowItem busStationLabel = new RowItem(busStationClick);
          busStationLabel.add(new ItDeBusStationNamePanel(busStation));
-         this.add(busStationLabel);
+         list.add(busStationLabel);
       }
    }
 

@@ -1,12 +1,13 @@
 body {
    margin: 0px;
-   background-color: #FFFFFF;
-   color: #484848;
+   background-color: #363636;
+   color: #cacaca;
    overflow: scroll;
+   font-family: ubuntu, arial, sans-serif;
 }
 
 .title-bar {
-   background-color: #ebebeb;
+   background-color: #262626;
    text-align: right;
 }
 
@@ -33,24 +34,35 @@ body {
    margin-right: 4px;
 }
 
-.menu {
-   background-color: #2e2e2e;
+.menu { /*background-color: #2e2e2e;*/
    padding: 0px;
+   
 }
 
-.menu .menu-item {
-   background-image: url('images/layout/menu-item-background.png');
-   height: 32px;
+.menu .menu-item { /*background-image: url('images/layout/menu-item-background.png');*/
+   height: 50px;
    width: 125px;
    font-size: 14px;
    overflow: hidden;
    cursor: pointer;
+   background-image:url('images/layout/pallini_menu.png');
+   background-repeat: no-repeat;
+   background-position: center right;
 }
 
 .menu .menu-item>* {
-   float: left;
-   margin-top: 6px;
-   margin-left: 6px;
+   display: inline;
+   vertical-align:middle;
+}
+
+.menu .menu-item>img {
+   /*margin-top: 8px;*/
+   /*margin-left: 6px;*/
+}
+
+.menu .menu-item>div {
+   line-height: 50px;
+   /*margin-left: 6px;*/
 }
 
 .bus-trip-detail .prev {
@@ -62,7 +74,7 @@ body {
 }
 
 .bus-trip-detail .next {
-   color: black;
+   color: #FFFFFF;
 }
 
 .routing>* {
@@ -107,8 +119,12 @@ body {
 }
 
 .row-item {
-   padding: 4px;
-   border-top: solid 1px #888888;
+   background-image: url("images/layout/pallini_menu_laterale.png");
+   background-repeat: no-repeat;
+   background-position: center bottom;
+   padding: 7px;
+   clear: both;
+   height:32px;
 }
 
 .row-item>.go {
@@ -117,22 +133,25 @@ body {
 }
 
 .map>.controls {
-   background-color: #777777;
+   xbackground-color: #777777;
    position: absolute;
    top: 0px;
-   left: 0px;
-   height: 32px;
+   width: 96px;
+   height: 40px;
    right: 0px;
+   z-index:1999;
 }
 
 .map>.controls>* {
    float: left;
-   margin-right: 8px;
+   margin-top: 10px;
+   width: 40px;
+   height: 40px;
 }
 
 .map>.mapdiv {
    position: absolute;
-   top: 32px;
+   top: 0px;
    left: 0px;
    bottom: 0px;
    right: 0px;
@@ -163,8 +182,8 @@ body {
    right: 0px;
    bottom: 0px;
    top: 0px;
-   z-index: 999;
-   background-color: #DDDDDD;
+   z-index: 4000;
+   background-color: #363636;
    opacity: 1;
    -moz-transition: opacity 0.7s;
    -webkit-transition: opacity 0.7s;
@@ -200,7 +219,7 @@ body {
    width: 225px;
    position: absolute;
    left: 0px;
-   top: 0px;
+   top: 40px;
    -moz-transition: left 0.7s;
    -webkit-transition: left 0.7s;
    -o-transition: left 0.7s;
@@ -208,6 +227,14 @@ body {
 }
 
 .sasabus-popup {
+   width: 200px;
+}
+
+.train-popup {
+   width: 200px;
+}
+
+.parking-popup {
    width: 200px;
 }
 
@@ -228,6 +255,39 @@ body {
 .main>div {
    margin: 6px;
 }
+
+.bus-stations .bus-stations-list
+{
+   background-image:url('images/layout/stops-line.png');
+   background-repeat:no-repeat;
+}
+
+.bus-stations-list>.row-item
+{
+   height:32px;
+   margin-left:20px;
+}
+
+.bus-stations .favourites-icon
+{
+   display:none;
+}
+
+.bus-stations-search-route>.bus-station-search
+{
+	
+    margin-top: 20px;
+    padding-bottom:80px;
+    background-image:url('images/layout/pallini_menu_laterale.png');
+    background-repeat:no-repeat;
+    background-position:center bottom;
+}
+
+.bus-stations-search-route>.route
+{
+   padding-top:60px;
+}
+
 
 body>.about {
    display: none;
@@ -290,14 +350,16 @@ body>.about>button {
 }
 
 .title-bar>.flags>a {
-   color: black;
-   font-size: 5px;
-   float: right;
-   display: block;
-   width: 28px;
-   height: 28px;
-   text-decoration: none;
-   margin-left: 2px;
+	color: #000000;
+    display: block;
+    float: right;
+    font-size: 5px;
+    height: 28px;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-top: 8px;
+    text-decoration: none;
+    width: 28px;
 }
 
 .title-bar>.flags>.it {
@@ -312,56 +374,171 @@ body>.about>button {
    background-image: url('images/UnitedKingsom.png')
 }
 
-.it-de-name>.first
-{
+.it-de-name>.first {
    
 }
-.it-de-name>.first>.favourites-icon
-{
-   float:right;
+
+ /* #E134 {
+	color: #ed1c24;
+	font-weight: bolder;
 }
-.dateBoxPopup
-{
-   background-color:#DDDDDD;
+
+#E146 {
+	color: #dfd100;
+	font-weight: bolder;
 }
-.dateBoxPopup td
-{
-   border:1px solid #AAAAAA;
+
+#E140 {
+	color: #2e3192;
+	font-weight: bolder;
+} */
+
+.it-de-name>.first>.favourites-icon {
+    float: left;
+    margin-right: 5px;
+    margin-top: 5px;
 }
-.route-result .bus-name *
-{
+
+.dateBoxPopup {
+   background-color: #DDDDDD;
+}
+
+.dateBoxPopup td {
+   border: 1px solid #AAAAAA;
+}
+
+.route-result .bus-name * {
+   float: left;
+   margin-right: 4px;
+   margin-top: 2px;
+}
+
+.route-result .bus-name {
+   height: 26px;
+   background-color: #262626;
+   margin-top: 4px;
+   padding:8px;
+}
+
+.route-result>* {
+   clear: both;
+}
+
+.route-result .down-icon {
+   display: block;
+   width: 21px;
+   margin: auto;
+}
+
+.bus-station-search input {
+   width: 98%;
+}
+
+.sasabus-date-box>* {
+   display: inline;
+   vertical-align: middle;
+}
+
+.sasabus-date-box input {
+   width: 150px;
+   margin-right: 2px;
+}
+
+.parking-popup .free-data {
+   width: 200px;
+   height: 200px;
+}
+
+.parking-panel .free-data {
+   width: 150px;
+   height: 100px;
+}
+
+.nearest-bus-stops {
+   margin-top: 20px;
+}
+
+.title-bar .logo-menu {
+   height: 35px;
+   margin-left: 3px;
+   margin-top: 7px;
+}
+
+.title-bar .menu-icon {
    float:left;
-   margin-right:4px;
-   margin-top:2px;
+   height: 35px;
+   margin-left: 6px;
+   margin-top: 7px;
 }
-.route-result .bus-name
+
+
+
+.testoHome {
+   font-weight: bolder;
+   color: #fa952e;
+}
+
+
+.green-panel .tree
 {
-   height:26px;
-   background-color:#DDDDDD;
-   margin-top:4px;
+   width:380px;
 }
-.route-result > *
+
+.bus-trip-detail .row
 {
    clear:both;
 }
-.route-result .down-icon
+
+.green-panel .suedtirol-pass
 {
-   display:block;
-   width:21px;
-   margin:auto;
-}
-.bus-station-search input
-{
-   width:100%;
+   width:380px;
 }
 
-.sasabus-date-box > *
+.areas .area_1
 {
-   display:inline;
-   vertical-align:middle;
+   background-image:url('images/layout/Bolzano.png');
+   background-repeat: no-repeat;
 }
-.sasabus-date-box input
+.areas .area_2
 {
-   width:150px;
-   margin-right:2px;
+   background-image:url('images/layout/Merano.png');
+   background-repeat: no-repeat;
+}
+.areas .area_3
+{
+   background-image:url('images/layout/Suburbana.png');
+   background-repeat: no-repeat;
+}
+
+.areas .row-item .it-de-name>*
+{
+   margin-left:30px;
+}
+
+.home .favourite-container 
+{
+   margin-bottom:50px;
+}
+
+.route .intro-text
+{
+   margin-bottom:20px;
+}
+
+.main > .green-panel
+{
+   background-color: #262626;
+    left: 40px;
+    margin: 0;
+    min-height: 100%;
+    position: absolute;
+    right: 0;
+    top: 50px;
+    z-index: 6000;
+    text-align: center;
+}
+
+.main > .green-panel>*
+{
+   margin-top:30px;
 }

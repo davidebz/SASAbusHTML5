@@ -21,7 +21,7 @@ package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMLabel;
+import bz.davide.dmweb.shared.DMHTML;
 import bz.davide.dmweb.shared.PageChangeHandler;
 
 /**
@@ -30,13 +30,15 @@ import bz.davide.dmweb.shared.PageChangeHandler;
 public class HomePanel extends DMFlowPanel implements PageChangeHandler
 {
    SASAbusMap                   map;
-   DMLabel                      introText;
+   DMHTML                       introText;
+   DMFlowPanel                  favouriteContainer           = new DMFlowPanel("favourite-container");
    FavouriteBusStationListPanel favouriteBusStationListPanel = null;
 
    public HomePanel()
    {
       super("home");
-      this.add(this.introText = new DMLabel(""));
+      this.add(this.favouriteContainer);
+      this.add(this.introText = new DMHTML(""));
 
    }
 
@@ -59,6 +61,7 @@ public class HomePanel extends DMFlowPanel implements PageChangeHandler
       {
          this.favouriteBusStationListPanel.refresh();
       }
+      this.map.showOverviewMap(true);
    }
 
    public void setIntroText(String introText)
@@ -69,6 +72,6 @@ public class HomePanel extends DMFlowPanel implements PageChangeHandler
    @Override
    public void pageHide()
    {
-
+      this.map.showOverviewMap(false);
    }
 }

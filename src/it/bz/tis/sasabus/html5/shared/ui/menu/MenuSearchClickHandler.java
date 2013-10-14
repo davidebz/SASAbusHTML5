@@ -22,7 +22,7 @@ package it.bz.tis.sasabus.html5.shared.ui.menu;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.html5.shared.ui.BusStationPanel;
-import it.bz.tis.sasabus.html5.shared.ui.BusStationSearchWidget;
+import it.bz.tis.sasabus.html5.shared.ui.BusStationSearchRoutePanel;
 import it.bz.tis.sasabus.html5.shared.ui.BusStationSelectedEventHandler;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.shared.DMClickEvent;
@@ -59,20 +59,21 @@ public class MenuSearchClickHandler implements DMClickHandler
    @Override
    public void onClick(DMClickEvent event)
    {
-      this.navigationPanel.newPage(new BusStationSearchWidget(this.map,
-                                                                this.areaList,
-                                                                new BusStationSelectedEventHandler()
-                                                                {
+      this.navigationPanel.newPage(new BusStationSearchRoutePanel(this.areaList,
+                                                                  this.map,
+                                                                  this.navigationPanel,
+                                                                  new BusStationSelectedEventHandler()
+                                                                  {
 
-                                                                   @Override
-                                                                   public void selected(BusStation busStation)
-                                                                   {
-                                                                      MenuSearchClickHandler.this.navigationPanel.newPage(new BusStationPanel(busStation,
-                                                                                                                                               MenuSearchClickHandler.this.areaList,
-                                                                                                                                               MenuSearchClickHandler.this.navigationPanel,
-                                                                                                                                               MenuSearchClickHandler.this.map));
-                                                                   }
-                                                                }));
+                                                                     @Override
+                                                                     public void selected(BusStation busStation)
+                                                                     {
+                                                                        MenuSearchClickHandler.this.navigationPanel.newPage(new BusStationPanel(busStation,
+                                                                                                                                                MenuSearchClickHandler.this.areaList,
+                                                                                                                                                MenuSearchClickHandler.this.navigationPanel,
+                                                                                                                                                MenuSearchClickHandler.this.map));
+                                                                     }
+                                                                  }));
       this.menu.hide();
    };
 }

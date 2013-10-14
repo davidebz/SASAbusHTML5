@@ -26,7 +26,7 @@ public class MenuIcon extends Icon
 {
    public MenuIcon()
    {
-      super("logo-menu");
+      super("menu-icon");
    }
 
    protected MenuIcon(Void void1)

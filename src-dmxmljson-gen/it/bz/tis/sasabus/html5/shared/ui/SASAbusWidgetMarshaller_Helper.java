@@ -29,13 +29,21 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
             {
                      internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel", structure.property("favouriteBusStationListPanel").structure(), identities, seq, false);
             }
+            // favouriteContainer
+            value = ((it.bz.tis.sasabus.html5.shared.ui.HomePanel)obj).favouriteContainer;
+            if (value == null)
+               structure.property("favouriteContainer").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMFlowPanel", structure.property("favouriteContainer").structure(), identities, seq, false);
+            }
             // introText
             value = ((it.bz.tis.sasabus.html5.shared.ui.HomePanel)obj).introText;
             if (value == null)
                structure.property("introText").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMLabel", structure.property("introText").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMHTML", structure.property("introText").structure(), identities, seq, false);
             }
             // map
             value = ((it.bz.tis.sasabus.html5.shared.ui.HomePanel)obj).map;

@@ -56,8 +56,12 @@ public class AboutPanel extends DMFlowPanel
       this.add(new DMLabel("Developed by"));
       this.add(new DMAnchor("http://www.davide.bz", "Davide Montesin", TARGET));
       this.add(new DMLabel("Bolzano/Bozen - Italy"));
+      this.add(new DMLabel("Design by (alphabetical order)"));
+      this.add(new DMAnchor("mailto:giuliarosso.rg@gmail.com", "Giulia Rosso", TARGET));
+      this.add(new DMAnchor("mailto:iryna_dorosh@ukr.net", "Iryna Dorosh", TARGET));
+      this.add(new DMAnchor("mailto:virginia.mazzocco@gmail.com", "Virginia Mazzocco", TARGET));
+      this.add(new DMLabel("members of the"));
       this.add(new DMAnchor("http://sasabus.org/wiki", "SASAbus community", TARGET));
-      this.add(new DMLabel("member"));
 
       DMAnchor showLicenses = new DMAnchor("#", "Third-party free open source software libraries");
       showLicenses.addClickHandler(new AboutPanelShow3rdPartyLicenses(thirdPartyLicenses));
@@ -81,6 +85,12 @@ public class AboutPanel extends DMFlowPanel
                                              "CC BY 3.0",
                                              "http://creativecommons.org/licenses/by/3.0/",
                                              "antibakteriell"));
+
+      thirdPartyLicenses.add(this.thirdParty("Visualization: Gauge",
+                                             "https://developers.google.com/chart/interactive/docs/gallery/gauge",
+                                             "API",
+                                             "https://developers.google.com/chart/terms",
+                                             "Google"));
 
       thirdPartyLicenses.add(this.thirdParty("GWT",
                                              "http://www.gwtproject.org",

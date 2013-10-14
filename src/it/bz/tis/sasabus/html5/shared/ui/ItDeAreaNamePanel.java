@@ -29,5 +29,6 @@ public class ItDeAreaNamePanel extends ItDeNamePanel
    public ItDeAreaNamePanel(Area area)
    {
       super(area.getName_it(), area.getName_de(), null);
+      this.addStyleName("area_" + area.getId());
    }
 }

@@ -26,6 +26,8 @@ import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.backend.shared.BusStop;
 import it.bz.tis.sasabus.backend.shared.BusTrip;
 import it.bz.tis.sasabus.backend.shared.BusTripStop;
+import it.bz.tis.sasabus.html5.shared.data.Parking;
+import it.bz.tis.sasabus.html5.shared.data.TrainStation;
 import it.bz.tis.sasabus.html5.shared.ui.AreaPanel;
 import it.bz.tis.sasabus.html5.shared.ui.icon.GpsIcon;
 
@@ -35,10 +37,14 @@ import java.util.Set;
 
 import bz.davide.dmweb.client.leaflet.Circle;
 import bz.davide.dmweb.client.leaflet.EventListener;
+import bz.davide.dmweb.client.leaflet.Icon;
+import bz.davide.dmweb.client.leaflet.IconOptions;
 import bz.davide.dmweb.client.leaflet.LatLng;
 import bz.davide.dmweb.client.leaflet.LatLngBounds;
 import bz.davide.dmweb.client.leaflet.Layer;
 import bz.davide.dmweb.client.leaflet.Map;
+import bz.davide.dmweb.client.leaflet.Marker;
+import bz.davide.dmweb.client.leaflet.MarkerOptions;
 import bz.davide.dmweb.client.leaflet.Path;
 import bz.davide.dmweb.client.leaflet.PathOptions;
 import bz.davide.dmweb.client.leaflet.Polygon;
@@ -48,7 +54,7 @@ import bz.davide.dmweb.shared.DMClickEvent;
 import bz.davide.dmweb.shared.DMClickHandler;
 import bz.davide.dmweb.shared.DMFlowPanel;
 import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMLabel;
+import bz.davide.dmweb.shared.DMImage;
 
 import com.google.gwt.user.client.Timer;
 
@@ -71,8 +77,8 @@ public class SASAbusMap extends DMFlowPanel
 
    DMFlowPanel                                        controls;
    DMFlowPanel                                        mapDiv;
-   DMLabel                                            zoomLevel;
-   DMLabel                                            latLonValues;
+   //DMLabel                                            zoomLevel;
+   //DMLabel                                            latLonValues;
 
    GpsIcon                                            gpsIcon;
 
@@ -85,9 +91,16 @@ public class SASAbusMap extends DMFlowPanel
 
    DMButton                                           close                              = new DMButton("X");
 
+   DMFlowPanel                                        overwievMap;
+
    public SASAbusMap()
    {
       super("map");
+
+      this.overwievMap = new DMFlowPanel("overview-map");
+      DMImage cartina = new DMImage("../images/Cartina.png");
+      this.overwievMap.add(cartina);
+      this.add(this.overwievMap);
 
       this.leafletMap = null;
 
@@ -103,12 +116,29 @@ public class SASAbusMap extends DMFlowPanel
       this.gpsIcon = new GpsIcon();
       this.controls.add(this.gpsIcon);
 
-      this.zoomLevel = new DMLabel("");
-      this.controls.add(this.zoomLevel);
+      //this.zoomLevel = new DMLabel("");
+      //this.controls.add(this.zoomLevel);
 
-      this.latLonValues = new DMLabel("");
-      this.controls.add(this.latLonValues);
+      //this.latLonValues = new DMLabel("");
+      //this.controls.add(this.latLonValues);
 
+   }
+
+   public void showOverviewMap(boolean show)
+   {
+      if (show)
+      {
+         this.overwievMap.addStyleName("show");
+      }
+      else
+      {
+         this.overwievMap.removeStyleName("show");
+      }
+   }
+
+   public Map getLeafletMap()
+   {
+      return this.leafletMap;
    }
 
    public void setNavigationPanel(DMHashNavigationPanel navigationPanel)
@@ -122,7 +152,7 @@ public class SASAbusMap extends DMFlowPanel
       this.navigationPanel = null;
    }
 
-   public void start(AreaList areaList)
+   public void start(final AreaList areaList)
    {
       this.areaList = areaList;
 
@@ -137,6 +167,59 @@ public class SASAbusMap extends DMFlowPanel
             SASAbusMap.this.hide();
          }
       });
+
+      // Add train stations
+
+      for (final TrainStation trainStation : TrainStation.list)
+      {
+         IconOptions iconOptions = new IconOptions();
+         iconOptions.setIconUrl("../images/layout/train-icon-map.png");
+         Icon icon = new Icon(iconOptions);
+         MarkerOptions markerOptions = new MarkerOptions();
+         markerOptions.setIcon(icon);
+         final LatLng latLng = new LatLng(trainStation.getLat(), trainStation.getLon());
+         Marker trainStationMarker = new Marker(latLng, markerOptions);
+
+         trainStationMarker.addClickEventListener(new EventListener()
+         {
+            @Override
+            public void onEvent()
+            {
+               TrainStationPopup trainStationPopup = new TrainStationPopup(trainStation,
+                                                                           SASAbusMap.this.navigationPanel,
+                                                                           areaList,
+                                                                           SASAbusMap.this);
+               SASAbusMap.this.leafletMap.openPopup(trainStationPopup.getElement(), latLng);
+               trainStationPopup.init();
+            }
+         });
+         this.leafletMap.addLayer(trainStationMarker);
+
+      }
+
+      // Add parkings
+
+      for (final Parking parking : Parking.list)
+      {
+         IconOptions iconOptions = new IconOptions();
+         iconOptions.setIconUrl("../images/layout/park-icon-map.png");
+         Icon icon = new Icon(iconOptions);
+         MarkerOptions markerOptions = new MarkerOptions();
+         markerOptions.setIcon(icon);
+         final LatLng latLng = new LatLng(parking.getLat(), parking.getLon());
+         Marker parkMarker = new Marker(latLng, markerOptions);
+         this.leafletMap.addLayer(parkMarker);
+         parkMarker.addClickEventListener(new EventListener()
+         {
+            @Override
+            public void onEvent()
+            {
+               ParkingPopup parkingPopup = new ParkingPopup(parking);
+               SASAbusMap.this.leafletMap.openPopup(parkingPopup.getElement(), latLng);
+               parkingPopup.init();
+            }
+         });
+      }
    }
 
    private void initBusStationsShapes(AreaList areaList)
@@ -303,7 +386,6 @@ public class SASAbusMap extends DMFlowPanel
          LatLng latLng = new LatLng(busStop.getLat(), busStop.getLon());
          bounds.add(latLng);
 
-
       }
       this.leafletMap.fitBounds(new LatLngBounds(bounds.toArray(new LatLng[0])));
       this.refreshBaseLayerAfterZoomLevelAndPosition();
@@ -340,9 +422,9 @@ public class SASAbusMap extends DMFlowPanel
    {
 
       int zoom = this.leafletMap.getZoom();
-      SASAbusMap.this.zoomLevel.setText("Zoom level: " + zoom);
+      //SASAbusMap.this.zoomLevel.setText("Zoom level: " + zoom);
       LatLng center = this.leafletMap.getCenter();
-      this.latLonValues.setText("lat,lon: " + (float) center.getLat() + "," + (float) center.getLng());
+      //this.latLonValues.setText("lat,lon: " + (float) center.getLat() + "," + (float) center.getLng());
 
       // Remove base layers
       for (Layer base : this.baseLayers)

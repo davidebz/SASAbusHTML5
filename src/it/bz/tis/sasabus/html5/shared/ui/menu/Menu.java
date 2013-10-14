@@ -21,13 +21,21 @@ package it.bz.tis.sasabus.html5.shared.ui.menu;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.html5.shared.ui.AboutPanel;
-import it.bz.tis.sasabus.html5.shared.ui.icon.BusIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.FavouritesIcon;
+import it.bz.tis.sasabus.html5.shared.ui.ParkingsPanel;
+import it.bz.tis.sasabus.html5.shared.ui.TrainStationsPanel;
+import it.bz.tis.sasabus.html5.shared.ui.icon.AboutIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.FavouritesActiveIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.FeedbackIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.LinesIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.MoreIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.RouteIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.NewsIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.ParkingIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.SearchIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.TrainIcon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
+import bz.davide.dmweb.shared.DMClickEvent;
+import bz.davide.dmweb.shared.DMClickHandler;
 import bz.davide.dmweb.shared.DMFlowPanel;
 import bz.davide.dmweb.shared.DMHashNavigationPanel;
 import bz.davide.dmweb.shared.i18n.I18N;
@@ -45,12 +53,17 @@ public class Menu extends DMFlowPanel
    MenuItem              areasAndLine;
    MenuItem              mapItem;
    MenuItem              search;
-   MenuItem              routing;
+   //MenuItem              routing;
    MenuItem              news;
    MenuItem              favourites;
+   //MenuItem              green;
    MenuItem              more;
    MenuItem              sendFeedback;
    MenuItem              about;
+
+   MenuItem              parkings;
+   MenuItem              train;
+
    DMFlowPanel           moreMenuItems;
 
    MenuMoreClickHandler  moreClickHandler;
@@ -68,7 +81,7 @@ public class Menu extends DMFlowPanel
       this.navigationPanel = navigationPanel;
       this.map = map;
 
-      this.areasAndLine = new MenuItem(new BusIcon(), I18N.singleton.getLocalizedText("Menu_areasLines"));
+      this.areasAndLine = new MenuItem(new LinesIcon(), I18N.singleton.getLocalizedText("Menu_areasLines"));
       this.add(this.areasAndLine);
 
       this.mapItem = new MenuItem(new MapIcon(), I18N.singleton.getLocalizedText("Menu_map"));
@@ -78,14 +91,16 @@ public class Menu extends DMFlowPanel
       this.search = new MenuItem(new SearchIcon(), I18N.singleton.getLocalizedText("Menu_search"));
       this.add(this.search);
 
-      this.routing = new MenuItem(new RouteIcon(), I18N.singleton.getLocalizedText("Menu_routing"));
-      this.add(this.routing);
+      this.favourites = new MenuItem(new FavouritesActiveIcon(), "Favourite");
+      this.add(this.favourites);
 
-      this.news = new MenuItem(new BusIcon(), I18N.singleton.getLocalizedText("Menu_news"));
-      this.add(this.news);
+      //this.green = new MenuItem(new TreeIcon(), "Green");
+      //this.add(this.green);
+      this.parkings = new MenuItem(new ParkingIcon(), "Park");
+      this.add(this.parkings);
 
-      this.sendFeedback = new MenuItem(new BusIcon(), I18N.singleton.getLocalizedText("Menu_feedback"));
-      this.add(this.sendFeedback);
+      //this.routing = new MenuItem(new RouteIcon(), I18N.singleton.getLocalizedText("Menu_routing"));
+      //this.add(this.routing);
 
       this.more = new MenuItem(new MoreIcon(), I18N.singleton.getLocalizedText("Menu_more"));
       this.more.addStyleName("more");
@@ -94,17 +109,21 @@ public class Menu extends DMFlowPanel
       this.moreMenuItems = new DMFlowPanel("more-menu-items");
       this.add(this.moreMenuItems);
 
+      this.train = new MenuItem(new TrainIcon(), "Train");
+      this.moreMenuItems.add(this.train);
 
-      this.favourites = new MenuItem(new FavouritesIcon(), "Favourit.");
-      this.moreMenuItems.add(this.favourites);
+      this.news = new MenuItem(new NewsIcon(), I18N.singleton.getLocalizedText("Menu_news"));
+      this.moreMenuItems.add(this.news);
 
+      this.sendFeedback = new MenuItem(new FeedbackIcon(), I18N.singleton.getLocalizedText("Menu_feedback"));
+      this.moreMenuItems.add(this.sendFeedback);
 
-      this.about = new MenuItem(new BusIcon(), I18N.singleton.getLocalizedText("Menu_about"));
+      this.about = new MenuItem(new AboutIcon(), I18N.singleton.getLocalizedText("Menu_about"));
       this.moreMenuItems.add(this.about);
 
    }
 
-   public void initClickHandlers(AreaList areaList)
+   public void initClickHandlers(final AreaList areaList)
    {
       this.areasAndLine.addClickHandler(new MenuAreaLinesClickHandler(this.navigationPanel,
                                                                       this,
@@ -113,7 +132,7 @@ public class Menu extends DMFlowPanel
       this.mapItem.addClickHandler(new MenuMapClickHandler(this.navigationPanel, this, areaList, this.map));
       this.news.addClickHandler(new MenuNewsClickHandler(this.navigationPanel, this));
       this.search.addClickHandler(new MenuSearchClickHandler(this.navigationPanel, this, areaList, this.map));
-      this.routing.addClickHandler(new MenuRouteClickHandler(this.navigationPanel, this, areaList, this.map));
+      //this.routing.addClickHandler(new MenuRouteClickHandler(this.navigationPanel, this, areaList, this.map));
       this.moreClickHandler = new MenuMoreClickHandler(this.moreMenuItems);
       this.more.addClickHandler(this.moreClickHandler);
       this.sendFeedback.addClickHandler(new MenuFeedbackClickHandler(this));
@@ -122,6 +141,45 @@ public class Menu extends DMFlowPanel
                                                                      this,
                                                                      areaList,
                                                                      this.map));
+
+      /*
+      this.green.addClickHandler(new DMClickHandler()
+      {
+         @Override
+         public void onClick(DMClickEvent event)
+         {
+            Menu.this.navigationPanel.newPage(new GreenPanel());
+            Menu.this.hide();
+         }
+      });
+      */
+
+      this.train.addClickHandler(new DMClickHandler()
+      {
+
+         @Override
+         public void onClick(DMClickEvent event)
+         {
+            Menu.this.navigationPanel.newPage(new TrainStationsPanel(Menu.this.navigationPanel,
+                                                                     areaList,
+                                                                     Menu.this.map));
+            Menu.this.hide();
+         }
+      });
+
+      this.parkings.addClickHandler(new DMClickHandler()
+      {
+
+         @Override
+         public void onClick(DMClickEvent event)
+         {
+            Menu.this.navigationPanel.newPage(new ParkingsPanel(Menu.this.navigationPanel,
+                                                                areaList,
+                                                                Menu.this.map));
+            Menu.this.hide();
+         }
+      });
+
    }
 
    Menu(Void void1)

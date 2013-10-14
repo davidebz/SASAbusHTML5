@@ -108,7 +108,7 @@ public class SplashPanel extends DMFlowPanel
             FavouriteBusStationListPanel favouriteBusStationListPanel = new FavouriteBusStationListPanel(data,
                                                                                                          navigationPanel,
                                                                                                          map);
-            homePage.add(favouriteBusStationListPanel);
+            homePage.favouriteContainer.add(favouriteBusStationListPanel);
             homePage.favouriteBusStationListPanel = favouriteBusStationListPanel;
          }
       };

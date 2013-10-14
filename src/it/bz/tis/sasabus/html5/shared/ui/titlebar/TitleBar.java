@@ -19,15 +19,13 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui.titlebar;
 
-import it.bz.tis.sasabus.html5.shared.ui.icon.HTML5Icon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.LogoIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.MenuIcon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import it.bz.tis.sasabus.html5.shared.ui.menu.Menu;
 import bz.davide.dmweb.shared.DMAnchor;
 import bz.davide.dmweb.shared.DMFlowPanel;
 import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMImage;
-import bz.davide.dmweb.shared.DMLabel;
 
 /**
  * @author Davide Montesin <d@vide.bz>
@@ -38,18 +36,13 @@ public class TitleBar extends DMFlowPanel
    {
       super("title-bar");
 
-      MenuIcon logoMenuIcon = new MenuIcon();
-      DMLabel title = new DMLabel("SASAbus");
-      title.setStyleName("title");
-      DMImage html5logo = new HTML5Icon();
-      DMLabel beta = new DMLabel("Beta");
-      beta.setStyleName("beta");
+      MenuIcon menuIcon = new MenuIcon();
+      this.add(menuIcon);
 
+      LogoIcon logoMenuIcon = new LogoIcon();
+      
       this.add(logoMenuIcon);
-      this.add(title);
-      this.add(html5logo);
-      this.add(beta);
-      logoMenuIcon.addClickHandler(new TitleBarMenuClickHandler(menu));
+      menuIcon.addClickHandler(new TitleBarMenuClickHandler(menu));
 
       DMFlowPanel flags = new DMFlowPanel("flags");
       DMAnchor it = new DMAnchor("/it/home", "IT");

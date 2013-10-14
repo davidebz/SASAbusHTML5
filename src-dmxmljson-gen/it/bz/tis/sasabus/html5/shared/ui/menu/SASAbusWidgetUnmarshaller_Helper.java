@@ -492,19 +492,19 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      ((Menu)obj).news = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
-            // routing
-            if ((value = structure.property("routing")) != null)
+            // parkings
+            if ((value = structure.property("parkings")) != null)
                if (value.isNull())
-                  ((Menu)obj).routing = null;
+                  ((Menu)obj).parkings = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).routing = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
+                     ((Menu)obj).parkings = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).routing = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
+                     ((Menu)obj).parkings = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
             // search
@@ -535,6 +535,21 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((Menu)obj).sendFeedback = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
+                  }
+               }
+            // train
+            if ((value = structure.property("train")) != null)
+               if (value.isNull())
+                  ((Menu)obj).train = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((Menu)obj).train = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((Menu)obj).train = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
          }

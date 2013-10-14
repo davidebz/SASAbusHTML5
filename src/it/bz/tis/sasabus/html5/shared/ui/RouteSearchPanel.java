@@ -62,24 +62,35 @@ public class RouteSearchPanel extends DMFlowPanel implements PageChangeHandler
       super("route");
       this.map = map;
       this.navigationPanel = navigationPanel;
-      this.add(new DMLabel(I18N.singleton.getLocalizedText("RouteSearchPanel_start_station")));
-      this.add(new BusStationSearchWidget(map, areaList, new BusStationSelectedEventHandler()
-      {
-         @Override
-         public void selected(BusStation busStation)
-         {
-            RouteSearchPanel.start = busStation;
-         }
-      }, start));
-      this.add(new DMLabel(I18N.singleton.getLocalizedText("RouteSearchPanel_end_station")));
-      this.add(new BusStationSearchWidget(map, areaList, new BusStationSelectedEventHandler()
-      {
-         @Override
-         public void selected(BusStation busStation)
-         {
-            RouteSearchPanel.end = busStation;
-         }
-      }, end));
+
+      DMLabel introText = new DMLabel("Route calculation");
+      introText.setStyleName("intro-text");
+      this.add(introText);
+
+      this.add(new BusStationSearchWidget(I18N.singleton.getLocalizedText("RouteSearchPanel_start_station"),
+                                          map,
+                                          areaList,
+                                          new BusStationSelectedEventHandler()
+                                          {
+                                             @Override
+                                             public void selected(BusStation busStation)
+                                             {
+                                                RouteSearchPanel.start = busStation;
+                                             }
+                                          },
+                                          start));
+      this.add(new BusStationSearchWidget(I18N.singleton.getLocalizedText("RouteSearchPanel_end_station"),
+                                          map,
+                                          areaList,
+                                          new BusStationSelectedEventHandler()
+                                          {
+                                             @Override
+                                             public void selected(BusStation busStation)
+                                             {
+                                                RouteSearchPanel.end = busStation;
+                                             }
+                                          },
+                                          end));
 
       this.add(new DMLabel(I18N.singleton.getLocalizedText("RouteSearchPanel_when") + ":"));
       this.add(this.dateBox = new SASAbusDateBox());

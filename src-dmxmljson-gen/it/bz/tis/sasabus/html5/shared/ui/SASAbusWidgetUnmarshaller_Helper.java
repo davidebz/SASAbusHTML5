@@ -39,6 +39,21 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      ((HomePanel)obj).favouriteBusStationListPanel = (it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)o;
                   }
                }
+            // favouriteContainer
+            if ((value = structure.property("favouriteContainer")) != null)
+               if (value.isNull())
+                  ((HomePanel)obj).favouriteContainer = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((HomePanel)obj).favouriteContainer = (bz.davide.dmweb.shared.DMFlowPanel)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("DMFlowPanel"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((HomePanel)obj).favouriteContainer = (bz.davide.dmweb.shared.DMFlowPanel)o;
+                  }
+               }
             // introText
             if ((value = structure.property("introText")) != null)
                if (value.isNull())
@@ -47,11 +62,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((HomePanel)obj).introText = (bz.davide.dmweb.shared.DMLabel)identities.get(refid);
+                     ((HomePanel)obj).introText = (bz.davide.dmweb.shared.DMHTML)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMLabel"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("DMHTML"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((HomePanel)obj).introText = (bz.davide.dmweb.shared.DMLabel)o;
+                     ((HomePanel)obj).introText = (bz.davide.dmweb.shared.DMHTML)o;
                   }
                }
             // map

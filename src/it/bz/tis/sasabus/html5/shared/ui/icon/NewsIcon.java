@@ -28,4 +28,9 @@ public class NewsIcon extends Icon
    {
       super("news-icon");
    }
+
+   protected NewsIcon(Void void1)
+   {
+      super(void1);
+   }
 }

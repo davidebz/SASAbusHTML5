@@ -337,6 +337,20 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                structure.close();
          }
       });
+      this.putClassMarshaller("bz.davide.dmweb.shared.DMHTML", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
+         @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
+            if (!superClass) {
+               if (isReference(structure, obj, identities, seq))
+                  return;
+               identities.put(obj, structure);
+               structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
+            }
+            internalMarschall(obj, "bz.davide.dmweb.shared.DMWidget", "N/A",structure, identities, seq, true);
+            Object value;
+            if (!superClass)
+               structure.close();
+         }
+      });
       this.putClassMarshaller("bz.davide.dmweb.shared.DMComplexPanel", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
          @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
             if (!superClass) {

@@ -21,7 +21,9 @@ package it.bz.tis.sasabus.html5.client;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusTripStopList;
+import it.bz.tis.sasabus.backend.shared.FreeSlots;
 import it.bz.tis.sasabus.backend.shared.NewsList;
+import it.bz.tis.sasabus.backend.shared.ParkingInfo;
 import it.bz.tis.sasabus.backend.shared.SASAbusBackendUnmarshaller;
 import it.bz.tis.sasabus.backend.shared.SASAbusDB;
 import it.bz.tis.sasabus.backend.shared.SASAbusDBDataReady;
@@ -56,6 +58,28 @@ public class SASAbusDBClientImpl implements SASAbusDB
    public void loadNews(SASAbusDBDataReady<NewsList> response)
    {
       this.connect("news?nocache=" + System.currentTimeMillis(), "NewsList", response);
+   }
+
+   @Override
+   public void loadParkingInfo(String parkingid, SASAbusDBDataReady<ParkingInfo> response)
+   {
+      this.connect("parking/getParkingStation?identifier=" +
+                            parkingid +
+                            "&nocache=" +
+                            System.currentTimeMillis(),
+                   "ParkingInfo",
+                   response);
+   }
+
+   @Override
+   public void loadParkingFreeSlots(String parkingid, SASAbusDBDataReady<FreeSlots> response)
+   {
+      this.connect("parkingfreeslots/getNumberOfFreeSlots?identifier=" +
+                            parkingid +
+                            "&nocache=" +
+                            System.currentTimeMillis(),
+                   "FreeSlots",
+                   response);
    }
 
    @Override

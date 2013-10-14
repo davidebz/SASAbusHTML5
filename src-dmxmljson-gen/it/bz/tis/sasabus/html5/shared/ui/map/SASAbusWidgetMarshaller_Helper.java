@@ -53,14 +53,6 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.backend.sh
             {
                      internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.ui.icon.GpsIcon", structure.property("gpsIcon").structure(), identities, seq, false);
             }
-            // latLonValues
-            value = ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).latLonValues;
-            if (value == null)
-               structure.property("latLonValues").nullValue();
-            else
-            {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMLabel", structure.property("latLonValues").structure(), identities, seq, false);
-            }
             // mapDiv
             value = ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).mapDiv;
             if (value == null)
@@ -77,13 +69,13 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.backend.sh
             {
                      internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMHashNavigationPanel", structure.property("navigationPanel").structure(), identities, seq, false);
             }
-            // zoomLevel
-            value = ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).zoomLevel;
+            // overwievMap
+            value = ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).overwievMap;
             if (value == null)
-               structure.property("zoomLevel").nullValue();
+               structure.property("overwievMap").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMLabel", structure.property("zoomLevel").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMFlowPanel", structure.property("overwievMap").structure(), identities, seq, false);
             }
             if (!superClass)
                structure.close();

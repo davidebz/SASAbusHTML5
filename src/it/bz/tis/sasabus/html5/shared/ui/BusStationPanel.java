@@ -107,7 +107,7 @@ public class BusStationPanel extends DMFlowPanel implements PageChangeHandler
       }
       this.add(lines);
 
-      this.add(new DMLabel(I18N.singleton.getLocalizedText("BusStationPanel_directions") + ":"));
+      //this.add(new DMLabel(I18N.singleton.getLocalizedText("BusStationPanel_directions") + ":"));
 
       DMButton nextDepartures = new DMButton(I18N.singleton.getLocalizedText("BusStationPanel_refresh_departures"));
       DMButton asStart = new DMButton(I18N.singleton.getLocalizedText("BusStationPanel_use_as_start_routing"));
@@ -116,6 +116,8 @@ public class BusStationPanel extends DMFlowPanel implements PageChangeHandler
       this.add(asEnd);
       DMFlowPanel departureInputPanel = new DMFlowPanel("departure-input");
       this.add(departureInputPanel);
+
+      departureInputPanel.add(new DMLabel("Next departures"));
 
       asStart.addClickHandler(new DMClickHandler()
       {

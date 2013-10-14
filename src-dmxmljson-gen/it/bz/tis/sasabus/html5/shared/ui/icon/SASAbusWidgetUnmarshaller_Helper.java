@@ -71,6 +71,21 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
             bz.davide.dmxmljson.unmarshalling.Value value;
          }
       });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.icon.LogoIcon", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            return new it.bz.tis.sasabus.html5.shared.ui.icon.LogoIcon((Void)null);
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.icon.LogoIcon", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            internalUnmarschall(structure, "it.bz.tis.sasabus.html5.shared.ui.icon.Icon", obj, identities);
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+         }
+      });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             return new it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon((Void)null);
@@ -101,6 +116,36 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
             bz.davide.dmxmljson.unmarshalling.Value value;
          }
       });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.icon.TrainIcon", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            return new it.bz.tis.sasabus.html5.shared.ui.icon.TrainIcon((Void)null);
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.icon.TrainIcon", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            internalUnmarschall(structure, "it.bz.tis.sasabus.html5.shared.ui.icon.Icon", obj, identities);
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.icon.ParkingIcon", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            return new it.bz.tis.sasabus.html5.shared.ui.icon.ParkingIcon((Void)null);
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.icon.ParkingIcon", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            internalUnmarschall(structure, "it.bz.tis.sasabus.html5.shared.ui.icon.Icon", obj, identities);
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+         }
+      });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.icon.FavouritesIcon", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             return new it.bz.tis.sasabus.html5.shared.ui.icon.FavouritesIcon((Void)null);
@@ -108,6 +153,96 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.icon.FavouritesIcon", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            internalUnmarschall(structure, "it.bz.tis.sasabus.html5.shared.ui.icon.Icon", obj, identities);
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.icon.FavouritesActiveIcon", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            return new it.bz.tis.sasabus.html5.shared.ui.icon.FavouritesActiveIcon((Void)null);
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.icon.FavouritesActiveIcon", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            internalUnmarschall(structure, "it.bz.tis.sasabus.html5.shared.ui.icon.Icon", obj, identities);
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.icon.TreeIcon", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            return new it.bz.tis.sasabus.html5.shared.ui.icon.TreeIcon((Void)null);
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.icon.TreeIcon", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            internalUnmarschall(structure, "it.bz.tis.sasabus.html5.shared.ui.icon.Icon", obj, identities);
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.icon.LinesIcon", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            return new it.bz.tis.sasabus.html5.shared.ui.icon.LinesIcon((Void)null);
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.icon.LinesIcon", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            internalUnmarschall(structure, "it.bz.tis.sasabus.html5.shared.ui.icon.Icon", obj, identities);
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.icon.NewsIcon", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            return new it.bz.tis.sasabus.html5.shared.ui.icon.NewsIcon((Void)null);
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.icon.NewsIcon", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            internalUnmarschall(structure, "it.bz.tis.sasabus.html5.shared.ui.icon.Icon", obj, identities);
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.icon.FeedbackIcon", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            return new it.bz.tis.sasabus.html5.shared.ui.icon.FeedbackIcon((Void)null);
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.icon.FeedbackIcon", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            internalUnmarschall(structure, "it.bz.tis.sasabus.html5.shared.ui.icon.Icon", obj, identities);
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.icon.AboutIcon", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            return new it.bz.tis.sasabus.html5.shared.ui.icon.AboutIcon((Void)null);
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.icon.AboutIcon", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "it.bz.tis.sasabus.html5.shared.ui.icon.Icon", obj, identities);
             String id = structure.getId();

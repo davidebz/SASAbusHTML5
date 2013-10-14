@@ -84,21 +84,6 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.backend.
                      ((SASAbusMap)obj).gpsIcon = (it.bz.tis.sasabus.html5.shared.ui.icon.GpsIcon)o;
                   }
                }
-            // latLonValues
-            if ((value = structure.property("latLonValues")) != null)
-               if (value.isNull())
-                  ((SASAbusMap)obj).latLonValues = null;
-               else
-               {
-                  String refid = value.structure().getRefId();    
-                  if (refid != null)                              
-                     ((SASAbusMap)obj).latLonValues = (bz.davide.dmweb.shared.DMLabel)identities.get(refid);
-                  else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMLabel"));              
-                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusMap)obj).latLonValues = (bz.davide.dmweb.shared.DMLabel)o;
-                  }
-               }
             // mapDiv
             if ((value = structure.property("mapDiv")) != null)
                if (value.isNull())
@@ -129,19 +114,19 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.backend.
                      ((SASAbusMap)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)o;
                   }
                }
-            // zoomLevel
-            if ((value = structure.property("zoomLevel")) != null)
+            // overwievMap
+            if ((value = structure.property("overwievMap")) != null)
                if (value.isNull())
-                  ((SASAbusMap)obj).zoomLevel = null;
+                  ((SASAbusMap)obj).overwievMap = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((SASAbusMap)obj).zoomLevel = (bz.davide.dmweb.shared.DMLabel)identities.get(refid);
+                     ((SASAbusMap)obj).overwievMap = (bz.davide.dmweb.shared.DMFlowPanel)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMLabel"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("DMFlowPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusMap)obj).zoomLevel = (bz.davide.dmweb.shared.DMLabel)o;
+                     ((SASAbusMap)obj).overwievMap = (bz.davide.dmweb.shared.DMFlowPanel)o;
                   }
                }
          }

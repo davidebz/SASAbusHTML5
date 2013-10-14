@@ -36,7 +36,6 @@ import bz.davide.dmweb.shared.DMKeyUpHandler;
 import bz.davide.dmweb.shared.DMLabel;
 import bz.davide.dmweb.shared.DMTextBox;
 import bz.davide.dmweb.shared.PageChangeHandler;
-import bz.davide.dmweb.shared.i18n.I18N;
 
 import com.google.gwt.user.client.Window;
 
@@ -48,14 +47,16 @@ public class BusStationSearchWidget extends DMFlowPanel implements PageChangeHan
 
    SASAbusMap map;
 
-   public BusStationSearchWidget(SASAbusMap map,
+   public BusStationSearchWidget(String title,
+                                 SASAbusMap map,
                                  final AreaList areaList,
                                  final BusStationSelectedEventHandler selected)
    {
-      this(map, areaList, selected, null);
+      this(title, map, areaList, selected, null);
    }
 
-   public BusStationSearchWidget(SASAbusMap map,
+   public BusStationSearchWidget(String title,
+                                 SASAbusMap map,
                                  final AreaList areaList,
                                  final BusStationSelectedEventHandler selected,
                                  BusStation initial)
@@ -73,7 +74,7 @@ public class BusStationSearchWidget extends DMFlowPanel implements PageChangeHan
 
       final DMFlowPanel results = new DMFlowPanel("results");
 
-      this.add(new DMLabel(I18N.singleton.getLocalizedText("BusStationSearchWidget_introtext")));
+      this.add(new DMLabel(title));
       this.add(filters);
       this.add(results);
 
@@ -104,7 +105,6 @@ public class BusStationSearchWidget extends DMFlowPanel implements PageChangeHan
             BusStationSearchWidget.refreshResults(searchText, areaList, results, selected);
          }
       });
-
 
    }
 

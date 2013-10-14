@@ -44,7 +44,7 @@ public class SASAbusHTML5 implements EntryPoint
                             hostName.equals("127.0.1.1") ||
                             hostName.equals("10.0.0.10");
 
-      String serviceBaseUrl = development ? "http://" + hostName + ":8080/SASAbusBackend/" : "/backend/";
+      String serviceBaseUrl = (development ? "http://" + hostName + ":8080" : "") + "/backend/";
 
       SASAbusDBClientImpl.singleton = new SASAbusDBClientImpl(serviceBaseUrl);
 

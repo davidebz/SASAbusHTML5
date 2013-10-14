@@ -453,6 +453,21 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
             bz.davide.dmxmljson.unmarshalling.Value value;
          }
       });
+      this.putInstanceFactory("bz.davide.dmweb.shared.DMHTML", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            return new bz.davide.dmweb.shared.DMHTML((Void)null);
+         }
+      });
+
+      this.putClassUnmarshaller("bz.davide.dmweb.shared.DMHTML", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            internalUnmarschall(structure, "bz.davide.dmweb.shared.DMWidget", obj, identities);
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+         }
+      });
       this.putInstanceFactory("bz.davide.dmweb.shared.DMComplexPanel", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             return null;

@@ -26,6 +26,8 @@ import it.bz.tis.sasabus.html5.shared.ui.icon.BusIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.DownIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.RouteEndIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.WalkIcon;
+import bz.davide.dmweb.shared.DMClickEvent;
+import bz.davide.dmweb.shared.DMClickHandler;
 import bz.davide.dmweb.shared.DMFlowPanel;
 import bz.davide.dmweb.shared.DMHashNavigationPanel;
 import bz.davide.dmweb.shared.DMLabel;
@@ -55,7 +57,7 @@ public class RouteResultDetailPanel extends DMFlowPanel
          busName.add(new BusIcon());
          busName.add(new DMLabel(conSection.getJourneys()[0].getBusLineNumber()));
          this.add(busName);
-         BasicStop[] basicStop = conSection.getJourneys()[0].getPassList().getBasicStops();
+         final BasicStop[] basicStop = conSection.getJourneys()[0].getPassList().getBasicStops();
          String time = "";
          if (basicStop[0].getArr() != null)
          {
@@ -63,7 +65,30 @@ public class RouteResultDetailPanel extends DMFlowPanel
          }
          this.add(newRow(time, splitName(basicStop[0].getStation().getName())));
 
-         this.add(new DownIcon());
+         if (basicStop.length > 2)
+         {
+            final DMFlowPanel allStopsPanel = new DMFlowPanel();
+            this.add(allStopsPanel);
+            DownIcon downIcon = new DownIcon();
+            allStopsPanel.add(downIcon);
+            downIcon.addClickHandler(new DMClickHandler()
+            {
+               @Override
+               public void onClick(DMClickEvent event)
+               {
+                  allStopsPanel.clear();
+                  for (int i = 1; i < basicStop.length - 1; i++)
+                  {
+                     String time = "";
+                     if (basicStop[i].getArr() != null)
+                     {
+                        time = RouteResultOverviewPanel.formatTime(basicStop[i].getArr().getTime());
+                     }
+                     allStopsPanel.add(newRow(time, splitName(basicStop[i].getStation().getName())));
+                  }
+               }
+            });
+         }
 
          time = "";
          if (basicStop[basicStop.length - 1].getArr() != null)

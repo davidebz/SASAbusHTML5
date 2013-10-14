@@ -34,8 +34,6 @@
 <script src="../js/leaflet-0.6.4/leaflet.js"></script>
 <script src="../js/leaflet-0.6.4/leaflet.label.js"></script>
 
-
-
 <!--                                           -->
 <!-- This script loads your compiled module.   -->
 <!-- If you add any GWT meta tags, they must   -->
@@ -56,6 +54,13 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
+</script>
+
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['gauge']});
 </script>
 
               ]]></param-value>

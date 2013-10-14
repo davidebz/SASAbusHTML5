@@ -308,13 +308,13 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
             {
                      internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem", structure.property("news").structure(), identities, seq, false);
             }
-            // routing
-            value = ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).routing;
+            // parkings
+            value = ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).parkings;
             if (value == null)
-               structure.property("routing").nullValue();
+               structure.property("parkings").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem", structure.property("routing").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem", structure.property("parkings").structure(), identities, seq, false);
             }
             // search
             value = ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).search;
@@ -331,6 +331,14 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
             else
             {
                      internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem", structure.property("sendFeedback").structure(), identities, seq, false);
+            }
+            // train
+            value = ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).train;
+            if (value == null)
+               structure.property("train").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem", structure.property("train").structure(), identities, seq, false);
             }
             if (!superClass)
                structure.close();
