@@ -27,13 +27,13 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.IdentityHashMap;
 
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMLabel;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.SpanView;
 
-public class BusStationInRangeWidget extends DMFlowPanel
+public class BusStationInRangeWidget extends DivView
 {
    public BusStationInRangeWidget(double lat,
                                   double lon,
@@ -42,7 +42,7 @@ public class BusStationInRangeWidget extends DMFlowPanel
                                   final SASAbusMap map)
    {
       super("nearest-bus-stops");
-      this.add(new DMLabel("Nearest bus stops: "));
+      this.add(new SpanView("Nearest bus stops: "));
 
       final IdentityHashMap<BusStation, Double> weights = new IdentityHashMap<BusStation, Double>();
 

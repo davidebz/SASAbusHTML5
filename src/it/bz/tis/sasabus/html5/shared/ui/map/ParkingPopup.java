@@ -26,30 +26,30 @@ import it.bz.tis.sasabus.html5.client.SASAbusDBClientImpl;
 import it.bz.tis.sasabus.html5.shared.data.Parking;
 import it.bz.tis.sasabus.html5.shared.ui.ItDeNamePanel;
 import bz.davide.dmweb.client.google.visualization.Gauge;
-import bz.davide.dmweb.shared.DMButton;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMLabel;
+import bz.davide.dmweb.shared.view.ButtonView;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.SpanView;
 
-public class ParkingPopup extends DMFlowPanel
+public class ParkingPopup extends DivView
 {
    Parking     parking;
-   DMFlowPanel freeParkingsData;
+   DivView freeParkingsData;
 
    public ParkingPopup(Parking parking)
    {
       super("parking-popup");
       this.parking = parking;
       this.add(new ItDeNamePanel(parking.getName_it(), parking.getName_de(), null));
-      this.add(new DMLabel("Free parkings:"));
-      this.add(this.freeParkingsData = new DMFlowPanel("free-data"));
+      this.add(new SpanView("Free parkings:"));
+      this.add(this.freeParkingsData = new DivView("free-data"));
 
    }
 
    void init()
    {
-      DMButton refresh = new DMButton("refresh");
+      ButtonView refresh = new ButtonView("refresh");
       this.add(refresh);
       DMClickHandler refreshHandler = new DMClickHandler()
       {
@@ -57,7 +57,7 @@ public class ParkingPopup extends DMFlowPanel
          public void onClick(DMClickEvent event)
          {
             ParkingPopup.this.freeParkingsData.clear();
-            ParkingPopup.this.freeParkingsData.add(new DMLabel("reading..."));
+            ParkingPopup.this.freeParkingsData.add(new SpanView("reading..."));
             SASAbusDBClientImpl.singleton.loadParkingInfo(ParkingPopup.this.parking.getId(),
                                                           new SASAbusDBDataReady<ParkingInfo>()
                                                           {

@@ -23,14 +23,14 @@ import it.bz.tis.sasabus.backend.shared.News;
 import it.bz.tis.sasabus.backend.shared.NewsList;
 import it.bz.tis.sasabus.backend.shared.SASAbusDBDataReady;
 import it.bz.tis.sasabus.html5.client.SASAbusDBClientImpl;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMLabel;
 import bz.davide.dmweb.shared.i18n.I18N;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.SpanView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class NewsPanel extends DMFlowPanel
+public class NewsPanel extends DivView
 {
 
    public NewsPanel()
@@ -38,10 +38,10 @@ public class NewsPanel extends DMFlowPanel
       super("news");
 
       this.addStyleName("news");
-      final DMFlowPanel newsListDiv = new DMFlowPanel("newslist");
+      final DivView newsListDiv = new DivView("newslist");
       this.add(newsListDiv);
 
-      newsListDiv.add(new DMLabel(I18N.singleton.getLocalizedText("NewsPanel_loading")));
+      newsListDiv.add(new SpanView(I18N.singleton.getLocalizedText("NewsPanel_loading")));
 
       SASAbusDBClientImpl.singleton.loadNews(new SASAbusDBDataReady<NewsList>()
       {
@@ -55,7 +55,7 @@ public class NewsPanel extends DMFlowPanel
 
    }
 
-   void newsListRead(final DMFlowPanel newsListDiv, NewsList newsList)
+   void newsListRead(final DivView newsListDiv, NewsList newsList)
    {
       newsListDiv.clear();
       for (int i = 0; i < newsList.getNews().size(); i++)

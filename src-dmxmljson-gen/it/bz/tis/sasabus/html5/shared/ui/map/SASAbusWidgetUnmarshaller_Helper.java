@@ -19,7 +19,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.backend.
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
-            internalUnmarschall(structure, "bz.davide.dmweb.shared.DMFlowPanel", obj, identities);
+            internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -47,11 +47,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.backend.
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((SASAbusMap)obj).close = (bz.davide.dmweb.shared.DMButton)identities.get(refid);
+                     ((SASAbusMap)obj).close = (bz.davide.dmweb.shared.view.ButtonView)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMButton"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("ButtonView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusMap)obj).close = (bz.davide.dmweb.shared.DMButton)o;
+                     ((SASAbusMap)obj).close = (bz.davide.dmweb.shared.view.ButtonView)o;
                   }
                }
             // controls
@@ -62,11 +62,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.backend.
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((SASAbusMap)obj).controls = (bz.davide.dmweb.shared.DMFlowPanel)identities.get(refid);
+                     ((SASAbusMap)obj).controls = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMFlowPanel"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusMap)obj).controls = (bz.davide.dmweb.shared.DMFlowPanel)o;
+                     ((SASAbusMap)obj).controls = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
             // gpsIcon
@@ -92,11 +92,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.backend.
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((SASAbusMap)obj).mapDiv = (bz.davide.dmweb.shared.DMFlowPanel)identities.get(refid);
+                     ((SASAbusMap)obj).mapDiv = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMFlowPanel"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusMap)obj).mapDiv = (bz.davide.dmweb.shared.DMFlowPanel)o;
+                     ((SASAbusMap)obj).mapDiv = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
             // navigationPanel
@@ -107,11 +107,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.backend.
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((SASAbusMap)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)identities.get(refid);
+                     ((SASAbusMap)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusMap)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)o;
+                     ((SASAbusMap)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
             // overwievMap
@@ -122,11 +122,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.backend.
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((SASAbusMap)obj).overwievMap = (bz.davide.dmweb.shared.DMFlowPanel)identities.get(refid);
+                     ((SASAbusMap)obj).overwievMap = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMFlowPanel"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusMap)obj).overwievMap = (bz.davide.dmweb.shared.DMFlowPanel)o;
+                     ((SASAbusMap)obj).overwievMap = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
          }

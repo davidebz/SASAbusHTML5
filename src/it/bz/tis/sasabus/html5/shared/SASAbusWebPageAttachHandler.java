@@ -23,27 +23,27 @@ import it.bz.tis.sasabus.html5.shared.ui.HomePanel;
 import it.bz.tis.sasabus.html5.shared.ui.SplashPanel;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import it.bz.tis.sasabus.html5.shared.ui.menu.Menu;
-import bz.davide.dmweb.shared.DMAttachEvent;
-import bz.davide.dmweb.shared.DMAttachHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.AttachEvent;
+import bz.davide.dmweb.shared.view.AttachListener;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
 
 import com.google.gwt.user.client.History;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class SASAbusWebPageAttachHandler implements DMAttachHandler
+public class SASAbusWebPageAttachHandler implements AttachListener
 {
-   DMFlowPanel           cover;
-   DMFlowPanel           wrapper;
+   DivView           cover;
+   DivView           wrapper;
    SASAbusMap            map;
    Menu                  menu;
    HomePanel             homePanel;
    DMHashNavigationPanel navigationPanel;
 
-   public SASAbusWebPageAttachHandler(DMFlowPanel cover,
-                                      DMFlowPanel wrapper,
+   public SASAbusWebPageAttachHandler(DivView cover,
+                                      DivView wrapper,
                                       SASAbusMap map,
                                       Menu menu,
                                       HomePanel homePanel,
@@ -62,7 +62,7 @@ public class SASAbusWebPageAttachHandler implements DMAttachHandler
    }
 
    @Override
-   public void onAttachOrDetach(DMAttachEvent event)
+   public void onAttachOrDetach(AttachEvent event)
    {
       if (event.isAttached())
       {

@@ -26,7 +26,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                structure.property("cover").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMFlowPanel", structure.property("cover").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("cover").structure(), identities, seq, false);
             }
             // homePanel
             value = ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).homePanel;
@@ -58,7 +58,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                structure.property("navigationPanel").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMHashNavigationPanel", structure.property("navigationPanel").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DMHashNavigationPanel", structure.property("navigationPanel").structure(), identities, seq, false);
             }
             // wrapper
             value = ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).wrapper;
@@ -66,7 +66,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                structure.property("wrapper").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMFlowPanel", structure.property("wrapper").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("wrapper").structure(), identities, seq, false);
             }
             if (!superClass)
                structure.close();

@@ -7,7 +7,7 @@
 package it.bz.tis.sasabus.html5.shared.ui.menu;
 
 
-public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.map.SASAbusWidgetUnmarshaller_Helper
+public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASAbusWidgetUnmarshaller_Helper
 {
    protected SASAbusWidgetUnmarshaller_Helper()
    {
@@ -19,7 +19,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
-            internalUnmarschall(structure, "bz.davide.dmweb.shared.DMClickableFlowPanel", obj, identities);
+            internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -135,11 +135,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuMapClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)identities.get(refid);
+                     ((MenuMapClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuMapClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)o;
+                     ((MenuMapClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
          }
@@ -179,11 +179,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuNewsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)identities.get(refid);
+                     ((MenuNewsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuNewsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)o;
+                     ((MenuNewsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
          }
@@ -253,11 +253,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuAreaLinesClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)identities.get(refid);
+                     ((MenuAreaLinesClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuAreaLinesClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)o;
+                     ((MenuAreaLinesClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
          }
@@ -297,11 +297,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuSettingsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)identities.get(refid);
+                     ((MenuSettingsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuSettingsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)o;
+                     ((MenuSettingsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
          }
@@ -314,7 +314,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.menu.Menu", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
-            internalUnmarschall(structure, "bz.davide.dmweb.shared.DMFlowPanel", obj, identities);
+            internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -455,11 +455,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).moreMenuItems = (bz.davide.dmweb.shared.DMFlowPanel)identities.get(refid);
+                     ((Menu)obj).moreMenuItems = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMFlowPanel"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).moreMenuItems = (bz.davide.dmweb.shared.DMFlowPanel)o;
+                     ((Menu)obj).moreMenuItems = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
             // navigationPanel
@@ -470,11 +470,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)identities.get(refid);
+                     ((Menu)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)o;
+                     ((Menu)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
             // news
@@ -574,11 +574,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuMoreClickHandler)obj).moreMenuItem = (bz.davide.dmweb.shared.DMFlowPanel)identities.get(refid);
+                     ((MenuMoreClickHandler)obj).moreMenuItem = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMFlowPanel"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuMoreClickHandler)obj).moreMenuItem = (bz.davide.dmweb.shared.DMFlowPanel)o;
+                     ((MenuMoreClickHandler)obj).moreMenuItem = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
             // moreOpen

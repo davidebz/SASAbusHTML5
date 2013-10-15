@@ -23,18 +23,18 @@ import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.html5.shared.FavouriteBusStationList;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMLabel;
-import bz.davide.dmweb.shared.PageChangeHandler;
 import bz.davide.dmweb.shared.i18n.I18N;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.PageChangeHandler;
+import bz.davide.dmweb.shared.view.SpanView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class FavouriteBusStationListPanel extends DMFlowPanel implements PageChangeHandler
+public class FavouriteBusStationListPanel extends DivView implements PageChangeHandler
 {
    AreaList              areaList;
    DMHashNavigationPanel navigationPanel;
@@ -61,7 +61,7 @@ public class FavouriteBusStationListPanel extends DMFlowPanel implements PageCha
 
       FavouriteBusStationList favourites = FavouriteBusStationList.getSingleton();
       BusStation[] busStations = BusLinePanel.sortByCurrentLanguage(this.areaList.getBusStations());
-      this.add(new DMLabel(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_favourite_are") +
+      this.add(new SpanView(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_favourite_are") +
                            ":"));
       int count = 0;
       for (final BusStation busStation : busStations)
@@ -86,7 +86,7 @@ public class FavouriteBusStationListPanel extends DMFlowPanel implements PageCha
       }
       if (count == 0)
       {
-         this.add(new DMLabel(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_empty_favourite")));
+         this.add(new SpanView(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_empty_favourite")));
       }
 
    }

@@ -19,7 +19,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.backend.sh
                identities.put(obj, structure);
                structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
             }
-            internalMarschall(obj, "bz.davide.dmweb.shared.DMFlowPanel", "N/A",structure, identities, seq, true);
+            internalMarschall(obj, "bz.davide.dmweb.shared.view.DivView", "N/A",structure, identities, seq, true);
             Object value;
             // areaList
             value = ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).areaList;
@@ -35,7 +35,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.backend.sh
                structure.property("close").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMButton", structure.property("close").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.ButtonView", structure.property("close").structure(), identities, seq, false);
             }
             // controls
             value = ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).controls;
@@ -43,7 +43,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.backend.sh
                structure.property("controls").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMFlowPanel", structure.property("controls").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("controls").structure(), identities, seq, false);
             }
             // gpsIcon
             value = ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).gpsIcon;
@@ -59,7 +59,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.backend.sh
                structure.property("mapDiv").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMFlowPanel", structure.property("mapDiv").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("mapDiv").structure(), identities, seq, false);
             }
             // navigationPanel
             value = ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).navigationPanel;
@@ -67,7 +67,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.backend.sh
                structure.property("navigationPanel").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMHashNavigationPanel", structure.property("navigationPanel").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DMHashNavigationPanel", structure.property("navigationPanel").structure(), identities, seq, false);
             }
             // overwievMap
             value = ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).overwievMap;
@@ -75,7 +75,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.backend.sh
                structure.property("overwievMap").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMFlowPanel", structure.property("overwievMap").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("overwievMap").structure(), identities, seq, false);
             }
             if (!superClass)
                structure.close();

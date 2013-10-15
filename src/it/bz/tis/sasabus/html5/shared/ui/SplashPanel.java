@@ -29,11 +29,11 @@ import it.bz.tis.sasabus.html5.client.SASAbusHTML5;
 import it.bz.tis.sasabus.html5.shared.ui.icon.HTML5Icon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import it.bz.tis.sasabus.html5.shared.ui.menu.Menu;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMImage;
-import bz.davide.dmweb.shared.DMLabel;
 import bz.davide.dmweb.shared.i18n.I18N;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.ImgView;
+import bz.davide.dmweb.shared.view.SpanView;
 import bz.davide.dmxmljson.marshalling.json.JSONStructure;
 import bz.davide.dmxmljson.unmarshalling.json.gwt.GWTStructure;
 
@@ -46,27 +46,27 @@ import com.google.gwt.user.client.Timer;
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class SplashPanel extends DMFlowPanel
+public class SplashPanel extends DivView
 {
    private static final String SASABUS_DB_LAST_MODIFIED = "SASAbusDBLastModified";
    private static final String SASABUS_DB_DATA          = "SASAbusDBData";
 
-   public SplashPanel(final DMFlowPanel cover,
-                      final DMFlowPanel wrapper,
+   public SplashPanel(final DivView cover,
+                      final DivView wrapper,
                       final SASAbusMap map,
                       final Menu menu,
                       final HomePanel homePage,
                       final DMHashNavigationPanel navigationPanel)
    {
       super("splash-panel");
-      this.add(new DMLabel("SASAbus"));
+      this.add(new SpanView("SASAbus"));
       this.add(new HTML5Icon());
-      DMFlowPanel imageContainer = new DMFlowPanel("image-container");
-      final DMImage sasaImg = new DMImage("../images/bus.png");
+      DivView imageContainer = new DivView("image-container");
+      final ImgView sasaImg = new ImgView("../images/bus.png");
       imageContainer.add(sasaImg);
 
       this.add(imageContainer);
-      final DMLabel currentOperation = new DMLabel(I18N.singleton.getLocalizedText("AboutPanel_checkingUpdates"));
+      final SpanView currentOperation = new SpanView(I18N.singleton.getLocalizedText("AboutPanel_checkingUpdates"));
       this.add(currentOperation);
 
       final long startTime = System.currentTimeMillis();

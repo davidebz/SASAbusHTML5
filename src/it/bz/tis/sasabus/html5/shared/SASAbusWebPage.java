@@ -24,10 +24,10 @@ import it.bz.tis.sasabus.html5.shared.ui.HomePanel;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import it.bz.tis.sasabus.html5.shared.ui.menu.Menu;
 import it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBar;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMWebPage;
-import bz.davide.dmweb.shared.DMWidget;
+import bz.davide.dmweb.shared.view.AbstractHtmlElementView;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DMWebPage;
+import bz.davide.dmweb.shared.view.DivView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
@@ -41,9 +41,9 @@ public class SASAbusWebPage extends DMWebPage
 
    public SASAbusWebPage()
    {
-      DMFlowPanel wrapper = new DMFlowPanel("cover-wrapper");
+      DivView wrapper = new DivView("cover-wrapper");
 
-      DMFlowPanel initialCover = new DMFlowPanel("cover");
+      DivView initialCover = new DivView("cover");
 
       wrapper.add(initialCover);
 
@@ -67,7 +67,7 @@ public class SASAbusWebPage extends DMWebPage
 
       this.titleBar = new TitleBar(this.menu, map, null);
 
-      this.setBodyContent(new DMWidget[] { this.titleBar,
+      this.setBodyContent(new AbstractHtmlElementView[] { this.titleBar,
                navigationPanel,
                map,
                this.menu,

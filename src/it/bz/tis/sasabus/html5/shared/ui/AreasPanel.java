@@ -22,16 +22,16 @@ package it.bz.tis.sasabus.html5.shared.ui;
 import it.bz.tis.sasabus.backend.shared.Area;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.PageChangeHandler;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.PageChangeHandler;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class AreasPanel extends DMFlowPanel implements PageChangeHandler
+public class AreasPanel extends DivView implements PageChangeHandler
 {
    SASAbusMap map;
    boolean    mapOpen;

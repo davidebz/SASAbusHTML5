@@ -259,7 +259,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.icon.Icon", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
-            internalUnmarschall(structure, "bz.davide.dmweb.shared.DMImage", obj, identities);
+            internalUnmarschall(structure, "bz.davide.dmweb.shared.view.ImgView", obj, identities);
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);

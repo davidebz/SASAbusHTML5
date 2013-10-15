@@ -26,17 +26,17 @@ import it.bz.tis.sasabus.html5.shared.ui.icon.BusIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.DownIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.RouteEndIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.WalkIcon;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMLabel;
 import bz.davide.dmweb.shared.i18n.I18N;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.SpanView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class RouteResultDetailPanel extends DMFlowPanel
+public class RouteResultDetailPanel extends DivView
 {
    public RouteResultDetailPanel(ConSectionList data, DMHashNavigationPanel navigationPanel)
    {
@@ -44,18 +44,18 @@ public class RouteResultDetailPanel extends DMFlowPanel
       this.addStyleName("bus-trip-detail");
       for (ConSection conSection : data.getConSections())
       {
-         DMFlowPanel busName = new DMFlowPanel("bus-name");
+         DivView busName = new DivView("bus-name");
          if (conSection.getWalks().length > 0)
          {
             busName.add(new WalkIcon());
-            busName.add(new DMLabel(I18N.singleton.getLocalizedText("RouteResultDetailPanel_walk_for") +
+            busName.add(new SpanView(I18N.singleton.getLocalizedText("RouteResultDetailPanel_walk_for") +
                                     ": " +
                                     RouteResultOverviewPanel.formatTime(conSection.getWalks()[0].getDuration().getTime())));
             this.add(busName);
             continue;
          }
          busName.add(new BusIcon());
-         busName.add(new DMLabel(conSection.getJourneys()[0].getBusLineNumber()));
+         busName.add(new SpanView(conSection.getJourneys()[0].getBusLineNumber()));
          this.add(busName);
          final BasicStop[] basicStop = conSection.getJourneys()[0].getPassList().getBasicStops();
          String time = "";
@@ -67,7 +67,7 @@ public class RouteResultDetailPanel extends DMFlowPanel
 
          if (basicStop.length > 2)
          {
-            final DMFlowPanel allStopsPanel = new DMFlowPanel();
+            final DivView allStopsPanel = new DivView();
             this.add(allStopsPanel);
             DownIcon downIcon = new DownIcon();
             allStopsPanel.add(downIcon);
@@ -97,16 +97,16 @@ public class RouteResultDetailPanel extends DMFlowPanel
          }
          this.add(newRow(time, splitName(basicStop[basicStop.length - 1].getStation().getName())));
       }
-      DMFlowPanel busName = new DMFlowPanel("bus-name");
+      DivView busName = new DivView("bus-name");
       busName.add(new RouteEndIcon());
-      busName.add(new DMLabel(I18N.singleton.getLocalizedText("RouteResultDetailPanel_you_arrive")));
+      busName.add(new SpanView(I18N.singleton.getLocalizedText("RouteResultDetailPanel_you_arrive")));
       this.add(busName);
    }
 
-   static DMFlowPanel newRow(String time, String[] names)
+   static DivView newRow(String time, String[] names)
    {
-      DMFlowPanel row = new DMFlowPanel("row");
-      DMLabel timeLabel = new DMLabel(time);
+      DivView row = new DivView("row");
+      SpanView timeLabel = new SpanView(time);
       timeLabel.setStyleName("time");
       row.add(timeLabel);
       row.add(new ItDeNamePanel(names[0], names[1], null));

@@ -22,17 +22,17 @@ package it.bz.tis.sasabus.html5.shared.ui;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.html5.shared.data.Parking;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMLabel;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.SpanView;
 
-public class ParkingsPanel extends DMFlowPanel
+public class ParkingsPanel extends DivView
 {
    public ParkingsPanel(final DMHashNavigationPanel navPanel, final AreaList areaList, final SASAbusMap map)
    {
-      this.add(new DMLabel("Parkings:"));
+      this.add(new SpanView("Parkings:"));
       for (final Parking park : Parking.list)
       {
          RowItem rowItem = new RowItem(new DMClickHandler()

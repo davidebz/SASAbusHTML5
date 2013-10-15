@@ -23,15 +23,15 @@ import it.bz.tis.sasabus.html5.shared.ui.icon.CalendarIcon;
 
 import java.util.Date;
 
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMDateBox;
-import bz.davide.dmweb.shared.DMFlowPanel;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMDateBox;
+import bz.davide.dmweb.shared.view.DivView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class SASAbusDateBox extends DMFlowPanel
+public class SASAbusDateBox extends DivView
 {
    DMDateBox dateBox;
 

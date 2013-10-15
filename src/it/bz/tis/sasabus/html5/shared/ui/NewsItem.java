@@ -19,16 +19,16 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHTML;
-import bz.davide.dmweb.shared.DMLabel;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHTML;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.SpanView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class NewsItem extends DMFlowPanel
+public class NewsItem extends DivView
 {
    DMHTML descr = null;
 
@@ -52,7 +52,7 @@ public class NewsItem extends DMFlowPanel
          }
       });
 
-      newsTitle.add(new DMLabel(title));
+      newsTitle.add(new SpanView(title));
       this.add(newsTitle);
 
    }

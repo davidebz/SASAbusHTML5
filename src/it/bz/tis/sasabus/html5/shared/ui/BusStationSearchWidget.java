@@ -26,23 +26,23 @@ import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 
 import java.util.ArrayList;
 
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMFocusEvent;
-import bz.davide.dmweb.shared.DMFocusHandler;
-import bz.davide.dmweb.shared.DMKeyUpEvent;
-import bz.davide.dmweb.shared.DMKeyUpHandler;
-import bz.davide.dmweb.shared.DMLabel;
-import bz.davide.dmweb.shared.DMTextBox;
-import bz.davide.dmweb.shared.PageChangeHandler;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMFocusEvent;
+import bz.davide.dmweb.shared.view.DMFocusHandler;
+import bz.davide.dmweb.shared.view.DMKeyUpEvent;
+import bz.davide.dmweb.shared.view.DMKeyUpHandler;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.InputView;
+import bz.davide.dmweb.shared.view.PageChangeHandler;
+import bz.davide.dmweb.shared.view.SpanView;
 
 import com.google.gwt.user.client.Window;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class BusStationSearchWidget extends DMFlowPanel implements PageChangeHandler
+public class BusStationSearchWidget extends DivView implements PageChangeHandler
 {
 
    SASAbusMap map;
@@ -63,18 +63,18 @@ public class BusStationSearchWidget extends DMFlowPanel implements PageChangeHan
    {
       super("bus-station-search");
       this.map = map;
-      DMFlowPanel filters = new DMFlowPanel("filters");
+      DivView filters = new DivView("filters");
       String text = "";
       if (initial != null)
       {
          text = ItDeNamePanel.asOneLine(initial.getName_it(), initial.getName_de());
       }
-      final DMTextBox searchText = new DMTextBox(text);
+      final InputView searchText = new InputView(text);
       filters.add(searchText);
 
-      final DMFlowPanel results = new DMFlowPanel("results");
+      final DivView results = new DivView("results");
 
-      this.add(new DMLabel(title));
+      this.add(new SpanView(title));
       this.add(filters);
       this.add(results);
 
@@ -108,9 +108,9 @@ public class BusStationSearchWidget extends DMFlowPanel implements PageChangeHan
 
    }
 
-   private static void refreshResults(DMTextBox searchText,
+   private static void refreshResults(InputView searchText,
                                       AreaList areaList,
-                                      DMFlowPanel results,
+                                      DivView results,
                                       BusStationSelectedEventHandler selected)
    {
 
@@ -166,14 +166,14 @@ public class BusStationSearchWidget extends DMFlowPanel implements PageChangeHan
       }
       if (count == 7)
       {
-         results.add(new DMLabel("..."));
+         results.add(new SpanView("..."));
       }
    }
 
    private static void busStationItem(final BusStation busStation,
-                                      final DMFlowPanel results,
+                                      final DivView results,
                                       final BusStationSelectedEventHandler selected,
-                                      final DMTextBox searchText)
+                                      final InputView searchText)
    {
       RowItem rowItem = new RowItem(new DMClickHandler()
       {

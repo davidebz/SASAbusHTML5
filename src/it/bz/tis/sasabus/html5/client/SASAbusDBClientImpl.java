@@ -29,7 +29,7 @@ import it.bz.tis.sasabus.backend.shared.SASAbusDB;
 import it.bz.tis.sasabus.backend.shared.SASAbusDBDataReady;
 import it.bz.tis.sasabus.backend.shared.SASAbusDBLastModified;
 import it.bz.tis.sasabus.backend.shared.travelplanner.ConRes;
-import bz.davide.dmweb.shared.DMWidget;
+import bz.davide.dmweb.shared.view.AbstractHtmlElementView;
 import bz.davide.dmxmljson.unmarshalling.json.gwt.GWTStructure;
 
 import com.google.gwt.core.client.JavaScriptObject;
@@ -126,7 +126,7 @@ public class SASAbusDBClientImpl implements SASAbusDB
    @Override
    public void nextRoute(String context, SASAbusDBDataReady<ConRes> response) throws Exception
    {
-      this.connect("sasabusdb/nextRoute?context=" + DMWidget.escapeText4url(context), "ConRes", response);
+      this.connect("sasabusdb/nextRoute?context=" + AbstractHtmlElementView.escapeText4url(context), "ConRes", response);
    }
 
    private <T> void connect(String methodUri,

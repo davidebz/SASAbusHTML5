@@ -23,18 +23,18 @@ import it.bz.tis.sasabus.backend.shared.Area;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusLine;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMLabel;
-import bz.davide.dmweb.shared.PageChangeHandler;
 import bz.davide.dmweb.shared.i18n.I18N;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.PageChangeHandler;
+import bz.davide.dmweb.shared.view.SpanView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class AreaPanel extends DMFlowPanel implements PageChangeHandler
+public class AreaPanel extends DivView implements PageChangeHandler
 {
 
    SASAbusMap map;
@@ -63,7 +63,7 @@ public class AreaPanel extends DMFlowPanel implements PageChangeHandler
                navPanel.newPage(newPanel);
             }
          });
-         busLineRow.add(new DMLabel(I18N.singleton.getLocalizedText("BusLine") + " " + busLine.getNumber()));
+         busLineRow.add(new SpanView(I18N.singleton.getLocalizedText("BusLine") + " " + busLine.getNumber()));
 
          this.add(busLineRow);
 

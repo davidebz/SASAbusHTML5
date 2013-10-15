@@ -29,21 +29,21 @@ import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 
 import java.util.Date;
 
-import bz.davide.dmweb.shared.DMButton;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMLabel;
-import bz.davide.dmweb.shared.PageChangeHandler;
 import bz.davide.dmweb.shared.i18n.I18N;
+import bz.davide.dmweb.shared.view.ButtonView;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.PageChangeHandler;
+import bz.davide.dmweb.shared.view.SpanView;
 
 import com.google.gwt.i18n.client.DateTimeFormat;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class RouteSearchPanel extends DMFlowPanel implements PageChangeHandler
+public class RouteSearchPanel extends DivView implements PageChangeHandler
 {
    public static BusStation    start = null;
    public static BusStation    end   = null;
@@ -52,10 +52,10 @@ public class RouteSearchPanel extends DMFlowPanel implements PageChangeHandler
 
    SASAbusDateBox              dateBox;
 
-   final DMButton              search;
+   final ButtonView              search;
    final DMHashNavigationPanel navigationPanel;
 
-   DMFlowPanel                 results;
+   DivView                 results;
 
    public RouteSearchPanel(AreaList areaList, final DMHashNavigationPanel navigationPanel, SASAbusMap map)
    {
@@ -63,7 +63,7 @@ public class RouteSearchPanel extends DMFlowPanel implements PageChangeHandler
       this.map = map;
       this.navigationPanel = navigationPanel;
 
-      DMLabel introText = new DMLabel("Route calculation");
+      SpanView introText = new SpanView("Route calculation");
       introText.setStyleName("intro-text");
       this.add(introText);
 
@@ -92,10 +92,10 @@ public class RouteSearchPanel extends DMFlowPanel implements PageChangeHandler
                                           },
                                           end));
 
-      this.add(new DMLabel(I18N.singleton.getLocalizedText("RouteSearchPanel_when") + ":"));
+      this.add(new SpanView(I18N.singleton.getLocalizedText("RouteSearchPanel_when") + ":"));
       this.add(this.dateBox = new SASAbusDateBox());
 
-      this.search = new DMButton(I18N.singleton.getLocalizedText("RouteSearchPanel_search"));
+      this.search = new ButtonView(I18N.singleton.getLocalizedText("RouteSearchPanel_search"));
       this.add(this.search);
       this.search.addClickHandler(new DMClickHandler()
       {
@@ -132,7 +132,7 @@ public class RouteSearchPanel extends DMFlowPanel implements PageChangeHandler
             }
          }
       });
-      this.add(this.results = new DMFlowPanel("results"));
+      this.add(this.results = new DivView("results"));
    }
 
    private void onFirstRouteReceived(ConRes data0)

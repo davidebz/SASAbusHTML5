@@ -23,11 +23,11 @@ import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.html5.shared.data.Parking;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.client.leaflet.LatLng;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.PageChangeHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.PageChangeHandler;
 
-public class ParkingPanel extends DMFlowPanel implements PageChangeHandler
+public class ParkingPanel extends DivView implements PageChangeHandler
 {
    SASAbusMap map;
    Parking    parking;

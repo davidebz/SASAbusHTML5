@@ -34,18 +34,18 @@ import it.bz.tis.sasabus.html5.shared.ui.icon.ParkingIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.SearchIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.TrainIcon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
 import bz.davide.dmweb.shared.i18n.I18N;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
 
 import com.google.gwt.user.client.Timer;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class Menu extends DMFlowPanel
+public class Menu extends DivView
 {
    DMHashNavigationPanel navigationPanel;
    SASAbusMap            map;
@@ -64,7 +64,7 @@ public class Menu extends DMFlowPanel
    MenuItem              parkings;
    MenuItem              train;
 
-   DMFlowPanel           moreMenuItems;
+   DivView           moreMenuItems;
 
    MenuMoreClickHandler  moreClickHandler;
 
@@ -106,7 +106,7 @@ public class Menu extends DMFlowPanel
       this.more.addStyleName("more");
       this.add(this.more);
 
-      this.moreMenuItems = new DMFlowPanel("more-menu-items");
+      this.moreMenuItems = new DivView("more-menu-items");
       this.add(this.moreMenuItems);
 
       this.train = new MenuItem(new TrainIcon(), "Train");

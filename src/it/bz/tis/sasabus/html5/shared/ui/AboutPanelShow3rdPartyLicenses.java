@@ -19,9 +19,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DivView;
 
 import com.google.gwt.dom.client.Style.Display;
 
@@ -30,9 +30,9 @@ import com.google.gwt.dom.client.Style.Display;
  */
 public class AboutPanelShow3rdPartyLicenses implements DMClickHandler
 {
-   DMFlowPanel licensesPanel;
+   DivView licensesPanel;
 
-   public AboutPanelShow3rdPartyLicenses(DMFlowPanel licensesPanel)
+   public AboutPanelShow3rdPartyLicenses(DivView licensesPanel)
    {
       super();
       this.licensesPanel = licensesPanel;

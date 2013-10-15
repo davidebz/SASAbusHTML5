@@ -28,18 +28,18 @@ import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMLabel;
-import bz.davide.dmweb.shared.PageChangeHandler;
 import bz.davide.dmweb.shared.i18n.I18N;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.PageChangeHandler;
+import bz.davide.dmweb.shared.view.SpanView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class BusLinePanel extends DMFlowPanel implements PageChangeHandler
+public class BusLinePanel extends DivView implements PageChangeHandler
 {
    SASAbusMap map;
    BusLine    busLine;
@@ -53,7 +53,7 @@ public class BusLinePanel extends DMFlowPanel implements PageChangeHandler
    {
       super("bus-stations");
       this.mapOpen = mapOpen;
-      this.add(new DMLabel(I18N.singleton.getLocalizedText("BusLine") +
+      this.add(new SpanView(I18N.singleton.getLocalizedText("BusLine") +
                            " " +
                            busLine.getNumber() +
                            " " +
@@ -75,9 +75,9 @@ public class BusLinePanel extends DMFlowPanel implements PageChangeHandler
          }
       });
 
-      this.add(new DMLabel(I18N.singleton.getLocalizedText("BusStations")));
+      this.add(new SpanView(I18N.singleton.getLocalizedText("BusStations")));
 
-      DMFlowPanel list = new DMFlowPanel("bus-stations-list");
+      DivView list = new DivView("bus-stations-list");
 
       this.add(list);
 

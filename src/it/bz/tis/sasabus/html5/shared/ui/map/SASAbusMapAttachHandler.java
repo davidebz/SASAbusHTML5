@@ -23,10 +23,10 @@ import bz.davide.dmweb.client.leaflet.EventListener;
 import bz.davide.dmweb.client.leaflet.LatLng;
 import bz.davide.dmweb.client.leaflet.Map;
 import bz.davide.dmweb.client.leaflet.OSMLayer;
-import bz.davide.dmweb.shared.DMAttachEvent;
-import bz.davide.dmweb.shared.DMAttachHandler;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
+import bz.davide.dmweb.shared.view.AttachEvent;
+import bz.davide.dmweb.shared.view.AttachListener;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
 
 import com.google.gwt.core.client.Callback;
 import com.google.gwt.geolocation.client.Geolocation;
@@ -38,7 +38,7 @@ import com.google.gwt.user.client.Window;
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class SASAbusMapAttachHandler implements DMAttachHandler
+public class SASAbusMapAttachHandler implements AttachListener
 {
    SASAbusMap map;
 
@@ -49,7 +49,7 @@ public class SASAbusMapAttachHandler implements DMAttachHandler
    }
 
    @Override
-   public void onAttachOrDetach(DMAttachEvent event)
+   public void onAttachOrDetach(AttachEvent event)
    {
       if (event.isAttached())
       {

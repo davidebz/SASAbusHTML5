@@ -22,8 +22,8 @@ package it.bz.tis.sasabus.html5.shared.ui;
 import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.html5.shared.FavouriteBusStationList;
 import it.bz.tis.sasabus.html5.shared.ui.icon.FavouritesIcon;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
 
 /**
  * @author Davide Montesin <d@vide.bz>

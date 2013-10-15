@@ -23,13 +23,13 @@ import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.html5.shared.data.TrainStation;
 import it.bz.tis.sasabus.html5.shared.ui.ItDeNamePanel;
 import it.bz.tis.sasabus.html5.shared.ui.TrainStationPanel;
-import bz.davide.dmweb.shared.DMButton;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.ButtonView;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
 
-public class TrainStationPopup extends DMFlowPanel
+public class TrainStationPopup extends DivView
 {
    TrainStation          trainStation;
    DMHashNavigationPanel navigationPanel;
@@ -51,7 +51,7 @@ public class TrainStationPopup extends DMFlowPanel
 
    void init()
    {
-      DMButton show = new DMButton("Show details");
+      ButtonView show = new ButtonView("Show details");
       this.add(show);
       show.addClickHandler(new DMClickHandler()
       {

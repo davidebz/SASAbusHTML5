@@ -23,14 +23,14 @@ import it.bz.tis.sasabus.html5.shared.ui.icon.LogoIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.MenuIcon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import it.bz.tis.sasabus.html5.shared.ui.menu.Menu;
-import bz.davide.dmweb.shared.DMAnchor;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.AnchorView;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class TitleBar extends DMFlowPanel
+public class TitleBar extends DivView
 {
    public TitleBar(final Menu menu, final SASAbusMap mapWidget, final DMHashNavigationPanel navigationPanel)
    {
@@ -40,16 +40,16 @@ public class TitleBar extends DMFlowPanel
       this.add(menuIcon);
 
       LogoIcon logoMenuIcon = new LogoIcon();
-      
+
       this.add(logoMenuIcon);
       menuIcon.addClickHandler(new TitleBarMenuClickHandler(menu));
 
-      DMFlowPanel flags = new DMFlowPanel("flags");
-      DMAnchor it = new DMAnchor("/it/home", "IT");
+      DivView flags = new DivView("flags");
+      AnchorView it = new AnchorView("/it/home", "IT");
       it.setStyleName("it");
-      DMAnchor de = new DMAnchor("/de/home", "DE");
+      AnchorView de = new AnchorView("/de/home", "DE");
       de.setStyleName("de");
-      DMAnchor en = new DMAnchor("/en/home", "EN");
+      AnchorView en = new AnchorView("/en/home", "EN");
       en.setStyleName("en");
 
       flags.add(it);

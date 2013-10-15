@@ -243,7 +243,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                identities.put(obj, structure);
                structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
             }
-            internalMarschall(obj, "bz.davide.dmweb.shared.DMImage", "N/A",structure, identities, seq, true);
+            internalMarschall(obj, "bz.davide.dmweb.shared.view.ImgView", "N/A",structure, identities, seq, true);
             Object value;
             if (!superClass)
                structure.close();

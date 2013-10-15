@@ -19,19 +19,19 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui.menu;
 
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DivView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
 public class MenuMoreClickHandler implements DMClickHandler
 {
-   DMFlowPanel moreMenuItem;
+   DivView moreMenuItem;
    boolean     moreOpen = false;
 
-   public MenuMoreClickHandler(DMFlowPanel moreMenuItem)
+   public MenuMoreClickHandler(DivView moreMenuItem)
    {
       super();
       this.moreMenuItem = moreMenuItem;

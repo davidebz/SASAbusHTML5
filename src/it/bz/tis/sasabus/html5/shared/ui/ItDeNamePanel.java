@@ -19,27 +19,27 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMLabel;
-import bz.davide.dmweb.shared.DMWidget;
 import bz.davide.dmweb.shared.i18n.I18N;
+import bz.davide.dmweb.shared.view.AbstractHtmlElementView;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.SpanView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class ItDeNamePanel extends DMFlowPanel
+public class ItDeNamePanel extends DivView
 {
-   protected DMWidget icon;
+   protected AbstractHtmlElementView icon;
 
-   public ItDeNamePanel(String itText, String deText, DMWidget icon)
+   public ItDeNamePanel(String itText, String deText, AbstractHtmlElementView icon)
    {
       this.icon = icon;
       this.setStyleName("it-de-name");
-      DMLabel it = new DMLabel(itText);
+      SpanView it = new SpanView(itText);
       it.setStyleName("it");
-      DMLabel de = new DMLabel(deText);
+      SpanView de = new SpanView(deText);
       de.setStyleName("de");
-      DMFlowPanel first = new DMFlowPanel("first");
+      DivView first = new DivView("first");
       this.add(first);
       if (icon != null)
       {

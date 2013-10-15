@@ -19,15 +19,15 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
-import bz.davide.dmweb.shared.DMAnchor;
-import bz.davide.dmweb.shared.DMButton;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMLabel;
+import bz.davide.dmweb.shared.view.AnchorView;
+import bz.davide.dmweb.shared.view.ButtonView;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.SpanView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class AboutPanel extends DMFlowPanel
+public class AboutPanel extends DivView
 {
 
    final static String TARGET = "sasabus_licenses";
@@ -35,39 +35,39 @@ public class AboutPanel extends DMFlowPanel
    public AboutPanel()
    {
       super("about");
-      DMButton close = new DMButton("X");
+      ButtonView close = new ButtonView("X");
       close.setStyleName("close");
 
-      DMFlowPanel thirdPartyLicenses = new DMFlowPanel("third-party-licenses");
+      DivView thirdPartyLicenses = new DivView("third-party-licenses");
 
       close.addClickHandler(new AboutPanelCloseHandler(this, thirdPartyLicenses));
       this.add(close);
-      DMFlowPanel copyright = new DMFlowPanel("copyright");
-      copyright.add(new DMLabel("(C) 2013"));
-      copyright.add(new DMAnchor("http://www.tis.bz.it/open", "TIS Innovation Park", TARGET));
+      DivView copyright = new DivView("copyright");
+      copyright.add(new SpanView("(C) 2013"));
+      copyright.add(new AnchorView("http://www.tis.bz.it/open", "TIS Innovation Park", TARGET));
       this.add(copyright);
-      this.add(new DMLabel("Via Siemens 29 Strasse - Bolzano/Bozen - Italy"));
+      this.add(new SpanView("Via Siemens 29 Strasse - Bolzano/Bozen - Italy"));
 
-      DMFlowPanel license = new DMFlowPanel("license");
+      DivView license = new DivView("license");
       this.add(license);
-      license.add(new DMLabel("License:"));
-      license.add(new DMAnchor("http://www.gnu.org/licenses/agpl-3.0.html", "Affero GPL", TARGET));
+      license.add(new SpanView("License:"));
+      license.add(new AnchorView("http://www.gnu.org/licenses/agpl-3.0.html", "Affero GPL", TARGET));
 
-      this.add(new DMLabel("Developed by"));
-      this.add(new DMAnchor("http://www.davide.bz", "Davide Montesin", TARGET));
-      this.add(new DMLabel("Bolzano/Bozen - Italy"));
-      this.add(new DMLabel("Design by (alphabetical order)"));
-      this.add(new DMAnchor("mailto:giuliarosso.rg@gmail.com", "Giulia Rosso", TARGET));
-      this.add(new DMAnchor("mailto:iryna_dorosh@ukr.net", "Iryna Dorosh", TARGET));
-      this.add(new DMAnchor("mailto:virginia.mazzocco@gmail.com", "Virginia Mazzocco", TARGET));
-      this.add(new DMLabel("members of the"));
-      this.add(new DMAnchor("http://sasabus.org/wiki", "SASAbus community", TARGET));
+      this.add(new SpanView("Developed by"));
+      this.add(new AnchorView("http://www.davide.bz", "Davide Montesin", TARGET));
+      this.add(new SpanView("Bolzano/Bozen - Italy"));
+      this.add(new SpanView("Design by (alphabetical order)"));
+      this.add(new AnchorView("mailto:giuliarosso.rg@gmail.com", "Giulia Rosso", TARGET));
+      this.add(new AnchorView("mailto:iryna_dorosh@ukr.net", "Iryna Dorosh", TARGET));
+      this.add(new AnchorView("mailto:virginia.mazzocco@gmail.com", "Virginia Mazzocco", TARGET));
+      this.add(new SpanView("members of the"));
+      this.add(new AnchorView("http://sasabus.org/wiki", "SASAbus community", TARGET));
 
-      DMAnchor showLicenses = new DMAnchor("#", "Third-party free open source software libraries");
+      AnchorView showLicenses = new AnchorView("#", "Third-party free open source software libraries");
       showLicenses.addClickHandler(new AboutPanelShow3rdPartyLicenses(thirdPartyLicenses));
       this.add(showLicenses);
 
-      thirdPartyLicenses.add(new DMLabel("(alphabetical order)"));
+      thirdPartyLicenses.add(new SpanView("(alphabetical order)"));
 
       thirdPartyLicenses.add(this.thirdParty("DM XML-JSON",
                                              "http://www.davide.bz/en/dmxj",
@@ -112,18 +112,18 @@ public class AboutPanel extends DMFlowPanel
       super(void1);
    }
 
-   private DMFlowPanel thirdParty(String libName,
+   private DivView thirdParty(String libName,
                                   String libUrl,
                                   String license,
                                   String licenseUrl,
                                   String owner)
    {
-      DMFlowPanel row = new DMFlowPanel("row");
-      row.add(new DMAnchor(libUrl, libName, TARGET));
-      row.add(new DMLabel("-"));
-      row.add(new DMAnchor(licenseUrl, license, TARGET));
-      row.add(new DMLabel("-"));
-      row.add(new DMLabel(owner));
+      DivView row = new DivView("row");
+      row.add(new AnchorView(libUrl, libName, TARGET));
+      row.add(new SpanView("-"));
+      row.add(new AnchorView(licenseUrl, license, TARGET));
+      row.add(new SpanView("-"));
+      row.add(new SpanView(owner));
       return row;
    }
 }

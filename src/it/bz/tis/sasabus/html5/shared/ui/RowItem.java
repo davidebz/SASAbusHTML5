@@ -20,13 +20,13 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.html5.shared.ui.icon.GoIcon;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DivView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class RowItem extends DMFlowPanel
+public class RowItem extends DivView
 {
 
    public RowItem(DMClickHandler clickHandler)

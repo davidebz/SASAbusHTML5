@@ -19,19 +19,19 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui.menu;
 
-import bz.davide.dmweb.shared.DMClickableFlowPanel;
-import bz.davide.dmweb.shared.DMImage;
-import bz.davide.dmweb.shared.DMLabel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.ImgView;
+import bz.davide.dmweb.shared.view.SpanView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class MenuItem extends DMClickableFlowPanel
+public class MenuItem extends DivView
 {
-   public MenuItem(DMImage menuIcon, String text)
+   public MenuItem(ImgView menuIcon, String text)
    {
       super("menu-item");
-      DMLabel label = new DMLabel(text);
+      SpanView label = new SpanView(text);
       label.setStyleName("menu-text");
       this.add(menuIcon);
       this.add(label);

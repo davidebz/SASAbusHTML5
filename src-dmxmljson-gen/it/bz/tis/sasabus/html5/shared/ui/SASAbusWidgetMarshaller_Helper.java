@@ -19,7 +19,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                identities.put(obj, structure);
                structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
             }
-            internalMarschall(obj, "bz.davide.dmweb.shared.DMFlowPanel", "N/A",structure, identities, seq, true);
+            internalMarschall(obj, "bz.davide.dmweb.shared.view.DivView", "N/A",structure, identities, seq, true);
             Object value;
             // favouriteBusStationListPanel
             value = ((it.bz.tis.sasabus.html5.shared.ui.HomePanel)obj).favouriteBusStationListPanel;
@@ -35,7 +35,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                structure.property("favouriteContainer").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMFlowPanel", structure.property("favouriteContainer").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("favouriteContainer").structure(), identities, seq, false);
             }
             // introText
             value = ((it.bz.tis.sasabus.html5.shared.ui.HomePanel)obj).introText;
@@ -43,7 +43,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                structure.property("introText").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMHTML", structure.property("introText").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DMHTML", structure.property("introText").structure(), identities, seq, false);
             }
             // map
             value = ((it.bz.tis.sasabus.html5.shared.ui.HomePanel)obj).map;
@@ -65,7 +65,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                identities.put(obj, structure);
                structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
             }
-            internalMarschall(obj, "bz.davide.dmweb.shared.DMFlowPanel", "N/A",structure, identities, seq, true);
+            internalMarschall(obj, "bz.davide.dmweb.shared.view.DivView", "N/A",structure, identities, seq, true);
             Object value;
             if (!superClass)
                structure.close();
@@ -94,7 +94,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                structure.property("thirdPartyLicenses").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMFlowPanel", structure.property("thirdPartyLicenses").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("thirdPartyLicenses").structure(), identities, seq, false);
             }
             if (!superClass)
                structure.close();
@@ -115,7 +115,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                structure.property("licensesPanel").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMFlowPanel", structure.property("licensesPanel").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("licensesPanel").structure(), identities, seq, false);
             }
             if (!superClass)
                structure.close();
@@ -129,7 +129,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                identities.put(obj, structure);
                structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
             }
-            internalMarschall(obj, "bz.davide.dmweb.shared.DMFlowPanel", "N/A",structure, identities, seq, true);
+            internalMarschall(obj, "bz.davide.dmweb.shared.view.DivView", "N/A",structure, identities, seq, true);
             Object value;
             // areaList
             value = ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).areaList;
@@ -153,7 +153,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                structure.property("navigationPanel").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.DMHashNavigationPanel", structure.property("navigationPanel").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DMHashNavigationPanel", structure.property("navigationPanel").structure(), identities, seq, false);
             }
             if (!superClass)
                structure.close();

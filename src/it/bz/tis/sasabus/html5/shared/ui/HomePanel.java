@@ -20,18 +20,18 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHTML;
-import bz.davide.dmweb.shared.PageChangeHandler;
+import bz.davide.dmweb.shared.view.DMHTML;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.PageChangeHandler;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class HomePanel extends DMFlowPanel implements PageChangeHandler
+public class HomePanel extends DivView implements PageChangeHandler
 {
    SASAbusMap                   map;
    DMHTML                       introText;
-   DMFlowPanel                  favouriteContainer           = new DMFlowPanel("favourite-container");
+   DivView                  favouriteContainer           = new DivView("favourite-container");
    FavouriteBusStationListPanel favouriteBusStationListPanel = null;
 
    public HomePanel()

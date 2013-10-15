@@ -19,12 +19,12 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui.icon;
 
-import bz.davide.dmweb.shared.DMImage;
+import bz.davide.dmweb.shared.view.ImgView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class Icon extends DMImage
+public class Icon extends ImgView
 {
    public Icon(String name)
    {

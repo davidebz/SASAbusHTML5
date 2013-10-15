@@ -21,16 +21,16 @@ package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.travelplanner.ConRes;
 import it.bz.tis.sasabus.backend.shared.travelplanner.Connection;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMLabel;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.SpanView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class RouteResultOverviewPanel extends DMFlowPanel
+public class RouteResultOverviewPanel extends DivView
 {
 
    public RouteResultOverviewPanel(ConRes[] routes, final DMHashNavigationPanel navigationPanel)
@@ -51,8 +51,8 @@ public class RouteResultOverviewPanel extends DMFlowPanel
          String transfers = "Transfers: " + connection.getOverview().getTransfers();
          String duration = "Duration: " + formatTime(connection.getOverview().getDuration().getTime());
          String endTime = formatTime(connection.getOverview().getArrival().getBasicStop().getArr().getTime());
-         rowItem.add(new DMLabel(startTime + " ---> " + endTime));
-         rowItem.add(new DMLabel(transfers + " - " + duration));
+         rowItem.add(new SpanView(startTime + " ---> " + endTime));
+         rowItem.add(new SpanView(transfers + " - " + duration));
          this.add(rowItem);
       }
    }

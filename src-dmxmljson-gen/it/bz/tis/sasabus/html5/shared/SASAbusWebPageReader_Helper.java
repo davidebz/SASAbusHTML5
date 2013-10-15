@@ -7,7 +7,7 @@
 package it.bz.tis.sasabus.html5.shared;
 
 
-public class SASAbusWebPageReader_Helper extends bz.davide.dmweb.shared.SASAbusWebPageReader_Helper
+public class SASAbusWebPageReader_Helper extends bz.davide.dmweb.shared.view.SASAbusWebPageReader_Helper
 {
    protected SASAbusWebPageReader_Helper()
    {
@@ -19,7 +19,7 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmweb.shared.SASAbusW
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.SASAbusWebPage", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
-            internalUnmarschall(structure, "bz.davide.dmweb.shared.DMWebPage", obj, identities);
+            internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DMWebPage", obj, identities);
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);

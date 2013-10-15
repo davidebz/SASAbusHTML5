@@ -19,16 +19,16 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMLabel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.SpanView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class SettingsPanel extends DMFlowPanel
+public class SettingsPanel extends DivView
 {
    public SettingsPanel()
    {
-      this.add(new DMLabel("Work in progress"));
+      this.add(new SpanView("Work in progress"));
    }
 }

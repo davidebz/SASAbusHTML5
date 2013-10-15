@@ -32,24 +32,24 @@ import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 
 import java.util.Date;
 
-import bz.davide.dmweb.shared.DMButton;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMLabel;
-import bz.davide.dmweb.shared.PageChangeHandler;
 import bz.davide.dmweb.shared.i18n.I18N;
+import bz.davide.dmweb.shared.view.ButtonView;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.PageChangeHandler;
+import bz.davide.dmweb.shared.view.SpanView;
 
 import com.google.gwt.i18n.client.DateTimeFormat;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class BusStationPanel extends DMFlowPanel implements PageChangeHandler
+public class BusStationPanel extends DivView implements PageChangeHandler
 {
    BusStation            busStation;
-   DMFlowPanel           departures;
+   DivView           departures;
    AreaList              areaList;
    DMHashNavigationPanel content;
    SASAbusMap            map;
@@ -69,7 +69,7 @@ public class BusStationPanel extends DMFlowPanel implements PageChangeHandler
 
       this.add(new ItDeBusStationNamePanel(busStation));
 
-      DMFlowPanel actions = new DMFlowPanel("actions");
+      DivView actions = new DivView("actions");
 
       MapIcon mapIcon = new MapIcon();
       mapIcon.addStyleName("only-mobile");
@@ -85,16 +85,16 @@ public class BusStationPanel extends DMFlowPanel implements PageChangeHandler
 
       this.add(actions);
 
-      DMFlowPanel lines = new DMFlowPanel("lines");
+      DivView lines = new DivView("lines");
 
-      lines.add(new DMLabel(I18N.singleton.getLocalizedText("BusLines") + ":"));
+      lines.add(new SpanView(I18N.singleton.getLocalizedText("BusLines") + ":"));
 
       BusLine[] busLines = busStation.getBusLines();
       BusLine.sortByNumber(busLines);
       for (int i = 0; i < busLines.length; i++)
       {
          final BusLine busLine = busStation.getBusLines()[i];
-         DMButton showLine = new DMButton(busLine.getNumber());
+         ButtonView showLine = new ButtonView(busLine.getNumber());
          lines.add(showLine);
          showLine.addClickHandler(new DMClickHandler()
          {
@@ -109,15 +109,15 @@ public class BusStationPanel extends DMFlowPanel implements PageChangeHandler
 
       //this.add(new DMLabel(I18N.singleton.getLocalizedText("BusStationPanel_directions") + ":"));
 
-      DMButton nextDepartures = new DMButton(I18N.singleton.getLocalizedText("BusStationPanel_refresh_departures"));
-      DMButton asStart = new DMButton(I18N.singleton.getLocalizedText("BusStationPanel_use_as_start_routing"));
-      DMButton asEnd = new DMButton(I18N.singleton.getLocalizedText("BusStationPanel_use_as_end_routing"));
+      ButtonView nextDepartures = new ButtonView(I18N.singleton.getLocalizedText("BusStationPanel_refresh_departures"));
+      ButtonView asStart = new ButtonView(I18N.singleton.getLocalizedText("BusStationPanel_use_as_start_routing"));
+      ButtonView asEnd = new ButtonView(I18N.singleton.getLocalizedText("BusStationPanel_use_as_end_routing"));
       this.add(asStart);
       this.add(asEnd);
-      DMFlowPanel departureInputPanel = new DMFlowPanel("departure-input");
+      DivView departureInputPanel = new DivView("departure-input");
       this.add(departureInputPanel);
 
-      departureInputPanel.add(new DMLabel("Next departures"));
+      departureInputPanel.add(new SpanView("Next departures"));
 
       asStart.addClickHandler(new DMClickHandler()
       {
@@ -150,7 +150,7 @@ public class BusStationPanel extends DMFlowPanel implements PageChangeHandler
       };
       nextDepartures.addClickHandler(retrieveNextDepartureHandler);
 
-      this.add(this.departures = new DMFlowPanel("departures"));
+      this.add(this.departures = new DivView("departures"));
 
       this.dateBox = new SASAbusDateBox();
       departureInputPanel.add(this.dateBox);
@@ -164,7 +164,7 @@ public class BusStationPanel extends DMFlowPanel implements PageChangeHandler
    public void findBusStationDepartures()
    {
       this.departures.clear();
-      this.departures.add(new DMLabel(I18N.singleton.getLocalizedText("BusStationPanel_calculating_departures")));
+      this.departures.add(new SpanView(I18N.singleton.getLocalizedText("BusStationPanel_calculating_departures")));
 
       Date date = this.dateBox.getValue();
 
@@ -191,7 +191,7 @@ public class BusStationPanel extends DMFlowPanel implements PageChangeHandler
                                                              });
    }
 
-   private static void showDepartures(DMFlowPanel departures,
+   private static void showDepartures(DivView departures,
                                       BusTripStopList data,
                                       final AreaList areaList,
                                       final DMHashNavigationPanel content,
@@ -222,7 +222,7 @@ public class BusStationPanel extends DMFlowPanel implements PageChangeHandler
             }
          });
 
-         rowItem.add(new DMLabel(formatBusTripStop(busLine, busTripStop)));
+         rowItem.add(new SpanView(formatBusTripStop(busLine, busTripStop)));
          departures.add(rowItem);
 
       }

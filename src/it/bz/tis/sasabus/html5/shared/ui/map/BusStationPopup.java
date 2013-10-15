@@ -25,16 +25,16 @@ import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.html5.shared.ui.BusLinePanel;
 import it.bz.tis.sasabus.html5.shared.ui.BusStationPanel;
 import it.bz.tis.sasabus.html5.shared.ui.ItDeBusStationNamePanel;
-import bz.davide.dmweb.shared.DMButton;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.ButtonView;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class BusStationPopup extends DMFlowPanel
+public class BusStationPopup extends DivView
 {
    BusStation            busStation;
    DMHashNavigationPanel navigationPanel;
@@ -56,7 +56,7 @@ public class BusStationPopup extends DMFlowPanel
    void init()
    {
       this.add(new ItDeBusStationNamePanel(this.busStation));
-      DMButton details = new DMButton("Show details");
+      ButtonView details = new ButtonView("Show details");
       this.add(details);
       details.addClickHandler(new DMClickHandler()
       {
@@ -72,7 +72,7 @@ public class BusStationPopup extends DMFlowPanel
       });
       for (final BusLine busLine : this.busStation.getBusLines())
       {
-         DMButton button = new DMButton(busLine.getNumber());
+         ButtonView button = new ButtonView(busLine.getNumber());
          button.addClickHandler(new DMClickHandler()
          {
 

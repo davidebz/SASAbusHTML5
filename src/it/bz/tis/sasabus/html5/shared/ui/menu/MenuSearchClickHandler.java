@@ -25,9 +25,9 @@ import it.bz.tis.sasabus.html5.shared.ui.BusStationPanel;
 import it.bz.tis.sasabus.html5.shared.ui.BusStationSearchRoutePanel;
 import it.bz.tis.sasabus.html5.shared.ui.BusStationSelectedEventHandler;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
 
 /**
  * @author Davide Montesin <d@vide.bz>

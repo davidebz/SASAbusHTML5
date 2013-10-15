@@ -49,19 +49,19 @@ import bz.davide.dmweb.client.leaflet.Path;
 import bz.davide.dmweb.client.leaflet.PathOptions;
 import bz.davide.dmweb.client.leaflet.Polygon;
 import bz.davide.dmweb.client.leaflet.Polyline;
-import bz.davide.dmweb.shared.DMButton;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMImage;
+import bz.davide.dmweb.shared.view.ButtonView;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.ImgView;
 
 import com.google.gwt.user.client.Timer;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class SASAbusMap extends DMFlowPanel
+public class SASAbusMap extends DivView
 {
 
    final static String[]                              COLORS                             = new String[] { "#FF0000",
@@ -75,8 +75,8 @@ public class SASAbusMap extends DMFlowPanel
 
    DMHashNavigationPanel                              navigationPanel;
 
-   DMFlowPanel                                        controls;
-   DMFlowPanel                                        mapDiv;
+   DivView                                        controls;
+   DivView                                        mapDiv;
    //DMLabel                                            zoomLevel;
    //DMLabel                                            latLonValues;
 
@@ -89,25 +89,25 @@ public class SASAbusMap extends DMFlowPanel
 
    AreaList                                           areaList;
 
-   DMButton                                           close                              = new DMButton("X");
+   ButtonView                                           close                              = new ButtonView("X");
 
-   DMFlowPanel                                        overwievMap;
+   DivView                                        overwievMap;
 
    public SASAbusMap()
    {
       super("map");
 
-      this.overwievMap = new DMFlowPanel("overview-map");
-      DMImage cartina = new DMImage("../images/Cartina.png");
+      this.overwievMap = new DivView("overview-map");
+      ImgView cartina = new ImgView("../images/Cartina.png");
       this.overwievMap.add(cartina);
       this.add(this.overwievMap);
 
       this.leafletMap = null;
 
-      this.controls = new DMFlowPanel("controls");
+      this.controls = new DivView("controls");
       this.add(this.controls);
 
-      this.mapDiv = new DMFlowPanel("mapdiv");
+      this.mapDiv = new DivView("mapdiv");
       this.add(this.mapDiv);
 
       this.controls.add(this.close);

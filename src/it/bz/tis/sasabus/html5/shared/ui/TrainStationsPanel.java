@@ -22,19 +22,19 @@ package it.bz.tis.sasabus.html5.shared.ui;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.html5.shared.data.TrainStation;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.DMLabel;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.SpanView;
 
-public class TrainStationsPanel extends DMFlowPanel
+public class TrainStationsPanel extends DivView
 {
    public TrainStationsPanel(final DMHashNavigationPanel navigationPanel,
                              final AreaList areaList,
                              final SASAbusMap map)
    {
-      this.add(new DMLabel("Train stations:"));
+      this.add(new SpanView("Train stations:"));
       for (final TrainStation trainStation : TrainStation.list)
       {
          RowItem rowItem = new RowItem(new DMClickHandler()

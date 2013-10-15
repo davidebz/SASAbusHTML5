@@ -7,7 +7,7 @@
 package bz.davide.dmweb.shared.i18n;
 
 
-public class SASAbusWidgetMarshaller_Helper extends bz.davide.dmweb.shared.SASAbusWidgetMarshaller_Helper
+public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.SASAbusWidgetMarshaller_Helper
 {
    protected SASAbusWidgetMarshaller_Helper()
    {

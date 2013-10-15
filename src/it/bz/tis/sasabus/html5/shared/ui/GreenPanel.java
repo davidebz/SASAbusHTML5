@@ -19,20 +19,20 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMImage;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.ImgView;
 
-public class GreenPanel extends DMFlowPanel
+public class GreenPanel extends DivView
 {
    public GreenPanel()
    {
       super("green-panel");
-      DMImage tree = new DMImage("../images/layout/tree.gif");
+      ImgView tree = new ImgView("../images/layout/tree.gif");
       tree.setStyleName("tree");
 
       this.add(tree);
 
-      DMImage suedtirolPass = new DMImage("../images/layout/suedtirol-pass.png");
+      ImgView suedtirolPass = new ImgView("../images/layout/suedtirol-pass.png");
       suedtirolPass.setStyleName("suedtirol-pass");
       this.add(suedtirolPass);
 

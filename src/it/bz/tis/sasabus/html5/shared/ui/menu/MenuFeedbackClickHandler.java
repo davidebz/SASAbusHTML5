@@ -19,9 +19,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui.menu;
 
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMWidget;
+import bz.davide.dmweb.shared.view.AbstractHtmlElementView;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
 
 import com.google.gwt.user.client.Window;
 
@@ -47,8 +47,8 @@ public class MenuFeedbackClickHandler implements DMClickHandler
    public void onClick(DMClickEvent event)
    {
       this.menu.hide();
-      String subjectEncoded = DMWidget.escapeText4url("SASAbus html5 feedback");
-      String bodyEncoded = DMWidget.escapeText4url("Your feedback here...\r\n\r\nMy browser is: " +
+      String subjectEncoded = AbstractHtmlElementView.escapeText4url("SASAbus html5 feedback");
+      String bodyEncoded = AbstractHtmlElementView.escapeText4url("Your feedback here...\r\n\r\nMy browser is: " +
                                                    Window.Navigator.getUserAgent() +
                                                    "\r\n");
       String mailto = "mailto:community@sasabus.org?subject=" + subjectEncoded + "&body=" + bodyEncoded;

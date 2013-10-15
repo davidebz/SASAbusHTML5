@@ -19,7 +19,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.HomePanel", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
-            internalUnmarschall(structure, "bz.davide.dmweb.shared.DMFlowPanel", obj, identities);
+            internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -47,11 +47,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((HomePanel)obj).favouriteContainer = (bz.davide.dmweb.shared.DMFlowPanel)identities.get(refid);
+                     ((HomePanel)obj).favouriteContainer = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMFlowPanel"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((HomePanel)obj).favouriteContainer = (bz.davide.dmweb.shared.DMFlowPanel)o;
+                     ((HomePanel)obj).favouriteContainer = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
             // introText
@@ -62,11 +62,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((HomePanel)obj).introText = (bz.davide.dmweb.shared.DMHTML)identities.get(refid);
+                     ((HomePanel)obj).introText = (bz.davide.dmweb.shared.view.DMHTML)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHTML"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((HomePanel)obj).introText = (bz.davide.dmweb.shared.DMHTML)o;
+                     ((HomePanel)obj).introText = (bz.davide.dmweb.shared.view.DMHTML)o;
                   }
                }
             // map
@@ -94,7 +94,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.AboutPanel", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
-            internalUnmarschall(structure, "bz.davide.dmweb.shared.DMFlowPanel", obj, identities);
+            internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -136,11 +136,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((AboutPanelCloseHandler)obj).thirdPartyLicenses = (bz.davide.dmweb.shared.DMFlowPanel)identities.get(refid);
+                     ((AboutPanelCloseHandler)obj).thirdPartyLicenses = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMFlowPanel"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((AboutPanelCloseHandler)obj).thirdPartyLicenses = (bz.davide.dmweb.shared.DMFlowPanel)o;
+                     ((AboutPanelCloseHandler)obj).thirdPartyLicenses = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
          }
@@ -165,11 +165,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((AboutPanelShow3rdPartyLicenses)obj).licensesPanel = (bz.davide.dmweb.shared.DMFlowPanel)identities.get(refid);
+                     ((AboutPanelShow3rdPartyLicenses)obj).licensesPanel = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMFlowPanel"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((AboutPanelShow3rdPartyLicenses)obj).licensesPanel = (bz.davide.dmweb.shared.DMFlowPanel)o;
+                     ((AboutPanelShow3rdPartyLicenses)obj).licensesPanel = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
          }
@@ -182,7 +182,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
-            internalUnmarschall(structure, "bz.davide.dmweb.shared.DMFlowPanel", obj, identities);
+            internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -225,11 +225,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((FavouriteBusStationListPanel)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)identities.get(refid);
+                     ((FavouriteBusStationListPanel)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((FavouriteBusStationListPanel)obj).navigationPanel = (bz.davide.dmweb.shared.DMHashNavigationPanel)o;
+                     ((FavouriteBusStationListPanel)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
          }

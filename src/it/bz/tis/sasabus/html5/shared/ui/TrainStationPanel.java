@@ -23,11 +23,11 @@ import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.html5.shared.data.TrainStation;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.client.leaflet.LatLng;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.PageChangeHandler;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.PageChangeHandler;
 
-public class TrainStationPanel extends DMFlowPanel implements PageChangeHandler
+public class TrainStationPanel extends DivView implements PageChangeHandler
 {
    SASAbusMap   map;
    TrainStation trainStation;

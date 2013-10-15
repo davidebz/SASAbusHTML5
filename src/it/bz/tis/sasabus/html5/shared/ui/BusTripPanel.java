@@ -26,18 +26,18 @@ import it.bz.tis.sasabus.backend.shared.BusTrip;
 import it.bz.tis.sasabus.backend.shared.BusTripStop;
 import it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.DMButton;
-import bz.davide.dmweb.shared.DMClickEvent;
-import bz.davide.dmweb.shared.DMClickHandler;
-import bz.davide.dmweb.shared.DMFlowPanel;
-import bz.davide.dmweb.shared.DMLabel;
-import bz.davide.dmweb.shared.PageChangeHandler;
 import bz.davide.dmweb.shared.i18n.I18N;
+import bz.davide.dmweb.shared.view.ButtonView;
+import bz.davide.dmweb.shared.view.DMClickEvent;
+import bz.davide.dmweb.shared.view.DMClickHandler;
+import bz.davide.dmweb.shared.view.DivView;
+import bz.davide.dmweb.shared.view.PageChangeHandler;
+import bz.davide.dmweb.shared.view.SpanView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class BusTripPanel extends DMFlowPanel implements PageChangeHandler
+public class BusTripPanel extends DivView implements PageChangeHandler
 {
 
    public BusTripPanel(BusLine busLine,
@@ -73,9 +73,9 @@ public class BusTripPanel extends DMFlowPanel implements PageChangeHandler
       final BusTripStop[] busTripStops = busTrip.getBusTripStops();
       if (startIndex > 0)
       {
-         final DMFlowPanel prevStops = new DMFlowPanel("prev-stops");
+         final DivView prevStops = new DivView("prev-stops");
          this.add(prevStops);
-         DMButton prevStopsButton = new DMButton(I18N.singleton.getLocalizedText("BusTripPanel_show_prev_stops"));
+         ButtonView prevStopsButton = new ButtonView(I18N.singleton.getLocalizedText("BusTripPanel_show_prev_stops"));
          prevStops.add(prevStopsButton);
 
          final int startIndexFinal = startIndex;
@@ -101,11 +101,11 @@ public class BusTripPanel extends DMFlowPanel implements PageChangeHandler
       }
    }
 
-   void buildRow(BusTripStop busTripStop, int i, int index, AreaList areaList, DMFlowPanel container)
+   void buildRow(BusTripStop busTripStop, int i, int index, AreaList areaList, DivView container)
    {
       BusStation busStation = areaList.findBusStopById(busTripStop.getBusStopId()).getBusStation();
-      DMFlowPanel row = new DMFlowPanel("row");
-      DMLabel time = new DMLabel(BusStationPanel.formatTime(busTripStop.getTimeHHMMSS()));
+      DivView row = new DivView("row");
+      SpanView time = new SpanView(BusStationPanel.formatTime(busTripStop.getTimeHHMMSS()));
       row.add(time);
       time.setStyleName("time");
       row.add(new ItDeBusStationNamePanel(busStation));
