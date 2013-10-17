@@ -288,6 +288,10 @@ body {
    padding-top:60px;
 }
 
+.bus-stations-search-route .results .row-item > *
+{
+   display:block;
+}
 
 body>.about {
    display: none;

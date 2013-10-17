@@ -46,7 +46,7 @@ body>.map {
 }
 
 .map .overview-map.show {
-   /* display: block; */
+   display: block;
 }
 
 .map .overview-map>img {
