@@ -99,22 +99,22 @@ public class SASAbusMap extends DivView
 
       this.overwievMap = new DivView("overview-map");
       ImgView cartina = new ImgView("../images/Cartina.png");
-      this.overwievMap.add(cartina);
-      this.add(this.overwievMap);
+      this.overwievMap.appendChild(cartina);
+      this.appendChild(this.overwievMap);
 
       this.leafletMap = null;
 
       this.controls = new DivView("controls");
-      this.add(this.controls);
+      this.appendChild(this.controls);
 
       this.mapDiv = new DivView("mapdiv");
-      this.add(this.mapDiv);
+      this.appendChild(this.mapDiv);
 
-      this.controls.add(this.close);
+      this.controls.appendChild(this.close);
       this.close.setStyleName("close");
 
       this.gpsIcon = new GpsIcon();
-      this.controls.add(this.gpsIcon);
+      this.controls.appendChild(this.gpsIcon);
 
       //this.zoomLevel = new DMLabel("");
       //this.controls.add(this.zoomLevel);

@@ -50,7 +50,7 @@ public class BusTripPanel extends DivView implements PageChangeHandler
 
       MapIcon mapIcon = new MapIcon();
       mapIcon.addStyleName("only-mobile");
-      this.add(mapIcon);
+      this.appendChild(mapIcon);
 
       map.highlightFitBusTrip(busTrip, index);
 
@@ -74,9 +74,9 @@ public class BusTripPanel extends DivView implements PageChangeHandler
       if (startIndex > 0)
       {
          final DivView prevStops = new DivView("prev-stops");
-         this.add(prevStops);
+         this.appendChild(prevStops);
          ButtonView prevStopsButton = new ButtonView(I18N.singleton.getLocalizedText("BusTripPanel_show_prev_stops"));
-         prevStops.add(prevStopsButton);
+         prevStops.appendChild(prevStopsButton);
 
          final int startIndexFinal = startIndex;
          prevStopsButton.addClickHandler(new DMClickHandler()
@@ -106,9 +106,9 @@ public class BusTripPanel extends DivView implements PageChangeHandler
       BusStation busStation = areaList.findBusStopById(busTripStop.getBusStopId()).getBusStation();
       DivView row = new DivView("row");
       SpanView time = new SpanView(BusStationPanel.formatTime(busTripStop.getTimeHHMMSS()));
-      row.add(time);
+      row.appendChild(time);
       time.setStyleName("time");
-      row.add(new ItDeBusStationNamePanel(busStation));
+      row.appendChild(new ItDeBusStationNamePanel(busStation));
 
       if (i < index)
       {
@@ -122,7 +122,7 @@ public class BusTripPanel extends DivView implements PageChangeHandler
       {
          row.addStyleName("next");
       }
-      container.add(row);
+      container.appendChild(row);
    }
 
    @Override

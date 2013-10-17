@@ -38,11 +38,11 @@ public class SASAbusDateBox extends DivView
    public SASAbusDateBox()
    {
       super("sasabus-date-box");
-      this.add(this.dateBox = new DMDateBox());
+      this.appendChild(this.dateBox = new DMDateBox());
       this.dateBox.setFormat("dd.MM.yyyy HH:mm");
       this.dateBox.setValue(new Date());
       CalendarIcon calendarIcon = new CalendarIcon();
-      this.add(calendarIcon);
+      this.appendChild(calendarIcon);
       calendarIcon.addClickHandler(new DMClickHandler()
       {
          @Override

@@ -53,7 +53,7 @@ public class BusLinePanel extends DivView implements PageChangeHandler
    {
       super("bus-stations");
       this.mapOpen = mapOpen;
-      this.add(new SpanView(I18N.singleton.getLocalizedText("BusLine") +
+      this.appendChild(new SpanView(I18N.singleton.getLocalizedText("BusLine") +
                            " " +
                            busLine.getNumber() +
                            " " +
@@ -64,7 +64,7 @@ public class BusLinePanel extends DivView implements PageChangeHandler
 
       MapIcon mapIcon = new MapIcon();
       mapIcon.addStyleName("only-mobile");
-      this.add(mapIcon);
+      this.appendChild(mapIcon);
       mapIcon.addClickHandler(new DMClickHandler()
       {
 
@@ -75,11 +75,11 @@ public class BusLinePanel extends DivView implements PageChangeHandler
          }
       });
 
-      this.add(new SpanView(I18N.singleton.getLocalizedText("BusStations")));
+      this.appendChild(new SpanView(I18N.singleton.getLocalizedText("BusStations")));
 
       DivView list = new DivView("bus-stations-list");
 
-      this.add(list);
+      this.appendChild(list);
 
       for (final BusStation busStation : sortByCurrentLanguage(busLine.getBusStations()))
       {
@@ -93,8 +93,8 @@ public class BusLinePanel extends DivView implements PageChangeHandler
             }
          };
          RowItem busStationLabel = new RowItem(busStationClick);
-         busStationLabel.add(new ItDeBusStationNamePanel(busStation));
-         list.add(busStationLabel);
+         busStationLabel.appendChild(new ItDeBusStationNamePanel(busStation));
+         list.appendChild(busStationLabel);
       }
    }
 

@@ -51,9 +51,9 @@ public class RouteResultOverviewPanel extends DivView
          String transfers = "Transfers: " + connection.getOverview().getTransfers();
          String duration = "Duration: " + formatTime(connection.getOverview().getDuration().getTime());
          String endTime = formatTime(connection.getOverview().getArrival().getBasicStop().getArr().getTime());
-         rowItem.add(new SpanView(startTime + " ---> " + endTime));
-         rowItem.add(new SpanView(transfers + " - " + duration));
-         this.add(rowItem);
+         rowItem.appendChild(new SpanView(startTime + " ---> " + endTime));
+         rowItem.appendChild(new SpanView(transfers + " - " + duration));
+         this.appendChild(rowItem);
       }
    }
 

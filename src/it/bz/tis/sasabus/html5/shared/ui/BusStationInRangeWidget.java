@@ -42,7 +42,7 @@ public class BusStationInRangeWidget extends DivView
                                   final SASAbusMap map)
    {
       super("nearest-bus-stops");
-      this.add(new SpanView("Nearest bus stops: "));
+      this.appendChild(new SpanView("Nearest bus stops: "));
 
       final IdentityHashMap<BusStation, Double> weights = new IdentityHashMap<BusStation, Double>();
 
@@ -86,8 +86,8 @@ public class BusStationInRangeWidget extends DivView
                navigationPanel.newPage(new BusStationPanel(copy[ii], areaList, navigationPanel, map));
             }
          });
-         rowItem.add(new ItDeNamePanel(copy[i].getName_it(), copy[i].getName_de(), null));
-         this.add(rowItem);
+         rowItem.appendChild(new ItDeNamePanel(copy[i].getName_it(), copy[i].getName_de(), null));
+         this.appendChild(rowItem);
       }
    }
 }

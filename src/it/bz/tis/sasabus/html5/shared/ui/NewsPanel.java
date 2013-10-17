@@ -39,9 +39,9 @@ public class NewsPanel extends DivView
 
       this.addStyleName("news");
       final DivView newsListDiv = new DivView("newslist");
-      this.add(newsListDiv);
+      this.appendChild(newsListDiv);
 
-      newsListDiv.add(new SpanView(I18N.singleton.getLocalizedText("NewsPanel_loading")));
+      newsListDiv.appendChild(new SpanView(I18N.singleton.getLocalizedText("NewsPanel_loading")));
 
       SASAbusDBClientImpl.singleton.loadNews(new SASAbusDBDataReady<NewsList>()
       {
@@ -63,11 +63,11 @@ public class NewsPanel extends DivView
          News news = newsList.getNews().get(i);
          if (I18N.singleton.getLanguage().equals("de"))
          {
-            newsListDiv.add(new NewsItem(news.getTitel_de(), news.getNachricht_de()));
+            newsListDiv.appendChild(new NewsItem(news.getTitel_de(), news.getNachricht_de()));
          }
          else
          {
-            newsListDiv.add(new NewsItem(news.getTitel_it(), news.getNachricht_it()));
+            newsListDiv.appendChild(new NewsItem(news.getTitel_it(), news.getNachricht_it()));
          }
       }
    }

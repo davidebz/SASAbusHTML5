@@ -82,44 +82,44 @@ public class Menu extends DivView
       this.map = map;
 
       this.areasAndLine = new MenuItem(new LinesIcon(), I18N.singleton.getLocalizedText("Menu_areasLines"));
-      this.add(this.areasAndLine);
+      this.appendChild(this.areasAndLine);
 
       this.mapItem = new MenuItem(new MapIcon(), I18N.singleton.getLocalizedText("Menu_map"));
       this.mapItem.addStyleName("map ");
-      this.add(this.mapItem);
+      this.appendChild(this.mapItem);
 
       this.search = new MenuItem(new SearchIcon(), I18N.singleton.getLocalizedText("Menu_search"));
-      this.add(this.search);
+      this.appendChild(this.search);
 
       this.favourites = new MenuItem(new FavouritesActiveIcon(), "Favourite");
-      this.add(this.favourites);
+      this.appendChild(this.favourites);
 
       //this.green = new MenuItem(new TreeIcon(), "Green");
       //this.add(this.green);
       this.parkings = new MenuItem(new ParkingIcon(), "Park");
-      this.add(this.parkings);
+      this.appendChild(this.parkings);
 
       //this.routing = new MenuItem(new RouteIcon(), I18N.singleton.getLocalizedText("Menu_routing"));
       //this.add(this.routing);
 
       this.more = new MenuItem(new MoreIcon(), I18N.singleton.getLocalizedText("Menu_more"));
       this.more.addStyleName("more");
-      this.add(this.more);
+      this.appendChild(this.more);
 
       this.moreMenuItems = new DivView("more-menu-items");
-      this.add(this.moreMenuItems);
+      this.appendChild(this.moreMenuItems);
 
       this.train = new MenuItem(new TrainIcon(), "Train");
-      this.moreMenuItems.add(this.train);
+      this.moreMenuItems.appendChild(this.train);
 
       this.news = new MenuItem(new NewsIcon(), I18N.singleton.getLocalizedText("Menu_news"));
-      this.moreMenuItems.add(this.news);
+      this.moreMenuItems.appendChild(this.news);
 
       this.sendFeedback = new MenuItem(new FeedbackIcon(), I18N.singleton.getLocalizedText("Menu_feedback"));
-      this.moreMenuItems.add(this.sendFeedback);
+      this.moreMenuItems.appendChild(this.sendFeedback);
 
       this.about = new MenuItem(new AboutIcon(), I18N.singleton.getLocalizedText("Menu_about"));
-      this.moreMenuItems.add(this.about);
+      this.moreMenuItems.appendChild(this.about);
 
    }
 

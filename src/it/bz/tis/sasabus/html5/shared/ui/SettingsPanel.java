@@ -29,6 +29,6 @@ public class SettingsPanel extends DivView
 {
    public SettingsPanel()
    {
-      this.add(new SpanView("Work in progress"));
+      this.appendChild(new SpanView("Work in progress"));
    }
 }

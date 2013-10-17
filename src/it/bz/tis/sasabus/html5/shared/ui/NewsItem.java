@@ -42,7 +42,7 @@ public class NewsItem extends DivView
          {
             if (NewsItem.this.descr == null)
             {
-               NewsItem.this.add(NewsItem.this.descr = new DMHTML(longDescr));
+               NewsItem.this.appendChild(NewsItem.this.descr = new DMHTML(longDescr));
             }
             else
             {
@@ -52,8 +52,8 @@ public class NewsItem extends DivView
          }
       });
 
-      newsTitle.add(new SpanView(title));
-      this.add(newsTitle);
+      newsTitle.appendChild(new SpanView(title));
+      this.appendChild(newsTitle);
 
    }
 }

@@ -34,7 +34,7 @@ public class RowItem extends DivView
       super("row-item");
       GoIcon go = new GoIcon();
       go.setStyleName("go");
-      this.add(go);
+      this.appendChild(go);
 
       this.addClickHandler(clickHandler);
 

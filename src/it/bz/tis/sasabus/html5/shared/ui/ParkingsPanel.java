@@ -32,7 +32,7 @@ public class ParkingsPanel extends DivView
 {
    public ParkingsPanel(final DMHashNavigationPanel navPanel, final AreaList areaList, final SASAbusMap map)
    {
-      this.add(new SpanView("Parkings:"));
+      this.appendChild(new SpanView("Parkings:"));
       for (final Parking park : Parking.list)
       {
          RowItem rowItem = new RowItem(new DMClickHandler()
@@ -43,8 +43,8 @@ public class ParkingsPanel extends DivView
                navPanel.newPage(new ParkingPanel(park, navPanel, areaList, map));
             }
          });
-         rowItem.add(new ItDeNamePanel(park.getName_it(), park.getName_de(), null));
-         this.add(rowItem);
+         rowItem.appendChild(new ItDeNamePanel(park.getName_it(), park.getName_de(), null));
+         this.appendChild(rowItem);
       }
    }
 }

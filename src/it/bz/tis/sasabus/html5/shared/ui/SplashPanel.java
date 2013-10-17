@@ -59,15 +59,15 @@ public class SplashPanel extends DivView
                       final DMHashNavigationPanel navigationPanel)
    {
       super("splash-panel");
-      this.add(new SpanView("SASAbus"));
-      this.add(new HTML5Icon());
+      this.appendChild(new SpanView("SASAbus"));
+      this.appendChild(new HTML5Icon());
       DivView imageContainer = new DivView("image-container");
       final ImgView sasaImg = new ImgView("../images/bus.png");
-      imageContainer.add(sasaImg);
+      imageContainer.appendChild(sasaImg);
 
-      this.add(imageContainer);
+      this.appendChild(imageContainer);
       final SpanView currentOperation = new SpanView(I18N.singleton.getLocalizedText("AboutPanel_checkingUpdates"));
-      this.add(currentOperation);
+      this.appendChild(currentOperation);
 
       final long startTime = System.currentTimeMillis();
 
@@ -108,7 +108,7 @@ public class SplashPanel extends DivView
             FavouriteBusStationListPanel favouriteBusStationListPanel = new FavouriteBusStationListPanel(data,
                                                                                                          navigationPanel,
                                                                                                          map);
-            homePage.favouriteContainer.add(favouriteBusStationListPanel);
+            homePage.favouriteContainer.appendChild(favouriteBusStationListPanel);
             homePage.favouriteBusStationListPanel = favouriteBusStationListPanel;
          }
       };

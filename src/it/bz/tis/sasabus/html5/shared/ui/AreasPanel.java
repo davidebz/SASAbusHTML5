@@ -56,8 +56,8 @@ public class AreasPanel extends DivView implements PageChangeHandler
             }
          });
 
-         areaRow.add(new ItDeAreaNamePanel(area));
-         this.add(areaRow);
+         areaRow.appendChild(new ItDeAreaNamePanel(area));
+         this.appendChild(areaRow);
 
       }
 

@@ -61,7 +61,7 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
 
       FavouriteBusStationList favourites = FavouriteBusStationList.getSingleton();
       BusStation[] busStations = BusLinePanel.sortByCurrentLanguage(this.areaList.getBusStations());
-      this.add(new SpanView(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_favourite_are") +
+      this.appendChild(new SpanView(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_favourite_are") +
                            ":"));
       int count = 0;
       for (final BusStation busStation : busStations)
@@ -79,14 +79,14 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
                                                                                                 FavouriteBusStationListPanel.this.map));
                }
             });
-            rowItem.add(new ItDeBusStationNamePanel(busStation));
-            this.add(rowItem);
+            rowItem.appendChild(new ItDeBusStationNamePanel(busStation));
+            this.appendChild(rowItem);
             count++;
          }
       }
       if (count == 0)
       {
-         this.add(new SpanView(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_empty_favourite")));
+         this.appendChild(new SpanView(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_empty_favourite")));
       }
 
    }

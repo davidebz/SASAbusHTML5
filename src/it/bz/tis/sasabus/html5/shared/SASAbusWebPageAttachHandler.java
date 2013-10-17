@@ -68,7 +68,7 @@ public class SASAbusWebPageAttachHandler implements AttachListener
       {
          History.newItem("0", false);
 
-         SASAbusWebPageAttachHandler.this.cover.add(new SplashPanel(SASAbusWebPageAttachHandler.this.cover,
+         SASAbusWebPageAttachHandler.this.cover.appendChild(new SplashPanel(SASAbusWebPageAttachHandler.this.cover,
                                                                     SASAbusWebPageAttachHandler.this.wrapper,
                                                                     SASAbusWebPageAttachHandler.this.map,
                                                                     SASAbusWebPageAttachHandler.this.menu,

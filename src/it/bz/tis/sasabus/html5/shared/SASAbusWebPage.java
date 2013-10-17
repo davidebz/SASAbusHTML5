@@ -45,7 +45,7 @@ public class SASAbusWebPage extends DMWebPage
 
       DivView initialCover = new DivView("cover");
 
-      wrapper.add(initialCover);
+      wrapper.appendChild(initialCover);
 
       SASAbusMap map = new SASAbusMap();
       this.homePanel = new HomePanel();

@@ -41,23 +41,23 @@ public class ParkingPopup extends DivView
    {
       super("parking-popup");
       this.parking = parking;
-      this.add(new ItDeNamePanel(parking.getName_it(), parking.getName_de(), null));
-      this.add(new SpanView("Free parkings:"));
-      this.add(this.freeParkingsData = new DivView("free-data"));
+      this.appendChild(new ItDeNamePanel(parking.getName_it(), parking.getName_de(), null));
+      this.appendChild(new SpanView("Free parkings:"));
+      this.appendChild(this.freeParkingsData = new DivView("free-data"));
 
    }
 
    void init()
    {
       ButtonView refresh = new ButtonView("refresh");
-      this.add(refresh);
+      this.appendChild(refresh);
       DMClickHandler refreshHandler = new DMClickHandler()
       {
          @Override
          public void onClick(DMClickEvent event)
          {
             ParkingPopup.this.freeParkingsData.clear();
-            ParkingPopup.this.freeParkingsData.add(new SpanView("reading..."));
+            ParkingPopup.this.freeParkingsData.appendChild(new SpanView("reading..."));
             SASAbusDBClientImpl.singleton.loadParkingInfo(ParkingPopup.this.parking.getId(),
                                                           new SASAbusDBDataReady<ParkingInfo>()
                                                           {

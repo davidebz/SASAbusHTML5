@@ -37,8 +37,8 @@ public class HomePanel extends DivView implements PageChangeHandler
    public HomePanel()
    {
       super("home");
-      this.add(this.favouriteContainer);
-      this.add(this.introText = new DMHTML(""));
+      this.appendChild(this.favouriteContainer);
+      this.appendChild(this.introText = new DMHTML(""));
 
    }
 

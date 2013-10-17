@@ -43,7 +43,7 @@ public class TrainStationPopup extends DivView
    {
       super("train-popup");
       this.trainStation = trainStation;
-      this.add(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null));
+      this.appendChild(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null));
       this.navigationPanel = navigationPanel;
       this.areaList = areaList;
       this.map = map;
@@ -52,7 +52,7 @@ public class TrainStationPopup extends DivView
    void init()
    {
       ButtonView show = new ButtonView("Show details");
-      this.add(show);
+      this.appendChild(show);
       show.addClickHandler(new DMClickHandler()
       {
          @Override

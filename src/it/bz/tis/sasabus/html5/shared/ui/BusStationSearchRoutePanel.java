@@ -37,11 +37,11 @@ public class BusStationSearchRoutePanel extends DivView implements PageChangeHan
                                      BusStationSelectedEventHandler selected)
    {
       super("bus-stations-search-route");
-      this.add(this.searchWidget = new BusStationSearchWidget(I18N.singleton.getLocalizedText("BusStationSearchWidget_introtext"),
+      this.appendChild(this.searchWidget = new BusStationSearchWidget(I18N.singleton.getLocalizedText("BusStationSearchWidget_introtext"),
                                                               map,
                                                               areaList,
                                                               selected));
-      this.add(this.routeSearchPanel = new RouteSearchPanel(areaList, navigationPanel, map));
+      this.appendChild(this.routeSearchPanel = new RouteSearchPanel(areaList, navigationPanel, map));
    }
 
    @Override

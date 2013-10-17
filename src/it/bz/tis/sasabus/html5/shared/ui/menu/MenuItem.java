@@ -33,8 +33,8 @@ public class MenuItem extends DivView
       super("menu-item");
       SpanView label = new SpanView(text);
       label.setStyleName("menu-text");
-      this.add(menuIcon);
-      this.add(label);
+      this.appendChild(menuIcon);
+      this.appendChild(label);
    }
 
    MenuItem(Void void1)

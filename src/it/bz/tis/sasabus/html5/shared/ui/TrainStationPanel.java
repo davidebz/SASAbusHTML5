@@ -39,8 +39,8 @@ public class TrainStationPanel extends DivView implements PageChangeHandler
    {
       this.map = map;
       this.trainStation = trainStation;
-      this.add(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null));
-      this.add(new BusStationInRangeWidget(trainStation.getLat(),
+      this.appendChild(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null));
+      this.appendChild(new BusStationInRangeWidget(trainStation.getLat(),
                                            trainStation.getLon(),
                                            navPanel,
                                            areaList,

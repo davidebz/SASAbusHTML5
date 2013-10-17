@@ -40,21 +40,21 @@ public class ItDeNamePanel extends DivView
       SpanView de = new SpanView(deText);
       de.setStyleName("de");
       DivView first = new DivView("first");
-      this.add(first);
+      this.appendChild(first);
       if (icon != null)
       {
-         first.add(icon);
+         first.appendChild(icon);
       }
       if (I18N.singleton.getLanguage().equals("de"))
       {
-         first.add(de);
-         this.add(it);
+         first.appendChild(de);
+         this.appendChild(it);
          it.addStyleName("second");
       }
       else
       {
-         first.add(it);
-         this.add(de);
+         first.appendChild(it);
+         this.appendChild(de);
          de.addStyleName("second");
       }
    }

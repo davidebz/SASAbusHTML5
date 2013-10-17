@@ -65,9 +65,9 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
 
       SpanView introText = new SpanView("Route calculation");
       introText.setStyleName("intro-text");
-      this.add(introText);
+      this.appendChild(introText);
 
-      this.add(new BusStationSearchWidget(I18N.singleton.getLocalizedText("RouteSearchPanel_start_station"),
+      this.appendChild(new BusStationSearchWidget(I18N.singleton.getLocalizedText("RouteSearchPanel_start_station"),
                                           map,
                                           areaList,
                                           new BusStationSelectedEventHandler()
@@ -79,7 +79,7 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
                                              }
                                           },
                                           start));
-      this.add(new BusStationSearchWidget(I18N.singleton.getLocalizedText("RouteSearchPanel_end_station"),
+      this.appendChild(new BusStationSearchWidget(I18N.singleton.getLocalizedText("RouteSearchPanel_end_station"),
                                           map,
                                           areaList,
                                           new BusStationSelectedEventHandler()
@@ -92,11 +92,11 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
                                           },
                                           end));
 
-      this.add(new SpanView(I18N.singleton.getLocalizedText("RouteSearchPanel_when") + ":"));
-      this.add(this.dateBox = new SASAbusDateBox());
+      this.appendChild(new SpanView(I18N.singleton.getLocalizedText("RouteSearchPanel_when") + ":"));
+      this.appendChild(this.dateBox = new SASAbusDateBox());
 
       this.search = new ButtonView(I18N.singleton.getLocalizedText("RouteSearchPanel_search"));
-      this.add(this.search);
+      this.appendChild(this.search);
       this.search.addClickHandler(new DMClickHandler()
       {
 
@@ -132,7 +132,7 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
             }
          }
       });
-      this.add(this.results = new DivView("results"));
+      this.appendChild(this.results = new DivView("results"));
    }
 
    private void onFirstRouteReceived(ConRes data0)
@@ -160,7 +160,7 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
                                                              public void ready(ConRes data2)
                                                              {
                                                                 routes[2] = data2;
-                                                                RouteSearchPanel.this.results.add(new RouteResultOverviewPanel(routes,
+                                                                RouteSearchPanel.this.results.appendChild(new RouteResultOverviewPanel(routes,
                                                                                                                                RouteSearchPanel.this.navigationPanel));
                                                                 RouteSearchPanel.this.search.setLabel("Search");
                                                              }

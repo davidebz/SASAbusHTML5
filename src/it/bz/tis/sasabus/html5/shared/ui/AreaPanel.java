@@ -50,7 +50,7 @@ public class AreaPanel extends DivView implements PageChangeHandler
       this.area = area;
       this.map = map;
 
-      this.add(new ItDeAreaNamePanel(area));
+      this.appendChild(new ItDeAreaNamePanel(area));
       for (final BusLine busLine : area.getBusLines())
       {
          RowItem busLineRow = new RowItem(new DMClickHandler()
@@ -63,9 +63,9 @@ public class AreaPanel extends DivView implements PageChangeHandler
                navPanel.newPage(newPanel);
             }
          });
-         busLineRow.add(new SpanView(I18N.singleton.getLocalizedText("BusLine") + " " + busLine.getNumber()));
+         busLineRow.appendChild(new SpanView(I18N.singleton.getLocalizedText("BusLine") + " " + busLine.getNumber()));
 
-         this.add(busLineRow);
+         this.appendChild(busLineRow);
 
       }
 

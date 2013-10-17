@@ -34,7 +34,7 @@ public class TrainStationsPanel extends DivView
                              final AreaList areaList,
                              final SASAbusMap map)
    {
-      this.add(new SpanView("Train stations:"));
+      this.appendChild(new SpanView("Train stations:"));
       for (final TrainStation trainStation : TrainStation.list)
       {
          RowItem rowItem = new RowItem(new DMClickHandler()
@@ -45,8 +45,8 @@ public class TrainStationsPanel extends DivView
                navigationPanel.newPage(new TrainStationPanel(trainStation, navigationPanel, areaList, map));
             }
          });
-         rowItem.add(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null));
-         this.add(rowItem);
+         rowItem.appendChild(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null));
+         this.appendChild(rowItem);
       }
 
    }

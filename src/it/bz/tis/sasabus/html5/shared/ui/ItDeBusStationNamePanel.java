@@ -60,11 +60,11 @@ public class ItDeBusStationNamePanel extends ItDeNamePanel
    {
       if (FavouriteBusStationList.getSingleton().isFavourite(busStation.getId()))
       {
-         favouritesIcon.setUrl("../images/layout/favourites-active.png");
+         favouritesIcon.setSrc("../images/layout/favourites-active.png");
       }
       else
       {
-         favouritesIcon.setUrl("../images/layout/favourites-icon.png");
+         favouritesIcon.setSrc("../images/layout/favourites-icon.png");
       }
    }
 }

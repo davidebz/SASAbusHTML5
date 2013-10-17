@@ -41,9 +41,9 @@ public class ParkingPanel extends DivView implements PageChangeHandler
       this.map = map;
       this.parking = parking;
 
-      this.add(new ItDeNamePanel(parking.getName_it(), parking.getName_de(), null));
+      this.appendChild(new ItDeNamePanel(parking.getName_it(), parking.getName_de(), null));
 
-      this.add(new BusStationInRangeWidget(parking.getLat(), parking.getLon(), navPanel, areaList, map));
+      this.appendChild(new BusStationInRangeWidget(parking.getLat(), parking.getLon(), navPanel, areaList, map));
    }
 
    @Override

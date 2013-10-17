@@ -37,11 +37,11 @@ public class TitleBar extends DivView
       super("title-bar");
 
       MenuIcon menuIcon = new MenuIcon();
-      this.add(menuIcon);
+      this.appendChild(menuIcon);
 
       LogoIcon logoMenuIcon = new LogoIcon();
 
-      this.add(logoMenuIcon);
+      this.appendChild(logoMenuIcon);
       menuIcon.addClickHandler(new TitleBarMenuClickHandler(menu));
 
       DivView flags = new DivView("flags");
@@ -52,11 +52,11 @@ public class TitleBar extends DivView
       AnchorView en = new AnchorView("/en/home", "EN");
       en.setStyleName("en");
 
-      flags.add(it);
-      flags.add(de);
-      flags.add(en);
+      flags.appendChild(it);
+      flags.appendChild(de);
+      flags.appendChild(en);
 
-      this.add(flags);
+      this.appendChild(flags);
 
    }
 }

@@ -70,13 +70,13 @@ public class BusStationSearchWidget extends DivView implements PageChangeHandler
          text = ItDeNamePanel.asOneLine(initial.getName_it(), initial.getName_de());
       }
       final InputView searchText = new InputView(text);
-      filters.add(searchText);
+      filters.appendChild(searchText);
 
       final DivView results = new DivView("results");
 
-      this.add(new SpanView(title));
-      this.add(filters);
-      this.add(results);
+      this.appendChild(new SpanView(title));
+      this.appendChild(filters);
+      this.appendChild(results);
 
       searchText.addFocusHandler(new DMFocusHandler()
       {
@@ -166,7 +166,7 @@ public class BusStationSearchWidget extends DivView implements PageChangeHandler
       }
       if (count == 7)
       {
-         results.add(new SpanView("..."));
+         results.appendChild(new SpanView("..."));
       }
    }
 
@@ -185,8 +185,8 @@ public class BusStationSearchWidget extends DivView implements PageChangeHandler
             selected.selected(busStation);
          }
       });
-      rowItem.add(new ItDeBusStationNamePanel(busStation));
-      results.add(rowItem);
+      rowItem.appendChild(new ItDeBusStationNamePanel(busStation));
+      results.appendChild(rowItem);
 
    }
 

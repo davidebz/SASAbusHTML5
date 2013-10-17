@@ -55,9 +55,9 @@ public class BusStationPopup extends DivView
 
    void init()
    {
-      this.add(new ItDeBusStationNamePanel(this.busStation));
+      this.appendChild(new ItDeBusStationNamePanel(this.busStation));
       ButtonView details = new ButtonView("Show details");
-      this.add(details);
+      this.appendChild(details);
       details.addClickHandler(new DMClickHandler()
       {
          @Override
@@ -86,7 +86,7 @@ public class BusStationPopup extends DivView
                                                                              true));
             }
          });
-         this.add(button);
+         this.appendChild(button);
       }
    }
 }

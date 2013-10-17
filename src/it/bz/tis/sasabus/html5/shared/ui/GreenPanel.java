@@ -30,11 +30,11 @@ public class GreenPanel extends DivView
       ImgView tree = new ImgView("../images/layout/tree.gif");
       tree.setStyleName("tree");
 
-      this.add(tree);
+      this.appendChild(tree);
 
       ImgView suedtirolPass = new ImgView("../images/layout/suedtirol-pass.png");
       suedtirolPass.setStyleName("suedtirol-pass");
-      this.add(suedtirolPass);
+      this.appendChild(suedtirolPass);
 
    }
 }
