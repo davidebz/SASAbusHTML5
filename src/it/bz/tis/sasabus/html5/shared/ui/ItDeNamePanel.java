@@ -19,6 +19,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
+import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
 import bz.davide.dmweb.shared.i18n.I18N;
 import bz.davide.dmweb.shared.view.AbstractHtmlElementView;
 import bz.davide.dmweb.shared.view.DivView;
@@ -31,7 +32,7 @@ public class ItDeNamePanel extends DivView
 {
    protected AbstractHtmlElementView icon;
 
-   public ItDeNamePanel(String itText, String deText, AbstractHtmlElementView icon)
+   public ItDeNamePanel(String itText, String deText, Icon icon)
    {
       this.icon = icon;
       this.setStyleName("it-de-name");
