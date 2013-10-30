@@ -49,7 +49,7 @@ import com.google.gwt.i18n.client.DateTimeFormat;
 public class BusStationPanel extends DivView implements PageChangeHandler
 {
    BusStation            busStation;
-   DivView           departures;
+   DivView               departures;
    AreaList              areaList;
    DMHashNavigationPanel content;
    SASAbusMap            map;
@@ -125,7 +125,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
          public void onClick(DMClickEvent event)
          {
             RouteSearchPanel.start = busStation;
-            navPanel.newPage(new RouteSearchPanel(areaList, navPanel, map));
+            navPanel.newPage(new BusStationSearchRoutePanel(areaList, map, navPanel, null));
          }
       });
 
@@ -135,7 +135,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
          public void onClick(DMClickEvent event)
          {
             RouteSearchPanel.end = busStation;
-            navPanel.newPage(new RouteSearchPanel(areaList, navPanel, map));
+            navPanel.newPage(new BusStationSearchRoutePanel(areaList, map, navPanel, null));
          }
       });
 

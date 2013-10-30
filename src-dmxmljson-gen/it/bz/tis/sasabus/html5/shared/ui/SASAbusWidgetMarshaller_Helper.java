@@ -43,7 +43,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
                structure.property("introText").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DMHTML", structure.property("introText").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("introText").structure(), identities, seq, false);
             }
             // map
             value = ((it.bz.tis.sasabus.html5.shared.ui.HomePanel)obj).map;

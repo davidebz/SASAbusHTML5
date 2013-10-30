@@ -20,9 +20,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.view.DMHTML;
+import bz.davide.dmweb.server.Html5ParserServerSide;
+import bz.davide.dmweb.shared.model.Div;
 import bz.davide.dmweb.shared.view.DivView;
 import bz.davide.dmweb.shared.view.PageChangeHandler;
+import bz.davide.dmweb.shared.view.TextNodeView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
@@ -30,15 +32,15 @@ import bz.davide.dmweb.shared.view.PageChangeHandler;
 public class HomePanel extends DivView implements PageChangeHandler
 {
    SASAbusMap                   map;
-   DMHTML                       introText;
-   DivView                  favouriteContainer           = new DivView("favourite-container");
+   DivView                      introText;
+   DivView                      favouriteContainer           = new DivView("favourite-container");
    FavouriteBusStationListPanel favouriteBusStationListPanel = null;
 
    public HomePanel()
    {
       super("home");
       this.appendChild(this.favouriteContainer);
-      this.appendChild(this.introText = new DMHTML(""));
+      this.appendChild(this.introText = new DivView("intro-text"));
 
    }
 
@@ -64,9 +66,10 @@ public class HomePanel extends DivView implements PageChangeHandler
       this.map.showOverviewMap(true);
    }
 
-   public void setIntroText(String introText)
+   public void setIntroText(String introText) throws Exception
    {
-      this.introText.setText(introText);
+      this.introText.clear();
+      this.introText.appendChild(new TextNodeView(introText));
    }
 
    @Override

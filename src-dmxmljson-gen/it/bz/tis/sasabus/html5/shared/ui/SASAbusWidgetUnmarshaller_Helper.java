@@ -62,11 +62,11 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((HomePanel)obj).introText = (bz.davide.dmweb.shared.view.DMHTML)identities.get(refid);
+                     ((HomePanel)obj).introText = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("DMHTML"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((HomePanel)obj).introText = (bz.davide.dmweb.shared.view.DMHTML)o;
+                     ((HomePanel)obj).introText = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
             // map

@@ -19,18 +19,20 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
+import bz.davide.dmweb.shared.model.Div;
+import bz.davide.dmweb.shared.model.Html5ParserGwt;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
-import bz.davide.dmweb.shared.view.DMHTML;
 import bz.davide.dmweb.shared.view.DivView;
 import bz.davide.dmweb.shared.view.SpanView;
+import bz.davide.dmweb.shared.view.TextNodeView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
 public class NewsItem extends DivView
 {
-   DMHTML descr = null;
+   DivView descr = null;
 
    public NewsItem(String title, final String longDescr)
    {
@@ -42,7 +44,21 @@ public class NewsItem extends DivView
          {
             if (NewsItem.this.descr == null)
             {
-               NewsItem.this.appendChild(NewsItem.this.descr = new DMHTML(longDescr));
+               NewsItem.this.appendChild(NewsItem.this.descr = new DivView("descr"));
+               try
+               {
+                  Div div = new Div();
+                  Html5ParserGwt.parseXhtml("<div>" + longDescr + "</div>", div);
+                  Html5ParserGwt.richText(NewsItem.this.descr, div.getChildNodes());
+               }
+               catch (Exception e)
+               {
+                  NewsItem.this.descr.clear();
+                  NewsItem.this.descr.appendChild(new TextNodeView("Error: " +
+                                                               e.getClass().getName() +
+                                                               " - " +
+                                                               e.getMessage()));
+               }
             }
             else
             {

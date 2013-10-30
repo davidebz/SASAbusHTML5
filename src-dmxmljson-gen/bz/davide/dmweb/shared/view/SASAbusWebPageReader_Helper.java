@@ -70,22 +70,6 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmxmljson.unmarshalli
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
-            // ElementInnerHtml
-            if ((value = structure.property("ElementInnerHtml")) != null)
-               if (value.isNull())
-                  ((AbstractHtmlElementView)obj).setElementInnerHtml(null);
-               else
-               {
-                  ((AbstractHtmlElementView)obj).setElementInnerHtml(value.string());
-               }
-            // ElementInnerText
-            if ((value = structure.property("ElementInnerText")) != null)
-               if (value.isNull())
-                  ((AbstractHtmlElementView)obj).setElementInnerText(null);
-               else
-               {
-                  ((AbstractHtmlElementView)obj).setElementInnerText(value.string());
-               }
             // StyleName
             if ((value = structure.property("StyleName")) != null)
                if (value.isNull())

@@ -76,7 +76,7 @@ public class SASAbusWebPage extends DMWebPage
 
    }
 
-   public void setIntroText(String text)
+   public void setIntroText(String text) throws Exception
    {
       this.homePanel.setIntroText(text);
    }

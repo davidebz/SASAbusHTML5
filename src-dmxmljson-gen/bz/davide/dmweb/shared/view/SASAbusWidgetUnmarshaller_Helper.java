@@ -299,7 +299,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                         if (refid != null)                              
                            arrayList.add(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("AbstractHtmlElementView"));              
+                           Object o = newInstance(value.structure().getRuntimeClassName("Node"));              
                            internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                            arrayList.add(o);                                                
                         }
@@ -413,7 +413,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                         if (refid != null)                              
                            arrayList.add(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("AbstractHtmlElementView"));              
+                           Object o = newInstance(value.structure().getRuntimeClassName("DivViewChildElement"));              
                            internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                            arrayList.add(o);                                                
                         }
@@ -430,21 +430,6 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
       });
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.DivView", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
-         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
-            internalUnmarschall(structure, "bz.davide.dmweb.shared.view.AbstractHtmlElementView", obj, identities);
-            String id = structure.getId();
-            if (id != null)
-               identities.put(id, obj);
-            bz.davide.dmxmljson.unmarshalling.Value value;
-         }
-      });
-      this.putInstanceFactory("bz.davide.dmweb.shared.view.DMHTML", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
-         @Override public Object newInstance() throws Exception {
-            return new bz.davide.dmweb.shared.view.DMHTML((Void)null);
-         }
-      });
-
-      this.putClassUnmarshaller("bz.davide.dmweb.shared.view.DMHTML", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.AbstractHtmlElementView", obj, identities);
             String id = structure.getId();
