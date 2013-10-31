@@ -81,12 +81,6 @@ body>.menu .menu-item>img
   
 }
 
-body>.menu .menu-item>div
-{
-   margin-left:6px;
-   
-}
-
 /*
 @media only screen and (min-width: 420px) {
    body>.main {

@@ -52,6 +52,7 @@ body {
 
 .menu .menu-item>* {
    display: inline;
+   margin-left:4px;
    vertical-align:middle;
 }
 
@@ -60,7 +61,7 @@ body {
    /*margin-left: 6px;*/
 }
 
-.menu .menu-item>div {
+.menu .menu-item>span {
    line-height: 50px;
    /*margin-left: 6px;*/
 }
