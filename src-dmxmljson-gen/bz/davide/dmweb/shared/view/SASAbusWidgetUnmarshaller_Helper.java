@@ -11,14 +11,33 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
 {
    protected SASAbusWidgetUnmarshaller_Helper()
    {
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.DMWidgetSerializationData", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.DMWidgetSerializationData>() {
+         @Override public void check(bz.davide.dmweb.shared.view.DMWidgetSerializationData  ret){
+            // attachHandlers
+            if (ret.attachHandlers != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.DMWidgetSerializationData.attachHandlers");
+            // domReady
+            if (ret.domReady != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.DMWidgetSerializationData.domReady");
+            // i18n
+            if (ret.i18n != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.DMWidgetSerializationData.i18n");
+            // idseq
+            if (ret.idseq != 0)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.DMWidgetSerializationData.idseq");
+         }
+      });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DMWidgetSerializationData", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new bz.davide.dmweb.shared.view.DMWidgetSerializationData((Void)null);
+            bz.davide.dmweb.shared.view.DMWidgetSerializationData ret = new bz.davide.dmweb.shared.view.DMWidgetSerializationData();
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DMWidgetSerializationData").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.DMWidgetSerializationData", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -30,22 +49,25 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
+                  arr.open();        
+                  java.util.ArrayList arrayList = new java.util.ArrayList(arr.length());       
                   while ((value = arr.nextItem()) != null) {                       
                      if (value.isNull())                                           
                         arrayList.add(null);                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
                            arrayList.add(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("AttachListener"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("AttachListener"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
                            arrayList.add(o);                                                
                         }
                      }                                                                   
                   }                                                                   
+                  arr.close();        
                   ((DMWidgetSerializationData)obj).attachHandlers = arrayList;
                }
             // domReady
@@ -55,22 +77,25 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
+                  arr.open();        
+                  java.util.ArrayList arrayList = new java.util.ArrayList(arr.length());       
                   while ((value = arr.nextItem()) != null) {                       
                      if (value.isNull())                                           
                         arrayList.add(null);                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
                            arrayList.add(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("AttachListener"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("AttachListener"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
                            arrayList.add(o);                                                
                         }
                      }                                                                   
                   }                                                                   
+                  arr.close();        
                   ((DMWidgetSerializationData)obj).domReady = arrayList;
                }
             // i18n
@@ -96,16 +121,27 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   ((DMWidgetSerializationData)obj).idseq = (int)value.integer();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler>() {
+         @Override public void check(bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler  ret){
+            // widget
+            if (ret.widget != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler.widget");
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler((Void)null);
+            bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler ret = new bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler();
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -125,16 +161,30 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      ((DMWidgetEventAttachHandler)obj).widget = (bz.davide.dmweb.shared.view.AbstractHtmlElementView)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler>() {
+         @Override public void check(bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler  ret){
+            // factory
+            if (ret.factory != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler.factory");
+            // widget
+            if (ret.widget != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler.widget");
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler((Void)null);
+            bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler ret = new bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler();
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -169,61 +219,99 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      ((DMGwtWidgetHostAttachHandler)obj).widget = (bz.davide.dmweb.shared.view.AbstractHtmlElementView)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.SpanView", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.SpanView>() {
+         @Override public void check(bz.davide.dmweb.shared.view.SpanView  ret){
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.AbstractHtmlElementView").check(ret);
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.SpanView", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new bz.davide.dmweb.shared.view.SpanView((Void)null);
+            bz.davide.dmweb.shared.view.SpanView ret = new bz.davide.dmweb.shared.view.SpanView();
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.SpanView").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.SpanView", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.AbstractHtmlElementView", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.AnchorView", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.AnchorView>() {
+         @Override public void check(bz.davide.dmweb.shared.view.AnchorView  ret){
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.AbstractHtmlElementView").check(ret);
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.AnchorView", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new bz.davide.dmweb.shared.view.AnchorView((Void)null);
+            bz.davide.dmweb.shared.view.AnchorView ret = new bz.davide.dmweb.shared.view.AnchorView();
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.AnchorView").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.AnchorView", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.AbstractHtmlElementView", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.ButtonView", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.ButtonView>() {
+         @Override public void check(bz.davide.dmweb.shared.view.ButtonView  ret){
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.AbstractHtmlElementView").check(ret);
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.ButtonView", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new bz.davide.dmweb.shared.view.ButtonView((Void)null);
+            bz.davide.dmweb.shared.view.ButtonView ret = new bz.davide.dmweb.shared.view.ButtonView();
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.ButtonView").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.ButtonView", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.AbstractHtmlElementView", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler>() {
+         @Override public void check(bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler  ret){
+            // navigationPanel
+            if (ret.navigationPanel != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler.navigationPanel");
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler((Void)null);
+            bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler ret = new bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler();
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -243,6 +331,26 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      ((DMHashNavigationPanelAttachHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.AbstractHtmlElementView", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.AbstractHtmlElementView>() {
+         @Override public void check(bz.davide.dmweb.shared.view.AbstractHtmlElementView  ret){
+            // attachHandlers
+            if (ret.attachHandlers != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.AbstractHtmlElementView.attachHandlers");
+            // childs
+            if (ret.childs != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.AbstractHtmlElementView.childs");
+            // clickHandlers
+            if (ret.clickHandlers != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.AbstractHtmlElementView.clickHandlers");
+            // eventBits
+            if (ret.eventBits != 0)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.AbstractHtmlElementView.eventBits");
+            // id
+            if (ret.id != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.AbstractHtmlElementView.id");
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.AbstractHtmlElementView", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
@@ -253,6 +361,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.AbstractHtmlElementView", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -264,22 +373,25 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
+                  arr.open();        
+                  java.util.ArrayList arrayList = new java.util.ArrayList(arr.length());       
                   while ((value = arr.nextItem()) != null) {                       
                      if (value.isNull())                                           
                         arrayList.add(null);                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
                            arrayList.add(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("AttachListener"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("AttachListener"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
                            arrayList.add(o);                                                
                         }
                      }                                                                   
                   }                                                                   
+                  arr.close();        
                   ((AbstractHtmlElementView)obj).attachHandlers = arrayList;
                }
             // childs
@@ -289,22 +401,25 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
+                  arr.open();        
+                  java.util.ArrayList arrayList = new java.util.ArrayList(arr.length());       
                   while ((value = arr.nextItem()) != null) {                       
                      if (value.isNull())                                           
                         arrayList.add(null);                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
                            arrayList.add(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("Node"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("Node"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
                            arrayList.add(o);                                                
                         }
                      }                                                                   
                   }                                                                   
+                  arr.close();        
                   ((AbstractHtmlElementView)obj).childs = arrayList;
                }
             // clickHandlers
@@ -314,22 +429,25 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
+                  arr.open();        
+                  java.util.ArrayList arrayList = new java.util.ArrayList(arr.length());       
                   while ((value = arr.nextItem()) != null) {                       
                      if (value.isNull())                                           
                         arrayList.add(null);                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
                            arrayList.add(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("DMClickHandler"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("DMClickHandler"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
                            arrayList.add(o);                                                
                         }
                      }                                                                   
                   }                                                                   
+                  arr.close();        
                   ((AbstractHtmlElementView)obj).clickHandlers = arrayList;
                }
             // eventBits
@@ -348,17 +466,35 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                {
                   ((AbstractHtmlElementView)obj).id = value.string();
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.DMHashNavigationPanel", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.DMHashNavigationPanel>() {
+         @Override public void check(bz.davide.dmweb.shared.view.DMHashNavigationPanel  ret){
+            // changeHandlers
+            if (ret.changeHandlers != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.DMHashNavigationPanel.changeHandlers");
+            // index
+            if (ret.index != 0)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.DMHashNavigationPanel.index");
+            // pages
+            if (ret.pages != null)
+               throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.DMHashNavigationPanel.pages");
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DMHashNavigationPanel", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new bz.davide.dmweb.shared.view.DMHashNavigationPanel((Void)null);
+            bz.davide.dmweb.shared.view.DMHashNavigationPanel ret = new bz.davide.dmweb.shared.view.DMHashNavigationPanel();
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DMHashNavigationPanel").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.DMHashNavigationPanel", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -370,22 +506,25 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
+                  arr.open();        
+                  java.util.ArrayList arrayList = new java.util.ArrayList(arr.length());       
                   while ((value = arr.nextItem()) != null) {                       
                      if (value.isNull())                                           
                         arrayList.add(null);                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
                            arrayList.add(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("PageChangeHandler"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("PageChangeHandler"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
                            arrayList.add(o);                                                
                         }
                      }                                                                   
                   }                                                                   
+                  arr.close();        
                   ((DMHashNavigationPanel)obj).changeHandlers = arrayList;
                }
             // index
@@ -403,54 +542,76 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
+                  arr.open();        
+                  java.util.ArrayList arrayList = new java.util.ArrayList(arr.length());       
                   while ((value = arr.nextItem()) != null) {                       
                      if (value.isNull())                                           
                         arrayList.add(null);                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
                            arrayList.add(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("DivViewChildElement"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("DivViewChildElement"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
                            arrayList.add(o);                                                
                         }
                      }                                                                   
                   }                                                                   
+                  arr.close();        
                   ((DMHashNavigationPanel)obj).pages = arrayList;
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.DivView", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.DivView>() {
+         @Override public void check(bz.davide.dmweb.shared.view.DivView  ret){
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.AbstractHtmlElementView").check(ret);
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DivView", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new bz.davide.dmweb.shared.view.DivView((Void)null);
+            bz.davide.dmweb.shared.view.DivView ret = new bz.davide.dmweb.shared.view.DivView();
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.DivView", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.AbstractHtmlElementView", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.ImgView", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.ImgView>() {
+         @Override public void check(bz.davide.dmweb.shared.view.ImgView  ret){
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.AbstractHtmlElementView").check(ret);
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.ImgView", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new bz.davide.dmweb.shared.view.ImgView((Void)null);
+            bz.davide.dmweb.shared.view.ImgView ret = new bz.davide.dmweb.shared.view.ImgView();
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.ImgView").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.ImgView", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.AbstractHtmlElementView", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            structure.close();
          }
       });
 

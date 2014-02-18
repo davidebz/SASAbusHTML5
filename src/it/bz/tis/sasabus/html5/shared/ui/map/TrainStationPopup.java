@@ -41,7 +41,7 @@ public class TrainStationPopup extends DivView
                             AreaList areaList,
                             SASAbusMap map)
    {
-      super("train-popup");
+      super(new DivView.InitParameters("train-popup"));
       this.trainStation = trainStation;
       this.appendChild(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null));
       this.navigationPanel = navigationPanel;
@@ -51,7 +51,7 @@ public class TrainStationPopup extends DivView
 
    void init()
    {
-      ButtonView show = new ButtonView("Show details");
+      ButtonView show = new ButtonView(new ButtonView.InitParameters("Show details"));
       this.appendChild(show);
       show.addClickHandler(new DMClickHandler()
       {

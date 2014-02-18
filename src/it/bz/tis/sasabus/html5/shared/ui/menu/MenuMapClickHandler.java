@@ -48,7 +48,7 @@ public class MenuMapClickHandler implements DMClickHandler
       this.areaList = areaList;
    }
 
-   MenuMapClickHandler(Void void1)
+   MenuMapClickHandler()
    {
 
    }

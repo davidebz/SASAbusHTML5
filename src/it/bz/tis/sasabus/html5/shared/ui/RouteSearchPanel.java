@@ -52,50 +52,51 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
 
    SASAbusDateBox              dateBox;
 
-   final ButtonView              search;
+   final ButtonView            search;
    final DMHashNavigationPanel navigationPanel;
 
-   DivView                 results;
+   DivView                     results;
 
    public RouteSearchPanel(AreaList areaList, final DMHashNavigationPanel navigationPanel, SASAbusMap map)
    {
-      super("route");
+      super(new DivView.InitParameters("route"));
       this.map = map;
       this.navigationPanel = navigationPanel;
 
-      SpanView introText = new SpanView("Route calculation");
+      SpanView introText = new SpanView(new SpanView.InitParameters("Route calculation"));
       introText.setStyleName("intro-text");
       this.appendChild(introText);
 
       this.appendChild(new BusStationSearchWidget(I18N.singleton.getLocalizedText("RouteSearchPanel_start_station"),
-                                          map,
-                                          areaList,
-                                          new BusStationSelectedEventHandler()
-                                          {
-                                             @Override
-                                             public void selected(BusStation busStation)
-                                             {
-                                                RouteSearchPanel.start = busStation;
-                                             }
-                                          },
-                                          start));
+                                                  map,
+                                                  areaList,
+                                                  new BusStationSelectedEventHandler()
+                                                  {
+                                                     @Override
+                                                     public void selected(BusStation busStation)
+                                                     {
+                                                        RouteSearchPanel.start = busStation;
+                                                     }
+                                                  },
+                                                  start));
       this.appendChild(new BusStationSearchWidget(I18N.singleton.getLocalizedText("RouteSearchPanel_end_station"),
-                                          map,
-                                          areaList,
-                                          new BusStationSelectedEventHandler()
-                                          {
-                                             @Override
-                                             public void selected(BusStation busStation)
-                                             {
-                                                RouteSearchPanel.end = busStation;
-                                             }
-                                          },
-                                          end));
+                                                  map,
+                                                  areaList,
+                                                  new BusStationSelectedEventHandler()
+                                                  {
+                                                     @Override
+                                                     public void selected(BusStation busStation)
+                                                     {
+                                                        RouteSearchPanel.end = busStation;
+                                                     }
+                                                  },
+                                                  end));
 
-      this.appendChild(new SpanView(I18N.singleton.getLocalizedText("RouteSearchPanel_when") + ":"));
-      this.appendChild(this.dateBox = new SASAbusDateBox());
+      this.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("RouteSearchPanel_when") +
+                                                                ":")));
+      this.appendChild(this.dateBox = new SASAbusDateBox(new SASAbusDateBox.InitParameters()));
 
-      this.search = new ButtonView(I18N.singleton.getLocalizedText("RouteSearchPanel_search"));
+      this.search = new ButtonView(new ButtonView.InitParameters(I18N.singleton.getLocalizedText("RouteSearchPanel_search")));
       this.appendChild(this.search);
       this.search.addClickHandler(new DMClickHandler()
       {
@@ -132,7 +133,7 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
             }
          }
       });
-      this.appendChild(this.results = new DivView("results"));
+      this.appendChild(this.results = new DivView(new DivView.InitParameters("results")));
    }
 
    private void onFirstRouteReceived(ConRes data0)
@@ -161,7 +162,7 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
                                                              {
                                                                 routes[2] = data2;
                                                                 RouteSearchPanel.this.results.appendChild(new RouteResultOverviewPanel(routes,
-                                                                                                                               RouteSearchPanel.this.navigationPanel));
+                                                                                                                                       RouteSearchPanel.this.navigationPanel));
                                                                 RouteSearchPanel.this.search.setLabel("Search");
                                                              }
                                                           });

@@ -34,13 +34,14 @@ public class ItDeNamePanel extends DivView
 
    public ItDeNamePanel(String itText, String deText, Icon icon)
    {
+      super(new DivView.InitParameters());
       this.icon = icon;
       this.setStyleName("it-de-name");
-      SpanView it = new SpanView(itText);
+      SpanView it = new SpanView(new SpanView.InitParameters(itText));
       it.setStyleName("it");
-      SpanView de = new SpanView(deText);
+      SpanView de = new SpanView(new SpanView.InitParameters(deText));
       de.setStyleName("de");
-      DivView first = new DivView("first");
+      DivView first = new DivView(new DivView.InitParameters("first"));
       this.appendChild(first);
       if (icon != null)
       {

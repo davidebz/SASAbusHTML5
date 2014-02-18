@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class MapIcon extends Icon
 {
-   public MapIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("map-icon");
+      public InitParameters()
+      {
+         super("map-icon");
+      }
    }
 
-   public MapIcon(Void void1)
+   public MapIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected MapIcon(){}
 }

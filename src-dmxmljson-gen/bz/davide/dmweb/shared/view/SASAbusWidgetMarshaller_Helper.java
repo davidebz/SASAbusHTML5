@@ -27,7 +27,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
             else
             {
                java.util.ArrayList arrayList = (java.util.ArrayList)value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("attachHandlers").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("attachHandlers").array(arrayList.size());        
                for (Object o: arrayList) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -42,7 +42,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
             else
             {
                java.util.ArrayList arrayList = (java.util.ArrayList)value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("domReady").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("domReady").array(arrayList.size());        
                for (Object o: arrayList) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -199,7 +199,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
             else
             {
                java.util.ArrayList arrayList = (java.util.ArrayList)value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("attachHandlers").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("attachHandlers").array(arrayList.size());        
                for (Object o: arrayList) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -214,7 +214,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
             else
             {
                java.util.ArrayList arrayList = (java.util.ArrayList)value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("childs").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("childs").array(arrayList.size());        
                for (Object o: arrayList) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -229,7 +229,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
             else
             {
                java.util.ArrayList arrayList = (java.util.ArrayList)value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("clickHandlers").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("clickHandlers").array(arrayList.size());        
                for (Object o: arrayList) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -274,7 +274,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
             else
             {
                java.util.ArrayList arrayList = (java.util.ArrayList)value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("changeHandlers").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("changeHandlers").array(arrayList.size());        
                for (Object o: arrayList) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -297,7 +297,7 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
             else
             {
                java.util.ArrayList arrayList = (java.util.ArrayList)value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("pages").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("pages").array(arrayList.size());        
                for (Object o: arrayList) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                

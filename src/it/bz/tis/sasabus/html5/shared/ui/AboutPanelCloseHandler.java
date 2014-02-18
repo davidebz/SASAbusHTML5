@@ -30,8 +30,8 @@ import com.google.gwt.dom.client.Style.Display;
  */
 public class AboutPanelCloseHandler implements DMClickHandler
 {
-   AboutPanel  aboutPanel;
-   DivView thirdPartyLicenses;
+   AboutPanel aboutPanel;
+   DivView    thirdPartyLicenses;
 
    public AboutPanelCloseHandler(AboutPanel aboutPanel, DivView thirdPartyLicenses)
    {
@@ -40,7 +40,7 @@ public class AboutPanelCloseHandler implements DMClickHandler
       this.thirdPartyLicenses = thirdPartyLicenses;
    }
 
-   protected AboutPanelCloseHandler(Void void1)
+   protected AboutPanelCloseHandler()
    {
    }
 

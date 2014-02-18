@@ -58,15 +58,15 @@ public class SplashPanel extends DivView
                       final HomePanel homePage,
                       final DMHashNavigationPanel navigationPanel)
    {
-      super("splash-panel");
-      this.appendChild(new SpanView("SASAbus"));
-      this.appendChild(new HTML5Icon());
-      DivView imageContainer = new DivView("image-container");
-      final ImgView sasaImg = new ImgView("../images/bus.png");
+      super(new DivView.InitParameters("splash-panel"));
+      this.appendChild(new SpanView(new SpanView.InitParameters("SASAbus")));
+      this.appendChild(new HTML5Icon(new HTML5Icon.InitParameters()));
+      DivView imageContainer = new DivView(new DivView.InitParameters("image-container"));
+      final ImgView sasaImg = new ImgView(new ImgView.InitParameters("../images/bus.png"));
       imageContainer.appendChild(sasaImg);
 
       this.appendChild(imageContainer);
-      final SpanView currentOperation = new SpanView(I18N.singleton.getLocalizedText("AboutPanel_checkingUpdates"));
+      final SpanView currentOperation = new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("AboutPanel_checkingUpdates")));
       this.appendChild(currentOperation);
 
       final long startTime = System.currentTimeMillis();
@@ -186,7 +186,7 @@ public class SplashPanel extends DivView
                               int i = 0;
                               long[] times = new long[7];
                               times[i++] = System.currentTimeMillis();
-                              JSONStructure jsonStructure = new JSONStructure();
+                              JSONStructure jsonStructure = new JSONStructure(0);
                               times[i++] = System.currentTimeMillis();
                               SASAbusBackendMarshaller marshaller = new SASAbusBackendMarshaller();
                               times[i++] = System.currentTimeMillis();

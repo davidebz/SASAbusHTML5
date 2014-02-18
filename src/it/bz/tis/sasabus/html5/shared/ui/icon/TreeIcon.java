@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class TreeIcon extends Icon
 {
-   public TreeIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("tree-icon");
+      public InitParameters()
+      {
+         super("tree-icon");
+      }
    }
 
-   TreeIcon(Void void1)
+   public TreeIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected TreeIcon(){}
 }

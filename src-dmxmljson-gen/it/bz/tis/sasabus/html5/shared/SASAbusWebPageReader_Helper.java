@@ -11,6 +11,10 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmweb.shared.view.SAS
 {
    protected SASAbusWebPageReader_Helper()
    {
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.SASAbusWebPage", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.SASAbusWebPage>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.SASAbusWebPage  ret){
+         }
+      });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.SASAbusWebPage", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             return new it.bz.tis.sasabus.html5.shared.SASAbusWebPage();
@@ -20,6 +24,7 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmweb.shared.view.SAS
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.SASAbusWebPage", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DMWebPage", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -32,6 +37,7 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmweb.shared.view.SAS
                {
                   ((SASAbusWebPage)obj).setIntroText(value.string());
                }
+            structure.close();
          }
       });
 

@@ -27,7 +27,7 @@ public class SASAbusWidgetMarshaller_Helper extends bz.davide.dmxmljson.marshall
             else
             {
                it.bz.tis.sasabus.backend.shared.Area[] rawarray = (it.bz.tis.sasabus.backend.shared.Area[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("areas").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("areas").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -62,7 +62,7 @@ public class SASAbusWidgetMarshaller_Helper extends bz.davide.dmxmljson.marshall
             else
             {
                it.bz.tis.sasabus.backend.shared.BusLine[] rawarray = (it.bz.tis.sasabus.backend.shared.BusLine[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busLines").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busLines").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -121,7 +121,7 @@ public class SASAbusWidgetMarshaller_Helper extends bz.davide.dmxmljson.marshall
             else
             {
                it.bz.tis.sasabus.backend.shared.BusStop[] rawarray = (it.bz.tis.sasabus.backend.shared.BusStop[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStops").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStops").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -209,7 +209,7 @@ public class SASAbusWidgetMarshaller_Helper extends bz.davide.dmxmljson.marshall
             else
             {
                it.bz.tis.sasabus.backend.shared.BusLine[] rawarray = (it.bz.tis.sasabus.backend.shared.BusLine[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busLines").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busLines").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                
@@ -223,7 +223,7 @@ public class SASAbusWidgetMarshaller_Helper extends bz.davide.dmxmljson.marshall
             else
             {
                it.bz.tis.sasabus.backend.shared.BusStop[] rawarray = (it.bz.tis.sasabus.backend.shared.BusStop[])value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStops").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStops").array(rawarray.length);        
                for (Object o: rawarray) {                                    
                   if (o == null)                                              
                      array.item().nullValue();                                

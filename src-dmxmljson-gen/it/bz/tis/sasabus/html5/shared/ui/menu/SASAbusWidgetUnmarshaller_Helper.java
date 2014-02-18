@@ -11,29 +11,51 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
 {
    protected SASAbusWidgetUnmarshaller_Helper()
    {
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem  ret){
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
+         }
+      });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler  ret){
+            // aboutPanel
+            if (ret.aboutPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler.aboutPanel");
+            // menu
+            if (ret.menu != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler.menu");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -68,16 +90,36 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
                      ((MenuAboutClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler  ret){
+            // areaList
+            if (ret.areaList != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler.areaList");
+            // map
+            if (ret.map != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler.map");
+            // menu
+            if (ret.menu != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler.menu");
+            // navigationPanel
+            if (ret.navigationPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler.navigationPanel");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -142,16 +184,30 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
                      ((MenuMapClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler  ret){
+            // menu
+            if (ret.menu != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler.menu");
+            // navigationPanel
+            if (ret.navigationPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler.navigationPanel");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -186,16 +242,36 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
                      ((MenuNewsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler  ret){
+            // areaList
+            if (ret.areaList != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler.areaList");
+            // map
+            if (ret.map != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler.map");
+            // menu
+            if (ret.menu != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler.menu");
+            // navigationPanel
+            if (ret.navigationPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler.navigationPanel");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -260,16 +336,30 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
                      ((MenuAreaLinesClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler  ret){
+            // menu
+            if (ret.menu != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler.menu");
+            // navigationPanel
+            if (ret.navigationPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler.navigationPanel");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -304,17 +394,74 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
                      ((MenuSettingsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.menu.Menu", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.menu.Menu>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.menu.Menu  ret){
+            // about
+            if (ret.about != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.about");
+            // aboutPanel
+            if (ret.aboutPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.aboutPanel");
+            // areasAndLine
+            if (ret.areasAndLine != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.areasAndLine");
+            // favourites
+            if (ret.favourites != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.favourites");
+            // map
+            if (ret.map != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.map");
+            // mapItem
+            if (ret.mapItem != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.mapItem");
+            // menuOpen
+            if (ret.menuOpen != false)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.menuOpen");
+            // more
+            if (ret.more != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.more");
+            // moreClickHandler
+            if (ret.moreClickHandler != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.moreClickHandler");
+            // moreMenuItems
+            if (ret.moreMenuItems != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.moreMenuItems");
+            // navigationPanel
+            if (ret.navigationPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.navigationPanel");
+            // news
+            if (ret.news != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.news");
+            // parkings
+            if (ret.parkings != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.parkings");
+            // search
+            if (ret.search != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.search");
+            // sendFeedback
+            if (ret.sendFeedback != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.sendFeedback");
+            // train
+            if (ret.train != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.train");
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.Menu", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.menu.Menu((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.menu.Menu ret = new it.bz.tis.sasabus.html5.shared.ui.menu.Menu();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.Menu").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.menu.Menu", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -552,16 +699,30 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
                      ((Menu)obj).train = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler  ret){
+            // moreMenuItem
+            if (ret.moreMenuItem != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler.moreMenuItem");
+            // moreOpen
+            if (ret.moreOpen != false)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler.moreOpen");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -589,6 +750,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
                {
                   ((MenuMoreClickHandler)obj).moreOpen = value.booleanValue();
                }
+            structure.close();
          }
       });
 

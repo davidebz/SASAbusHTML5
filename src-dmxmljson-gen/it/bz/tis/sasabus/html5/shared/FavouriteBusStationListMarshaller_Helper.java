@@ -28,11 +28,11 @@ public class FavouriteBusStationListMarshaller_Helper extends bz.davide.dmxmljso
             {
                // Hashmap
                java.util.HashMap hashMap = (java.util.HashMap)value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStationIds").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("busStationIds").array(hashMap.size());        
                java.util.ArrayList keySelList = new java.util.ArrayList(hashMap.keySet());
                java.util.Collections.sort(keySelList);
                for (Object key: keySelList) {
-                  bz.davide.dmxmljson.marshalling.Array item = array.item().array(); 
+                  bz.davide.dmxmljson.marshalling.Array item = array.item().array(2); 
                   item.item().string((String)key);
                   item.item().string((String)hashMap.get(key));
                }

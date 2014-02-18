@@ -46,7 +46,7 @@ public class BusStationPopup extends DivView
                           SASAbusMap map,
                           AreaList areaList)
    {
-      super("sasabus-popup");
+      super(new DivView.InitParameters("sasabus-popup"));
       this.busStation = busStation;
       this.navigationPanel = navigationPanel;
       this.map = map;
@@ -56,7 +56,7 @@ public class BusStationPopup extends DivView
    void init()
    {
       this.appendChild(new ItDeBusStationNamePanel(this.busStation));
-      ButtonView details = new ButtonView("Show details");
+      ButtonView details = new ButtonView(new ButtonView.InitParameters("Show details"));
       this.appendChild(details);
       details.addClickHandler(new DMClickHandler()
       {
@@ -72,7 +72,7 @@ public class BusStationPopup extends DivView
       });
       for (final BusLine busLine : this.busStation.getBusLines())
       {
-         ButtonView button = new ButtonView(busLine.getNumber());
+         ButtonView button = new ButtonView(new ButtonView.InitParameters(busLine.getNumber()));
          button.addClickHandler(new DMClickHandler()
          {
 

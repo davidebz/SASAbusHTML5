@@ -11,14 +11,24 @@ public class FavouriteBusStationListUnmarshaller_Helper extends bz.davide.dmxmlj
 {
    protected FavouriteBusStationListUnmarshaller_Helper()
    {
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.FavouriteBusStationList", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.FavouriteBusStationList>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.FavouriteBusStationList  ret){
+            // busStationIds
+            if (ret.busStationIds != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.FavouriteBusStationList.busStationIds");
+         }
+      });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.FavouriteBusStationList", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.FavouriteBusStationList((Void)null);
+            it.bz.tis.sasabus.html5.shared.FavouriteBusStationList ret = new it.bz.tis.sasabus.html5.shared.FavouriteBusStationList();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.FavouriteBusStationList").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.FavouriteBusStationList", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -39,6 +49,7 @@ public class FavouriteBusStationListUnmarshaller_Helper extends bz.davide.dmxmlj
                   }                       
                   ((FavouriteBusStationList)obj).busStationIds = hashMap;
                }
+            structure.close();
          }
       });
 

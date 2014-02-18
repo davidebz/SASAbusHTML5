@@ -34,22 +34,22 @@ public class TitleBar extends DivView
 {
    public TitleBar(final Menu menu, final SASAbusMap mapWidget, final DMHashNavigationPanel navigationPanel)
    {
-      super("title-bar");
+      super(new DivView.InitParameters("title-bar"));
 
-      MenuIcon menuIcon = new MenuIcon();
+      MenuIcon menuIcon = new MenuIcon(new MenuIcon.InitParameters());
       this.appendChild(menuIcon);
 
-      LogoIcon logoMenuIcon = new LogoIcon();
+      LogoIcon logoMenuIcon = new LogoIcon(new LogoIcon.InitParameters());
 
       this.appendChild(logoMenuIcon);
       menuIcon.addClickHandler(new TitleBarMenuClickHandler(menu));
 
-      DivView flags = new DivView("flags");
-      AnchorView it = new AnchorView("/it/home", "IT");
+      DivView flags = new DivView(new DivView.InitParameters("flags"));
+      AnchorView it = new AnchorView(new AnchorView.InitParameters("/it/home", "IT"));
       it.setStyleName("it");
-      AnchorView de = new AnchorView("/de/home", "DE");
+      AnchorView de = new AnchorView(new AnchorView.InitParameters("/de/home", "DE"));
       de.setStyleName("de");
-      AnchorView en = new AnchorView("/en/home", "EN");
+      AnchorView en = new AnchorView(new AnchorView.InitParameters("/en/home", "EN"));
       en.setStyleName("en");
 
       flags.appendChild(it);

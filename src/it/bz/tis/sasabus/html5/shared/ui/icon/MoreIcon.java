@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class MoreIcon extends Icon
 {
-   public MoreIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("more-icon");
+      public InitParameters()
+      {
+         super("more-icon");
+      }
    }
 
-   MoreIcon(Void void1)
+   public MoreIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected MoreIcon(){}
 }

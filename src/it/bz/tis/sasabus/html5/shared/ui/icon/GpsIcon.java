@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class GpsIcon extends Icon
 {
-   public GpsIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("gps-icon");
+      public InitParameters()
+      {
+         super("gps-icon");
+      }
    }
 
-   GpsIcon(Void void1)
+   public GpsIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected GpsIcon(){}
 }

@@ -32,7 +32,8 @@ public class ParkingsPanel extends DivView
 {
    public ParkingsPanel(final DMHashNavigationPanel navPanel, final AreaList areaList, final SASAbusMap map)
    {
-      this.appendChild(new SpanView("Parkings:"));
+      super(new DivView.InitParameters());
+      this.appendChild(new SpanView(new SpanView.InitParameters("Parkings:")));
       for (final Parking park : Parking.list)
       {
          RowItem rowItem = new RowItem(new DMClickHandler()

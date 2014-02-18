@@ -37,7 +37,7 @@ public class MenuMoreClickHandler implements DMClickHandler
       this.moreMenuItem = moreMenuItem;
    }
 
-   MenuMoreClickHandler(Void void1)
+   MenuMoreClickHandler()
    {
 
    }

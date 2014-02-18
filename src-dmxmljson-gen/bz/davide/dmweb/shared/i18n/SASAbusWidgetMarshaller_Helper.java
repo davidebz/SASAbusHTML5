@@ -37,11 +37,11 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
             {
                // Hashmap
                java.util.HashMap hashMap = (java.util.HashMap)value;                        
-               bz.davide.dmxmljson.marshalling.Array array = structure.property("map").array();        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("map").array(hashMap.size());        
                java.util.ArrayList keySelList = new java.util.ArrayList(hashMap.keySet());
                java.util.Collections.sort(keySelList);
                for (Object key: keySelList) {
-                  bz.davide.dmxmljson.marshalling.Array item = array.item().array(); 
+                  bz.davide.dmxmljson.marshalling.Array item = array.item().array(2); 
                   item.item().string((String)key);
                   item.item().string((String)hashMap.get(key));
                }

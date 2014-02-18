@@ -11,14 +11,24 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.i18
 {
    protected SASAbusWidgetUnmarshaller_Helper()
    {
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler  ret){
+            // menu
+            if (ret.menu != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler.menu");
+         }
+      });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -38,16 +48,27 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.i18
                      ((TitleBarMenuClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler  ret){
+            // mapWidget
+            if (ret.mapWidget != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler.mapWidget");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -67,6 +88,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.i18
                      ((TitleBarMapClickHandler)obj).mapWidget = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)o;
                   }
                }
+            structure.close();
          }
       });
 

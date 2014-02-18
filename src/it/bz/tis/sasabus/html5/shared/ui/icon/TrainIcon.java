@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class TrainIcon extends Icon
 {
-   public TrainIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("train-icon");
+      public InitParameters()
+      {
+         super("train-icon");
+      }
    }
 
-   public TrainIcon(Void void1)
+   public TrainIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected TrainIcon(){}
 }

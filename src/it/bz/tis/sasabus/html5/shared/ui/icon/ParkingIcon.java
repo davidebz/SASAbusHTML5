@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class ParkingIcon extends Icon
 {
-   public ParkingIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("park-icon");
+      public InitParameters()
+      {
+         super("park-icon");
+      }
    }
 
-   public ParkingIcon(Void void1)
+   public ParkingIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected ParkingIcon(){}
 }

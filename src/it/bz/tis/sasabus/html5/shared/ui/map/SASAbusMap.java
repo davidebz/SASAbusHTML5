@@ -64,9 +64,10 @@ import com.google.gwt.user.client.Timer;
 public class SASAbusMap extends DivView
 {
 
-   final static String[]                              COLORS                             = new String[] { "#FF0000",
+   final static String[]                              COLORS                             = new String[]{
+            "#FF0000",
             "#0000FF",
-            "#FFFF00"                                                                   };
+            "#FFFF00"                                                                    };
 
    transient Map                                      leafletMap;
    transient ArrayList<Layer>                         baseLayers                         = new ArrayList<Layer>();
@@ -75,8 +76,8 @@ public class SASAbusMap extends DivView
 
    DMHashNavigationPanel                              navigationPanel;
 
-   DivView                                        controls;
-   DivView                                        mapDiv;
+   DivView                                            controls;
+   DivView                                            mapDiv;
    //DMLabel                                            zoomLevel;
    //DMLabel                                            latLonValues;
 
@@ -89,31 +90,41 @@ public class SASAbusMap extends DivView
 
    AreaList                                           areaList;
 
-   ButtonView                                           close                              = new ButtonView("X");
+   ButtonView                                         close;
 
-   DivView                                        overwievMap;
+   DivView                                            overwievMap;
 
-   public SASAbusMap()
+   public static class InitParameters extends DivView.InitParameters
    {
-      super("map");
+      public InitParameters()
+      {
+         super("map");
+      }
+   }
 
-      this.overwievMap = new DivView("overview-map");
-      ImgView cartina = new ImgView("../images/Cartina.png");
+   public SASAbusMap(InitParameters initParameters)
+   {
+      super(initParameters);
+
+      this.close = new ButtonView(new ButtonView.InitParameters("X"));
+
+      this.overwievMap = new DivView(new DivView.InitParameters("overview-map"));
+      ImgView cartina = new ImgView(new ImgView.InitParameters("../images/Cartina.png"));
       this.overwievMap.appendChild(cartina);
       this.appendChild(this.overwievMap);
 
       this.leafletMap = null;
 
-      this.controls = new DivView("controls");
+      this.controls = new DivView(new DivView.InitParameters("controls"));
       this.appendChild(this.controls);
 
-      this.mapDiv = new DivView("mapdiv");
+      this.mapDiv = new DivView(new DivView.InitParameters("mapdiv"));
       this.appendChild(this.mapDiv);
 
       this.controls.appendChild(this.close);
       this.close.setStyleName("close");
 
-      this.gpsIcon = new GpsIcon();
+      this.gpsIcon = new GpsIcon(new GpsIcon.InitParameters());
       this.controls.appendChild(this.gpsIcon);
 
       //this.zoomLevel = new DMLabel("");
@@ -122,6 +133,10 @@ public class SASAbusMap extends DivView
       //this.latLonValues = new DMLabel("");
       //this.controls.add(this.latLonValues);
 
+   }
+
+   protected SASAbusMap()
+   {
    }
 
    public void showOverviewMap(boolean show)
@@ -144,12 +159,6 @@ public class SASAbusMap extends DivView
    public void setNavigationPanel(DMHashNavigationPanel navigationPanel)
    {
       this.navigationPanel = navigationPanel;
-   }
-
-   protected SASAbusMap(Void void1)
-   {
-      super(void1);
-      this.navigationPanel = null;
    }
 
    public void start(final AreaList areaList)

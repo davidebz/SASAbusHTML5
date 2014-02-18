@@ -24,8 +24,17 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class CalendarIcon extends Icon
 {
-   public CalendarIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("calendar-icon");
+      public InitParameters()
+      {
+         super("calendar-icon");
+      }
    }
+
+   public CalendarIcon(InitParameters initParameters)
+   {
+      super(initParameters);
+   }
+   protected CalendarIcon(){}
 }

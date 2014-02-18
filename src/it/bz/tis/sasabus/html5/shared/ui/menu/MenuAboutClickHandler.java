@@ -40,7 +40,7 @@ public class MenuAboutClickHandler implements DMClickHandler
       this.menu = menu;
    }
 
-   MenuAboutClickHandler(Void void1)
+   MenuAboutClickHandler()
    {
 
    }

@@ -41,20 +41,21 @@ public class SASAbusWebPage extends DMWebPage
 
    public SASAbusWebPage()
    {
-      DivView wrapper = new DivView("cover-wrapper");
+      DivView wrapper = new DivView(new DivView.InitParameters("cover-wrapper"));
 
-      DivView initialCover = new DivView("cover");
+      DivView initialCover = new DivView(new DivView.InitParameters("cover"));
 
       wrapper.appendChild(initialCover);
 
-      SASAbusMap map = new SASAbusMap();
-      this.homePanel = new HomePanel();
+      SASAbusMap map = new SASAbusMap(new SASAbusMap.InitParameters());
+      this.homePanel = new HomePanel(new HomePanel.InitParameters());
 
       this.homePanel.setMap(map);
-      DMHashNavigationPanel navigationPanel = new DMHashNavigationPanel("main", this.homePanel);
+      DMHashNavigationPanel navigationPanel = new DMHashNavigationPanel(new DMHashNavigationPanel.InitParameters("main",
+                                                                                                                 this.homePanel));
       map.setNavigationPanel(navigationPanel);
 
-      AboutPanel aboutPanel = new AboutPanel();
+      AboutPanel aboutPanel = new AboutPanel(new AboutPanel.InitParameters());
 
       this.menu = new Menu(navigationPanel, null, map, aboutPanel);
 
@@ -67,12 +68,13 @@ public class SASAbusWebPage extends DMWebPage
 
       this.titleBar = new TitleBar(this.menu, map, null);
 
-      this.setBodyContent(new AbstractHtmlElementView[] { this.titleBar,
+      this.setBodyContent(new AbstractHtmlElementView[]{
+               this.titleBar,
                navigationPanel,
                map,
                this.menu,
                wrapper,
-               aboutPanel });
+               aboutPanel});
 
    }
 

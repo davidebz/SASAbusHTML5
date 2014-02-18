@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class LinesIcon extends Icon
 {
-   public LinesIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("lines-icon");
+      public InitParameters()
+      {
+         super("lines-icon");
+      }
    }
 
-   public LinesIcon(Void void1)
+   public LinesIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected LinesIcon(){}
 }

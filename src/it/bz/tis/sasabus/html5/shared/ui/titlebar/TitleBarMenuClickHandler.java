@@ -37,7 +37,7 @@ public class TitleBarMenuClickHandler implements DMClickHandler
       this.menu = menu;
    }
 
-   TitleBarMenuClickHandler(Void void1)
+   TitleBarMenuClickHandler()
    {
    }
 

@@ -41,7 +41,7 @@ public class AreasPanel extends DivView implements PageChangeHandler
                      final SASAbusMap map,
                      boolean mapOpen)
    {
-      super("areas");
+      super(new DivView.InitParameters("areas"));
       this.map = map;
       this.mapOpen = mapOpen;
       for (final Area area : areaList.getAreas())

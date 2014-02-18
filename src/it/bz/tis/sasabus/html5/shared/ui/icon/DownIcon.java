@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class DownIcon extends Icon
 {
-   public DownIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("down-icon");
+      public InitParameters()
+      {
+         super("down-icon");
+      }
    }
 
-   DownIcon(Void void1)
+   public DownIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected DownIcon(){}
 }

@@ -51,7 +51,7 @@ public class MenuSearchClickHandler implements DMClickHandler
       this.map = map;
    }
 
-   MenuSearchClickHandler(Void void1)
+   MenuSearchClickHandler()
    {
 
    }

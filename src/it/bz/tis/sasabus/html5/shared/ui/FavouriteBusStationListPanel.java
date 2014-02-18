@@ -44,15 +44,15 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
                                        DMHashNavigationPanel navigationPanel,
                                        SASAbusMap map)
    {
+      super(new DivView.InitParameters());
       this.areaList = areaList;
       this.navigationPanel = navigationPanel;
       this.map = map;
       this.refresh();
    }
 
-   protected FavouriteBusStationListPanel(Void void1)
+   protected FavouriteBusStationListPanel()
    {
-      super(void1);
    }
 
    public void refresh()
@@ -61,8 +61,8 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
 
       FavouriteBusStationList favourites = FavouriteBusStationList.getSingleton();
       BusStation[] busStations = BusLinePanel.sortByCurrentLanguage(this.areaList.getBusStations());
-      this.appendChild(new SpanView(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_favourite_are") +
-                           ":"));
+      this.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_favourite_are") +
+                                                                ":")));
       int count = 0;
       for (final BusStation busStation : busStations)
       {
@@ -86,7 +86,7 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
       }
       if (count == 0)
       {
-         this.appendChild(new SpanView(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_empty_favourite")));
+         this.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_empty_favourite"))));
       }
 
    }

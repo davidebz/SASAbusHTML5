@@ -39,7 +39,7 @@ public class MenuNewsClickHandler implements DMClickHandler
       this.menu = menu;
    }
 
-   MenuNewsClickHandler(Void void1)
+   MenuNewsClickHandler()
    {
 
    }
@@ -47,7 +47,7 @@ public class MenuNewsClickHandler implements DMClickHandler
    @Override
    public void onClick(DMClickEvent event)
    {
-      this.navigationPanel.newPage(new NewsPanel());
+      this.navigationPanel.newPage(new NewsPanel(new NewsPanel.InitParameters()));
       this.menu.hide();
    };
 }

@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class FeedbackIcon extends Icon
 {
-   public FeedbackIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("feedback-icon");
+      public InitParameters()
+      {
+         super("feedback-icon");
+      }
    }
 
-   protected FeedbackIcon(Void void1)
+   public FeedbackIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected FeedbackIcon(){}
 }

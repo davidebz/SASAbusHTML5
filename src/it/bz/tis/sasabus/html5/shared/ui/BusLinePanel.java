@@ -51,18 +51,18 @@ public class BusLinePanel extends DivView implements PageChangeHandler
                        final SASAbusMap map,
                        boolean mapOpen)
    {
-      super("bus-stations");
+      super(new DivView.InitParameters("bus-stations"));
       this.mapOpen = mapOpen;
-      this.appendChild(new SpanView(I18N.singleton.getLocalizedText("BusLine") +
-                           " " +
-                           busLine.getNumber() +
-                           " " +
-                           ItDeNamePanel.asOneLine(busLine.getArea().getName_it(),
-                                                   busLine.getArea().getName_de())));
+      this.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("BusLine") +
+                                                                " " +
+                                                                busLine.getNumber() +
+                                                                " " +
+                                                                ItDeNamePanel.asOneLine(busLine.getArea().getName_it(),
+                                                                                        busLine.getArea().getName_de()))));
       this.map = map;
       this.busLine = busLine;
 
-      MapIcon mapIcon = new MapIcon();
+      MapIcon mapIcon = new MapIcon(new MapIcon.InitParameters());
       mapIcon.addStyleName("only-mobile");
       this.appendChild(mapIcon);
       mapIcon.addClickHandler(new DMClickHandler()
@@ -75,9 +75,9 @@ public class BusLinePanel extends DivView implements PageChangeHandler
          }
       });
 
-      this.appendChild(new SpanView(I18N.singleton.getLocalizedText("BusStations")));
+      this.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("BusStations"))));
 
-      DivView list = new DivView("bus-stations-list");
+      DivView list = new DivView(new DivView.InitParameters("bus-stations-list"));
 
       this.appendChild(list);
 

@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class RouteIcon extends Icon
 {
-   public RouteIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("route-icon");
+      public InitParameters()
+      {
+         super("route-icon");
+      }
    }
 
-   RouteIcon(Void void1)
+   public RouteIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected RouteIcon(){}
 }

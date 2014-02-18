@@ -32,7 +32,7 @@ public class ItDeBusStationNamePanel extends ItDeNamePanel
 {
    public ItDeBusStationNamePanel(final BusStation busStation)
    {
-      super(busStation.getName_it(), busStation.getName_de(), new FavouritesIcon());
+      super(busStation.getName_it(), busStation.getName_de(), new FavouritesIcon(new FavouritesIcon.InitParameters()));
       final FavouritesIcon favouritesIcon = (FavouritesIcon) this.icon;
       refreshStatus(favouritesIcon, busStation);
       favouritesIcon.addClickHandler(new DMClickHandler()

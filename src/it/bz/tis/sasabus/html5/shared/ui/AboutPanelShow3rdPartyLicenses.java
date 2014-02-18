@@ -38,7 +38,7 @@ public class AboutPanelShow3rdPartyLicenses implements DMClickHandler
       this.licensesPanel = licensesPanel;
    }
 
-   protected AboutPanelShow3rdPartyLicenses(Void void1)
+   protected AboutPanelShow3rdPartyLicenses()
    {
 
    }

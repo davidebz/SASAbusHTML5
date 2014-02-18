@@ -34,7 +34,8 @@ public class TrainStationsPanel extends DivView
                              final AreaList areaList,
                              final SASAbusMap map)
    {
-      this.appendChild(new SpanView("Train stations:"));
+      super(new DivView.InitParameters());
+      this.appendChild(new SpanView(new SpanView.InitParameters("Train stations:")));
       for (final TrainStation trainStation : TrainStation.list)
       {
          RowItem rowItem = new RowItem(new DMClickHandler()

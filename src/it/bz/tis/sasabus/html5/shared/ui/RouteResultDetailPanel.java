@@ -40,22 +40,22 @@ public class RouteResultDetailPanel extends DivView
 {
    public RouteResultDetailPanel(ConSectionList data, DMHashNavigationPanel navigationPanel)
    {
-      super("route-result");
+      super(new DivView.InitParameters("route-result"));
       this.addStyleName("bus-trip-detail");
       for (ConSection conSection : data.getConSections())
       {
-         DivView busName = new DivView("bus-name");
+         DivView busName = new DivView(new DivView.InitParameters("bus-name"));
          if (conSection.getWalks().length > 0)
          {
-            busName.appendChild(new WalkIcon());
-            busName.appendChild(new SpanView(I18N.singleton.getLocalizedText("RouteResultDetailPanel_walk_for") +
-                                    ": " +
-                                    RouteResultOverviewPanel.formatTime(conSection.getWalks()[0].getDuration().getTime())));
+            busName.appendChild(new WalkIcon(new WalkIcon.InitParameters()));
+            busName.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("RouteResultDetailPanel_walk_for") +
+                                                                         ": " +
+                                                                         RouteResultOverviewPanel.formatTime(conSection.getWalks()[0].getDuration().getTime()))));
             this.appendChild(busName);
             continue;
          }
-         busName.appendChild(new BusIcon());
-         busName.appendChild(new SpanView(conSection.getJourneys()[0].getBusLineNumber()));
+         busName.appendChild(new BusIcon(new BusIcon.InitParameters()));
+         busName.appendChild(new SpanView(new SpanView.InitParameters(conSection.getJourneys()[0].getBusLineNumber())));
          this.appendChild(busName);
          final BasicStop[] basicStop = conSection.getJourneys()[0].getPassList().getBasicStops();
          String time = "";
@@ -67,9 +67,9 @@ public class RouteResultDetailPanel extends DivView
 
          if (basicStop.length > 2)
          {
-            final DivView allStopsPanel = new DivView();
+            final DivView allStopsPanel = new DivView(new DivView.InitParameters());
             this.appendChild(allStopsPanel);
-            DownIcon downIcon = new DownIcon();
+            DownIcon downIcon = new DownIcon(new DownIcon.InitParameters());
             allStopsPanel.appendChild(downIcon);
             downIcon.addClickHandler(new DMClickHandler()
             {
@@ -97,16 +97,16 @@ public class RouteResultDetailPanel extends DivView
          }
          this.appendChild(newRow(time, splitName(basicStop[basicStop.length - 1].getStation().getName())));
       }
-      DivView busName = new DivView("bus-name");
-      busName.appendChild(new RouteEndIcon());
-      busName.appendChild(new SpanView(I18N.singleton.getLocalizedText("RouteResultDetailPanel_you_arrive")));
+      DivView busName = new DivView(new DivView.InitParameters("bus-name"));
+      busName.appendChild(new RouteEndIcon(new RouteEndIcon.InitParameters()));
+      busName.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("RouteResultDetailPanel_you_arrive"))));
       this.appendChild(busName);
    }
 
    static DivView newRow(String time, String[] names)
    {
-      DivView row = new DivView("row");
-      SpanView timeLabel = new SpanView(time);
+      DivView row = new DivView(new DivView.InitParameters("row"));
+      SpanView timeLabel = new SpanView(new SpanView.InitParameters(time));
       timeLabel.setStyleName("time");
       row.appendChild(timeLabel);
       row.appendChild(new ItDeNamePanel(names[0], names[1], null));
@@ -118,8 +118,8 @@ public class RouteResultDetailPanel extends DivView
       int pos = itDe.indexOf(" - ");
       if (pos < 0)
       {
-         return new String[] { itDe, itDe };
+         return new String[]{itDe, itDe};
       }
-      return new String[] { itDe.substring(0, pos), itDe.substring(pos + 1) };
+      return new String[]{itDe.substring(0, pos), itDe.substring(pos + 1)};
    }
 }

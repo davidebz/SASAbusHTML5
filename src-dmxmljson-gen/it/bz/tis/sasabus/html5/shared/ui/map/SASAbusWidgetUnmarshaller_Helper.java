@@ -11,15 +11,44 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.backend.
 {
    protected SASAbusWidgetUnmarshaller_Helper()
    {
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap  ret){
+            // areaList
+            if (ret.areaList != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.areaList");
+            // close
+            if (ret.close != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.close");
+            // controls
+            if (ret.controls != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.controls");
+            // gpsIcon
+            if (ret.gpsIcon != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.gpsIcon");
+            // mapDiv
+            if (ret.mapDiv != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.mapDiv");
+            // navigationPanel
+            if (ret.navigationPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.navigationPanel");
+            // overwievMap
+            if (ret.overwievMap != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.overwievMap");
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
+         }
+      });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap ret = new it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -129,6 +158,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.backend.
                      ((SASAbusMap)obj).overwievMap = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
+            structure.close();
          }
       });
 

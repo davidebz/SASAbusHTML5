@@ -50,11 +50,7 @@ public class FavouriteBusStationList
 
    HashMap<String, String> busStationIds = new HashMap<String, String>();
 
-   private FavouriteBusStationList()
-   {
-   }
-
-   protected FavouriteBusStationList(Void void1)
+   FavouriteBusStationList()
    {
    }
 
@@ -105,7 +101,7 @@ public class FavouriteBusStationList
       final Storage localStorage = Storage.getLocalStorageIfSupported();
       if (localStorage != null)
       {
-         JSONStructure jsonStructure = new JSONStructure();
+         JSONStructure jsonStructure = new JSONStructure(0);
          try
          {
             new FavouriteBusStationListMarshaller().marschall(this, jsonStructure);

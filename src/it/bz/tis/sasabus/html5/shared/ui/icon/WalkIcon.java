@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class WalkIcon extends Icon
 {
-   public WalkIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("walk");
+      public InitParameters()
+      {
+         super("walk");
+      }
    }
 
-   WalkIcon(Void void1)
+   public WalkIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected WalkIcon(){}
 }

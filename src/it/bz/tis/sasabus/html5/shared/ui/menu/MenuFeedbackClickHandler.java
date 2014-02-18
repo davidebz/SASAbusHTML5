@@ -38,7 +38,7 @@ public class MenuFeedbackClickHandler implements DMClickHandler
       this.menu = menu;
    }
 
-   MenuFeedbackClickHandler(Void void1)
+   MenuFeedbackClickHandler()
    {
 
    }

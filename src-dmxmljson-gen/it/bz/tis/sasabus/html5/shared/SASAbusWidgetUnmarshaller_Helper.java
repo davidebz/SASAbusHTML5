@@ -11,14 +11,39 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
 {
    protected SASAbusWidgetUnmarshaller_Helper()
    {
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler  ret){
+            // cover
+            if (ret.cover != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.cover");
+            // homePanel
+            if (ret.homePanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.homePanel");
+            // map
+            if (ret.map != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.map");
+            // menu
+            if (ret.menu != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.menu");
+            // navigationPanel
+            if (ret.navigationPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.navigationPanel");
+            // wrapper
+            if (ret.wrapper != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.wrapper");
+         }
+      });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler((Void)null);
+            it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler ret = new it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -113,6 +138,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      ((SASAbusWebPageAttachHandler)obj).wrapper = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
+            structure.close();
          }
       });
 

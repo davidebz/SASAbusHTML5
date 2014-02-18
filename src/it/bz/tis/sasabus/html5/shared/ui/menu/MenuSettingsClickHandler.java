@@ -39,7 +39,7 @@ public class MenuSettingsClickHandler implements DMClickHandler
       this.menu = menu;
    }
 
-   MenuSettingsClickHandler(Void void1)
+   MenuSettingsClickHandler()
    {
 
    }
@@ -47,7 +47,7 @@ public class MenuSettingsClickHandler implements DMClickHandler
    @Override
    public void onClick(DMClickEvent event)
    {
-      this.navigationPanel.newPage(new SettingsPanel());
+      this.navigationPanel.newPage(new SettingsPanel(new SettingsPanel.InitParameters()));
       this.menu.hide();
    };
 }

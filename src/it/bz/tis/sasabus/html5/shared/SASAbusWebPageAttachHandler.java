@@ -35,8 +35,8 @@ import com.google.gwt.user.client.History;
  */
 public class SASAbusWebPageAttachHandler implements AttachListener
 {
-   DivView           cover;
-   DivView           wrapper;
+   DivView               cover;
+   DivView               wrapper;
    SASAbusMap            map;
    Menu                  menu;
    HomePanel             homePanel;
@@ -57,7 +57,7 @@ public class SASAbusWebPageAttachHandler implements AttachListener
       this.navigationPanel = navigationPanel;
    }
 
-   SASAbusWebPageAttachHandler(Void void1)
+   SASAbusWebPageAttachHandler()
    {
    }
 
@@ -69,11 +69,11 @@ public class SASAbusWebPageAttachHandler implements AttachListener
          History.newItem("0", false);
 
          SASAbusWebPageAttachHandler.this.cover.appendChild(new SplashPanel(SASAbusWebPageAttachHandler.this.cover,
-                                                                    SASAbusWebPageAttachHandler.this.wrapper,
-                                                                    SASAbusWebPageAttachHandler.this.map,
-                                                                    SASAbusWebPageAttachHandler.this.menu,
-                                                                    this.homePanel,
-                                                                    this.navigationPanel));
+                                                                            SASAbusWebPageAttachHandler.this.wrapper,
+                                                                            SASAbusWebPageAttachHandler.this.map,
+                                                                            SASAbusWebPageAttachHandler.this.menu,
+                                                                            this.homePanel,
+                                                                            this.navigationPanel));
       }
    }
 }

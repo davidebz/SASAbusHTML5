@@ -35,7 +35,7 @@ public class TitleBarMapClickHandler implements DMClickHandler
       this.mapWidget = mapWidget;
    }
 
-   protected TitleBarMapClickHandler(Void void1)
+   protected TitleBarMapClickHandler()
    {
    }
 

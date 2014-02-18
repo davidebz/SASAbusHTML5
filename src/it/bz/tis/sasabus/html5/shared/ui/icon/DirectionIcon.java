@@ -24,8 +24,17 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class DirectionIcon extends Icon
 {
-   public DirectionIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("direction-icon");
+      public InitParameters()
+      {
+         super("direction-icon");
+      }
    }
+
+   public DirectionIcon(InitParameters initParameters)
+   {
+      super(initParameters);
+   }
+   protected DirectionIcon(){}
 }

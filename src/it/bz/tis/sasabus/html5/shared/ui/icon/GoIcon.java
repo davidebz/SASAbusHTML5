@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class GoIcon extends Icon
 {
-   public GoIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("go-icon");
+      public InitParameters()
+      {
+         super("go-icon");
+      }
    }
 
-   public GoIcon(Void void1)
+   public GoIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected GoIcon(){}
 }

@@ -27,8 +27,18 @@ import bz.davide.dmweb.shared.view.SpanView;
  */
 public class SettingsPanel extends DivView
 {
-   public SettingsPanel()
+   public static class InitParameters extends DivView.InitParameters
    {
-      this.appendChild(new SpanView("Work in progress"));
+      public InitParameters()
+      {
+         super("settings-panel");
+      }
+   }
+
+   public SettingsPanel(InitParameters initParameters)
+   {
+      super(initParameters);
+
+      this.appendChild(new SpanView(new SpanView.InitParameters("Work in progress")));
    }
 }

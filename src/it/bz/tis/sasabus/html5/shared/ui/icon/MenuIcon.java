@@ -24,14 +24,20 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class MenuIcon extends Icon
 {
-   public MenuIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("menu-icon");
+      public InitParameters()
+      {
+         super("menu-icon");
+      }
    }
 
-   protected MenuIcon(Void void1)
+   public MenuIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
 
+
+
+   protected MenuIcon(){}
 }

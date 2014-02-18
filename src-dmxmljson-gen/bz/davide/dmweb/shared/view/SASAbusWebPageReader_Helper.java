@@ -11,6 +11,10 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmxmljson.unmarshalli
 {
    protected SASAbusWebPageReader_Helper()
    {
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.DMWebPage", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.DMWebPage>() {
+         @Override public void check(bz.davide.dmweb.shared.view.DMWebPage  ret){
+         }
+      });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DMWebPage", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             return new bz.davide.dmweb.shared.view.DMWebPage();
@@ -19,6 +23,7 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmxmljson.unmarshalli
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.DMWebPage", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -30,23 +35,27 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmxmljson.unmarshalli
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
-                  java.util.ArrayList arrayList = new java.util.ArrayList();       
-                  while ((value = arr.nextItem()) != null) {                       
+                  arr.open();        
+                  bz.davide.dmweb.shared.view.AbstractHtmlElementView[] arrayList = new bz.davide.dmweb.shared.view.AbstractHtmlElementView[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
                      if (value.isNull())                                           
-                        arrayList.add(null);                                       
+                        arrayList[i] = null;                                       
                      else                                                          
                      {                                                                   
-                        String refid = value.structure().getRefId();    
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
                         if (refid != null)                              
-                           arrayList.add(identities.get(refid));                                                
+                           arrayList[i] = (bz.davide.dmweb.shared.view.AbstractHtmlElementView)(identities.get(refid));                                                
                         else {
-                           Object o = newInstance(value.structure().getRuntimeClassName("AbstractHtmlElementView"));              
-                           internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                           arrayList.add(o);                                                
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("AbstractHtmlElementView"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (bz.davide.dmweb.shared.view.AbstractHtmlElementView)(o);                                                
                         }
                      }                                                                   
                   }                                                                   
-                  ((DMWebPage)obj).setBodyContent((bz.davide.dmweb.shared.view.AbstractHtmlElementView[])arrayList.toArray(new bz.davide.dmweb.shared.view.AbstractHtmlElementView[0]));
+                  arr.close();        
+                  ((DMWebPage)obj).setBodyContent(arrayList);
                }
             // Title
             if ((value = structure.property("Title")) != null)
@@ -56,6 +65,11 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmxmljson.unmarshalli
                {
                   ((DMWebPage)obj).setTitle(value.string());
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.AbstractHtmlElementView", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.AbstractHtmlElementView>() {
+         @Override public void check(bz.davide.dmweb.shared.view.AbstractHtmlElementView  ret){
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.AbstractHtmlElementView", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
@@ -66,6 +80,7 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmxmljson.unmarshalli
 
       this.putClassUnmarshaller("bz.davide.dmweb.shared.view.AbstractHtmlElementView", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -78,6 +93,7 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmxmljson.unmarshalli
                {
                   ((AbstractHtmlElementView)obj).setStyleName(value.string());
                }
+            structure.close();
          }
       });
 

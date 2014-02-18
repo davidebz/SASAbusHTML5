@@ -32,98 +32,116 @@ public class AboutPanel extends DivView
 
    final static String TARGET = "sasabus_licenses";
 
-   public AboutPanel()
+   public static class InitParameters extends DivView.InitParameters
    {
-      super("about");
-      ButtonView close = new ButtonView("X");
+      public InitParameters()
+      {
+         super("about");
+      }
+   }
+
+   public AboutPanel(InitParameters initParameters)
+   {
+      super(initParameters);
+      ButtonView close = new ButtonView(new ButtonView.InitParameters("X"));
       close.setStyleName("close");
 
-      DivView thirdPartyLicenses = new DivView("third-party-licenses");
+      DivView thirdPartyLicenses = new DivView(new DivView.InitParameters("third-party-licenses"));
 
       close.addClickHandler(new AboutPanelCloseHandler(this, thirdPartyLicenses));
       this.appendChild(close);
-      DivView copyright = new DivView("copyright");
-      copyright.appendChild(new SpanView("(C) 2013"));
-      copyright.appendChild(new AnchorView("http://www.tis.bz.it/open", "TIS Innovation Park", TARGET));
+      DivView copyright = new DivView(new DivView.InitParameters("copyright"));
+      copyright.appendChild(new SpanView(new SpanView.InitParameters("(C) 2013")));
+      copyright.appendChild(new AnchorView(new AnchorView.InitParameters("http://www.tis.bz.it/open",
+                                                                         "TIS Innovation Park",
+                                                                         TARGET)));
       this.appendChild(copyright);
-      this.appendChild(new SpanView("Via Siemens 29 Strasse - Bolzano/Bozen - Italy"));
+      this.appendChild(new SpanView(new SpanView.InitParameters("Via Siemens 29 Strasse - Bolzano/Bozen - Italy")));
 
-      DivView license = new DivView("license");
+      DivView license = new DivView(new DivView.InitParameters("license"));
       this.appendChild(license);
-      license.appendChild(new SpanView("License:"));
-      license.appendChild(new AnchorView("http://www.gnu.org/licenses/agpl-3.0.html", "Affero GPL", TARGET));
+      license.appendChild(new SpanView(new SpanView.InitParameters("License:")));
+      license.appendChild(new AnchorView(new AnchorView.InitParameters("http://www.gnu.org/licenses/agpl-3.0.html",
+                                                                       "Affero GPL",
+                                                                       TARGET)));
 
-      this.appendChild(new SpanView("Developed by"));
-      this.appendChild(new AnchorView("http://www.davide.bz", "Davide Montesin", TARGET));
-      this.appendChild(new SpanView("Bolzano/Bozen - Italy"));
-      this.appendChild(new SpanView("Design by (alphabetical order)"));
-      this.appendChild(new AnchorView("mailto:giuliarosso.rg@gmail.com", "Giulia Rosso", TARGET));
-      this.appendChild(new AnchorView("mailto:iryna_dorosh@ukr.net", "Iryna Dorosh", TARGET));
-      this.appendChild(new AnchorView("mailto:virginia.mazzocco@gmail.com", "Virginia Mazzocco", TARGET));
-      this.appendChild(new SpanView("members of the"));
-      this.appendChild(new AnchorView("http://sasabus.org/wiki", "SASAbus community", TARGET));
+      this.appendChild(new SpanView(new SpanView.InitParameters("Developed by")));
+      this.appendChild(new AnchorView(new AnchorView.InitParameters("http://www.davide.bz",
+                                                                    "Davide Montesin",
+                                                                    TARGET)));
+      this.appendChild(new SpanView(new SpanView.InitParameters("Bolzano/Bozen - Italy")));
+      this.appendChild(new SpanView(new SpanView.InitParameters("Design by (alphabetical order)")));
+      this.appendChild(new AnchorView(new AnchorView.InitParameters("mailto:giuliarosso.rg@gmail.com",
+                                                                    "Giulia Rosso",
+                                                                    TARGET)));
+      this.appendChild(new AnchorView(new AnchorView.InitParameters("mailto:iryna_dorosh@ukr.net",
+                                                                    "Iryna Dorosh",
+                                                                    TARGET)));
+      this.appendChild(new AnchorView(new AnchorView.InitParameters("mailto:virginia.mazzocco@gmail.com",
+                                                                    "Virginia Mazzocco",
+                                                                    TARGET)));
+      this.appendChild(new SpanView(new SpanView.InitParameters("members of the")));
+      this.appendChild(new AnchorView(new AnchorView.InitParameters("http://sasabus.org/wiki",
+                                                                    "SASAbus community",
+                                                                    TARGET)));
 
-      AnchorView showLicenses = new AnchorView("#", "Third-party free open source software libraries");
+      AnchorView showLicenses = new AnchorView(new AnchorView.InitParameters("#",
+                                                                             "Third-party free open source software libraries"));
       showLicenses.addClickHandler(new AboutPanelShow3rdPartyLicenses(thirdPartyLicenses));
       this.appendChild(showLicenses);
 
-      thirdPartyLicenses.appendChild(new SpanView("(alphabetical order)"));
+      thirdPartyLicenses.appendChild(new SpanView(new SpanView.InitParameters("(alphabetical order)")));
 
       thirdPartyLicenses.appendChild(this.thirdParty("DM XML-JSON",
-                                             "http://www.davide.bz/en/dmxj",
-                                             "LGPL3",
-                                             "http://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License",
-                                             "Davide Montesin"));
+                                                     "http://www.davide.bz/en/dmxj",
+                                                     "LGPL3",
+                                                     "http://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License",
+                                                     "Davide Montesin"));
       thirdPartyLicenses.appendChild(this.thirdParty("DM Web",
-                                             "http://www.davide.bz/en/dmweb",
-                                             "LGPL3",
-                                             "http://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License",
-                                             "Davide Montesin"));
+                                                     "http://www.davide.bz/en/dmweb",
+                                                     "LGPL3",
+                                                     "http://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License",
+                                                     "Davide Montesin"));
 
       thirdPartyLicenses.appendChild(this.thirdParty("Flag Icons - Europe",
-                                             "http://antibakteriell.deviantart.com/art/Flag-Icons-Europe-166536006",
-                                             "CC BY 3.0",
-                                             "http://creativecommons.org/licenses/by/3.0/",
-                                             "antibakteriell"));
+                                                     "http://antibakteriell.deviantart.com/art/Flag-Icons-Europe-166536006",
+                                                     "CC BY 3.0",
+                                                     "http://creativecommons.org/licenses/by/3.0/",
+                                                     "antibakteriell"));
 
       thirdPartyLicenses.appendChild(this.thirdParty("Visualization: Gauge",
-                                             "https://developers.google.com/chart/interactive/docs/gallery/gauge",
-                                             "API",
-                                             "https://developers.google.com/chart/terms",
-                                             "Google"));
+                                                     "https://developers.google.com/chart/interactive/docs/gallery/gauge",
+                                                     "API",
+                                                     "https://developers.google.com/chart/terms",
+                                                     "Google"));
 
       thirdPartyLicenses.appendChild(this.thirdParty("GWT",
-                                             "http://www.gwtproject.org",
-                                             "Apache 2.0",
-                                             "http://www.gwtproject.org/terms.html",
-                                             "Google"));
+                                                     "http://www.gwtproject.org",
+                                                     "Apache 2.0",
+                                                     "http://www.gwtproject.org/terms.html",
+                                                     "Google"));
       thirdPartyLicenses.appendChild(this.thirdParty("Leaflet",
-                                             "http://leafletjs.com",
-                                             "BSD",
-                                             "http://github.com/Leaflet/Leaflet/blob/master/LICENSE",
-                                             "Vladimir Agafonkin, CloudMade"));
+                                                     "http://leafletjs.com",
+                                                     "BSD",
+                                                     "http://github.com/Leaflet/Leaflet/blob/master/LICENSE",
+                                                     "Vladimir Agafonkin, CloudMade"));
 
       this.appendChild(thirdPartyLicenses);
 
    }
 
-   AboutPanel(Void void1)
+   protected AboutPanel()
    {
-      super(void1);
    }
 
-   private DivView thirdParty(String libName,
-                                  String libUrl,
-                                  String license,
-                                  String licenseUrl,
-                                  String owner)
+   private DivView thirdParty(String libName, String libUrl, String license, String licenseUrl, String owner)
    {
-      DivView row = new DivView("row");
-      row.appendChild(new AnchorView(libUrl, libName, TARGET));
-      row.appendChild(new SpanView("-"));
-      row.appendChild(new AnchorView(licenseUrl, license, TARGET));
-      row.appendChild(new SpanView("-"));
-      row.appendChild(new SpanView(owner));
+      DivView row = new DivView(new DivView.InitParameters("row"));
+      row.appendChild(new AnchorView(new AnchorView.InitParameters(libUrl, libName, TARGET)));
+      row.appendChild(new SpanView(new SpanView.InitParameters("-")));
+      row.appendChild(new AnchorView(new AnchorView.InitParameters(licenseUrl, license, TARGET)));
+      row.appendChild(new SpanView(new SpanView.InitParameters("-")));
+      row.appendChild(new SpanView(new SpanView.InitParameters(owner)));
       return row;
    }
 }

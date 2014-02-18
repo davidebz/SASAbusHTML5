@@ -32,16 +32,23 @@ import bz.davide.dmweb.shared.view.SpanView;
  */
 public class NewsPanel extends DivView
 {
-
-   public NewsPanel()
+   public static class InitParameters extends DivView.InitParameters
    {
-      super("news");
+      public InitParameters()
+      {
+         super("news");
+      }
+   }
+
+   public NewsPanel(InitParameters initParameters)
+   {
+      super(initParameters);
 
       this.addStyleName("news");
-      final DivView newsListDiv = new DivView("newslist");
+      final DivView newsListDiv = new DivView(new DivView.InitParameters("newslist"));
       this.appendChild(newsListDiv);
 
-      newsListDiv.appendChild(new SpanView(I18N.singleton.getLocalizedText("NewsPanel_loading")));
+      newsListDiv.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("NewsPanel_loading"))));
 
       SASAbusDBClientImpl.singleton.loadNews(new SASAbusDBDataReady<NewsList>()
       {

@@ -64,7 +64,7 @@ public class Menu extends DivView
    MenuItem              parkings;
    MenuItem              train;
 
-   DivView           moreMenuItems;
+   DivView               moreMenuItems;
 
    MenuMoreClickHandler  moreClickHandler;
 
@@ -75,52 +75,64 @@ public class Menu extends DivView
                final SASAbusMap map,
                AboutPanel aboutPanel)
    {
-      super("menu");
+      super(new DivView.InitParameters("menu"));
 
       this.aboutPanel = aboutPanel;
       this.navigationPanel = navigationPanel;
       this.map = map;
 
-      this.areasAndLine = new MenuItem(new LinesIcon(), I18N.singleton.getLocalizedText("Menu_areasLines"));
+      this.areasAndLine = new MenuItem(new LinesIcon(new LinesIcon.InitParameters()),
+                                       I18N.singleton.getLocalizedText("Menu_areasLines"));
       this.appendChild(this.areasAndLine);
 
-      this.mapItem = new MenuItem(new MapIcon(), I18N.singleton.getLocalizedText("Menu_map"));
+      this.mapItem = new MenuItem(new MapIcon(new MapIcon.InitParameters()),
+                                  I18N.singleton.getLocalizedText("Menu_map"));
       this.mapItem.addStyleName("map ");
       this.appendChild(this.mapItem);
 
-      this.search = new MenuItem(new SearchIcon(), I18N.singleton.getLocalizedText("Menu_search"));
+      this.search = new MenuItem(new SearchIcon(new SearchIcon.InitParameters()),
+                                 I18N.singleton.getLocalizedText("Menu_search"));
       this.appendChild(this.search);
 
-      this.favourites = new MenuItem(new FavouritesActiveIcon(), "Favourite");
+      this.favourites = new MenuItem(new FavouritesActiveIcon(new FavouritesActiveIcon.InitParameters()),
+                                     "Favourite");
       this.appendChild(this.favourites);
 
-      //this.green = new MenuItem(new TreeIcon(), "Green");
+      //this.green = new MenuItem(new TreeIcon(new TreeIcon.InitParameters()), "Green");
       //this.add(this.green);
-      this.parkings = new MenuItem(new ParkingIcon(), "Park");
+      this.parkings = new MenuItem(new ParkingIcon(new ParkingIcon.InitParameters()), "Park");
       this.appendChild(this.parkings);
 
-      //this.routing = new MenuItem(new RouteIcon(), I18N.singleton.getLocalizedText("Menu_routing"));
+      //this.routing = new MenuItem(new RouteIcon(new RouteIcon.InitParameters()), I18N.singleton.getLocalizedText("Menu_routing"));
       //this.add(this.routing);
 
-      this.more = new MenuItem(new MoreIcon(), I18N.singleton.getLocalizedText("Menu_more"));
+      this.more = new MenuItem(new MoreIcon(new MoreIcon.InitParameters()),
+                               I18N.singleton.getLocalizedText("Menu_more"));
       this.more.addStyleName("more");
       this.appendChild(this.more);
 
-      this.moreMenuItems = new DivView("more-menu-items");
+      this.moreMenuItems = new DivView(new DivView.InitParameters("more-menu-items"));
       this.appendChild(this.moreMenuItems);
 
-      this.train = new MenuItem(new TrainIcon(), "Train");
+      this.train = new MenuItem(new TrainIcon(new TrainIcon.InitParameters()), "Train");
       this.moreMenuItems.appendChild(this.train);
 
-      this.news = new MenuItem(new NewsIcon(), I18N.singleton.getLocalizedText("Menu_news"));
+      this.news = new MenuItem(new NewsIcon(new NewsIcon.InitParameters()),
+                               I18N.singleton.getLocalizedText("Menu_news"));
       this.moreMenuItems.appendChild(this.news);
 
-      this.sendFeedback = new MenuItem(new FeedbackIcon(), I18N.singleton.getLocalizedText("Menu_feedback"));
+      this.sendFeedback = new MenuItem(new FeedbackIcon(new FeedbackIcon.InitParameters()),
+                                       I18N.singleton.getLocalizedText("Menu_feedback"));
       this.moreMenuItems.appendChild(this.sendFeedback);
 
-      this.about = new MenuItem(new AboutIcon(), I18N.singleton.getLocalizedText("Menu_about"));
+      this.about = new MenuItem(new AboutIcon(new AboutIcon.InitParameters()),
+                                I18N.singleton.getLocalizedText("Menu_about"));
       this.moreMenuItems.appendChild(this.about);
 
+   }
+
+   protected Menu()
+   {
    }
 
    public void initClickHandlers(final AreaList areaList)
@@ -180,11 +192,6 @@ public class Menu extends DivView
          }
       });
 
-   }
-
-   Menu(Void void1)
-   {
-      super(void1);
    }
 
    public void show()

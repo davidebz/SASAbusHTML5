@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class SearchIcon extends Icon
 {
-   public SearchIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("search-icon");
+      public InitParameters()
+      {
+         super("search-icon");
+      }
    }
 
-   SearchIcon(Void void1)
+   public SearchIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected SearchIcon(){}
 }

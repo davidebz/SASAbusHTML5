@@ -48,7 +48,7 @@ public class MenuFavouritesClickHandler implements DMClickHandler
       this.areaList = areaList;
    }
 
-   MenuFavouritesClickHandler(Void void1)
+   MenuFavouritesClickHandler()
    {
 
    }

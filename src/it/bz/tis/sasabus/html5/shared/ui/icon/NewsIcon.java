@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class NewsIcon extends Icon
 {
-   public NewsIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("news-icon");
+      public InitParameters()
+      {
+         super("news-icon");
+      }
    }
 
-   protected NewsIcon(Void void1)
+   public NewsIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected NewsIcon(){}
 }

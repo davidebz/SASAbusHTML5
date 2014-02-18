@@ -37,14 +37,15 @@ public class TrainStationPanel extends DivView implements PageChangeHandler
                             final AreaList areaList,
                             final SASAbusMap map)
    {
+      super(new DivView.InitParameters());
       this.map = map;
       this.trainStation = trainStation;
       this.appendChild(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null));
       this.appendChild(new BusStationInRangeWidget(trainStation.getLat(),
-                                           trainStation.getLon(),
-                                           navPanel,
-                                           areaList,
-                                           map));
+                                                   trainStation.getLon(),
+                                                   navPanel,
+                                                   areaList,
+                                                   map));
    }
 
    @Override

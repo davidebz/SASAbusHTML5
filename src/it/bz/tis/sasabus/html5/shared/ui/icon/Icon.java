@@ -26,15 +26,23 @@ import bz.davide.dmweb.shared.view.ImgView;
  */
 public class Icon extends ImgView
 {
-   public Icon(String name)
+   public static class InitParameters extends ImgView.InitParameters
    {
-      super("../images/layout/" + name + ".png");
-      this.setStyleName("icon");
-      this.addStyleName(name);
+      String name;
+
+      public InitParameters(String name)
+      {
+         super("../images/layout/" + name + ".png");
+         this.name = name;
+      }
    }
 
-   public Icon(Void void1)
+   public Icon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
+      this.setStyleName("icon");
+      this.addStyleName(initParameters.name);
    }
+
+   protected Icon(){}
 }

@@ -24,13 +24,19 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class FavouritesActiveIcon extends Icon
 {
-   public FavouritesActiveIcon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("favourites-active");
+      public InitParameters()
+      {
+         super("favourites-active");
+      }
    }
 
-   protected FavouritesActiveIcon(Void void1)
+   public FavouritesActiveIcon(InitParameters initParameters)
    {
-      super(void1);
+      super(initParameters);
    }
+
+
+   protected FavouritesActiveIcon(){}
 }

@@ -36,7 +36,7 @@ public class BusStationSearchRoutePanel extends DivView implements PageChangeHan
                                      DMHashNavigationPanel navigationPanel,
                                      BusStationSelectedEventHandler selected)
    {
-      super("bus-stations-search-route");
+      super(new DivView.InitParameters("bus-stations-search-route"));
       this.appendChild(this.searchWidget = new BusStationSearchWidget(I18N.singleton.getLocalizedText("BusStationSearchWidget_introtext"),
                                                               map,
                                                               areaList,

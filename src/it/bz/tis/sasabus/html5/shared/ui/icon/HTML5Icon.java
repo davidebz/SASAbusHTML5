@@ -24,8 +24,17 @@ package it.bz.tis.sasabus.html5.shared.ui.icon;
  */
 public class HTML5Icon extends Icon
 {
-   public HTML5Icon()
+   public static class InitParameters extends Icon.InitParameters
    {
-      super("html5logo");
+      public InitParameters()
+      {
+         super("html5logo");
+      }
    }
+
+   public HTML5Icon(InitParameters initParameters)
+   {
+      super(initParameters);
+   }
+   protected HTML5Icon(){}
 }

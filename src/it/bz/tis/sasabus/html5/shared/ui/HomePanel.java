@@ -31,20 +31,28 @@ public class HomePanel extends DivView implements PageChangeHandler
 {
    SASAbusMap                   map;
    DivView                      introText;
-   DivView                      favouriteContainer           = new DivView("favourite-container");
+   DivView                      favouriteContainer;
    FavouriteBusStationListPanel favouriteBusStationListPanel = null;
 
-   public HomePanel()
+   public static class InitParameters extends DivView.InitParameters
    {
-      super("home");
+      public InitParameters()
+      {
+         super("home");
+      }
+   }
+
+   public HomePanel(InitParameters initParameters)
+   {
+      super(initParameters);
+      this.favouriteContainer = new DivView(new DivView.InitParameters("favourite-container"));
       this.appendChild(this.favouriteContainer);
-      this.appendChild(this.introText = new DivView("intro-text"));
+      this.appendChild(this.introText = new DivView(new DivView.InitParameters("intro-text")));
 
    }
 
-   HomePanel(Void void1)
+   protected HomePanel()
    {
-      super(void1);
    }
 
    public void setMap(SASAbusMap map)

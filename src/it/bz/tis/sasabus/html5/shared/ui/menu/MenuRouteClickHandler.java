@@ -48,7 +48,7 @@ public class MenuRouteClickHandler implements DMClickHandler
       this.map = map;
    }
 
-   MenuRouteClickHandler(Void void1)
+   MenuRouteClickHandler()
    {
 
    }

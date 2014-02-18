@@ -11,15 +11,35 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
 {
    protected SASAbusWidgetUnmarshaller_Helper()
    {
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.HomePanel", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.HomePanel>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.HomePanel  ret){
+            // favouriteBusStationListPanel
+            if (ret.favouriteBusStationListPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.HomePanel.favouriteBusStationListPanel");
+            // favouriteContainer
+            if (ret.favouriteContainer != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.HomePanel.favouriteContainer");
+            // introText
+            if (ret.introText != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.HomePanel.introText");
+            // map
+            if (ret.map != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.HomePanel.map");
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
+         }
+      });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.HomePanel", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.HomePanel((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.HomePanel ret = new it.bz.tis.sasabus.html5.shared.ui.HomePanel();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.HomePanel").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.HomePanel", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -84,31 +104,54 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      ((HomePanel)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.AboutPanel", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.AboutPanel>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.AboutPanel  ret){
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.AboutPanel", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.AboutPanel((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.AboutPanel ret = new it.bz.tis.sasabus.html5.shared.ui.AboutPanel();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.AboutPanel").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.AboutPanel", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler  ret){
+            // aboutPanel
+            if (ret.aboutPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler.aboutPanel");
+            // thirdPartyLicenses
+            if (ret.thirdPartyLicenses != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler.thirdPartyLicenses");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler ret = new it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -143,16 +186,27 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      ((AboutPanelCloseHandler)obj).thirdPartyLicenses = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses  ret){
+            // licensesPanel
+            if (ret.licensesPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses.licensesPanel");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses ret = new it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -172,17 +226,35 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      ((AboutPanelShow3rdPartyLicenses)obj).licensesPanel = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel  ret){
+            // areaList
+            if (ret.areaList != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel.areaList");
+            // map
+            if (ret.map != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel.map");
+            // navigationPanel
+            if (ret.navigationPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel.navigationPanel");
+            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
-            return new it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel((Void)null);
+            it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel ret = new it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel").check(ret);
+            return ret;
          }
       });
 
       this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
          @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
             internalUnmarschall(structure, "bz.davide.dmweb.shared.view.DivView", obj, identities);
+            structure.open();
             String id = structure.getId();
             if (id != null)
                identities.put(id, obj);
@@ -232,6 +304,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      ((FavouriteBusStationListPanel)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
+            structure.close();
          }
       });
 
