@@ -55,6 +55,20 @@ public class SASAbusWidgetMarshaller_Helper extends bz.davide.dmxmljson.marshall
                structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
             }
             Object value;
+            // bounds
+            value = ((it.bz.tis.sasabus.backend.shared.Area)obj).bounds;
+            if (value == null)
+               structure.property("bounds").nullValue();
+            else
+            {
+               it.bz.tis.sasabus.backend.shared.LatLng[] rawarray = (it.bz.tis.sasabus.backend.shared.LatLng[])value;                        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("bounds").array(rawarray.length);        
+               for (Object o: rawarray) {                                    
+                  if (o == null)                                              
+                     array.item().nullValue();                                
+                     internalMarschall(o, o.getClass().getName(), "it.bz.tis.sasabus.backend.shared.LatLng", array.item().structure(), identities, seq, false);
+               }                                                              
+            }
             // busLines
             value = ((it.bz.tis.sasabus.backend.shared.Area)obj).busLines;
             if (value == null)
@@ -92,6 +106,35 @@ public class SASAbusWidgetMarshaller_Helper extends bz.davide.dmxmljson.marshall
             else
             {
                     structure.property("name_it").string((String)value);                          
+            }
+            if (!superClass)
+               structure.close();
+         }
+      });
+      this.putClassMarshaller("it.bz.tis.sasabus.backend.shared.LatLng", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
+         @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
+            if (!superClass) {
+               if (isReference(structure, obj, identities, seq))
+                  return;
+               identities.put(obj, structure);
+               structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
+            }
+            Object value;
+            // lat
+            value = ((it.bz.tis.sasabus.backend.shared.LatLng)obj).lat;
+            if (value == null)
+               structure.property("lat").nullValue();
+            else
+            {
+                    structure.property("lat").decimal((Double)value);                          
+            }
+            // lon
+            value = ((it.bz.tis.sasabus.backend.shared.LatLng)obj).lon;
+            if (value == null)
+               structure.property("lon").nullValue();
+            else
+            {
+                    structure.property("lon").decimal((Double)value);                          
             }
             if (!superClass)
                structure.close();

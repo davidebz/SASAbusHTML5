@@ -21,7 +21,6 @@ package it.bz.tis.sasabus.html5.client;
 
 import it.bz.tis.sasabus.html5.shared.SASAbusWidgetUnmarshaller;
 import bz.davide.dmweb.client.DMWeb;
-
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.Window;
 
@@ -39,10 +38,10 @@ public class SASAbusHTML5 implements EntryPoint
    public void onModuleLoad()
    {
       String hostName = Window.Location.getHostName();
-      boolean development = hostName.equals("localhost") ||
-                            hostName.equals("127.0.0.1") ||
-                            hostName.equals("127.0.1.1") ||
-                            hostName.equals("10.0.0.10");
+      boolean development = hostName.equals("localhost")
+                            || hostName.equals("127.0.0.1")
+                            || hostName.equals("127.0.1.1")
+                            || hostName.equals("10.0.0.10");
 
       String serviceBaseUrl = (development ? "http://" + hostName + ":8080" : "") + "/backend/";
 
@@ -55,6 +54,7 @@ public class SASAbusHTML5 implements EntryPoint
 
    public static void handleException(Exception exxx)
    {
+      exxx.printStackTrace();
       Window.alert("Err " + exxx.getClass().getName() + ": " + exxx.getMessage());
    }
 }

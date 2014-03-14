@@ -78,6 +78,9 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmxmljson.unmars
       });
       this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.Area", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.Area>() {
          @Override public void check(it.bz.tis.sasabus.backend.shared.Area  ret){
+            // bounds
+            if (ret.bounds != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.Area.bounds");
             // busLines
             if (ret.busLines != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.Area.busLines");
@@ -107,6 +110,35 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmxmljson.unmars
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            // bounds
+            if ((value = structure.property("bounds")) != null)
+               if (value.isNull())
+                  ((Area)obj).bounds = null;
+               else
+               {
+                  bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
+                  arr.open();        
+                  it.bz.tis.sasabus.backend.shared.LatLng[] arrayList = new it.bz.tis.sasabus.backend.shared.LatLng[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
+                     if (value.isNull())                                           
+                        arrayList[i] = null;                                       
+                     else                                                          
+                     {                                                                   
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
+                        if (refid != null)                              
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.LatLng)(identities.get(refid));                                                
+                        else {
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("LatLng"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.backend.shared.LatLng)(o);                                                
+                        }
+                     }                                                                   
+                  }                                                                   
+                  arr.close();        
+                  ((Area)obj).bounds = arrayList;
+               }
             // busLines
             if ((value = structure.property("busLines")) != null)
                if (value.isNull())
@@ -159,6 +191,50 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmxmljson.unmars
                else
                {
                   ((Area)obj).name_it = value.string();
+               }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.backend.shared.LatLng", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.backend.shared.LatLng>() {
+         @Override public void check(it.bz.tis.sasabus.backend.shared.LatLng  ret){
+            // lat
+            if (ret.lat != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.LatLng.lat");
+            // lon
+            if (ret.lon != 0)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.backend.shared.LatLng.lon");
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.LatLng", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            it.bz.tis.sasabus.backend.shared.LatLng ret = new it.bz.tis.sasabus.backend.shared.LatLng();
+            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.LatLng").check(ret);
+            return ret;
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.backend.shared.LatLng", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+            // lat
+            if ((value = structure.property("lat")) != null)
+               if (value.isNull())
+                  new RuntimeException("Impossibile value for primitive type");
+               else
+               {
+                  ((LatLng)obj).lat = value.decimal();
+               }
+            // lon
+            if ((value = structure.property("lon")) != null)
+               if (value.isNull())
+                  new RuntimeException("Impossibile value for primitive type");
+               else
+               {
+                  ((LatLng)obj).lon = value.decimal();
                }
             structure.close();
          }

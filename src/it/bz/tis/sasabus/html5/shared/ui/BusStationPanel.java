@@ -29,9 +29,7 @@ import it.bz.tis.sasabus.backend.shared.SASAbusDBDataReady;
 import it.bz.tis.sasabus.html5.client.SASAbusDBClientImpl;
 import it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-
 import java.util.Date;
-
 import bz.davide.dmweb.shared.i18n.I18N;
 import bz.davide.dmweb.shared.view.ButtonView;
 import bz.davide.dmweb.shared.view.DMClickEvent;
@@ -40,7 +38,6 @@ import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
 import bz.davide.dmweb.shared.view.DivView;
 import bz.davide.dmweb.shared.view.PageChangeHandler;
 import bz.davide.dmweb.shared.view.SpanView;
-
 import com.google.gwt.i18n.client.DateTimeFormat;
 
 /**
@@ -87,8 +84,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
 
       DivView lines = new DivView(new DivView.InitParameters("lines"));
 
-      lines.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("BusLines") +
-                                                                 ":")));
+      lines.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("BusLines") + ":")));
 
       BusLine[] busLines = busStation.getBusLines();
       BusLine.sortByNumber(busLines);
@@ -205,8 +201,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
       {
          BusTripStop[] busTripStops = busTripStopRef.getBusTrip().getBusTripStops();
          BusTripStop busTripStop = busTripStops[busTripStopRef.getIndex()];
-         final BusLine busLine = areaList.findBusLineById(busTripStopRef.getBusTrip().getBusLineId(),
-                                                          busTripStopRef.getBusTrip().getAreaId());
+         final BusLine busLine = areaList.findBusLineById(busTripStopRef.getBusTrip().getBusLineId());
 
          RowItem rowItem = new RowItem(new DMClickHandler()
          {
@@ -231,12 +226,12 @@ public class BusStationPanel extends DivView implements PageChangeHandler
 
    public static String formatBusTripStop(BusLine busLine, BusTripStop busTripStop)
    {
-      return "" +
-             formatTime(busTripStop.getTimeHHMMSS()) +
-             " - " +
-             busLine.getNumber() +
-             " " +
-             ItDeNamePanel.asOneLine(busLine.getArea().getName_it(), busLine.getArea().getName_de());
+      return ""
+             + formatTime(busTripStop.getTimeHHMMSS())
+             + " - "
+             + busLine.getNumber()
+             + " "
+             + ItDeNamePanel.asOneLine(busLine.getArea().getName_it(), busLine.getArea().getName_de());
    }
 
    public static String formatTime(int hhmmss)

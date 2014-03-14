@@ -30,11 +30,9 @@ import it.bz.tis.sasabus.html5.shared.data.Parking;
 import it.bz.tis.sasabus.html5.shared.data.TrainStation;
 import it.bz.tis.sasabus.html5.shared.ui.AreaPanel;
 import it.bz.tis.sasabus.html5.shared.ui.icon.GpsIcon;
-
 import java.util.ArrayList;
 import java.util.IdentityHashMap;
 import java.util.Set;
-
 import bz.davide.dmweb.client.leaflet.Circle;
 import bz.davide.dmweb.client.leaflet.EventListener;
 import bz.davide.dmweb.client.leaflet.Icon;
@@ -55,7 +53,6 @@ import bz.davide.dmweb.shared.view.DMClickHandler;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
 import bz.davide.dmweb.shared.view.DivView;
 import bz.davide.dmweb.shared.view.ImgView;
-
 import com.google.gwt.user.client.Timer;
 
 /**
@@ -64,10 +61,9 @@ import com.google.gwt.user.client.Timer;
 public class SASAbusMap extends DivView
 {
 
-   final static String[]                              COLORS                             = new String[]{
-            "#FF0000",
-            "#0000FF",
-            "#FFFF00"                                                                    };
+   final static String[]                              COLORS                             = new String[] { "#FF0000",
+         "#0000FF",
+         "#FFFF00"                                                                      };
 
    transient Map                                      leafletMap;
    transient ArrayList<Layer>                         baseLayers                         = new ArrayList<Layer>();
@@ -326,10 +322,10 @@ public class SASAbusMap extends DivView
 
          ArrayList<LatLng> bounds = new ArrayList<LatLng>();
 
-         LatLng[] latLngs = new LatLng[area.getBoundLats().length];
+         LatLng[] latLngs = new LatLng[area.getBounds().length];
          for (int i = 0; i < latLngs.length; i++)
          {
-            latLngs[i] = new LatLng(area.getBoundLats()[i], area.getBoundLons()[i]);
+            latLngs[i] = new LatLng(area.getBounds()[i].getLat(), area.getBounds()[i].getLon());
             bounds.add(latLngs[i]);
          }
          Polygon polygon = new Polygon(latLngs, polylineOptions);
