@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -21,12 +22,11 @@ package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusStation;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.IdentityHashMap;
-
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
@@ -39,7 +39,8 @@ public class BusStationInRangeWidget extends DivView
                                   double lon,
                                   final DMHashNavigationPanel navigationPanel,
                                   final AreaList areaList,
-                                  final SASAbusMap map)
+                                  final SASAbusMap map,
+                                  final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters("nearest-bus-stops"));
       this.appendChild(new SpanView(new SpanView.InitParameters("Nearest bus stops: ")));
@@ -51,10 +52,10 @@ public class BusStationInRangeWidget extends DivView
       for (int i = 0; i < copy.length; i++)
       {
          copy[i] = busStations[i];
-         double weight = (copy[i].getBusStops()[0].getLat() - lat) *
-                         (copy[i].getBusStops()[0].getLat() - lat) +
-                         (copy[i].getBusStops()[0].getLon() - lon) *
-                         (copy[i].getBusStops()[0].getLon() - lon);
+         double weight = (copy[i].getBusStops()[0].getLat() - lat)
+                         * (copy[i].getBusStops()[0].getLat() - lat)
+                         + (copy[i].getBusStops()[0].getLon() - lon)
+                         * (copy[i].getBusStops()[0].getLon() - lon);
          weights.put(copy[i], weight);
       }
       Arrays.sort(copy, new Comparator<BusStation>()
@@ -83,10 +84,10 @@ public class BusStationInRangeWidget extends DivView
             @Override
             public void onClick(DMClickEvent event)
             {
-               navigationPanel.newPage(new BusStationPanel(copy[ii], areaList, navigationPanel, map));
+               navigationPanel.newPage(new BusStationPanel(copy[ii], areaList, navigationPanel, map, i18n));
             }
          });
-         rowItem.appendChild(new ItDeNamePanel(copy[i].getName_it(), copy[i].getName_de(), null));
+         rowItem.appendChild(new ItDeNamePanel(copy[i].getName_it(), copy[i].getName_de(), null, i18n));
          this.appendChild(rowItem);
       }
    }

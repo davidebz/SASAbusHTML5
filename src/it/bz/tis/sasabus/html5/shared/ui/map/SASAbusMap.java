@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -26,6 +27,7 @@ import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.backend.shared.BusStop;
 import it.bz.tis.sasabus.backend.shared.BusTrip;
 import it.bz.tis.sasabus.backend.shared.BusTripStop;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.data.Parking;
 import it.bz.tis.sasabus.html5.shared.data.TrainStation;
 import it.bz.tis.sasabus.html5.shared.ui.AreaPanel;
@@ -90,17 +92,25 @@ public class SASAbusMap extends DivView
 
    DivView                                            overwievMap;
 
+   SASAbusI18N                                        i18n;
+
    public static class InitParameters extends DivView.InitParameters
    {
-      public InitParameters()
+
+      final SASAbusI18N i18n;
+
+      public InitParameters(final SASAbusI18N i18n)
       {
          super("map");
+         this.i18n = i18n;
       }
    }
 
    public SASAbusMap(InitParameters initParameters)
    {
       super(initParameters);
+
+      this.i18n = initParameters.i18n;
 
       this.close = new ButtonView(new ButtonView.InitParameters("X"));
 
@@ -193,7 +203,8 @@ public class SASAbusMap extends DivView
                TrainStationPopup trainStationPopup = new TrainStationPopup(trainStation,
                                                                            SASAbusMap.this.navigationPanel,
                                                                            areaList,
-                                                                           SASAbusMap.this);
+                                                                           SASAbusMap.this,
+                                                                           SASAbusMap.this.i18n);
                SASAbusMap.this.leafletMap.openPopup(trainStationPopup.getElement(), latLng);
                trainStationPopup.init();
             }
@@ -219,7 +230,7 @@ public class SASAbusMap extends DivView
             @Override
             public void onEvent()
             {
-               ParkingPopup parkingPopup = new ParkingPopup(parking);
+               ParkingPopup parkingPopup = new ParkingPopup(parking, SASAbusMap.this.i18n);
                SASAbusMap.this.leafletMap.openPopup(parkingPopup.getElement(), latLng);
                parkingPopup.init();
             }
@@ -305,7 +316,11 @@ public class SASAbusMap extends DivView
    {
       BusStop busStop = busStation.getBusStops()[0];
       LatLng latLng = new LatLng(busStop.getLat(), busStop.getLon());
-      BusStationPopup mapPopup = new BusStationPopup(busStation, this.navigationPanel, this, this.areaList);
+      BusStationPopup mapPopup = new BusStationPopup(busStation,
+                                                     this.navigationPanel,
+                                                     this,
+                                                     this.areaList,
+                                                     this.i18n);
       this.leafletMap.openPopup(mapPopup.getElement(), latLng);
       mapPopup.init();
    }
@@ -338,7 +353,8 @@ public class SASAbusMap extends DivView
                SASAbusMap.this.navigationPanel.newPage(new AreaPanel(area,
                                                                      SASAbusMap.this.navigationPanel,
                                                                      areaList,
-                                                                     SASAbusMap.this));
+                                                                     SASAbusMap.this,
+                                                                     SASAbusMap.this.i18n));
 
             }
          });

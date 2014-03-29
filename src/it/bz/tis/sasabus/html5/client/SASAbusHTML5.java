@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -19,7 +20,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.client;
 
-import it.bz.tis.sasabus.html5.shared.SASAbusWidgetUnmarshaller;
+import it.bz.tis.sasabus.html5.shared.SASAbusUnmarshaller;
 import bz.davide.dmweb.client.DMWeb;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.Window;
@@ -47,7 +48,7 @@ public class SASAbusHTML5 implements EntryPoint
 
       SASAbusDBClientImpl.singleton = new SASAbusDBClientImpl(serviceBaseUrl);
 
-      SASAbusWidgetUnmarshaller widgetUnmarshaller = new SASAbusWidgetUnmarshaller();
+      SASAbusUnmarshaller widgetUnmarshaller = new SASAbusUnmarshaller();
       DMWeb.start(widgetUnmarshaller);
 
    }

@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -21,6 +22,7 @@ package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.travelplanner.ConRes;
 import it.bz.tis.sasabus.backend.shared.travelplanner.Connection;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
@@ -33,7 +35,9 @@ import bz.davide.dmweb.shared.view.SpanView;
 public class RouteResultOverviewPanel extends DivView
 {
 
-   public RouteResultOverviewPanel(ConRes[] routes, final DMHashNavigationPanel navigationPanel)
+   public RouteResultOverviewPanel(ConRes[] routes,
+                                   final DMHashNavigationPanel navigationPanel,
+                                   final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters());
       for (final ConRes conRes : routes)
@@ -45,7 +49,8 @@ public class RouteResultOverviewPanel extends DivView
             public void onClick(DMClickEvent event)
             {
                navigationPanel.newPage(new RouteResultDetailPanel(connection.getConSectionList(),
-                                                                  navigationPanel));
+                                                                  navigationPanel,
+                                                                  i18n));
             }
          });
          String startTime = formatTime(connection.getOverview().getDeparture().getBasicStop().getDep().getTime());

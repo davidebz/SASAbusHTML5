@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -22,11 +23,11 @@ package it.bz.tis.sasabus.html5.shared.ui;
 import it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop;
 import it.bz.tis.sasabus.backend.shared.travelplanner.ConSection;
 import it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.icon.BusIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.DownIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.RouteEndIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.WalkIcon;
-import bz.davide.dmweb.shared.i18n.I18N;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
@@ -38,7 +39,7 @@ import bz.davide.dmweb.shared.view.SpanView;
  */
 public class RouteResultDetailPanel extends DivView
 {
-   public RouteResultDetailPanel(ConSectionList data, DMHashNavigationPanel navigationPanel)
+   public RouteResultDetailPanel(ConSectionList data, DMHashNavigationPanel navigationPanel, final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters("route-result"));
       this.addStyleName("bus-trip-detail");
@@ -48,9 +49,9 @@ public class RouteResultDetailPanel extends DivView
          if (conSection.getWalks().length > 0)
          {
             busName.appendChild(new WalkIcon(new WalkIcon.InitParameters()));
-            busName.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("RouteResultDetailPanel_walk_for") +
-                                                                         ": " +
-                                                                         RouteResultOverviewPanel.formatTime(conSection.getWalks()[0].getDuration().getTime()))));
+            busName.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("RouteResultDetailPanel_walk_for")
+                                                                         + ": "
+                                                                         + RouteResultOverviewPanel.formatTime(conSection.getWalks()[0].getDuration().getTime()))));
             this.appendChild(busName);
             continue;
          }
@@ -63,7 +64,7 @@ public class RouteResultDetailPanel extends DivView
          {
             time = RouteResultOverviewPanel.formatTime(basicStop[0].getArr().getTime());
          }
-         this.appendChild(newRow(time, splitName(basicStop[0].getStation().getName())));
+         this.appendChild(newRow(time, splitName(basicStop[0].getStation().getName()), i18n));
 
          if (basicStop.length > 2)
          {
@@ -84,7 +85,7 @@ public class RouteResultDetailPanel extends DivView
                      {
                         time = RouteResultOverviewPanel.formatTime(basicStop[i].getArr().getTime());
                      }
-                     allStopsPanel.appendChild(newRow(time, splitName(basicStop[i].getStation().getName())));
+                     allStopsPanel.appendChild(newRow(time, splitName(basicStop[i].getStation().getName()), i18n));
                   }
                }
             });
@@ -95,21 +96,21 @@ public class RouteResultDetailPanel extends DivView
          {
             time = RouteResultOverviewPanel.formatTime(basicStop[basicStop.length - 1].getArr().getTime());
          }
-         this.appendChild(newRow(time, splitName(basicStop[basicStop.length - 1].getStation().getName())));
+         this.appendChild(newRow(time, splitName(basicStop[basicStop.length - 1].getStation().getName()), i18n));
       }
       DivView busName = new DivView(new DivView.InitParameters("bus-name"));
       busName.appendChild(new RouteEndIcon(new RouteEndIcon.InitParameters()));
-      busName.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("RouteResultDetailPanel_you_arrive"))));
+      busName.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("RouteResultDetailPanel_you_arrive"))));
       this.appendChild(busName);
    }
 
-   static DivView newRow(String time, String[] names)
+   static DivView newRow(String time, String[] names, final SASAbusI18N i18n)
    {
       DivView row = new DivView(new DivView.InitParameters("row"));
       SpanView timeLabel = new SpanView(new SpanView.InitParameters(time));
       timeLabel.setStyleName("time");
       row.appendChild(timeLabel);
-      row.appendChild(new ItDeNamePanel(names[0], names[1], null));
+      row.appendChild(new ItDeNamePanel(names[0], names[1], null, i18n));
       return row;
    }
 
@@ -118,8 +119,8 @@ public class RouteResultDetailPanel extends DivView
       int pos = itDe.indexOf(" - ");
       if (pos < 0)
       {
-         return new String[]{itDe, itDe};
+         return new String[] { itDe, itDe };
       }
-      return new String[]{itDe.substring(0, pos), itDe.substring(pos + 1)};
+      return new String[] { itDe.substring(0, pos), itDe.substring(pos + 1) };
    }
 }

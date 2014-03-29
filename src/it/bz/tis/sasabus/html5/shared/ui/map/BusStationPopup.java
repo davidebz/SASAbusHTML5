@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -22,6 +23,7 @@ package it.bz.tis.sasabus.html5.shared.ui.map;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusLine;
 import it.bz.tis.sasabus.backend.shared.BusStation;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.BusLinePanel;
 import it.bz.tis.sasabus.html5.shared.ui.BusStationPanel;
 import it.bz.tis.sasabus.html5.shared.ui.ItDeBusStationNamePanel;
@@ -41,21 +43,25 @@ public class BusStationPopup extends DivView
    SASAbusMap            map;
    AreaList              areaList;
 
+   final SASAbusI18N     i18n;
+
    public BusStationPopup(BusStation busStation,
                           DMHashNavigationPanel navigationPanel,
                           SASAbusMap map,
-                          AreaList areaList)
+                          AreaList areaList,
+                          final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters("sasabus-popup"));
       this.busStation = busStation;
       this.navigationPanel = navigationPanel;
       this.map = map;
       this.areaList = areaList;
+      this.i18n = i18n;
    }
 
    void init()
    {
-      this.appendChild(new ItDeBusStationNamePanel(this.busStation));
+      this.appendChild(new ItDeBusStationNamePanel(this.busStation, this.i18n));
       ButtonView details = new ButtonView(new ButtonView.InitParameters("Show details"));
       this.appendChild(details);
       details.addClickHandler(new DMClickHandler()
@@ -66,7 +72,8 @@ public class BusStationPopup extends DivView
             BusStationPopup.this.navigationPanel.newPage(new BusStationPanel(BusStationPopup.this.busStation,
                                                                              BusStationPopup.this.areaList,
                                                                              BusStationPopup.this.navigationPanel,
-                                                                             BusStationPopup.this.map));
+                                                                             BusStationPopup.this.map,
+                                                                             BusStationPopup.this.i18n));
             BusStationPopup.this.map.leafletMap.closePopup();
          }
       });
@@ -83,7 +90,8 @@ public class BusStationPopup extends DivView
                                                                              BusStationPopup.this.areaList,
                                                                              BusStationPopup.this.navigationPanel,
                                                                              BusStationPopup.this.map,
-                                                                             true));
+                                                                             true,
+                                                                             BusStationPopup.this.i18n));
             }
          });
          this.appendChild(button);

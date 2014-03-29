@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -27,7 +28,6 @@ import bz.davide.dmweb.shared.view.AttachEvent;
 import bz.davide.dmweb.shared.view.AttachListener;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
 import bz.davide.dmweb.shared.view.DivView;
-
 import com.google.gwt.user.client.History;
 
 /**
@@ -42,12 +42,15 @@ public class SASAbusWebPageAttachHandler implements AttachListener
    HomePanel             homePanel;
    DMHashNavigationPanel navigationPanel;
 
+   SASAbusI18N           i18n;
+
    public SASAbusWebPageAttachHandler(DivView cover,
                                       DivView wrapper,
                                       SASAbusMap map,
                                       Menu menu,
                                       HomePanel homePanel,
-                                      DMHashNavigationPanel navigationPanel)
+                                      DMHashNavigationPanel navigationPanel,
+                                      final SASAbusI18N i18n)
    {
       this.cover = cover;
       this.wrapper = wrapper;
@@ -55,6 +58,7 @@ public class SASAbusWebPageAttachHandler implements AttachListener
       this.menu = menu;
       this.homePanel = homePanel;
       this.navigationPanel = navigationPanel;
+      this.i18n = i18n;
    }
 
    SASAbusWebPageAttachHandler()
@@ -73,7 +77,8 @@ public class SASAbusWebPageAttachHandler implements AttachListener
                                                                             SASAbusWebPageAttachHandler.this.map,
                                                                             SASAbusWebPageAttachHandler.this.menu,
                                                                             this.homePanel,
-                                                                            this.navigationPanel));
+                                                                            this.navigationPanel,
+                                                                            this.i18n));
       }
    }
 }

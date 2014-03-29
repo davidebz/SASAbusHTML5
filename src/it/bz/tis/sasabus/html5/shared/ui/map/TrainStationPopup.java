@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -20,6 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared.ui.map;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.data.TrainStation;
 import it.bz.tis.sasabus.html5.shared.ui.ItDeNamePanel;
 import it.bz.tis.sasabus.html5.shared.ui.TrainStationPanel;
@@ -36,17 +38,21 @@ public class TrainStationPopup extends DivView
    AreaList              areaList;
    SASAbusMap            map;
 
+   final SASAbusI18N     i18n;
+
    public TrainStationPopup(TrainStation trainStation,
                             DMHashNavigationPanel navigationPanel,
                             AreaList areaList,
-                            SASAbusMap map)
+                            SASAbusMap map,
+                            final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters("train-popup"));
       this.trainStation = trainStation;
-      this.appendChild(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null));
+      this.appendChild(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null, i18n));
       this.navigationPanel = navigationPanel;
       this.areaList = areaList;
       this.map = map;
+      this.i18n = i18n;
    }
 
    void init()
@@ -61,7 +67,8 @@ public class TrainStationPopup extends DivView
             TrainStationPopup.this.navigationPanel.newPage(new TrainStationPanel(TrainStationPopup.this.trainStation,
                                                                                  TrainStationPopup.this.navigationPanel,
                                                                                  TrainStationPopup.this.areaList,
-                                                                                 TrainStationPopup.this.map));
+                                                                                 TrainStationPopup.this.map,
+                                                                                 TrainStationPopup.this.i18n));
          }
       });
    }

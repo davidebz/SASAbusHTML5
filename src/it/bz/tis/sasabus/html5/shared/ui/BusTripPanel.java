@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -24,9 +25,9 @@ import it.bz.tis.sasabus.backend.shared.BusLine;
 import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.backend.shared.BusTrip;
 import it.bz.tis.sasabus.backend.shared.BusTripStop;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.i18n.I18N;
 import bz.davide.dmweb.shared.view.ButtonView;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
@@ -44,7 +45,8 @@ public class BusTripPanel extends DivView implements PageChangeHandler
                        final BusTrip busTrip,
                        final int index,
                        final AreaList areaList,
-                       final SASAbusMap map)
+                       final SASAbusMap map,
+                       final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters("bus-trip-detail"));
 
@@ -75,7 +77,7 @@ public class BusTripPanel extends DivView implements PageChangeHandler
       {
          final DivView prevStops = new DivView(new DivView.InitParameters("prev-stops"));
          this.appendChild(prevStops);
-         ButtonView prevStopsButton = new ButtonView(new ButtonView.InitParameters(I18N.singleton.getLocalizedText("BusTripPanel_show_prev_stops")));
+         ButtonView prevStopsButton = new ButtonView(new ButtonView.InitParameters(i18n.getLocalizedText("BusTripPanel_show_prev_stops")));
          prevStops.appendChild(prevStopsButton);
 
          final int startIndexFinal = startIndex;
@@ -88,7 +90,7 @@ public class BusTripPanel extends DivView implements PageChangeHandler
                for (int i = 0; i < startIndexFinal; i++)
                {
                   BusTripStop busTripStop = busTripStops[i];
-                  BusTripPanel.this.buildRow(busTripStop, i, index, areaList, prevStops);
+                  BusTripPanel.this.buildRow(busTripStop, i, index, areaList, prevStops, i18n);
                }
             }
          });
@@ -97,18 +99,23 @@ public class BusTripPanel extends DivView implements PageChangeHandler
       for (int i = startIndex; i < busTripStops.length; i++)
       {
          BusTripStop busTripStop = busTripStops[i];
-         this.buildRow(busTripStop, i, index, areaList, this);
+         this.buildRow(busTripStop, i, index, areaList, this, i18n);
       }
    }
 
-   void buildRow(BusTripStop busTripStop, int i, int index, AreaList areaList, DivView container)
+   void buildRow(BusTripStop busTripStop,
+                 int i,
+                 int index,
+                 AreaList areaList,
+                 DivView container,
+                 final SASAbusI18N i18n)
    {
       BusStation busStation = areaList.findBusStopById(busTripStop.getBusStopId()).getBusStation();
       DivView row = new DivView(new DivView.InitParameters("row"));
       SpanView time = new SpanView(new SpanView.InitParameters(BusStationPanel.formatTime(busTripStop.getTimeHHMMSS())));
       row.appendChild(time);
       time.setStyleName("time");
-      row.appendChild(new ItDeBusStationNamePanel(busStation));
+      row.appendChild(new ItDeBusStationNamePanel(busStation, i18n));
 
       if (i < index)
       {

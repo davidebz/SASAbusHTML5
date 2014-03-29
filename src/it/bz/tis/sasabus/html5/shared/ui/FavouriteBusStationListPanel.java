@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -22,8 +23,8 @@ package it.bz.tis.sasabus.html5.shared.ui;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.html5.shared.FavouriteBusStationList;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.i18n.I18N;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
@@ -39,15 +40,18 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
    AreaList              areaList;
    DMHashNavigationPanel navigationPanel;
    SASAbusMap            map;
+   SASAbusI18N           i18n;
 
    public FavouriteBusStationListPanel(AreaList areaList,
                                        DMHashNavigationPanel navigationPanel,
-                                       SASAbusMap map)
+                                       SASAbusMap map,
+                                       final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters());
       this.areaList = areaList;
       this.navigationPanel = navigationPanel;
       this.map = map;
+      this.i18n = i18n;
       this.refresh();
    }
 
@@ -60,9 +64,9 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
       this.clear();
 
       FavouriteBusStationList favourites = FavouriteBusStationList.getSingleton();
-      BusStation[] busStations = BusLinePanel.sortByCurrentLanguage(this.areaList.getBusStations());
-      this.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_favourite_are") +
-                                                                ":")));
+      BusStation[] busStations = BusLinePanel.sortByCurrentLanguage(this.areaList.getBusStations(), this.i18n);
+      this.appendChild(new SpanView(new SpanView.InitParameters(this.i18n.getLocalizedText("FavouriteBusStationListPanel_favourite_are")
+                                                                + ":")));
       int count = 0;
       for (final BusStation busStation : busStations)
       {
@@ -76,17 +80,18 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
                   FavouriteBusStationListPanel.this.navigationPanel.newPage(new BusStationPanel(busStation,
                                                                                                 FavouriteBusStationListPanel.this.areaList,
                                                                                                 FavouriteBusStationListPanel.this.navigationPanel,
-                                                                                                FavouriteBusStationListPanel.this.map));
+                                                                                                FavouriteBusStationListPanel.this.map,
+                                                                                                FavouriteBusStationListPanel.this.i18n));
                }
             });
-            rowItem.appendChild(new ItDeBusStationNamePanel(busStation));
+            rowItem.appendChild(new ItDeBusStationNamePanel(busStation, this.i18n));
             this.appendChild(rowItem);
             count++;
          }
       }
       if (count == 0)
       {
-         this.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("FavouriteBusStationListPanel_empty_favourite"))));
+         this.appendChild(new SpanView(new SpanView.InitParameters(this.i18n.getLocalizedText("FavouriteBusStationListPanel_empty_favourite"))));
       }
 
    }

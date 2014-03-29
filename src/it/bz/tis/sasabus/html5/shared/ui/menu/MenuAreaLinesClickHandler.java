@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -56,7 +57,11 @@ public class MenuAreaLinesClickHandler implements DMClickHandler
    @Override
    public void onClick(DMClickEvent event)
    {
-      this.navigationPanel.newPage(new AreasPanel(this.navigationPanel, this.areaList, this.map, false));
+      this.navigationPanel.newPage(new AreasPanel(this.navigationPanel,
+                                                  this.areaList,
+                                                  this.map,
+                                                  false,
+                                                  this.menu.i18n));
       this.menu.hide();
    };
 }

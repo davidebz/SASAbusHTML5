@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -22,13 +23,11 @@ package it.bz.tis.sasabus.html5.shared.ui;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusLine;
 import it.bz.tis.sasabus.backend.shared.BusStation;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-
 import java.util.Arrays;
 import java.util.Comparator;
-
-import bz.davide.dmweb.shared.i18n.I18N;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
@@ -49,16 +48,18 @@ public class BusLinePanel extends DivView implements PageChangeHandler
                        final AreaList areaList,
                        final DMHashNavigationPanel navPanel,
                        final SASAbusMap map,
-                       boolean mapOpen)
+                       boolean mapOpen,
+                       final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters("bus-stations"));
       this.mapOpen = mapOpen;
-      this.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("BusLine") +
-                                                                " " +
-                                                                busLine.getNumber() +
-                                                                " " +
-                                                                ItDeNamePanel.asOneLine(busLine.getArea().getName_it(),
-                                                                                        busLine.getArea().getName_de()))));
+      this.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("BusLine")
+                                                                + " "
+                                                                + busLine.getNumber()
+                                                                + " "
+                                                                + ItDeNamePanel.asOneLine(busLine.getArea().getName_it(),
+                                                                                          busLine.getArea().getName_de(),
+                                                                                          i18n))));
       this.map = map;
       this.busLine = busLine;
 
@@ -75,30 +76,30 @@ public class BusLinePanel extends DivView implements PageChangeHandler
          }
       });
 
-      this.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("BusStations"))));
+      this.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("BusStations"))));
 
       DivView list = new DivView(new DivView.InitParameters("bus-stations-list"));
 
       this.appendChild(list);
 
-      for (final BusStation busStation : sortByCurrentLanguage(busLine.getBusStations()))
+      for (final BusStation busStation : sortByCurrentLanguage(busLine.getBusStations(), i18n))
       {
          DMClickHandler busStationClick = new DMClickHandler()
          {
             @Override
             public void onClick(DMClickEvent event)
             {
-               BusStationPanel newPanel = new BusStationPanel(busStation, areaList, navPanel, map);
+               BusStationPanel newPanel = new BusStationPanel(busStation, areaList, navPanel, map, i18n);
                navPanel.newPage(newPanel);
             }
          };
          RowItem busStationLabel = new RowItem(busStationClick);
-         busStationLabel.appendChild(new ItDeBusStationNamePanel(busStation));
+         busStationLabel.appendChild(new ItDeBusStationNamePanel(busStation, i18n));
          list.appendChild(busStationLabel);
       }
    }
 
-   static BusStation[] sortByCurrentLanguage(BusStation[] busStations)
+   static BusStation[] sortByCurrentLanguage(BusStation[] busStations, final SASAbusI18N i18n)
    {
       BusStation[] result = new BusStation[busStations.length];
       for (int i = 0; i < result.length; i++)
@@ -111,7 +112,7 @@ public class BusLinePanel extends DivView implements PageChangeHandler
          public int compare(BusStation o1, BusStation o2)
          {
             int diff;
-            if (I18N.singleton.getLanguage().equals("de"))
+            if (i18n.getLanguage().equals("de"))
             {
                diff = o1.getName_de().compareToIgnoreCase(o2.getName_de());
             }

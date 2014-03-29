@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -22,8 +23,8 @@ package it.bz.tis.sasabus.html5.shared.ui;
 import it.bz.tis.sasabus.backend.shared.Area;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusLine;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.i18n.I18N;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
@@ -43,14 +44,15 @@ public class AreaPanel extends DivView implements PageChangeHandler
    public AreaPanel(Area area,
                     final DMHashNavigationPanel navPanel,
                     final AreaList areaList,
-                    final SASAbusMap map)
+                    final SASAbusMap map,
+                    final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters("lines"));
 
       this.area = area;
       this.map = map;
 
-      this.appendChild(new ItDeAreaNamePanel(area));
+      this.appendChild(new ItDeAreaNamePanel(area, i18n));
       for (final BusLine busLine : area.getBusLines())
       {
          RowItem busLineRow = new RowItem(new DMClickHandler()
@@ -59,13 +61,13 @@ public class AreaPanel extends DivView implements PageChangeHandler
             @Override
             public void onClick(DMClickEvent event)
             {
-               BusLinePanel newPanel = new BusLinePanel(busLine, areaList, navPanel, map, false);
+               BusLinePanel newPanel = new BusLinePanel(busLine, areaList, navPanel, map, false, i18n);
                navPanel.newPage(newPanel);
             }
          });
-         busLineRow.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("BusLine") +
-                                                                         " " +
-                                                                         busLine.getNumber())));
+         busLineRow.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("BusLine")
+                                                                         + " "
+                                                                         + busLine.getNumber())));
 
          this.appendChild(busLineRow);
 

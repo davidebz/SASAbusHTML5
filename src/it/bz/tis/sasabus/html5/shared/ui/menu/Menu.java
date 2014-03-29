@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -20,6 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared.ui.menu;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.AboutPanel;
 import it.bz.tis.sasabus.html5.shared.ui.ParkingsPanel;
 import it.bz.tis.sasabus.html5.shared.ui.TrainStationsPanel;
@@ -34,12 +36,10 @@ import it.bz.tis.sasabus.html5.shared.ui.icon.ParkingIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.SearchIcon;
 import it.bz.tis.sasabus.html5.shared.ui.icon.TrainIcon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-import bz.davide.dmweb.shared.i18n.I18N;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
 import bz.davide.dmweb.shared.view.DivView;
-
 import com.google.gwt.user.client.Timer;
 
 /**
@@ -70,28 +70,32 @@ public class Menu extends DivView
 
    AboutPanel            aboutPanel;
 
+   SASAbusI18N           i18n;
+
    public Menu(final DMHashNavigationPanel navigationPanel,
                final AreaList areaList,
                final SASAbusMap map,
-               AboutPanel aboutPanel)
+               AboutPanel aboutPanel,
+               SASAbusI18N i18n)
    {
       super(new DivView.InitParameters("menu"));
+
+      this.i18n = i18n;
 
       this.aboutPanel = aboutPanel;
       this.navigationPanel = navigationPanel;
       this.map = map;
 
       this.areasAndLine = new MenuItem(new LinesIcon(new LinesIcon.InitParameters()),
-                                       I18N.singleton.getLocalizedText("Menu_areasLines"));
+                                       i18n.getLocalizedText("Menu_areasLines"));
       this.appendChild(this.areasAndLine);
 
-      this.mapItem = new MenuItem(new MapIcon(new MapIcon.InitParameters()),
-                                  I18N.singleton.getLocalizedText("Menu_map"));
+      this.mapItem = new MenuItem(new MapIcon(new MapIcon.InitParameters()), i18n.getLocalizedText("Menu_map"));
       this.mapItem.addStyleName("map ");
       this.appendChild(this.mapItem);
 
       this.search = new MenuItem(new SearchIcon(new SearchIcon.InitParameters()),
-                                 I18N.singleton.getLocalizedText("Menu_search"));
+                                 i18n.getLocalizedText("Menu_search"));
       this.appendChild(this.search);
 
       this.favourites = new MenuItem(new FavouritesActiveIcon(new FavouritesActiveIcon.InitParameters()),
@@ -103,11 +107,10 @@ public class Menu extends DivView
       this.parkings = new MenuItem(new ParkingIcon(new ParkingIcon.InitParameters()), "Park");
       this.appendChild(this.parkings);
 
-      //this.routing = new MenuItem(new RouteIcon(new RouteIcon.InitParameters()), I18N.singleton.getLocalizedText("Menu_routing"));
+      //this.routing = new MenuItem(new RouteIcon(new RouteIcon.InitParameters()), i18n.getLocalizedText("Menu_routing"));
       //this.add(this.routing);
 
-      this.more = new MenuItem(new MoreIcon(new MoreIcon.InitParameters()),
-                               I18N.singleton.getLocalizedText("Menu_more"));
+      this.more = new MenuItem(new MoreIcon(new MoreIcon.InitParameters()), i18n.getLocalizedText("Menu_more"));
       this.more.addStyleName("more");
       this.appendChild(this.more);
 
@@ -117,16 +120,14 @@ public class Menu extends DivView
       this.train = new MenuItem(new TrainIcon(new TrainIcon.InitParameters()), "Train");
       this.moreMenuItems.appendChild(this.train);
 
-      this.news = new MenuItem(new NewsIcon(new NewsIcon.InitParameters()),
-                               I18N.singleton.getLocalizedText("Menu_news"));
+      this.news = new MenuItem(new NewsIcon(new NewsIcon.InitParameters()), i18n.getLocalizedText("Menu_news"));
       this.moreMenuItems.appendChild(this.news);
 
       this.sendFeedback = new MenuItem(new FeedbackIcon(new FeedbackIcon.InitParameters()),
-                                       I18N.singleton.getLocalizedText("Menu_feedback"));
+                                       i18n.getLocalizedText("Menu_feedback"));
       this.moreMenuItems.appendChild(this.sendFeedback);
 
-      this.about = new MenuItem(new AboutIcon(new AboutIcon.InitParameters()),
-                                I18N.singleton.getLocalizedText("Menu_about"));
+      this.about = new MenuItem(new AboutIcon(new AboutIcon.InitParameters()), i18n.getLocalizedText("Menu_about"));
       this.moreMenuItems.appendChild(this.about);
 
    }
@@ -174,7 +175,8 @@ public class Menu extends DivView
          {
             Menu.this.navigationPanel.newPage(new TrainStationsPanel(Menu.this.navigationPanel,
                                                                      areaList,
-                                                                     Menu.this.map));
+                                                                     Menu.this.map,
+                                                                     Menu.this.i18n));
             Menu.this.hide();
          }
       });
@@ -187,7 +189,8 @@ public class Menu extends DivView
          {
             Menu.this.navigationPanel.newPage(new ParkingsPanel(Menu.this.navigationPanel,
                                                                 areaList,
-                                                                Menu.this.map));
+                                                                Menu.this.map,
+                                                                Menu.this.i18n));
             Menu.this.hide();
          }
       });

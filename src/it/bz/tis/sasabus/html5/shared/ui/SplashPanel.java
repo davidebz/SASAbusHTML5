@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -26,17 +27,16 @@ import it.bz.tis.sasabus.backend.shared.SASAbusDBDataReady;
 import it.bz.tis.sasabus.backend.shared.SASAbusDBLastModified;
 import it.bz.tis.sasabus.html5.client.SASAbusDBClientImpl;
 import it.bz.tis.sasabus.html5.client.SASAbusHTML5;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.icon.HTML5Icon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import it.bz.tis.sasabus.html5.shared.ui.menu.Menu;
-import bz.davide.dmweb.shared.i18n.I18N;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
 import bz.davide.dmweb.shared.view.DivView;
 import bz.davide.dmweb.shared.view.ImgView;
 import bz.davide.dmweb.shared.view.SpanView;
 import bz.davide.dmxmljson.marshalling.json.JSONStructure;
 import bz.davide.dmxmljson.unmarshalling.json.gwt.GWTStructure;
-
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.json.client.JSONParser;
@@ -56,7 +56,8 @@ public class SplashPanel extends DivView
                       final SASAbusMap map,
                       final Menu menu,
                       final HomePanel homePage,
-                      final DMHashNavigationPanel navigationPanel)
+                      final DMHashNavigationPanel navigationPanel,
+                      final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters("splash-panel"));
       this.appendChild(new SpanView(new SpanView.InitParameters("SASAbus")));
@@ -66,7 +67,7 @@ public class SplashPanel extends DivView
       imageContainer.appendChild(sasaImg);
 
       this.appendChild(imageContainer);
-      final SpanView currentOperation = new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("AboutPanel_checkingUpdates")));
+      final SpanView currentOperation = new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("AboutPanel_checkingUpdates")));
       this.appendChild(currentOperation);
 
       final long startTime = System.currentTimeMillis();
@@ -76,7 +77,7 @@ public class SplashPanel extends DivView
          @Override
          public void ready(final AreaList data)
          {
-            currentOperation.setText(I18N.singleton.getLocalizedText("AboutPanel_ready"));
+            currentOperation.setText(i18n.getLocalizedText("AboutPanel_ready"));
             long stopTime = System.currentTimeMillis();
             long minWait = 2000 - (stopTime - startTime);
             if (minWait < 0)
@@ -107,7 +108,8 @@ public class SplashPanel extends DivView
             t1.schedule((int) minWait);
             FavouriteBusStationListPanel favouriteBusStationListPanel = new FavouriteBusStationListPanel(data,
                                                                                                          navigationPanel,
-                                                                                                         map);
+                                                                                                         map,
+                                                                                                         i18n);
             homePage.favouriteContainer.appendChild(favouriteBusStationListPanel);
             homePage.favouriteBusStationListPanel = favouriteBusStationListPanel;
          }
@@ -129,7 +131,7 @@ public class SplashPanel extends DivView
                   if (localLastModified == data.getTimestamp())
                   {
 
-                     currentOperation.setText(I18N.singleton.getLocalizedText("AboutPanel_readingLocalstore"));
+                     currentOperation.setText(i18n.getLocalizedText("AboutPanel_readingLocalstore"));
 
                      Timer t1 = new Timer()
                      {
@@ -162,7 +164,7 @@ public class SplashPanel extends DivView
                }
             }
 
-            currentOperation.setText(I18N.singleton.getLocalizedText("AboutPanel_downloadingUpdates"));
+            currentOperation.setText(i18n.getLocalizedText("AboutPanel_downloadingUpdates"));
 
             SASAbusDBClientImpl.singleton.listBusAreasLinesStopsStations(new SASAbusDBDataReady<AreaList>()
             {
@@ -173,7 +175,7 @@ public class SplashPanel extends DivView
                   // save data to localstore if possible
                   if (localStorage != null) // browser support local storage
                   {
-                     currentOperation.setText(I18N.singleton.getLocalizedText("AboutPanel_writingLocalstore"));
+                     currentOperation.setText(i18n.getLocalizedText("AboutPanel_writingLocalstore"));
 
                      Timer t1 = new Timer()
                      {

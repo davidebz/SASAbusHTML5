@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -24,68 +25,66 @@ import it.bz.tis.sasabus.html5.shared.ui.HomePanel;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import it.bz.tis.sasabus.html5.shared.ui.menu.Menu;
 import it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBar;
+import java.util.ArrayList;
 import bz.davide.dmweb.shared.view.AbstractHtmlElementView;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
-import bz.davide.dmweb.shared.view.DMWebPage;
 import bz.davide.dmweb.shared.view.DivView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
-public class SASAbusWebPage extends DMWebPage
+public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
 {
 
    TitleBar  titleBar;
    Menu      menu;
    HomePanel homePanel;
 
-   public static class InitParameters extends DMWebPage.InitParameters
+   public static class InitParameters
    {
       SASAbusI18N i18n;
+      String      introText;
    }
 
-   public SASAbusWebPage()
+   public SASAbusWebPage(InitParameters initParameters) throws Exception
    {
-      super(new DMWebPage.InitParameters());
+      //super(initParameters);
       DivView wrapper = new DivView(new DivView.InitParameters("cover-wrapper"));
 
       DivView initialCover = new DivView(new DivView.InitParameters("cover"));
 
       wrapper.appendChild(initialCover);
 
-      SASAbusMap map = new SASAbusMap(new SASAbusMap.InitParameters());
+      SASAbusMap map = new SASAbusMap(new SASAbusMap.InitParameters(initParameters.i18n));
       this.homePanel = new HomePanel(new HomePanel.InitParameters());
 
       this.homePanel.setMap(map);
+      this.homePanel.setIntroText(initParameters.introText);
       DMHashNavigationPanel navigationPanel = new DMHashNavigationPanel(new DMHashNavigationPanel.InitParameters("main",
                                                                                                                  this.homePanel));
       map.setNavigationPanel(navigationPanel);
 
       AboutPanel aboutPanel = new AboutPanel(new AboutPanel.InitParameters());
 
-      this.menu = new Menu(navigationPanel, null, map, aboutPanel);
+      this.menu = new Menu(navigationPanel, null, map, aboutPanel, initParameters.i18n);
 
-      this.addAttachHandler(new SASAbusWebPageAttachHandler(initialCover,
-                                                            wrapper,
-                                                            map,
-                                                            this.menu,
-                                                            this.homePanel,
-                                                            navigationPanel));
+      this.menu.addAttachHandler(new SASAbusWebPageAttachHandler(initialCover,
+                                                                 wrapper,
+                                                                 map,
+                                                                 this.menu,
+                                                                 this.homePanel,
+                                                                 navigationPanel,
+                                                                 initParameters.i18n));
 
       this.titleBar = new TitleBar(this.menu, map, null);
 
-      this.setBodyContent(new AbstractHtmlElementView[] { this.titleBar,
-            navigationPanel,
-            map,
-            this.menu,
-            wrapper,
-            aboutPanel });
+      this.add(this.titleBar);
+      this.add(navigationPanel);
+      this.add(map);
+      this.add(this.menu);
+      this.add(wrapper);
+      this.add(aboutPanel);
 
-   }
-
-   public void setIntroText(String text) throws Exception
-   {
-      this.homePanel.setIntroText(text);
    }
 
 }

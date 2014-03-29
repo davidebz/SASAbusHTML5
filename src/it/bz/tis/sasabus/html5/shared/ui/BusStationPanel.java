@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -27,10 +28,10 @@ import it.bz.tis.sasabus.backend.shared.BusTripStopList;
 import it.bz.tis.sasabus.backend.shared.BusTripStopReference;
 import it.bz.tis.sasabus.backend.shared.SASAbusDBDataReady;
 import it.bz.tis.sasabus.html5.client.SASAbusDBClientImpl;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import java.util.Date;
-import bz.davide.dmweb.shared.i18n.I18N;
 import bz.davide.dmweb.shared.view.ButtonView;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
@@ -53,18 +54,22 @@ public class BusStationPanel extends DivView implements PageChangeHandler
 
    SASAbusDateBox        dateBox;
 
+   final SASAbusI18N     i18n;
+
    public BusStationPanel(final BusStation busStation,
                           final AreaList areaList,
                           final DMHashNavigationPanel navPanel,
-                          final SASAbusMap map)
+                          final SASAbusMap map,
+                          final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters("bus-station-detail"));
       this.busStation = busStation;
       this.areaList = areaList;
       this.content = navPanel;
       this.map = map;
+      this.i18n = i18n;
 
-      this.appendChild(new ItDeBusStationNamePanel(busStation));
+      this.appendChild(new ItDeBusStationNamePanel(busStation, i18n));
 
       DivView actions = new DivView(new DivView.InitParameters("actions"));
 
@@ -84,7 +89,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
 
       DivView lines = new DivView(new DivView.InitParameters("lines"));
 
-      lines.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("BusLines") + ":")));
+      lines.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("BusLines") + ":")));
 
       BusLine[] busLines = busStation.getBusLines();
       BusLine.sortByNumber(busLines);
@@ -98,17 +103,17 @@ public class BusStationPanel extends DivView implements PageChangeHandler
             @Override
             public void onClick(DMClickEvent event)
             {
-               navPanel.newPage(new BusLinePanel(busLine, areaList, navPanel, map, false));
+               navPanel.newPage(new BusLinePanel(busLine, areaList, navPanel, map, false, i18n));
             }
          });
       }
       this.appendChild(lines);
 
-      //this.add(new DMLabel(I18N.singleton.getLocalizedText("BusStationPanel_directions") + ":"));
+      //this.add(new DMLabel(i18n.getLocalizedText("BusStationPanel_directions") + ":"));
 
-      ButtonView nextDepartures = new ButtonView(new ButtonView.InitParameters(I18N.singleton.getLocalizedText("BusStationPanel_refresh_departures")));
-      ButtonView asStart = new ButtonView(new ButtonView.InitParameters(I18N.singleton.getLocalizedText("BusStationPanel_use_as_start_routing")));
-      ButtonView asEnd = new ButtonView(new ButtonView.InitParameters(I18N.singleton.getLocalizedText("BusStationPanel_use_as_end_routing")));
+      ButtonView nextDepartures = new ButtonView(new ButtonView.InitParameters(i18n.getLocalizedText("BusStationPanel_refresh_departures")));
+      ButtonView asStart = new ButtonView(new ButtonView.InitParameters(i18n.getLocalizedText("BusStationPanel_use_as_start_routing")));
+      ButtonView asEnd = new ButtonView(new ButtonView.InitParameters(i18n.getLocalizedText("BusStationPanel_use_as_end_routing")));
       this.appendChild(asStart);
       this.appendChild(asEnd);
       DivView departureInputPanel = new DivView(new DivView.InitParameters("departure-input"));
@@ -122,7 +127,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
          public void onClick(DMClickEvent event)
          {
             RouteSearchPanel.start = busStation;
-            navPanel.newPage(new BusStationSearchRoutePanel(areaList, map, navPanel, null));
+            navPanel.newPage(new BusStationSearchRoutePanel(areaList, map, navPanel, null, i18n));
          }
       });
 
@@ -132,7 +137,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
          public void onClick(DMClickEvent event)
          {
             RouteSearchPanel.end = busStation;
-            navPanel.newPage(new BusStationSearchRoutePanel(areaList, map, navPanel, null));
+            navPanel.newPage(new BusStationSearchRoutePanel(areaList, map, navPanel, null, i18n));
          }
       });
 
@@ -161,7 +166,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
    public void findBusStationDepartures()
    {
       this.departures.clear();
-      this.departures.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("BusStationPanel_calculating_departures"))));
+      this.departures.appendChild(new SpanView(new SpanView.InitParameters(this.i18n.getLocalizedText("BusStationPanel_calculating_departures"))));
 
       Date date = this.dateBox.getValue();
 
@@ -183,7 +188,8 @@ public class BusStationPanel extends DivView implements PageChangeHandler
                                                                                   data,
                                                                                   BusStationPanel.this.areaList,
                                                                                   BusStationPanel.this.content,
-                                                                                  BusStationPanel.this.map);
+                                                                                  BusStationPanel.this.map,
+                                                                                  BusStationPanel.this.i18n);
                                                                 }
                                                              });
    }
@@ -192,7 +198,8 @@ public class BusStationPanel extends DivView implements PageChangeHandler
                                       BusTripStopList data,
                                       final AreaList areaList,
                                       final DMHashNavigationPanel content,
-                                      final SASAbusMap map)
+                                      final SASAbusMap map,
+                                      final SASAbusI18N i18n)
    {
       departures.clear();
       // Dummy, only to cache bus stations!
@@ -213,25 +220,26 @@ public class BusStationPanel extends DivView implements PageChangeHandler
                                                 busTripStopRef.getBusTrip(),
                                                 busTripStopRef.getIndex(),
                                                 areaList,
-                                                map));
+                                                map,
+                                                i18n));
 
             }
          });
 
-         rowItem.appendChild(new SpanView(new SpanView.InitParameters(formatBusTripStop(busLine, busTripStop))));
+         rowItem.appendChild(new SpanView(new SpanView.InitParameters(formatBusTripStop(busLine, busTripStop, i18n))));
          departures.appendChild(rowItem);
 
       }
    }
 
-   public static String formatBusTripStop(BusLine busLine, BusTripStop busTripStop)
+   public static String formatBusTripStop(BusLine busLine, BusTripStop busTripStop, final SASAbusI18N i18n)
    {
       return ""
              + formatTime(busTripStop.getTimeHHMMSS())
              + " - "
              + busLine.getNumber()
              + " "
-             + ItDeNamePanel.asOneLine(busLine.getArea().getName_it(), busLine.getArea().getName_de());
+             + ItDeNamePanel.asOneLine(busLine.getArea().getName_it(), busLine.getArea().getName_de(), i18n);
    }
 
    public static String formatTime(int hhmmss)

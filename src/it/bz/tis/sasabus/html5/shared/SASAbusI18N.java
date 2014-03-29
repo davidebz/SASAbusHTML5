@@ -39,7 +39,16 @@ public class SASAbusI18N
             this.cache.put(t.key, t);
          }
       }
-      return this.cache.get(key).text;
+      String ret = null;
+      if (this.cache.get(key) != null)
+      {
+         ret = this.cache.get(key).text;
+      }
+      if (ret == null || ret.length() == 0)
+      {
+         ret = "[" + key + "]";
+      }
+      return ret;
    }
 
    public String getLanguage()

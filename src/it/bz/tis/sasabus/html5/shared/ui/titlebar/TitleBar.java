@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -45,11 +46,11 @@ public class TitleBar extends DivView
       menuIcon.addClickHandler(new TitleBarMenuClickHandler(menu));
 
       DivView flags = new DivView(new DivView.InitParameters("flags"));
-      AnchorView it = new AnchorView(new AnchorView.InitParameters("/it/home", "IT"));
+      AnchorView it = new AnchorView(new AnchorView.InitParameters("/it", "IT"));
       it.setStyleName("it");
-      AnchorView de = new AnchorView(new AnchorView.InitParameters("/de/home", "DE"));
+      AnchorView de = new AnchorView(new AnchorView.InitParameters("/de", "DE"));
       de.setStyleName("de");
-      AnchorView en = new AnchorView(new AnchorView.InitParameters("/en/home", "EN"));
+      AnchorView en = new AnchorView(new AnchorView.InitParameters("/en", "EN"));
       en.setStyleName("en");
 
       flags.appendChild(it);

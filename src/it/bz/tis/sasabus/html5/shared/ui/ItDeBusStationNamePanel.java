@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -21,6 +22,7 @@ package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.html5.shared.FavouriteBusStationList;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.icon.FavouritesIcon;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
@@ -30,9 +32,12 @@ import bz.davide.dmweb.shared.view.DMClickHandler;
  */
 public class ItDeBusStationNamePanel extends ItDeNamePanel
 {
-   public ItDeBusStationNamePanel(final BusStation busStation)
+   public ItDeBusStationNamePanel(final BusStation busStation, final SASAbusI18N i18n)
    {
-      super(busStation.getName_it(), busStation.getName_de(), new FavouritesIcon(new FavouritesIcon.InitParameters()));
+      super(busStation.getName_it(),
+            busStation.getName_de(),
+            new FavouritesIcon(new FavouritesIcon.InitParameters()),
+            i18n);
       final FavouritesIcon favouritesIcon = (FavouritesIcon) this.icon;
       refreshStatus(favouritesIcon, busStation);
       favouritesIcon.addClickHandler(new DMClickHandler()

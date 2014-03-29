@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -20,15 +21,16 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.Area;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 
 /**
  * @author Davide Montesin <d@vide.bz>
  */
 public class ItDeAreaNamePanel extends ItDeNamePanel
 {
-   public ItDeAreaNamePanel(Area area)
+   public ItDeAreaNamePanel(Area area, final SASAbusI18N i18n)
    {
-      super(area.getName_it(), area.getName_de(), null);
+      super(area.getName_it(), area.getName_de(), null, i18n);
       this.addStyleName("area_" + area.getId());
    }
 }

@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -20,6 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.data.TrainStation;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.client.leaflet.LatLng;
@@ -35,17 +37,19 @@ public class TrainStationPanel extends DivView implements PageChangeHandler
    public TrainStationPanel(TrainStation trainStation,
                             final DMHashNavigationPanel navPanel,
                             final AreaList areaList,
-                            final SASAbusMap map)
+                            final SASAbusMap map,
+                            final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters());
       this.map = map;
       this.trainStation = trainStation;
-      this.appendChild(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null));
+      this.appendChild(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null, i18n));
       this.appendChild(new BusStationInRangeWidget(trainStation.getLat(),
                                                    trainStation.getLon(),
                                                    navPanel,
                                                    areaList,
-                                                   map));
+                                                   map,
+                                                   i18n));
    }
 
    @Override

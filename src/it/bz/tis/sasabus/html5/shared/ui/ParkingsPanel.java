@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -20,6 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.data.Parking;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.shared.view.DMClickEvent;
@@ -30,7 +32,10 @@ import bz.davide.dmweb.shared.view.SpanView;
 
 public class ParkingsPanel extends DivView
 {
-   public ParkingsPanel(final DMHashNavigationPanel navPanel, final AreaList areaList, final SASAbusMap map)
+   public ParkingsPanel(final DMHashNavigationPanel navPanel,
+                        final AreaList areaList,
+                        final SASAbusMap map,
+                        final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters());
       this.appendChild(new SpanView(new SpanView.InitParameters("Parkings:")));
@@ -41,10 +46,10 @@ public class ParkingsPanel extends DivView
             @Override
             public void onClick(DMClickEvent event)
             {
-               navPanel.newPage(new ParkingPanel(park, navPanel, areaList, map));
+               navPanel.newPage(new ParkingPanel(park, navPanel, areaList, map, i18n));
             }
          });
-         rowItem.appendChild(new ItDeNamePanel(park.getName_it(), park.getName_de(), null));
+         rowItem.appendChild(new ItDeNamePanel(park.getName_it(), park.getName_de(), null, i18n));
          this.appendChild(rowItem);
       }
    }

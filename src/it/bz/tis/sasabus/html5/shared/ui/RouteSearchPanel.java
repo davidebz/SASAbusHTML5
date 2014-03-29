@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -25,11 +26,9 @@ import it.bz.tis.sasabus.backend.shared.SASAbusDBDataReady;
 import it.bz.tis.sasabus.backend.shared.travelplanner.ConRes;
 import it.bz.tis.sasabus.html5.client.SASAbusDBClientImpl;
 import it.bz.tis.sasabus.html5.client.SASAbusHTML5;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
-
 import java.util.Date;
-
-import bz.davide.dmweb.shared.i18n.I18N;
 import bz.davide.dmweb.shared.view.ButtonView;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
@@ -37,7 +36,6 @@ import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
 import bz.davide.dmweb.shared.view.DivView;
 import bz.davide.dmweb.shared.view.PageChangeHandler;
 import bz.davide.dmweb.shared.view.SpanView;
-
 import com.google.gwt.i18n.client.DateTimeFormat;
 
 /**
@@ -57,17 +55,23 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
 
    DivView                     results;
 
-   public RouteSearchPanel(AreaList areaList, final DMHashNavigationPanel navigationPanel, SASAbusMap map)
+   final SASAbusI18N           i18n;
+
+   public RouteSearchPanel(AreaList areaList,
+                           final DMHashNavigationPanel navigationPanel,
+                           SASAbusMap map,
+                           final SASAbusI18N i18n)
    {
       super(new DivView.InitParameters("route"));
       this.map = map;
       this.navigationPanel = navigationPanel;
+      this.i18n = i18n;
 
       SpanView introText = new SpanView(new SpanView.InitParameters("Route calculation"));
       introText.setStyleName("intro-text");
       this.appendChild(introText);
 
-      this.appendChild(new BusStationSearchWidget(I18N.singleton.getLocalizedText("RouteSearchPanel_start_station"),
+      this.appendChild(new BusStationSearchWidget(i18n.getLocalizedText("RouteSearchPanel_start_station"),
                                                   map,
                                                   areaList,
                                                   new BusStationSelectedEventHandler()
@@ -78,8 +82,9 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
                                                         RouteSearchPanel.start = busStation;
                                                      }
                                                   },
-                                                  start));
-      this.appendChild(new BusStationSearchWidget(I18N.singleton.getLocalizedText("RouteSearchPanel_end_station"),
+                                                  start,
+                                                  i18n));
+      this.appendChild(new BusStationSearchWidget(i18n.getLocalizedText("RouteSearchPanel_end_station"),
                                                   map,
                                                   areaList,
                                                   new BusStationSelectedEventHandler()
@@ -90,13 +95,14 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
                                                         RouteSearchPanel.end = busStation;
                                                      }
                                                   },
-                                                  end));
+                                                  end,
+                                                  i18n));
 
-      this.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("RouteSearchPanel_when") +
-                                                                ":")));
+      this.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("RouteSearchPanel_when")
+                                                                + ":")));
       this.appendChild(this.dateBox = new SASAbusDateBox(new SASAbusDateBox.InitParameters()));
 
-      this.search = new ButtonView(new ButtonView.InitParameters(I18N.singleton.getLocalizedText("RouteSearchPanel_search")));
+      this.search = new ButtonView(new ButtonView.InitParameters(i18n.getLocalizedText("RouteSearchPanel_search")));
       this.appendChild(this.search);
       this.search.addClickHandler(new DMClickHandler()
       {
@@ -104,7 +110,7 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
          @Override
          public void onClick(DMClickEvent event)
          {
-            RouteSearchPanel.this.search.setLabel(I18N.singleton.getLocalizedText("RouteSearchPanel_calculating_routing"));
+            RouteSearchPanel.this.search.setLabel(i18n.getLocalizedText("RouteSearchPanel_calculating_routing"));
             RouteSearchPanel.this.results.clear();
 
             Date date = RouteSearchPanel.this.dateBox.getValue();
@@ -162,7 +168,8 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
                                                              {
                                                                 routes[2] = data2;
                                                                 RouteSearchPanel.this.results.appendChild(new RouteResultOverviewPanel(routes,
-                                                                                                                                       RouteSearchPanel.this.navigationPanel));
+                                                                                                                                       RouteSearchPanel.this.navigationPanel,
+                                                                                                                                       RouteSearchPanel.this.i18n));
                                                                 RouteSearchPanel.this.search.setLabel("Search");
                                                              }
                                                           });

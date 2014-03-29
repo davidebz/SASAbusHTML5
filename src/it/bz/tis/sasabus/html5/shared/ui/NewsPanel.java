@@ -2,6 +2,7 @@
 SASAbusHTML5 - HTML5 App for SASA bus
 
 Copyright (C) 2013 TIS Innovation Park - Bolzano/Bozen - Italy
+Copyright (C) 2013-2014 Davide Montesin <d@vide.bz> - Bolzano/Bozen - Italy
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as
@@ -23,7 +24,7 @@ import it.bz.tis.sasabus.backend.shared.News;
 import it.bz.tis.sasabus.backend.shared.NewsList;
 import it.bz.tis.sasabus.backend.shared.SASAbusDBDataReady;
 import it.bz.tis.sasabus.html5.client.SASAbusDBClientImpl;
-import bz.davide.dmweb.shared.i18n.I18N;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import bz.davide.dmweb.shared.view.DivView;
 import bz.davide.dmweb.shared.view.SpanView;
 
@@ -34,13 +35,16 @@ public class NewsPanel extends DivView
 {
    public static class InitParameters extends DivView.InitParameters
    {
-      public InitParameters()
+      final SASAbusI18N i18n;
+
+      public InitParameters(final SASAbusI18N i18n)
       {
          super("news");
+         this.i18n = i18n;
       }
    }
 
-   public NewsPanel(InitParameters initParameters)
+   public NewsPanel(final InitParameters initParameters)
    {
       super(initParameters);
 
@@ -48,7 +52,7 @@ public class NewsPanel extends DivView
       final DivView newsListDiv = new DivView(new DivView.InitParameters("newslist"));
       this.appendChild(newsListDiv);
 
-      newsListDiv.appendChild(new SpanView(new SpanView.InitParameters(I18N.singleton.getLocalizedText("NewsPanel_loading"))));
+      newsListDiv.appendChild(new SpanView(new SpanView.InitParameters(initParameters.i18n.getLocalizedText("NewsPanel_loading"))));
 
       SASAbusDBClientImpl.singleton.loadNews(new SASAbusDBDataReady<NewsList>()
       {
@@ -56,19 +60,19 @@ public class NewsPanel extends DivView
          @Override
          public void ready(NewsList newsList)
          {
-            NewsPanel.this.newsListRead(newsListDiv, newsList);
+            NewsPanel.this.newsListRead(newsListDiv, newsList, initParameters.i18n);
          }
       });
 
    }
 
-   void newsListRead(final DivView newsListDiv, NewsList newsList)
+   void newsListRead(final DivView newsListDiv, NewsList newsList, SASAbusI18N i18n)
    {
       newsListDiv.clear();
       for (int i = 0; i < newsList.getNews().size(); i++)
       {
          News news = newsList.getNews().get(i);
-         if (I18N.singleton.getLanguage().equals("de"))
+         if (i18n.getLanguage().equals("de"))
          {
             newsListDiv.appendChild(new NewsItem(news.getTitel_de(), news.getNachricht_de()));
          }

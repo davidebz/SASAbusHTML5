@@ -14,95 +14,10 @@
       <url-pattern>/*</url-pattern>
    </filter-mapping>
 
-   <filter>
-      <filter-name>SimpleXMLWebSiteEngine</filter-name>
-      <filter-class>bz.davide.dmweb.server.SimpleXMLWebSiteEngine</filter-class>
-      <init-param>
-         <param-name>WebPageReaderClassName</param-name>
-         <param-value>it.bz.tis.sasabus.html5.shared.SASAbusWebPageReader</param-value>
-      </init-param>
-      <init-param>
-         <param-name>WidgetMarshallerClassName</param-name>
-         <param-value>it.bz.tis.sasabus.html5.shared.SASAbusWidgetMarshaller</param-value>
-      </init-param>
-      <init-param>
-         <param-name>html-head</param-name>
-         <param-value><![CDATA[
-              
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link type="text/css" rel="stylesheet" href="../main-structure-responsive.css">
-<link type="text/css" rel="stylesheet" href="../SASAbusHTML5.css">
 
-<link rel="stylesheet" href="../js/leaflet-0.6.4/leaflet.css" />
-<!--[if lte IE 8]>
-    <link rel="stylesheet" href="../js/leaflet-0.6.4/leaflet.ie.css" />
-<![endif]-->
-
-<link rel="stylesheet" href="../js/leaflet-0.6.4/leaflet.label.css" />
-
-<script src="../js/leaflet-0.6.4/leaflet.js"></script>
-<script src="../js/leaflet-0.6.4/leaflet.label.js"></script>
-
-<!--                                           -->
-<!-- This script loads your compiled module.   -->
-<!-- If you add any GWT meta tags, they must   -->
-<!-- be added before this line.                -->
-<!--                                           -->
-<script type="text/javascript" language="javascript" src="../sasabushtml5/sasabushtml5.nocache.js"></script>
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-42332209-1']);
-  _gaq.push(['_trackPageview']);
-  _gaq.push(['_trackEvent', 'ua', 'hit', navigator.userAgent]);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-
-<script type='text/javascript' src='https://www.google.com/jsapi'></script>
-    <script type='text/javascript'>
-      google.load('visualization', '1', {packages:['gauge']});
-</script>
-
-              ]]></param-value>
-      </init-param>
-
-      <init-param>
-         <param-name>html-body</param-name>
-         <param-value><![CDATA[
-              
-<!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
-<noscript>
-   <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">Your web
-      browser must have JavaScript enabled in order for this application to display correctly.</div>
-</noscript>
-
-<!-- OPTIONAL: include this if you want history support -->
-<iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position: absolute; width: 0; height: 0; border: 0"></iframe>
-
-              ]]></param-value>
-      </init-param>
-   </filter>
-
-   <filter-mapping>
-      <filter-name>SimpleXMLWebSiteEngine</filter-name>
-      <url-pattern>/</url-pattern>
-      <url-pattern>/it/*</url-pattern>
-      <url-pattern>/de/*</url-pattern>
-      <url-pattern>/en/*</url-pattern>
-   </filter-mapping>
-   
-  <!-- Default page to serve -->
+   <!-- Default page to serve -->
    <welcome-file-list>
-      <welcome-file>it</welcome-file>
+      <welcome-file>index.jsp</welcome-file>
    </welcome-file-list>
 
 </web-app>
