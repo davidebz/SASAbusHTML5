@@ -337,8 +337,8 @@ body>.about>button {
 }
 
 .it-de-name>.second {
-   font-size: 13px;
-   xfont-style: italic;
+   font-size: 12px;
+   font-style: italic;
 }
 
 .bus-trip-detail .row {

@@ -36,16 +36,16 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.i18
             // menu
             if ((value = structure.property("menu")) != null)
                if (value.isNull())
-                  ((TitleBarMenuClickHandler)obj).menu = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler)obj).menu = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((TitleBarMenuClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Menu"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((TitleBarMenuClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
                   }
                }
             structure.close();
@@ -76,16 +76,16 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.i18
             // mapWidget
             if ((value = structure.property("mapWidget")) != null)
                if (value.isNull())
-                  ((TitleBarMapClickHandler)obj).mapWidget = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler)obj).mapWidget = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((TitleBarMapClickHandler)obj).mapWidget = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler)obj).mapWidget = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("SASAbusMap"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((TitleBarMapClickHandler)obj).mapWidget = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler)obj).mapWidget = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)o;
                   }
                }
             structure.close();

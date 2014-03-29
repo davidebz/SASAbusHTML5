@@ -36,7 +36,7 @@ public class FavouriteBusStationListUnmarshaller_Helper extends bz.davide.dmxmlj
             // busStationIds
             if ((value = structure.property("busStationIds")) != null)
                if (value.isNull())
-                  ((FavouriteBusStationList)obj).busStationIds = null;
+                  ((it.bz.tis.sasabus.html5.shared.FavouriteBusStationList)obj).busStationIds = null;
                else
                {
                   //hashmap

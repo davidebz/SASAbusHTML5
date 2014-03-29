@@ -32,10 +32,10 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmweb.shared.view.SAS
             // IntroText
             if ((value = structure.property("IntroText")) != null)
                if (value.isNull())
-                  ((SASAbusWebPage)obj).setIntroText(null);
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage)obj).setIntroText(null);
                else
                {
-                  ((SASAbusWebPage)obj).setIntroText(value.string());
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage)obj).setIntroText(value.string());
                }
             structure.close();
          }

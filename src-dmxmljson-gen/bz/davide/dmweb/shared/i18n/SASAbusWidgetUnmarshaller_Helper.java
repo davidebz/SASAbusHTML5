@@ -41,15 +41,15 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
             // language
             if ((value = structure.property("language")) != null)
                if (value.isNull())
-                  ((I18NData)obj).language = null;
+                  ((bz.davide.dmweb.shared.i18n.I18NData)obj).language = null;
                else
                {
-                  ((I18NData)obj).language = value.string();
+                  ((bz.davide.dmweb.shared.i18n.I18NData)obj).language = value.string();
                }
             // map
             if ((value = structure.property("map")) != null)
                if (value.isNull())
-                  ((I18NData)obj).map = null;
+                  ((bz.davide.dmweb.shared.i18n.I18NData)obj).map = null;
                else
                {
                   //hashmap

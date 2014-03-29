@@ -63,31 +63,31 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
             // aboutPanel
             if ((value = structure.property("aboutPanel")) != null)
                if (value.isNull())
-                  ((MenuAboutClickHandler)obj).aboutPanel = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler)obj).aboutPanel = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuAboutClickHandler)obj).aboutPanel = (it.bz.tis.sasabus.html5.shared.ui.AboutPanel)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler)obj).aboutPanel = (it.bz.tis.sasabus.html5.shared.ui.AboutPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("AboutPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuAboutClickHandler)obj).aboutPanel = (it.bz.tis.sasabus.html5.shared.ui.AboutPanel)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler)obj).aboutPanel = (it.bz.tis.sasabus.html5.shared.ui.AboutPanel)o;
                   }
                }
             // menu
             if ((value = structure.property("menu")) != null)
                if (value.isNull())
-                  ((MenuAboutClickHandler)obj).menu = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler)obj).menu = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuAboutClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Menu"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuAboutClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
                   }
                }
             structure.close();
@@ -127,61 +127,61 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
             // areaList
             if ((value = structure.property("areaList")) != null)
                if (value.isNull())
-                  ((MenuMapClickHandler)obj).areaList = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler)obj).areaList = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuMapClickHandler)obj).areaList = (it.bz.tis.sasabus.backend.shared.AreaList)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler)obj).areaList = (it.bz.tis.sasabus.backend.shared.AreaList)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("AreaList"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuMapClickHandler)obj).areaList = (it.bz.tis.sasabus.backend.shared.AreaList)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler)obj).areaList = (it.bz.tis.sasabus.backend.shared.AreaList)o;
                   }
                }
             // map
             if ((value = structure.property("map")) != null)
                if (value.isNull())
-                  ((MenuMapClickHandler)obj).map = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler)obj).map = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuMapClickHandler)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("SASAbusMap"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuMapClickHandler)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)o;
                   }
                }
             // menu
             if ((value = structure.property("menu")) != null)
                if (value.isNull())
-                  ((MenuMapClickHandler)obj).menu = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler)obj).menu = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuMapClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Menu"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuMapClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
                   }
                }
             // navigationPanel
             if ((value = structure.property("navigationPanel")) != null)
                if (value.isNull())
-                  ((MenuMapClickHandler)obj).navigationPanel = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler)obj).navigationPanel = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuMapClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuMapClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
             structure.close();
@@ -215,31 +215,31 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
             // menu
             if ((value = structure.property("menu")) != null)
                if (value.isNull())
-                  ((MenuNewsClickHandler)obj).menu = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler)obj).menu = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuNewsClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Menu"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuNewsClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
                   }
                }
             // navigationPanel
             if ((value = structure.property("navigationPanel")) != null)
                if (value.isNull())
-                  ((MenuNewsClickHandler)obj).navigationPanel = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler)obj).navigationPanel = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuNewsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuNewsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
             structure.close();
@@ -279,61 +279,61 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
             // areaList
             if ((value = structure.property("areaList")) != null)
                if (value.isNull())
-                  ((MenuAreaLinesClickHandler)obj).areaList = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler)obj).areaList = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuAreaLinesClickHandler)obj).areaList = (it.bz.tis.sasabus.backend.shared.AreaList)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler)obj).areaList = (it.bz.tis.sasabus.backend.shared.AreaList)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("AreaList"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuAreaLinesClickHandler)obj).areaList = (it.bz.tis.sasabus.backend.shared.AreaList)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler)obj).areaList = (it.bz.tis.sasabus.backend.shared.AreaList)o;
                   }
                }
             // map
             if ((value = structure.property("map")) != null)
                if (value.isNull())
-                  ((MenuAreaLinesClickHandler)obj).map = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler)obj).map = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuAreaLinesClickHandler)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("SASAbusMap"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuAreaLinesClickHandler)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)o;
                   }
                }
             // menu
             if ((value = structure.property("menu")) != null)
                if (value.isNull())
-                  ((MenuAreaLinesClickHandler)obj).menu = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler)obj).menu = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuAreaLinesClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Menu"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuAreaLinesClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
                   }
                }
             // navigationPanel
             if ((value = structure.property("navigationPanel")) != null)
                if (value.isNull())
-                  ((MenuAreaLinesClickHandler)obj).navigationPanel = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler)obj).navigationPanel = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuAreaLinesClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuAreaLinesClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
             structure.close();
@@ -367,31 +367,31 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
             // menu
             if ((value = structure.property("menu")) != null)
                if (value.isNull())
-                  ((MenuSettingsClickHandler)obj).menu = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler)obj).menu = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuSettingsClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Menu"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuSettingsClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
                   }
                }
             // navigationPanel
             if ((value = structure.property("navigationPanel")) != null)
                if (value.isNull())
-                  ((MenuSettingsClickHandler)obj).navigationPanel = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler)obj).navigationPanel = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuSettingsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuSettingsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
             structure.close();
@@ -469,91 +469,91 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
             // about
             if ((value = structure.property("about")) != null)
                if (value.isNull())
-                  ((Menu)obj).about = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).about = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).about = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).about = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).about = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).about = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
             // aboutPanel
             if ((value = structure.property("aboutPanel")) != null)
                if (value.isNull())
-                  ((Menu)obj).aboutPanel = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).aboutPanel = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).aboutPanel = (it.bz.tis.sasabus.html5.shared.ui.AboutPanel)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).aboutPanel = (it.bz.tis.sasabus.html5.shared.ui.AboutPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("AboutPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).aboutPanel = (it.bz.tis.sasabus.html5.shared.ui.AboutPanel)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).aboutPanel = (it.bz.tis.sasabus.html5.shared.ui.AboutPanel)o;
                   }
                }
             // areasAndLine
             if ((value = structure.property("areasAndLine")) != null)
                if (value.isNull())
-                  ((Menu)obj).areasAndLine = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).areasAndLine = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).areasAndLine = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).areasAndLine = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).areasAndLine = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).areasAndLine = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
             // favourites
             if ((value = structure.property("favourites")) != null)
                if (value.isNull())
-                  ((Menu)obj).favourites = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).favourites = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).favourites = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).favourites = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).favourites = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).favourites = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
             // map
             if ((value = structure.property("map")) != null)
                if (value.isNull())
-                  ((Menu)obj).map = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).map = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("SASAbusMap"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)o;
                   }
                }
             // mapItem
             if ((value = structure.property("mapItem")) != null)
                if (value.isNull())
-                  ((Menu)obj).mapItem = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).mapItem = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).mapItem = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).mapItem = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).mapItem = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).mapItem = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
             // menuOpen
@@ -562,141 +562,141 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((Menu)obj).menuOpen = value.booleanValue();
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).menuOpen = value.booleanValue();
                }
             // more
             if ((value = structure.property("more")) != null)
                if (value.isNull())
-                  ((Menu)obj).more = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).more = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).more = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).more = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).more = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).more = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
             // moreClickHandler
             if ((value = structure.property("moreClickHandler")) != null)
                if (value.isNull())
-                  ((Menu)obj).moreClickHandler = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).moreClickHandler = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).moreClickHandler = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).moreClickHandler = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuMoreClickHandler"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).moreClickHandler = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).moreClickHandler = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler)o;
                   }
                }
             // moreMenuItems
             if ((value = structure.property("moreMenuItems")) != null)
                if (value.isNull())
-                  ((Menu)obj).moreMenuItems = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).moreMenuItems = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).moreMenuItems = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).moreMenuItems = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).moreMenuItems = (bz.davide.dmweb.shared.view.DivView)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).moreMenuItems = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
             // navigationPanel
             if ((value = structure.property("navigationPanel")) != null)
                if (value.isNull())
-                  ((Menu)obj).navigationPanel = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).navigationPanel = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
             // news
             if ((value = structure.property("news")) != null)
                if (value.isNull())
-                  ((Menu)obj).news = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).news = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).news = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).news = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).news = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).news = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
             // parkings
             if ((value = structure.property("parkings")) != null)
                if (value.isNull())
-                  ((Menu)obj).parkings = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).parkings = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).parkings = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).parkings = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).parkings = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).parkings = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
             // search
             if ((value = structure.property("search")) != null)
                if (value.isNull())
-                  ((Menu)obj).search = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).search = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).search = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).search = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).search = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).search = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
             // sendFeedback
             if ((value = structure.property("sendFeedback")) != null)
                if (value.isNull())
-                  ((Menu)obj).sendFeedback = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).sendFeedback = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).sendFeedback = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).sendFeedback = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).sendFeedback = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).sendFeedback = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
             // train
             if ((value = structure.property("train")) != null)
                if (value.isNull())
-                  ((Menu)obj).train = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).train = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((Menu)obj).train = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).train = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("MenuItem"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((Menu)obj).train = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).train = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
                }
             structure.close();
@@ -730,16 +730,16 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
             // moreMenuItem
             if ((value = structure.property("moreMenuItem")) != null)
                if (value.isNull())
-                  ((MenuMoreClickHandler)obj).moreMenuItem = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler)obj).moreMenuItem = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((MenuMoreClickHandler)obj).moreMenuItem = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler)obj).moreMenuItem = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((MenuMoreClickHandler)obj).moreMenuItem = (bz.davide.dmweb.shared.view.DivView)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler)obj).moreMenuItem = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
             // moreOpen
@@ -748,7 +748,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends bz.davide.dmweb.shared.vie
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((MenuMoreClickHandler)obj).moreOpen = value.booleanValue();
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler)obj).moreOpen = value.booleanValue();
                }
             structure.close();
          }

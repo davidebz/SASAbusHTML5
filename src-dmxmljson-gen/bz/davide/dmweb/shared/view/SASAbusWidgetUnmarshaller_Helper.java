@@ -45,7 +45,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
             // attachHandlers
             if ((value = structure.property("attachHandlers")) != null)
                if (value.isNull())
-                  ((DMWidgetSerializationData)obj).attachHandlers = null;
+                  ((bz.davide.dmweb.shared.view.DMWidgetSerializationData)obj).attachHandlers = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -68,12 +68,12 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((DMWidgetSerializationData)obj).attachHandlers = arrayList;
+                  ((bz.davide.dmweb.shared.view.DMWidgetSerializationData)obj).attachHandlers = arrayList;
                }
             // domReady
             if ((value = structure.property("domReady")) != null)
                if (value.isNull())
-                  ((DMWidgetSerializationData)obj).domReady = null;
+                  ((bz.davide.dmweb.shared.view.DMWidgetSerializationData)obj).domReady = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -96,21 +96,21 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((DMWidgetSerializationData)obj).domReady = arrayList;
+                  ((bz.davide.dmweb.shared.view.DMWidgetSerializationData)obj).domReady = arrayList;
                }
             // i18n
             if ((value = structure.property("i18n")) != null)
                if (value.isNull())
-                  ((DMWidgetSerializationData)obj).i18n = null;
+                  ((bz.davide.dmweb.shared.view.DMWidgetSerializationData)obj).i18n = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((DMWidgetSerializationData)obj).i18n = (bz.davide.dmweb.shared.i18n.I18NData)identities.get(refid);
+                     ((bz.davide.dmweb.shared.view.DMWidgetSerializationData)obj).i18n = (bz.davide.dmweb.shared.i18n.I18NData)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("I18NData"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((DMWidgetSerializationData)obj).i18n = (bz.davide.dmweb.shared.i18n.I18NData)o;
+                     ((bz.davide.dmweb.shared.view.DMWidgetSerializationData)obj).i18n = (bz.davide.dmweb.shared.i18n.I18NData)o;
                   }
                }
             // idseq
@@ -119,7 +119,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((DMWidgetSerializationData)obj).idseq = (int)value.integer();
+                  ((bz.davide.dmweb.shared.view.DMWidgetSerializationData)obj).idseq = (int)value.integer();
                }
             structure.close();
          }
@@ -149,16 +149,16 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
             // widget
             if ((value = structure.property("widget")) != null)
                if (value.isNull())
-                  ((DMWidgetEventAttachHandler)obj).widget = null;
+                  ((bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler)obj).widget = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((DMWidgetEventAttachHandler)obj).widget = (bz.davide.dmweb.shared.view.AbstractHtmlElementView)identities.get(refid);
+                     ((bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler)obj).widget = (bz.davide.dmweb.shared.view.AbstractHtmlElementView)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("AbstractHtmlElementView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((DMWidgetEventAttachHandler)obj).widget = (bz.davide.dmweb.shared.view.AbstractHtmlElementView)o;
+                     ((bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler)obj).widget = (bz.davide.dmweb.shared.view.AbstractHtmlElementView)o;
                   }
                }
             structure.close();
@@ -192,31 +192,31 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
             // factory
             if ((value = structure.property("factory")) != null)
                if (value.isNull())
-                  ((DMGwtWidgetHostAttachHandler)obj).factory = null;
+                  ((bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler)obj).factory = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((DMGwtWidgetHostAttachHandler)obj).factory = (bz.davide.dmweb.shared.view.DMGwtWidgetHostFactory)identities.get(refid);
+                     ((bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler)obj).factory = (bz.davide.dmweb.shared.view.DMGwtWidgetHostFactory)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMGwtWidgetHostFactory"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((DMGwtWidgetHostAttachHandler)obj).factory = (bz.davide.dmweb.shared.view.DMGwtWidgetHostFactory)o;
+                     ((bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler)obj).factory = (bz.davide.dmweb.shared.view.DMGwtWidgetHostFactory)o;
                   }
                }
             // widget
             if ((value = structure.property("widget")) != null)
                if (value.isNull())
-                  ((DMGwtWidgetHostAttachHandler)obj).widget = null;
+                  ((bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler)obj).widget = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((DMGwtWidgetHostAttachHandler)obj).widget = (bz.davide.dmweb.shared.view.AbstractHtmlElementView)identities.get(refid);
+                     ((bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler)obj).widget = (bz.davide.dmweb.shared.view.AbstractHtmlElementView)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("AbstractHtmlElementView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((DMGwtWidgetHostAttachHandler)obj).widget = (bz.davide.dmweb.shared.view.AbstractHtmlElementView)o;
+                     ((bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler)obj).widget = (bz.davide.dmweb.shared.view.AbstractHtmlElementView)o;
                   }
                }
             structure.close();
@@ -319,16 +319,16 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
             // navigationPanel
             if ((value = structure.property("navigationPanel")) != null)
                if (value.isNull())
-                  ((DMHashNavigationPanelAttachHandler)obj).navigationPanel = null;
+                  ((bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler)obj).navigationPanel = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((DMHashNavigationPanelAttachHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
+                     ((bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((DMHashNavigationPanelAttachHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
+                     ((bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
             structure.close();
@@ -369,7 +369,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
             // attachHandlers
             if ((value = structure.property("attachHandlers")) != null)
                if (value.isNull())
-                  ((AbstractHtmlElementView)obj).attachHandlers = null;
+                  ((bz.davide.dmweb.shared.view.AbstractHtmlElementView)obj).attachHandlers = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -392,12 +392,12 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((AbstractHtmlElementView)obj).attachHandlers = arrayList;
+                  ((bz.davide.dmweb.shared.view.AbstractHtmlElementView)obj).attachHandlers = arrayList;
                }
             // childs
             if ((value = structure.property("childs")) != null)
                if (value.isNull())
-                  ((AbstractHtmlElementView)obj).childs = null;
+                  ((bz.davide.dmweb.shared.view.AbstractHtmlElementView)obj).childs = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -420,12 +420,12 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((AbstractHtmlElementView)obj).childs = arrayList;
+                  ((bz.davide.dmweb.shared.view.AbstractHtmlElementView)obj).childs = arrayList;
                }
             // clickHandlers
             if ((value = structure.property("clickHandlers")) != null)
                if (value.isNull())
-                  ((AbstractHtmlElementView)obj).clickHandlers = null;
+                  ((bz.davide.dmweb.shared.view.AbstractHtmlElementView)obj).clickHandlers = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -448,7 +448,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((AbstractHtmlElementView)obj).clickHandlers = arrayList;
+                  ((bz.davide.dmweb.shared.view.AbstractHtmlElementView)obj).clickHandlers = arrayList;
                }
             // eventBits
             if ((value = structure.property("eventBits")) != null)
@@ -456,15 +456,15 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((AbstractHtmlElementView)obj).eventBits = (int)value.integer();
+                  ((bz.davide.dmweb.shared.view.AbstractHtmlElementView)obj).eventBits = (int)value.integer();
                }
             // id
             if ((value = structure.property("id")) != null)
                if (value.isNull())
-                  ((AbstractHtmlElementView)obj).id = null;
+                  ((bz.davide.dmweb.shared.view.AbstractHtmlElementView)obj).id = null;
                else
                {
-                  ((AbstractHtmlElementView)obj).id = value.string();
+                  ((bz.davide.dmweb.shared.view.AbstractHtmlElementView)obj).id = value.string();
                }
             structure.close();
          }
@@ -502,7 +502,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
             // changeHandlers
             if ((value = structure.property("changeHandlers")) != null)
                if (value.isNull())
-                  ((DMHashNavigationPanel)obj).changeHandlers = null;
+                  ((bz.davide.dmweb.shared.view.DMHashNavigationPanel)obj).changeHandlers = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -525,7 +525,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((DMHashNavigationPanel)obj).changeHandlers = arrayList;
+                  ((bz.davide.dmweb.shared.view.DMHashNavigationPanel)obj).changeHandlers = arrayList;
                }
             // index
             if ((value = structure.property("index")) != null)
@@ -533,12 +533,12 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                   new RuntimeException("Impossibile value for primitive type");
                else
                {
-                  ((DMHashNavigationPanel)obj).index = (int)value.integer();
+                  ((bz.davide.dmweb.shared.view.DMHashNavigationPanel)obj).index = (int)value.integer();
                }
             // pages
             if ((value = structure.property("pages")) != null)
                if (value.isNull())
-                  ((DMHashNavigationPanel)obj).pages = null;
+                  ((bz.davide.dmweb.shared.view.DMHashNavigationPanel)obj).pages = null;
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -561,7 +561,7 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((DMHashNavigationPanel)obj).pages = arrayList;
+                  ((bz.davide.dmweb.shared.view.DMHashNavigationPanel)obj).pages = arrayList;
                }
             structure.close();
          }

@@ -51,91 +51,91 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
             // cover
             if ((value = structure.property("cover")) != null)
                if (value.isNull())
-                  ((SASAbusWebPageAttachHandler)obj).cover = null;
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).cover = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((SASAbusWebPageAttachHandler)obj).cover = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).cover = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusWebPageAttachHandler)obj).cover = (bz.davide.dmweb.shared.view.DivView)o;
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).cover = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
             // homePanel
             if ((value = structure.property("homePanel")) != null)
                if (value.isNull())
-                  ((SASAbusWebPageAttachHandler)obj).homePanel = null;
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).homePanel = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((SASAbusWebPageAttachHandler)obj).homePanel = (it.bz.tis.sasabus.html5.shared.ui.HomePanel)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).homePanel = (it.bz.tis.sasabus.html5.shared.ui.HomePanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("HomePanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusWebPageAttachHandler)obj).homePanel = (it.bz.tis.sasabus.html5.shared.ui.HomePanel)o;
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).homePanel = (it.bz.tis.sasabus.html5.shared.ui.HomePanel)o;
                   }
                }
             // map
             if ((value = structure.property("map")) != null)
                if (value.isNull())
-                  ((SASAbusWebPageAttachHandler)obj).map = null;
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).map = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((SASAbusWebPageAttachHandler)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("SASAbusMap"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusWebPageAttachHandler)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)o;
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).map = (it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)o;
                   }
                }
             // menu
             if ((value = structure.property("menu")) != null)
                if (value.isNull())
-                  ((SASAbusWebPageAttachHandler)obj).menu = null;
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).menu = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((SASAbusWebPageAttachHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("Menu"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusWebPageAttachHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).menu = (it.bz.tis.sasabus.html5.shared.ui.menu.Menu)o;
                   }
                }
             // navigationPanel
             if ((value = structure.property("navigationPanel")) != null)
                if (value.isNull())
-                  ((SASAbusWebPageAttachHandler)obj).navigationPanel = null;
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).navigationPanel = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((SASAbusWebPageAttachHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DMHashNavigationPanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusWebPageAttachHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
                }
             // wrapper
             if ((value = structure.property("wrapper")) != null)
                if (value.isNull())
-                  ((SASAbusWebPageAttachHandler)obj).wrapper = null;
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).wrapper = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((SASAbusWebPageAttachHandler)obj).wrapper = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).wrapper = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
                   else {
                      Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((SASAbusWebPageAttachHandler)obj).wrapper = (bz.davide.dmweb.shared.view.DivView)o;
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).wrapper = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
             structure.close();

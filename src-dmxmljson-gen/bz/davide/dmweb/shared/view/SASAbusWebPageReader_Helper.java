@@ -31,7 +31,7 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmxmljson.unmarshalli
             // BodyContent
             if ((value = structure.property("BodyContent")) != null)
                if (value.isNull())
-                  ((DMWebPage)obj).setBodyContent(null);
+                  ((bz.davide.dmweb.shared.view.DMWebPage)obj).setBodyContent(null);
                else
                {
                   bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
@@ -55,15 +55,15 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmxmljson.unmarshalli
                      }                                                                   
                   }                                                                   
                   arr.close();        
-                  ((DMWebPage)obj).setBodyContent(arrayList);
+                  ((bz.davide.dmweb.shared.view.DMWebPage)obj).setBodyContent(arrayList);
                }
             // Title
             if ((value = structure.property("Title")) != null)
                if (value.isNull())
-                  ((DMWebPage)obj).setTitle(null);
+                  ((bz.davide.dmweb.shared.view.DMWebPage)obj).setTitle(null);
                else
                {
-                  ((DMWebPage)obj).setTitle(value.string());
+                  ((bz.davide.dmweb.shared.view.DMWebPage)obj).setTitle(value.string());
                }
             structure.close();
          }
@@ -88,10 +88,10 @@ public class SASAbusWebPageReader_Helper extends bz.davide.dmxmljson.unmarshalli
             // StyleName
             if ((value = structure.property("StyleName")) != null)
                if (value.isNull())
-                  ((AbstractHtmlElementView)obj).setStyleName(null);
+                  ((bz.davide.dmweb.shared.view.AbstractHtmlElementView)obj).setStyleName(null);
                else
                {
-                  ((AbstractHtmlElementView)obj).setStyleName(value.string());
+                  ((bz.davide.dmweb.shared.view.AbstractHtmlElementView)obj).setStyleName(value.string());
                }
             structure.close();
          }

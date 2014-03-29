@@ -41,6 +41,7 @@ public class SASAbusWebPage extends DMWebPage
 
    public SASAbusWebPage()
    {
+      super(new DMWebPage.InitParameters());
       DivView wrapper = new DivView(new DivView.InitParameters("cover-wrapper"));
 
       DivView initialCover = new DivView(new DivView.InitParameters("cover"));
@@ -68,13 +69,12 @@ public class SASAbusWebPage extends DMWebPage
 
       this.titleBar = new TitleBar(this.menu, map, null);
 
-      this.setBodyContent(new AbstractHtmlElementView[]{
-               this.titleBar,
-               navigationPanel,
-               map,
-               this.menu,
-               wrapper,
-               aboutPanel});
+      this.setBodyContent(new AbstractHtmlElementView[] { this.titleBar,
+            navigationPanel,
+            map,
+            this.menu,
+            wrapper,
+            aboutPanel });
 
    }
 
