@@ -11,6 +11,71 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
 {
    protected SASAbusWidgetUnmarshaller_Helper()
    {
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.SASAbusI18N", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.SASAbusI18N>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.SASAbusI18N  ret){
+            // language
+            if (ret.language != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusI18N.language");
+            // translations
+            if (ret.translations != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusI18N.translations");
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.SASAbusI18N", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            it.bz.tis.sasabus.html5.shared.SASAbusI18N ret = new it.bz.tis.sasabus.html5.shared.SASAbusI18N();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.SASAbusI18N").check(ret);
+            return ret;
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.SASAbusI18N", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+            // language
+            if ((value = structure.property("language")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusI18N)obj).language = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusI18N)obj).language = value.string();
+               }
+            // translations
+            if ((value = structure.property("translations")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusI18N)obj).translations = null;
+               else
+               {
+                  bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
+                  arr.open();        
+                  it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText[] arrayList = new it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
+                     if (value.isNull())                                           
+                        arrayList[i] = null;                                       
+                     else                                                          
+                     {                                                                   
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
+                        if (refid != null)                              
+                           arrayList[i] = (it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText)(identities.get(refid));                                                
+                        else {
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("SASAbusI18NKeyLocalizedText"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText)(o);                                                
+                        }
+                     }                                                                   
+                  }                                                                   
+                  arr.close();        
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusI18N)obj).translations = arrayList;
+               }
+            structure.close();
+         }
+      });
       this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler>() {
          @Override public void check(it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler  ret){
             // cover
@@ -137,6 +202,50 @@ public class SASAbusWidgetUnmarshaller_Helper extends it.bz.tis.sasabus.html5.sh
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).wrapper = (bz.davide.dmweb.shared.view.DivView)o;
                   }
+               }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText  ret){
+            // key
+            if (ret.key != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText.key");
+            // text
+            if (ret.text != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText.text");
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText ret = new it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText").check(ret);
+            return ret;
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+            // key
+            if ((value = structure.property("key")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText)obj).key = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText)obj).key = value.string();
+               }
+            // text
+            if ((value = structure.property("text")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText)obj).text = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText)obj).text = value.string();
                }
             structure.close();
          }

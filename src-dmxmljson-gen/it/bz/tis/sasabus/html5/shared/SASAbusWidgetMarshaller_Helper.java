@@ -11,6 +11,41 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
 {
    protected SASAbusWidgetMarshaller_Helper()
    {
+      this.putClassMarshaller("it.bz.tis.sasabus.html5.shared.SASAbusI18N", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
+         @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
+            if (!superClass) {
+               if (isReference(structure, obj, identities, seq))
+                  return;
+               identities.put(obj, structure);
+               structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
+            }
+            Object value;
+            // language
+            value = ((it.bz.tis.sasabus.html5.shared.SASAbusI18N)obj).language;
+            if (value == null)
+               structure.property("language").nullValue();
+            else
+            {
+                    structure.property("language").string((String)value);                          
+            }
+            // translations
+            value = ((it.bz.tis.sasabus.html5.shared.SASAbusI18N)obj).translations;
+            if (value == null)
+               structure.property("translations").nullValue();
+            else
+            {
+               it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText[] rawarray = (it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText[])value;                        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("translations").array(rawarray.length);        
+               for (Object o: rawarray) {                                    
+                  if (o == null)                                              
+                     array.item().nullValue();                                
+                     internalMarschall(o, o.getClass().getName(), "it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText", array.item().structure(), identities, seq, false);
+               }                                                              
+            }
+            if (!superClass)
+               structure.close();
+         }
+      });
       this.putClassMarshaller("it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
          @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
             if (!superClass) {
@@ -67,6 +102,35 @@ public class SASAbusWidgetMarshaller_Helper extends it.bz.tis.sasabus.html5.shar
             else
             {
                      internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("wrapper").structure(), identities, seq, false);
+            }
+            if (!superClass)
+               structure.close();
+         }
+      });
+      this.putClassMarshaller("it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
+         @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
+            if (!superClass) {
+               if (isReference(structure, obj, identities, seq))
+                  return;
+               identities.put(obj, structure);
+               structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
+            }
+            Object value;
+            // key
+            value = ((it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText)obj).key;
+            if (value == null)
+               structure.property("key").nullValue();
+            else
+            {
+                    structure.property("key").string((String)value);                          
+            }
+            // text
+            value = ((it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText)obj).text;
+            if (value == null)
+               structure.property("text").nullValue();
+            else
+            {
+                    structure.property("text").string((String)value);                          
             }
             if (!superClass)
                structure.close();

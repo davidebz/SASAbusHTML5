@@ -39,6 +39,11 @@ public class SASAbusWebPage extends DMWebPage
    Menu      menu;
    HomePanel homePanel;
 
+   public static class InitParameters extends DMWebPage.InitParameters
+   {
+      SASAbusI18N i18n;
+   }
+
    public SASAbusWebPage()
    {
       super(new DMWebPage.InitParameters());
