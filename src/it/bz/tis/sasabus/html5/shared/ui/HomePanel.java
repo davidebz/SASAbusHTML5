@@ -69,7 +69,7 @@ public class HomePanel extends DivView implements PageChangeHandler
       {
          this.favouriteBusStationListPanel.refresh();
       }
-      this.map.showOverviewMap(true);
+      //this.map.showOverviewMap(true);
    }
 
    public void setIntroText(String introText) throws Exception
@@ -81,6 +81,6 @@ public class HomePanel extends DivView implements PageChangeHandler
    @Override
    public void pageHide()
    {
-      this.map.showOverviewMap(false);
+      //this.map.showOverviewMap(false);
    }
 }
