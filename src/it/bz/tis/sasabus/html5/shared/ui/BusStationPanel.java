@@ -117,6 +117,12 @@ public class BusStationPanel extends DivView implements PageChangeHandler
       ButtonView asEnd = new ButtonView(new ButtonView.InitParameters(this.i18n.getLocalizedText("BusStationPanel_use_as_end_routing")));
       this.appendChild(asStart);
       this.appendChild(asEnd);
+
+      if (customAndI18n.getBusStationCustomView() != null)
+      {
+         this.appendChild(customAndI18n.getBusStationCustomView().createView());
+      }
+
       DivView departureInputPanel = new DivView(new DivView.InitParameters("departure-input"));
       this.appendChild(departureInputPanel);
 
