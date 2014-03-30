@@ -9,6 +9,7 @@ mkdir tmp
 
 rsync -acO ../war/WEB-INF/classes/ tmp/
 rsync -acO ../src/ tmp/
+rsync -acO ../src-dmxmljson-gen/ tmp/
 
 mkdir -p tmp/META-INF/resources
 
