@@ -22,7 +22,7 @@ package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusStation;
-import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
+import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -40,7 +40,7 @@ public class BusStationInRangeWidget extends DivView
                                   final DMHashNavigationPanel navigationPanel,
                                   final AreaList areaList,
                                   final SASAbusMap map,
-                                  final SASAbusI18N i18n)
+                                  final BusStationCustomViewAndI18N custom)
    {
       super(new DivView.InitParameters("nearest-bus-stops"));
       this.appendChild(new SpanView(new SpanView.InitParameters("Nearest bus stops: ")));
@@ -84,10 +84,10 @@ public class BusStationInRangeWidget extends DivView
             @Override
             public void onClick(DMClickEvent event)
             {
-               navigationPanel.newPage(new BusStationPanel(copy[ii], areaList, navigationPanel, map, i18n));
+               navigationPanel.newPage(new BusStationPanel(copy[ii], areaList, navigationPanel, map, custom));
             }
          });
-         rowItem.appendChild(new ItDeNamePanel(copy[i].getName_it(), copy[i].getName_de(), null, i18n));
+         rowItem.appendChild(new ItDeNamePanel(copy[i].getName_it(), copy[i].getName_de(), null, custom.getI18n()));
          this.appendChild(rowItem);
       }
    }

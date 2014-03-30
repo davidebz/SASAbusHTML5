@@ -139,13 +139,13 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             {
                      internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.backend.shared.AreaList", structure.property("areaList").structure(), identities, seq, false);
             }
-            // i18n
-            value = ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).i18n;
+            // custom
+            value = ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).custom;
             if (value == null)
-               structure.property("i18n").nullValue();
+               structure.property("custom").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.SASAbusI18N", structure.property("i18n").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N", structure.property("custom").structure(), identities, seq, false);
             }
             // map
             value = ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).map;

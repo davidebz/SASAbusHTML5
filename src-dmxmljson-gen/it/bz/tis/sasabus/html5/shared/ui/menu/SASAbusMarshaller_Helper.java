@@ -236,6 +236,14 @@ public class SASAbusMarshaller_Helper extends bz.davide.dmweb.shared.view.SASAbu
             {
                      internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem", structure.property("areasAndLine").structure(), identities, seq, false);
             }
+            // custom
+            value = ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).custom;
+            if (value == null)
+               structure.property("custom").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N", structure.property("custom").structure(), identities, seq, false);
+            }
             // favourites
             value = ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).favourites;
             if (value == null)

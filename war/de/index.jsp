@@ -63,7 +63,8 @@
 
 	
 	<dmweb:fragment viewclass="it.bz.tis.sasabus.html5.shared.SASAbusWebPage">
-		<initParameters> 
+		<initParameters>
+		<custom.BusStationCustomViewAndI18N>
 			<i18n>
 				<language>de</language>
 				<translations><key>AboutPanel_checkingUpdates</key><text>Suche nach Updates ...</text></translations>
@@ -101,7 +102,8 @@
 				<translations><key>RouteSearchPanel_start_station</key><text>Start</text></translations>
 				<translations><key>RouteSearchPanel_when</key><text>Wann</text></translations>
 				
-			</i18n>
+				</i18n>
+			</custom.BusStationCustomViewAndI18N>
 			<homePageCustomFragment.HomePageCustomIntroText>
 			<introText>Liebe Betatester, willkommen bei SASAbus HTML5. Mit dieser App können Sie
       Informationen zu allen Diensten der SASA abrufen: Buslinien, Haltestellen, Fahrpläne

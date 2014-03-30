@@ -27,6 +27,7 @@ import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.backend.shared.BusStop;
 import it.bz.tis.sasabus.backend.shared.BusTrip;
 import it.bz.tis.sasabus.backend.shared.BusTripStop;
+import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.data.Parking;
 import it.bz.tis.sasabus.html5.shared.data.TrainStation;
@@ -93,16 +94,17 @@ public class SASAbusMap extends DivView
    DivView                                            overwievMap;
 
    SASAbusI18N                                        i18n;
+   BusStationCustomViewAndI18N                        custom;
 
    public static class InitParameters extends DivView.InitParameters
    {
 
-      final SASAbusI18N i18n;
+      BusStationCustomViewAndI18N custom;
 
-      public InitParameters(final SASAbusI18N i18n)
+      public InitParameters(BusStationCustomViewAndI18N custom)
       {
          super("map");
-         this.i18n = i18n;
+         this.custom = custom;
       }
    }
 
@@ -110,7 +112,7 @@ public class SASAbusMap extends DivView
    {
       super(initParameters);
 
-      this.i18n = initParameters.i18n;
+      this.i18n = initParameters.custom.getI18n();
 
       this.close = new ButtonView(new ButtonView.InitParameters("X"));
 
@@ -204,7 +206,7 @@ public class SASAbusMap extends DivView
                                                                            SASAbusMap.this.navigationPanel,
                                                                            areaList,
                                                                            SASAbusMap.this,
-                                                                           SASAbusMap.this.i18n);
+                                                                           SASAbusMap.this.custom);
                SASAbusMap.this.leafletMap.openPopup(trainStationPopup.getElement(), latLng);
                trainStationPopup.init();
             }
@@ -320,7 +322,7 @@ public class SASAbusMap extends DivView
                                                      this.navigationPanel,
                                                      this,
                                                      this.areaList,
-                                                     this.i18n);
+                                                     this.custom);
       this.leafletMap.openPopup(mapPopup.getElement(), latLng);
       mapPopup.init();
    }
@@ -354,7 +356,7 @@ public class SASAbusMap extends DivView
                                                                      SASAbusMap.this.navigationPanel,
                                                                      areaList,
                                                                      SASAbusMap.this,
-                                                                     SASAbusMap.this.i18n));
+                                                                     SASAbusMap.this.custom));
 
             }
          });

@@ -35,14 +35,14 @@ import com.google.gwt.user.client.History;
  */
 public class SASAbusWebPageAttachHandler implements AttachListener
 {
-   DivView               cover;
-   DivView               wrapper;
-   SASAbusMap            map;
-   Menu                  menu;
-   HomePanel             homePanel;
-   DMHashNavigationPanel navigationPanel;
+   DivView                     cover;
+   DivView                     wrapper;
+   SASAbusMap                  map;
+   Menu                        menu;
+   HomePanel                   homePanel;
+   DMHashNavigationPanel       navigationPanel;
 
-   SASAbusI18N           i18n;
+   BusStationCustomViewAndI18N custom;
 
    public SASAbusWebPageAttachHandler(DivView cover,
                                       DivView wrapper,
@@ -50,7 +50,7 @@ public class SASAbusWebPageAttachHandler implements AttachListener
                                       Menu menu,
                                       HomePanel homePanel,
                                       DMHashNavigationPanel navigationPanel,
-                                      final SASAbusI18N i18n)
+                                      final BusStationCustomViewAndI18N custom)
    {
       this.cover = cover;
       this.wrapper = wrapper;
@@ -58,7 +58,7 @@ public class SASAbusWebPageAttachHandler implements AttachListener
       this.menu = menu;
       this.homePanel = homePanel;
       this.navigationPanel = navigationPanel;
-      this.i18n = i18n;
+      this.custom = custom;
    }
 
    SASAbusWebPageAttachHandler()
@@ -78,7 +78,7 @@ public class SASAbusWebPageAttachHandler implements AttachListener
                                                                             SASAbusWebPageAttachHandler.this.menu,
                                                                             this.homePanel,
                                                                             this.navigationPanel,
-                                                                            this.i18n));
+                                                                            this.custom));
       }
    }
 }

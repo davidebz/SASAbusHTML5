@@ -45,6 +45,14 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.backend.shared.S
             {
                      internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("controls").structure(), identities, seq, false);
             }
+            // custom
+            value = ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).custom;
+            if (value == null)
+               structure.property("custom").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N", structure.property("custom").structure(), identities, seq, false);
+            }
             // gpsIcon
             value = ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).gpsIcon;
             if (value == null)

@@ -22,7 +22,7 @@ package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.Area;
 import it.bz.tis.sasabus.backend.shared.AreaList;
-import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
+import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
@@ -42,7 +42,7 @@ public class AreasPanel extends DivView implements PageChangeHandler
                      final AreaList areaList,
                      final SASAbusMap map,
                      boolean mapOpen,
-                     final SASAbusI18N i18n)
+                     final BusStationCustomViewAndI18N custom)
    {
       super(new DivView.InitParameters("areas"));
       this.map = map;
@@ -55,11 +55,11 @@ public class AreasPanel extends DivView implements PageChangeHandler
             @Override
             public void onClick(DMClickEvent event)
             {
-               navPanel.newPage(new AreaPanel(area, navPanel, areaList, map, i18n));
+               navPanel.newPage(new AreaPanel(area, navPanel, areaList, map, custom));
             }
          });
 
-         areaRow.appendChild(new ItDeAreaNamePanel(area, i18n));
+         areaRow.appendChild(new ItDeAreaNamePanel(area, custom.getI18n()));
          this.appendChild(areaRow);
 
       }

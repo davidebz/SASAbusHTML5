@@ -61,7 +61,7 @@ public class MenuAreaLinesClickHandler implements DMClickHandler
                                                   this.areaList,
                                                   this.map,
                                                   false,
-                                                  this.menu.i18n));
+                                                  this.menu.custom));
       this.menu.hide();
    };
 }

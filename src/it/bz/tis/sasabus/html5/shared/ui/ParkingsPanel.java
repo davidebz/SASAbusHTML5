@@ -21,7 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
-import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
+import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.data.Parking;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.shared.view.DMClickEvent;
@@ -35,7 +35,7 @@ public class ParkingsPanel extends DivView
    public ParkingsPanel(final DMHashNavigationPanel navPanel,
                         final AreaList areaList,
                         final SASAbusMap map,
-                        final SASAbusI18N i18n)
+                        final BusStationCustomViewAndI18N custom)
    {
       super(new DivView.InitParameters());
       this.appendChild(new SpanView(new SpanView.InitParameters("Parkings:")));
@@ -46,10 +46,10 @@ public class ParkingsPanel extends DivView
             @Override
             public void onClick(DMClickEvent event)
             {
-               navPanel.newPage(new ParkingPanel(park, navPanel, areaList, map, i18n));
+               navPanel.newPage(new ParkingPanel(park, navPanel, areaList, map, custom));
             }
          });
-         rowItem.appendChild(new ItDeNamePanel(park.getName_it(), park.getName_de(), null, i18n));
+         rowItem.appendChild(new ItDeNamePanel(park.getName_it(), park.getName_de(), null, custom.getI18n()));
          this.appendChild(rowItem);
       }
    }

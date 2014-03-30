@@ -42,8 +42,8 @@ public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
 
    public static class InitParameters
    {
-      SASAbusI18N            i18n;
-      HomePageCustomFragment homePageCustomFragment;
+      BusStationCustomViewAndI18N custom;
+      HomePageCustomFragment      homePageCustomFragment;
    }
 
    public SASAbusWebPage(InitParameters initParameters) throws Exception
@@ -55,7 +55,7 @@ public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
 
       wrapper.appendChild(initialCover);
 
-      SASAbusMap map = new SASAbusMap(new SASAbusMap.InitParameters(initParameters.i18n));
+      SASAbusMap map = new SASAbusMap(new SASAbusMap.InitParameters(initParameters.custom));
       this.homePanel = new HomePanel(new HomePanel.InitParameters(initParameters.homePageCustomFragment));
 
       this.homePanel.setMap(map);
@@ -66,7 +66,7 @@ public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
 
       AboutPanel aboutPanel = new AboutPanel(new AboutPanel.InitParameters());
 
-      this.menu = new Menu(navigationPanel, null, map, aboutPanel, initParameters.i18n);
+      this.menu = new Menu(navigationPanel, null, map, aboutPanel, initParameters.custom);
 
       this.menu.addAttachHandler(new SASAbusWebPageAttachHandler(initialCover,
                                                                  wrapper,
@@ -74,7 +74,7 @@ public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
                                                                  this.menu,
                                                                  this.homePanel,
                                                                  navigationPanel,
-                                                                 initParameters.i18n));
+                                                                 initParameters.custom));
 
       this.titleBar = new TitleBar(this.menu, map, null);
 

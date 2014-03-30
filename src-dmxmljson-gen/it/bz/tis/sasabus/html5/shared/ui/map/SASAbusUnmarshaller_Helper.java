@@ -22,6 +22,9 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.backend.shared
             // controls
             if (ret.controls != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.controls");
+            // custom
+            if (ret.custom != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.custom");
             // gpsIcon
             if (ret.gpsIcon != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.gpsIcon");
@@ -99,6 +102,21 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.backend.shared
                      Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).controls = (bz.davide.dmweb.shared.view.DivView)o;
+                  }
+               }
+            // custom
+            if ((value = structure.property("custom")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).custom = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).custom = (it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("BusStationCustomViewAndI18N"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).custom = (it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)o;
                   }
                }
             // gpsIcon

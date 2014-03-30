@@ -13,12 +13,12 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
    {
       this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters>() {
          @Override public void check(it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters  ret){
+            // custom
+            if (ret.custom != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.custom");
             // homePageCustomFragment
             if (ret.homePageCustomFragment != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.homePageCustomFragment");
-            // i18n
-            if (ret.i18n != null)
-               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.i18n");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
@@ -36,6 +36,21 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            // custom
+            if ((value = structure.property("custom")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).custom = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).custom = (it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("BusStationCustomViewAndI18N"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).custom = (it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)o;
+                  }
+               }
             // homePageCustomFragment
             if ((value = structure.property("homePageCustomFragment")) != null)
                if (value.isNull())
@@ -49,21 +64,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                      Object o = newInstance(value.structure().getRuntimeClassName("HomePageCustomFragment"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).homePageCustomFragment = (it.bz.tis.sasabus.html5.shared.HomePageCustomFragment)o;
-                  }
-               }
-            // i18n
-            if ((value = structure.property("i18n")) != null)
-               if (value.isNull())
-                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).i18n = null;
-               else
-               {
-                  String refid = value.structure().getRefId();    
-                  if (refid != null)                              
-                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).i18n = (it.bz.tis.sasabus.html5.shared.SASAbusI18N)identities.get(refid);
-                  else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("SASAbusI18N"));              
-                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).i18n = (it.bz.tis.sasabus.html5.shared.SASAbusI18N)o;
                   }
                }
             structure.close();
@@ -167,17 +167,75 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             structure.close();
          }
       });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N  ret){
+            // busStationCustomView
+            if (ret.busStationCustomView != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N.busStationCustomView");
+            // i18n
+            if (ret.i18n != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N.i18n");
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N ret = new it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N").check(ret);
+            return ret;
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+            // busStationCustomView
+            if ((value = structure.property("busStationCustomView")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)obj).busStationCustomView = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)obj).busStationCustomView = (it.bz.tis.sasabus.html5.shared.BusStationCustomView)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("BusStationCustomView"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)obj).busStationCustomView = (it.bz.tis.sasabus.html5.shared.BusStationCustomView)o;
+                  }
+               }
+            // i18n
+            if ((value = structure.property("i18n")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)obj).i18n = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)obj).i18n = (it.bz.tis.sasabus.html5.shared.SASAbusI18N)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("SASAbusI18N"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)obj).i18n = (it.bz.tis.sasabus.html5.shared.SASAbusI18N)o;
+                  }
+               }
+            structure.close();
+         }
+      });
       this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler>() {
          @Override public void check(it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler  ret){
             // cover
             if (ret.cover != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.cover");
+            // custom
+            if (ret.custom != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.custom");
             // homePanel
             if (ret.homePanel != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.homePanel");
-            // i18n
-            if (ret.i18n != null)
-               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.i18n");
             // map
             if (ret.map != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.map");
@@ -222,6 +280,21 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                      ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).cover = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
+            // custom
+            if ((value = structure.property("custom")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).custom = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).custom = (it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("BusStationCustomViewAndI18N"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).custom = (it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)o;
+                  }
+               }
             // homePanel
             if ((value = structure.property("homePanel")) != null)
                if (value.isNull())
@@ -235,21 +308,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                      Object o = newInstance(value.structure().getRuntimeClassName("HomePanel"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).homePanel = (it.bz.tis.sasabus.html5.shared.ui.HomePanel)o;
-                  }
-               }
-            // i18n
-            if ((value = structure.property("i18n")) != null)
-               if (value.isNull())
-                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).i18n = null;
-               else
-               {
-                  String refid = value.structure().getRefId();    
-                  if (refid != null)                              
-                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).i18n = (it.bz.tis.sasabus.html5.shared.SASAbusI18N)identities.get(refid);
-                  else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("SASAbusI18N"));              
-                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).i18n = (it.bz.tis.sasabus.html5.shared.SASAbusI18N)o;
                   }
                }
             // map

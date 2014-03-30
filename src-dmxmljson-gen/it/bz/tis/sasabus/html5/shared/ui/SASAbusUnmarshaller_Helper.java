@@ -234,9 +234,9 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             // areaList
             if (ret.areaList != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel.areaList");
-            // i18n
-            if (ret.i18n != null)
-               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel.i18n");
+            // custom
+            if (ret.custom != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel.custom");
             // map
             if (ret.map != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel.map");
@@ -277,19 +277,19 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                      ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).areaList = (it.bz.tis.sasabus.backend.shared.AreaList)o;
                   }
                }
-            // i18n
-            if ((value = structure.property("i18n")) != null)
+            // custom
+            if ((value = structure.property("custom")) != null)
                if (value.isNull())
-                  ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).i18n = null;
+                  ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).custom = null;
                else
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).i18n = (it.bz.tis.sasabus.html5.shared.SASAbusI18N)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).custom = (it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("SASAbusI18N"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("BusStationCustomViewAndI18N"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).i18n = (it.bz.tis.sasabus.html5.shared.SASAbusI18N)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).custom = (it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)o;
                   }
                }
             // map

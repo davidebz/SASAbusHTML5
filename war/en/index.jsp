@@ -63,7 +63,8 @@
 
 	
 	<dmweb:fragment viewclass="it.bz.tis.sasabus.html5.shared.SASAbusWebPage">
-		<initParameters> 
+		<initParameters>
+		<custom.BusStationCustomViewAndI18N>
 			<i18n>
 				<language>en</language>
 					<translations><key>AboutPanel_checkingUpdates</key><text>checking updates ...</text></translations>
@@ -100,7 +101,8 @@
 					<translations><key>RouteSearchPanel_search</key><text>Search</text></translations>
 					<translations><key>RouteSearchPanel_start_station</key><text>Start</text></translations>
 					<translations><key>RouteSearchPanel_when</key><text>When</text></translations>
-			</i18n>
+				</i18n>
+			</custom.BusStationCustomViewAndI18N>
 			<homePageCustomFragment.HomePageCustomIntroText>
 				<introText>Welcome beta-tester to sasabus html5! This app let you discover the SASA
 			      services: bus lines, bus stops, departures, routing of area Merano/Meran and

@@ -21,6 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared.ui.menu;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
+import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.AboutPanel;
 import it.bz.tis.sasabus.html5.shared.ui.ParkingsPanel;
@@ -47,55 +48,58 @@ import com.google.gwt.user.client.Timer;
  */
 public class Menu extends DivView
 {
-   DMHashNavigationPanel navigationPanel;
-   SASAbusMap            map;
-   boolean               menuOpen = false;
-   MenuItem              areasAndLine;
-   MenuItem              mapItem;
-   MenuItem              search;
+   DMHashNavigationPanel       navigationPanel;
+   SASAbusMap                  map;
+   boolean                     menuOpen = false;
+   MenuItem                    areasAndLine;
+   MenuItem                    mapItem;
+   MenuItem                    search;
    //MenuItem              routing;
-   MenuItem              news;
-   MenuItem              favourites;
+   MenuItem                    news;
+   MenuItem                    favourites;
    //MenuItem              green;
-   MenuItem              more;
-   MenuItem              sendFeedback;
-   MenuItem              about;
+   MenuItem                    more;
+   MenuItem                    sendFeedback;
+   MenuItem                    about;
 
-   MenuItem              parkings;
-   MenuItem              train;
+   MenuItem                    parkings;
+   MenuItem                    train;
 
-   DivView               moreMenuItems;
+   DivView                     moreMenuItems;
 
-   MenuMoreClickHandler  moreClickHandler;
+   MenuMoreClickHandler        moreClickHandler;
 
-   AboutPanel            aboutPanel;
+   AboutPanel                  aboutPanel;
 
-   SASAbusI18N           i18n;
+   SASAbusI18N                 i18n;
+   BusStationCustomViewAndI18N custom;
 
    public Menu(final DMHashNavigationPanel navigationPanel,
                final AreaList areaList,
                final SASAbusMap map,
                AboutPanel aboutPanel,
-               SASAbusI18N i18n)
+               BusStationCustomViewAndI18N custom)
    {
       super(new DivView.InitParameters("menu"));
 
-      this.i18n = i18n;
+      this.i18n = custom.getI18n();
+      this.custom = custom;
 
       this.aboutPanel = aboutPanel;
       this.navigationPanel = navigationPanel;
       this.map = map;
 
       this.areasAndLine = new MenuItem(new LinesIcon(new LinesIcon.InitParameters()),
-                                       i18n.getLocalizedText("Menu_areasLines"));
+                                       this.i18n.getLocalizedText("Menu_areasLines"));
       this.appendChild(this.areasAndLine);
 
-      this.mapItem = new MenuItem(new MapIcon(new MapIcon.InitParameters()), i18n.getLocalizedText("Menu_map"));
+      this.mapItem = new MenuItem(new MapIcon(new MapIcon.InitParameters()),
+                                  this.i18n.getLocalizedText("Menu_map"));
       this.mapItem.addStyleName("map ");
       this.appendChild(this.mapItem);
 
       this.search = new MenuItem(new SearchIcon(new SearchIcon.InitParameters()),
-                                 i18n.getLocalizedText("Menu_search"));
+                                 this.i18n.getLocalizedText("Menu_search"));
       this.appendChild(this.search);
 
       this.favourites = new MenuItem(new FavouritesActiveIcon(new FavouritesActiveIcon.InitParameters()),
@@ -110,7 +114,8 @@ public class Menu extends DivView
       //this.routing = new MenuItem(new RouteIcon(new RouteIcon.InitParameters()), i18n.getLocalizedText("Menu_routing"));
       //this.add(this.routing);
 
-      this.more = new MenuItem(new MoreIcon(new MoreIcon.InitParameters()), i18n.getLocalizedText("Menu_more"));
+      this.more = new MenuItem(new MoreIcon(new MoreIcon.InitParameters()),
+                               this.i18n.getLocalizedText("Menu_more"));
       this.more.addStyleName("more");
       this.appendChild(this.more);
 
@@ -120,14 +125,16 @@ public class Menu extends DivView
       this.train = new MenuItem(new TrainIcon(new TrainIcon.InitParameters()), "Train");
       this.moreMenuItems.appendChild(this.train);
 
-      this.news = new MenuItem(new NewsIcon(new NewsIcon.InitParameters()), i18n.getLocalizedText("Menu_news"));
+      this.news = new MenuItem(new NewsIcon(new NewsIcon.InitParameters()),
+                               this.i18n.getLocalizedText("Menu_news"));
       this.moreMenuItems.appendChild(this.news);
 
       this.sendFeedback = new MenuItem(new FeedbackIcon(new FeedbackIcon.InitParameters()),
-                                       i18n.getLocalizedText("Menu_feedback"));
+                                       this.i18n.getLocalizedText("Menu_feedback"));
       this.moreMenuItems.appendChild(this.sendFeedback);
 
-      this.about = new MenuItem(new AboutIcon(new AboutIcon.InitParameters()), i18n.getLocalizedText("Menu_about"));
+      this.about = new MenuItem(new AboutIcon(new AboutIcon.InitParameters()),
+                                this.i18n.getLocalizedText("Menu_about"));
       this.moreMenuItems.appendChild(this.about);
 
    }
@@ -176,7 +183,7 @@ public class Menu extends DivView
             Menu.this.navigationPanel.newPage(new TrainStationsPanel(Menu.this.navigationPanel,
                                                                      areaList,
                                                                      Menu.this.map,
-                                                                     Menu.this.i18n));
+                                                                     Menu.this.custom));
             Menu.this.hide();
          }
       });
@@ -190,7 +197,7 @@ public class Menu extends DivView
             Menu.this.navigationPanel.newPage(new ParkingsPanel(Menu.this.navigationPanel,
                                                                 areaList,
                                                                 Menu.this.map,
-                                                                Menu.this.i18n));
+                                                                Menu.this.custom));
             Menu.this.hide();
          }
       });

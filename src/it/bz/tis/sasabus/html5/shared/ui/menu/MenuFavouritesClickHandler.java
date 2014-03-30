@@ -60,7 +60,7 @@ public class MenuFavouritesClickHandler implements DMClickHandler
       this.navigationPanel.newPage(new FavouriteBusStationListPanel(this.areaList,
                                                                     this.navigationPanel,
                                                                     this.map,
-                                                                    this.menu.i18n));
+                                                                    this.menu.custom));
       this.menu.hide();
    };
 }

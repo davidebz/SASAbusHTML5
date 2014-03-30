@@ -22,8 +22,8 @@ package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusStation;
+import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.FavouriteBusStationList;
-import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
@@ -37,21 +37,21 @@ import bz.davide.dmweb.shared.view.SpanView;
  */
 public class FavouriteBusStationListPanel extends DivView implements PageChangeHandler
 {
-   AreaList              areaList;
-   DMHashNavigationPanel navigationPanel;
-   SASAbusMap            map;
-   SASAbusI18N           i18n;
+   AreaList                    areaList;
+   DMHashNavigationPanel       navigationPanel;
+   SASAbusMap                  map;
+   BusStationCustomViewAndI18N custom;
 
    public FavouriteBusStationListPanel(AreaList areaList,
                                        DMHashNavigationPanel navigationPanel,
                                        SASAbusMap map,
-                                       final SASAbusI18N i18n)
+                                       final BusStationCustomViewAndI18N custom)
    {
       super(new DivView.InitParameters());
       this.areaList = areaList;
       this.navigationPanel = navigationPanel;
       this.map = map;
-      this.i18n = i18n;
+      this.custom = custom;
       this.refresh();
    }
 
@@ -64,8 +64,9 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
       this.clear();
 
       FavouriteBusStationList favourites = FavouriteBusStationList.getSingleton();
-      BusStation[] busStations = BusLinePanel.sortByCurrentLanguage(this.areaList.getBusStations(), this.i18n);
-      this.appendChild(new SpanView(new SpanView.InitParameters(this.i18n.getLocalizedText("FavouriteBusStationListPanel_favourite_are")
+      BusStation[] busStations = BusLinePanel.sortByCurrentLanguage(this.areaList.getBusStations(),
+                                                                    this.custom.getI18n());
+      this.appendChild(new SpanView(new SpanView.InitParameters(this.custom.getI18n().getLocalizedText("FavouriteBusStationListPanel_favourite_are")
                                                                 + ":")));
       int count = 0;
       for (final BusStation busStation : busStations)
@@ -81,17 +82,17 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
                                                                                                 FavouriteBusStationListPanel.this.areaList,
                                                                                                 FavouriteBusStationListPanel.this.navigationPanel,
                                                                                                 FavouriteBusStationListPanel.this.map,
-                                                                                                FavouriteBusStationListPanel.this.i18n));
+                                                                                                FavouriteBusStationListPanel.this.custom));
                }
             });
-            rowItem.appendChild(new ItDeBusStationNamePanel(busStation, this.i18n));
+            rowItem.appendChild(new ItDeBusStationNamePanel(busStation, this.custom.getI18n()));
             this.appendChild(rowItem);
             count++;
          }
       }
       if (count == 0)
       {
-         this.appendChild(new SpanView(new SpanView.InitParameters(this.i18n.getLocalizedText("FavouriteBusStationListPanel_empty_favourite"))));
+         this.appendChild(new SpanView(new SpanView.InitParameters(this.custom.getI18n().getLocalizedText("FavouriteBusStationListPanel_empty_favourite"))));
       }
 
    }

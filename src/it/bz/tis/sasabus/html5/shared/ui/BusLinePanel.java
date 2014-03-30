@@ -23,6 +23,7 @@ package it.bz.tis.sasabus.html5.shared.ui;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusLine;
 import it.bz.tis.sasabus.backend.shared.BusStation;
+import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
@@ -49,17 +50,17 @@ public class BusLinePanel extends DivView implements PageChangeHandler
                        final DMHashNavigationPanel navPanel,
                        final SASAbusMap map,
                        boolean mapOpen,
-                       final SASAbusI18N i18n)
+                       final BusStationCustomViewAndI18N custom)
    {
       super(new DivView.InitParameters("bus-stations"));
       this.mapOpen = mapOpen;
-      this.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("BusLine")
+      this.appendChild(new SpanView(new SpanView.InitParameters(custom.getI18n().getLocalizedText("BusLine")
                                                                 + " "
                                                                 + busLine.getNumber()
                                                                 + " "
                                                                 + ItDeNamePanel.asOneLine(busLine.getArea().getName_it(),
                                                                                           busLine.getArea().getName_de(),
-                                                                                          i18n))));
+                                                                                          custom.getI18n()))));
       this.map = map;
       this.busLine = busLine;
 
@@ -76,25 +77,25 @@ public class BusLinePanel extends DivView implements PageChangeHandler
          }
       });
 
-      this.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("BusStations"))));
+      this.appendChild(new SpanView(new SpanView.InitParameters(custom.getI18n().getLocalizedText("BusStations"))));
 
       DivView list = new DivView(new DivView.InitParameters("bus-stations-list"));
 
       this.appendChild(list);
 
-      for (final BusStation busStation : sortByCurrentLanguage(busLine.getBusStations(), i18n))
+      for (final BusStation busStation : sortByCurrentLanguage(busLine.getBusStations(), custom.getI18n()))
       {
          DMClickHandler busStationClick = new DMClickHandler()
          {
             @Override
             public void onClick(DMClickEvent event)
             {
-               BusStationPanel newPanel = new BusStationPanel(busStation, areaList, navPanel, map, i18n);
+               BusStationPanel newPanel = new BusStationPanel(busStation, areaList, navPanel, map, custom);
                navPanel.newPage(newPanel);
             }
          };
          RowItem busStationLabel = new RowItem(busStationClick);
-         busStationLabel.appendChild(new ItDeBusStationNamePanel(busStation, i18n));
+         busStationLabel.appendChild(new ItDeBusStationNamePanel(busStation, custom.getI18n()));
          list.appendChild(busStationLabel);
       }
    }

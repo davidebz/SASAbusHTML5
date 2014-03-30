@@ -27,6 +27,7 @@ import it.bz.tis.sasabus.backend.shared.SASAbusDBDataReady;
 import it.bz.tis.sasabus.backend.shared.SASAbusDBLastModified;
 import it.bz.tis.sasabus.html5.client.SASAbusDBClientImpl;
 import it.bz.tis.sasabus.html5.client.SASAbusHTML5;
+import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.icon.HTML5Icon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
@@ -57,9 +58,10 @@ public class SplashPanel extends DivView
                       final Menu menu,
                       final HomePanel homePage,
                       final DMHashNavigationPanel navigationPanel,
-                      final SASAbusI18N i18n)
+                      final BusStationCustomViewAndI18N custom)
    {
       super(new DivView.InitParameters("splash-panel"));
+      final SASAbusI18N i18n = custom.getI18n();
       this.appendChild(new SpanView(new SpanView.InitParameters("SASAbus")));
       this.appendChild(new HTML5Icon(new HTML5Icon.InitParameters()));
       DivView imageContainer = new DivView(new DivView.InitParameters("image-container"));
@@ -109,7 +111,7 @@ public class SplashPanel extends DivView
             FavouriteBusStationListPanel favouriteBusStationListPanel = new FavouriteBusStationListPanel(data,
                                                                                                          navigationPanel,
                                                                                                          map,
-                                                                                                         i18n);
+                                                                                                         custom);
             homePage.favouriteContainer.appendChild(favouriteBusStationListPanel);
             homePage.favouriteBusStationListPanel = favouriteBusStationListPanel;
          }

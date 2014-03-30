@@ -73,7 +73,7 @@ public class MenuSearchClickHandler implements DMClickHandler
                                                                                                                                                 MenuSearchClickHandler.this.areaList,
                                                                                                                                                 MenuSearchClickHandler.this.navigationPanel,
                                                                                                                                                 MenuSearchClickHandler.this.map,
-                                                                                                                                                MenuSearchClickHandler.this.menu.i18n));
+                                                                                                                                                MenuSearchClickHandler.this.menu.custom));
                                                                      }
                                                                   },
                                                                   this.menu.i18n));

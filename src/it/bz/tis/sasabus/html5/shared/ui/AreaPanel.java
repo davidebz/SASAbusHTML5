@@ -23,7 +23,7 @@ package it.bz.tis.sasabus.html5.shared.ui;
 import it.bz.tis.sasabus.backend.shared.Area;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusLine;
-import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
+import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
@@ -45,14 +45,14 @@ public class AreaPanel extends DivView implements PageChangeHandler
                     final DMHashNavigationPanel navPanel,
                     final AreaList areaList,
                     final SASAbusMap map,
-                    final SASAbusI18N i18n)
+                    final BusStationCustomViewAndI18N custom)
    {
       super(new DivView.InitParameters("lines"));
 
       this.area = area;
       this.map = map;
 
-      this.appendChild(new ItDeAreaNamePanel(area, i18n));
+      this.appendChild(new ItDeAreaNamePanel(area, custom.getI18n()));
       for (final BusLine busLine : area.getBusLines())
       {
          RowItem busLineRow = new RowItem(new DMClickHandler()
@@ -61,11 +61,11 @@ public class AreaPanel extends DivView implements PageChangeHandler
             @Override
             public void onClick(DMClickEvent event)
             {
-               BusLinePanel newPanel = new BusLinePanel(busLine, areaList, navPanel, map, false, i18n);
+               BusLinePanel newPanel = new BusLinePanel(busLine, areaList, navPanel, map, false, custom);
                navPanel.newPage(newPanel);
             }
          });
-         busLineRow.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("BusLine")
+         busLineRow.appendChild(new SpanView(new SpanView.InitParameters(custom.getI18n().getLocalizedText("BusLine")
                                                                          + " "
                                                                          + busLine.getNumber())));
 

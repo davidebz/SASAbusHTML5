@@ -23,6 +23,7 @@ package it.bz.tis.sasabus.html5.shared.ui.map;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusLine;
 import it.bz.tis.sasabus.backend.shared.BusStation;
+import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.BusLinePanel;
 import it.bz.tis.sasabus.html5.shared.ui.BusStationPanel;
@@ -38,25 +39,27 @@ import bz.davide.dmweb.shared.view.DivView;
  */
 public class BusStationPopup extends DivView
 {
-   BusStation            busStation;
-   DMHashNavigationPanel navigationPanel;
-   SASAbusMap            map;
-   AreaList              areaList;
+   BusStation                  busStation;
+   DMHashNavigationPanel       navigationPanel;
+   SASAbusMap                  map;
+   AreaList                    areaList;
 
-   final SASAbusI18N     i18n;
+   final SASAbusI18N           i18n;
+   BusStationCustomViewAndI18N custom;
 
    public BusStationPopup(BusStation busStation,
                           DMHashNavigationPanel navigationPanel,
                           SASAbusMap map,
                           AreaList areaList,
-                          final SASAbusI18N i18n)
+                          final BusStationCustomViewAndI18N custom)
    {
       super(new DivView.InitParameters("sasabus-popup"));
       this.busStation = busStation;
       this.navigationPanel = navigationPanel;
       this.map = map;
       this.areaList = areaList;
-      this.i18n = i18n;
+      this.i18n = custom.getI18n();
+      this.custom = custom;
    }
 
    void init()
@@ -73,7 +76,7 @@ public class BusStationPopup extends DivView
                                                                              BusStationPopup.this.areaList,
                                                                              BusStationPopup.this.navigationPanel,
                                                                              BusStationPopup.this.map,
-                                                                             BusStationPopup.this.i18n));
+                                                                             BusStationPopup.this.custom));
             BusStationPopup.this.map.leafletMap.closePopup();
          }
       });
@@ -91,7 +94,7 @@ public class BusStationPopup extends DivView
                                                                              BusStationPopup.this.navigationPanel,
                                                                              BusStationPopup.this.map,
                                                                              true,
-                                                                             BusStationPopup.this.i18n));
+                                                                             BusStationPopup.this.custom));
             }
          });
          this.appendChild(button);

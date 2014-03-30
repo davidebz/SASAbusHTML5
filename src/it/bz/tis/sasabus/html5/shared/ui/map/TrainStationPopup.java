@@ -21,7 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared.ui.map;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
-import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
+import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.data.TrainStation;
 import it.bz.tis.sasabus.html5.shared.ui.ItDeNamePanel;
 import it.bz.tis.sasabus.html5.shared.ui.TrainStationPanel;
@@ -33,26 +33,29 @@ import bz.davide.dmweb.shared.view.DivView;
 
 public class TrainStationPopup extends DivView
 {
-   TrainStation          trainStation;
-   DMHashNavigationPanel navigationPanel;
-   AreaList              areaList;
-   SASAbusMap            map;
+   TrainStation                      trainStation;
+   DMHashNavigationPanel             navigationPanel;
+   AreaList                          areaList;
+   SASAbusMap                        map;
 
-   final SASAbusI18N     i18n;
+   final BusStationCustomViewAndI18N custom;
 
    public TrainStationPopup(TrainStation trainStation,
                             DMHashNavigationPanel navigationPanel,
                             AreaList areaList,
                             SASAbusMap map,
-                            final SASAbusI18N i18n)
+                            final BusStationCustomViewAndI18N custom)
    {
       super(new DivView.InitParameters("train-popup"));
       this.trainStation = trainStation;
-      this.appendChild(new ItDeNamePanel(trainStation.getName_it(), trainStation.getName_de(), null, i18n));
+      this.appendChild(new ItDeNamePanel(trainStation.getName_it(),
+                                         trainStation.getName_de(),
+                                         null,
+                                         custom.getI18n()));
       this.navigationPanel = navigationPanel;
       this.areaList = areaList;
       this.map = map;
-      this.i18n = i18n;
+      this.custom = custom;
    }
 
    void init()
@@ -68,7 +71,7 @@ public class TrainStationPopup extends DivView
                                                                                  TrainStationPopup.this.navigationPanel,
                                                                                  TrainStationPopup.this.areaList,
                                                                                  TrainStationPopup.this.map,
-                                                                                 TrainStationPopup.this.i18n));
+                                                                                 TrainStationPopup.this.custom));
          }
       });
    }
