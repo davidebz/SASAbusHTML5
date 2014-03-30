@@ -19,10 +19,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
+import it.bz.tis.sasabus.html5.shared.HomePageCustomFragment;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.shared.view.DivView;
 import bz.davide.dmweb.shared.view.PageChangeHandler;
-import bz.davide.dmweb.shared.view.TextNodeView;
 
 /**
  * @author Davide Montesin <d@vide.bz>
@@ -36,10 +36,19 @@ public class HomePanel extends DivView implements PageChangeHandler
 
    public static class InitParameters extends DivView.InitParameters
    {
-      public InitParameters()
+      HomePageCustomFragment custom;
+
+      public InitParameters(HomePageCustomFragment custom)
       {
          super("home");
+         this.custom = custom;
       }
+
+      protected DivView newIntroText()
+      {
+         return new DivView(new DivView.InitParameters("intro-text"));
+      }
+
    }
 
    public HomePanel(InitParameters initParameters)
@@ -47,7 +56,7 @@ public class HomePanel extends DivView implements PageChangeHandler
       super(initParameters);
       this.favouriteContainer = new DivView(new DivView.InitParameters("favourite-container"));
       this.appendChild(this.favouriteContainer);
-      this.appendChild(this.introText = new DivView(new DivView.InitParameters("intro-text")));
+      this.appendChild(this.introText = initParameters.custom.createView());
 
    }
 
@@ -70,12 +79,6 @@ public class HomePanel extends DivView implements PageChangeHandler
          this.favouriteBusStationListPanel.refresh();
       }
       //this.map.showOverviewMap(true);
-   }
-
-   public void setIntroText(String introText) throws Exception
-   {
-      this.introText.clear();
-      this.introText.appendChild(new TextNodeView(introText));
    }
 
    @Override

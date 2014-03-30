@@ -20,6 +20,14 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
                structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
             }
             Object value;
+            // homePageCustomFragment
+            value = ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).homePageCustomFragment;
+            if (value == null)
+               structure.property("homePageCustomFragment").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.HomePageCustomFragment", structure.property("homePageCustomFragment").structure(), identities, seq, false);
+            }
             // i18n
             value = ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).i18n;
             if (value == null)
@@ -27,14 +35,6 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             else
             {
                      internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.SASAbusI18N", structure.property("i18n").structure(), identities, seq, false);
-            }
-            // introText
-            value = ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).introText;
-            if (value == null)
-               structure.property("introText").nullValue();
-            else
-            {
-                    structure.property("introText").string((String)value);                          
             }
             if (!superClass)
                structure.close();
@@ -70,6 +70,27 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
                      array.item().nullValue();                                
                      internalMarschall(o, o.getClass().getName(), "it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText", array.item().structure(), identities, seq, false);
                }                                                              
+            }
+            if (!superClass)
+               structure.close();
+         }
+      });
+      this.putClassMarshaller("it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
+         @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
+            if (!superClass) {
+               if (isReference(structure, obj, identities, seq))
+                  return;
+               identities.put(obj, structure);
+               structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
+            }
+            Object value;
+            // introText
+            value = ((it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText)obj).introText;
+            if (value == null)
+               structure.property("introText").nullValue();
+            else
+            {
+                    structure.property("introText").string((String)value);                          
             }
             if (!superClass)
                structure.close();

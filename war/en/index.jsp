@@ -101,11 +101,13 @@
 					<translations><key>RouteSearchPanel_start_station</key><text>Start</text></translations>
 					<translations><key>RouteSearchPanel_when</key><text>When</text></translations>
 			</i18n>
-			<introText>Welcome beta-tester to sasabus html5! This app let you discover the SASA
-      services: bus lines, bus stops, departures, routing of area Merano/Meran and
-      Bolzano/Bozen. If you are using the web-app on a small screen click the top-left
-      icon to open the menu. Any feedback is welcome. Plese send us a feedback using the
-      "Feedback" item in menu.</introText>
+			<homePageCustomFragment.HomePageCustomIntroText>
+				<introText>Welcome beta-tester to sasabus html5! This app let you discover the SASA
+			      services: bus lines, bus stops, departures, routing of area Merano/Meran and
+			      Bolzano/Bozen. If you are using the web-app on a small screen click the top-left
+			      icon to open the menu. Any feedback is welcome. Plese send us a feedback using the
+			      "Feedback" item in menu.</introText>
+			</homePageCustomFragment.HomePageCustomIntroText>
 		</initParameters>
 	</dmweb:fragment>
 

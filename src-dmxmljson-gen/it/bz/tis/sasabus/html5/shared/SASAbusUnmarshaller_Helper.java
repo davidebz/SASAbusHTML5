@@ -13,12 +13,12 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
    {
       this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters>() {
          @Override public void check(it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters  ret){
+            // homePageCustomFragment
+            if (ret.homePageCustomFragment != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.homePageCustomFragment");
             // i18n
             if (ret.i18n != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.i18n");
-            // introText
-            if (ret.introText != null)
-               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.introText");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
@@ -36,6 +36,21 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            // homePageCustomFragment
+            if ((value = structure.property("homePageCustomFragment")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).homePageCustomFragment = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).homePageCustomFragment = (it.bz.tis.sasabus.html5.shared.HomePageCustomFragment)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("HomePageCustomFragment"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).homePageCustomFragment = (it.bz.tis.sasabus.html5.shared.HomePageCustomFragment)o;
+                  }
+               }
             // i18n
             if ((value = structure.property("i18n")) != null)
                if (value.isNull())
@@ -50,14 +65,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).i18n = (it.bz.tis.sasabus.html5.shared.SASAbusI18N)o;
                   }
-               }
-            // introText
-            if ((value = structure.property("introText")) != null)
-               if (value.isNull())
-                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).introText = null;
-               else
-               {
-                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).introText = value.string();
                }
             structure.close();
          }
@@ -123,6 +130,39 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                   }                                                                   
                   arr.close();        
                   ((it.bz.tis.sasabus.html5.shared.SASAbusI18N)obj).translations = arrayList;
+               }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText  ret){
+            // introText
+            if (ret.introText != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText.introText");
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText ret = new it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText();
+            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText").check(ret);
+            return ret;
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+            // introText
+            if ((value = structure.property("introText")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText)obj).introText = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText)obj).introText = value.string();
                }
             structure.close();
          }

@@ -102,12 +102,14 @@
 					<translations><key>RouteSearchPanel_when</key><text>Quando</text></translations>
 					
 			</i18n>
+			<homePageCustomFragment.HomePageCustomIntroText>
 			<introText>Benvenuto beta-tester nell'applicazione SASAbusHTML5. Questa app ti permette
       di scoprire i servizi SASA: linee dei bus, fermate, partenze e calcolo del percorso
       delle aree/bacini di Merano/Meran e Bolzano/Bozen. Se stai usando l'applicazione su
       un dispositivo con schermo piccolo puoi cliccare sull'icona in alto a sinistra per
       aprire il menu. Feedback sono molto importanti. Per qualsiasi segnalazione puoi
       usare la voce di menu "Feedback". Buon divertimento!</introText>
+      		</homePageCustomFragment.HomePageCustomIntroText>
 		</initParameters>
 	</dmweb:fragment>
 

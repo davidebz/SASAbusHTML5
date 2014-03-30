@@ -42,8 +42,8 @@ public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
 
    public static class InitParameters
    {
-      SASAbusI18N i18n;
-      String      introText;
+      SASAbusI18N            i18n;
+      HomePageCustomFragment homePageCustomFragment;
    }
 
    public SASAbusWebPage(InitParameters initParameters) throws Exception
@@ -56,10 +56,10 @@ public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
       wrapper.appendChild(initialCover);
 
       SASAbusMap map = new SASAbusMap(new SASAbusMap.InitParameters(initParameters.i18n));
-      this.homePanel = new HomePanel(new HomePanel.InitParameters());
+      this.homePanel = new HomePanel(new HomePanel.InitParameters(initParameters.homePageCustomFragment));
 
       this.homePanel.setMap(map);
-      this.homePanel.setIntroText(initParameters.introText);
+
       DMHashNavigationPanel navigationPanel = new DMHashNavigationPanel(new DMHashNavigationPanel.InitParameters("main",
                                                                                                                  this.homePanel));
       map.setNavigationPanel(navigationPanel);
