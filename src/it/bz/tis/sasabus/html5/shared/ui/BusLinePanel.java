@@ -25,7 +25,7 @@ import it.bz.tis.sasabus.backend.shared.BusLine;
 import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
-import it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -64,7 +64,7 @@ public class BusLinePanel extends DivView implements PageChangeHandler
       this.map = map;
       this.busLine = busLine;
 
-      MapIcon mapIcon = new MapIcon(new MapIcon.InitParameters());
+      Icon mapIcon = Icon.newMapIcon();
       mapIcon.addStyleName("only-mobile");
       this.appendChild(mapIcon);
       mapIcon.addClickHandler(new DMClickHandler()

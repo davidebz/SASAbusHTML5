@@ -24,10 +24,7 @@ import it.bz.tis.sasabus.backend.shared.travelplanner.BasicStop;
 import it.bz.tis.sasabus.backend.shared.travelplanner.ConSection;
 import it.bz.tis.sasabus.backend.shared.travelplanner.ConSectionList;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
-import it.bz.tis.sasabus.html5.shared.ui.icon.BusIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.DownIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.RouteEndIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.WalkIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
@@ -48,14 +45,14 @@ public class RouteResultDetailPanel extends DivView
          DivView busName = new DivView(new DivView.InitParameters("bus-name"));
          if (conSection.getWalks().length > 0)
          {
-            busName.appendChild(new WalkIcon(new WalkIcon.InitParameters()));
+            busName.appendChild(Icon.newWalkIcon());
             busName.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("RouteResultDetailPanel_walk_for")
                                                                          + ": "
                                                                          + RouteResultOverviewPanel.formatTime(conSection.getWalks()[0].getDuration().getTime()))));
             this.appendChild(busName);
             continue;
          }
-         busName.appendChild(new BusIcon(new BusIcon.InitParameters()));
+         busName.appendChild(Icon.newBusIcon());
          busName.appendChild(new SpanView(new SpanView.InitParameters(conSection.getJourneys()[0].getBusLineNumber())));
          this.appendChild(busName);
          final BasicStop[] basicStop = conSection.getJourneys()[0].getPassList().getBasicStops();
@@ -70,7 +67,7 @@ public class RouteResultDetailPanel extends DivView
          {
             final DivView allStopsPanel = new DivView(new DivView.InitParameters());
             this.appendChild(allStopsPanel);
-            DownIcon downIcon = new DownIcon(new DownIcon.InitParameters());
+            Icon downIcon = Icon.newDownIcon();
             allStopsPanel.appendChild(downIcon);
             downIcon.addClickHandler(new DMClickHandler()
             {
@@ -99,7 +96,7 @@ public class RouteResultDetailPanel extends DivView
          this.appendChild(newRow(time, splitName(basicStop[basicStop.length - 1].getStation().getName()), i18n));
       }
       DivView busName = new DivView(new DivView.InitParameters("bus-name"));
-      busName.appendChild(new RouteEndIcon(new RouteEndIcon.InitParameters()));
+      busName.appendChild(Icon.newRouteEndIcon());
       busName.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("RouteResultDetailPanel_you_arrive"))));
       this.appendChild(busName);
    }

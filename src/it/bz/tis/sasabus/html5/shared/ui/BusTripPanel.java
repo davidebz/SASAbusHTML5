@@ -26,7 +26,7 @@ import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.backend.shared.BusTrip;
 import it.bz.tis.sasabus.backend.shared.BusTripStop;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
-import it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.shared.view.ButtonView;
 import bz.davide.dmweb.shared.view.DMClickEvent;
@@ -50,7 +50,7 @@ public class BusTripPanel extends DivView implements PageChangeHandler
    {
       super(new DivView.InitParameters("bus-trip-detail"));
 
-      MapIcon mapIcon = new MapIcon(new MapIcon.InitParameters());
+      Icon mapIcon = Icon.newMapIcon();
       mapIcon.addStyleName("only-mobile");
       this.appendChild(mapIcon);
 

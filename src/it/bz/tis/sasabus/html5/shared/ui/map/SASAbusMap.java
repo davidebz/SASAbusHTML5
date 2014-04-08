@@ -32,7 +32,6 @@ import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.data.Parking;
 import it.bz.tis.sasabus.html5.shared.data.TrainStation;
 import it.bz.tis.sasabus.html5.shared.ui.AreaPanel;
-import it.bz.tis.sasabus.html5.shared.ui.icon.GpsIcon;
 import java.util.ArrayList;
 import java.util.IdentityHashMap;
 import java.util.Set;
@@ -80,7 +79,7 @@ public class SASAbusMap extends DivView
    //DMLabel                                            zoomLevel;
    //DMLabel                                            latLonValues;
 
-   GpsIcon                                            gpsIcon;
+   it.bz.tis.sasabus.html5.shared.ui.icon.Icon        gpsIcon;
 
    transient IdentityHashMap<Area, Polygon>           polygonOfAreaCache                 = new IdentityHashMap<Area, Polygon>();
    transient IdentityHashMap<Area, ArrayList<LatLng>> boundsOfAreaCache                  = new IdentityHashMap<Area, ArrayList<LatLng>>();
@@ -132,7 +131,7 @@ public class SASAbusMap extends DivView
       this.controls.appendChild(this.close);
       this.close.setStyleName("close");
 
-      this.gpsIcon = new GpsIcon(new GpsIcon.InitParameters());
+      this.gpsIcon = it.bz.tis.sasabus.html5.shared.ui.icon.Icon.newGpsIcon();
       this.controls.appendChild(this.gpsIcon);
 
       //this.zoomLevel = new DMLabel("");

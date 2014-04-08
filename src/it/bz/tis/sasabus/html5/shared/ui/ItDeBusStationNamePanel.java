@@ -23,7 +23,7 @@ package it.bz.tis.sasabus.html5.shared.ui;
 import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.html5.shared.FavouriteBusStationList;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
-import it.bz.tis.sasabus.html5.shared.ui.icon.FavouritesIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
 
@@ -34,11 +34,8 @@ public class ItDeBusStationNamePanel extends ItDeNamePanel
 {
    public ItDeBusStationNamePanel(final BusStation busStation, final SASAbusI18N i18n)
    {
-      super(busStation.getName_it(),
-            busStation.getName_de(),
-            new FavouritesIcon(new FavouritesIcon.InitParameters()),
-            i18n);
-      final FavouritesIcon favouritesIcon = (FavouritesIcon) this.icon;
+      super(busStation.getName_it(), busStation.getName_de(), Icon.newFavouritesIcon(), i18n);
+      final Icon favouritesIcon = (Icon) this.icon;
       refreshStatus(favouritesIcon, busStation);
       favouritesIcon.addClickHandler(new DMClickHandler()
       {
@@ -61,7 +58,7 @@ public class ItDeBusStationNamePanel extends ItDeNamePanel
       });
    }
 
-   static void refreshStatus(FavouritesIcon favouritesIcon, BusStation busStation)
+   static void refreshStatus(Icon favouritesIcon, BusStation busStation)
    {
       if (FavouriteBusStationList.getSingleton().isFavourite(busStation.getId()))
       {

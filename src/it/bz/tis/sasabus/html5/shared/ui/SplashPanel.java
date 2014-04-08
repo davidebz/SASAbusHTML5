@@ -29,7 +29,7 @@ import it.bz.tis.sasabus.html5.client.SASAbusDBClientImpl;
 import it.bz.tis.sasabus.html5.client.SASAbusHTML5;
 import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
-import it.bz.tis.sasabus.html5.shared.ui.icon.HTML5Icon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import it.bz.tis.sasabus.html5.shared.ui.menu.Menu;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
@@ -63,7 +63,7 @@ public class SplashPanel extends DivView
       super(new DivView.InitParameters("splash-panel"));
       final SASAbusI18N i18n = custom.getI18n();
       this.appendChild(new SpanView(new SpanView.InitParameters("SASAbus")));
-      this.appendChild(new HTML5Icon(new HTML5Icon.InitParameters()));
+      this.appendChild(Icon.newHTML5Icon());
       DivView imageContainer = new DivView(new DivView.InitParameters("image-container"));
       final ImgView sasaImg = new ImgView(new ImgView.InitParameters("../images/bus.png"));
       imageContainer.appendChild(sasaImg);

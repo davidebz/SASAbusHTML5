@@ -19,10 +19,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
-import it.bz.tis.sasabus.html5.shared.ui.icon.CalendarIcon;
-
+import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
 import java.util.Date;
-
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
 import bz.davide.dmweb.shared.view.DMDateBox;
@@ -50,7 +48,7 @@ public class SASAbusDateBox extends DivView
       this.appendChild(this.dateBox = new DMDateBox(new DMDateBox.InitParameters()));
       this.dateBox.setFormat("dd.MM.yyyy HH:mm");
       this.dateBox.setValue(new Date());
-      CalendarIcon calendarIcon = new CalendarIcon(new CalendarIcon.InitParameters());
+      Icon calendarIcon = Icon.newCalendarIcon();
       this.appendChild(calendarIcon);
       calendarIcon.addClickHandler(new DMClickHandler()
       {

@@ -26,16 +26,7 @@ import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.AboutPanel;
 import it.bz.tis.sasabus.html5.shared.ui.ParkingsPanel;
 import it.bz.tis.sasabus.html5.shared.ui.TrainStationsPanel;
-import it.bz.tis.sasabus.html5.shared.ui.icon.AboutIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.FavouritesActiveIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.FeedbackIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.LinesIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.MoreIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.NewsIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.ParkingIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.SearchIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.TrainIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
@@ -89,52 +80,44 @@ public class Menu extends DivView
       this.navigationPanel = navigationPanel;
       this.map = map;
 
-      this.areasAndLine = new MenuItem(new LinesIcon(new LinesIcon.InitParameters()),
-                                       this.i18n.getLocalizedText("Menu_areasLines"));
+      this.areasAndLine = new MenuItem(Icon.newLinesIcon(), this.i18n.getLocalizedText("Menu_areasLines"));
       this.appendChild(this.areasAndLine);
 
-      this.mapItem = new MenuItem(new MapIcon(new MapIcon.InitParameters()),
-                                  this.i18n.getLocalizedText("Menu_map"));
+      this.mapItem = new MenuItem(Icon.newMapIcon(), this.i18n.getLocalizedText("Menu_map"));
       this.mapItem.addStyleName("map ");
       this.appendChild(this.mapItem);
 
-      this.search = new MenuItem(new SearchIcon(new SearchIcon.InitParameters()),
-                                 this.i18n.getLocalizedText("Menu_search"));
+      this.search = new MenuItem(Icon.newSearchIcon(), this.i18n.getLocalizedText("Menu_search"));
       this.appendChild(this.search);
 
-      this.favourites = new MenuItem(new FavouritesActiveIcon(new FavouritesActiveIcon.InitParameters()),
-                                     "Favourite");
+      this.favourites = new MenuItem(Icon.newFavouritesActiveIcon(), "Favourite");
       this.appendChild(this.favourites);
 
       //this.green = new MenuItem(new TreeIcon(new TreeIcon.InitParameters()), "Green");
       //this.add(this.green);
-      this.parkings = new MenuItem(new ParkingIcon(new ParkingIcon.InitParameters()), "Park");
+      this.parkings = new MenuItem(Icon.newParkIcon(), "Park");
       this.appendChild(this.parkings);
 
       //this.routing = new MenuItem(new RouteIcon(new RouteIcon.InitParameters()), i18n.getLocalizedText("Menu_routing"));
       //this.add(this.routing);
 
-      this.more = new MenuItem(new MoreIcon(new MoreIcon.InitParameters()),
-                               this.i18n.getLocalizedText("Menu_more"));
+      this.more = new MenuItem(Icon.newMoreIcon(), this.i18n.getLocalizedText("Menu_more"));
       this.more.addStyleName("more");
       this.appendChild(this.more);
 
       this.moreMenuItems = new DivView(new DivView.InitParameters("more-menu-items"));
       this.appendChild(this.moreMenuItems);
 
-      this.train = new MenuItem(new TrainIcon(new TrainIcon.InitParameters()), "Train");
+      this.train = new MenuItem(Icon.newTrainIcon(), "Train");
       this.moreMenuItems.appendChild(this.train);
 
-      this.news = new MenuItem(new NewsIcon(new NewsIcon.InitParameters()),
-                               this.i18n.getLocalizedText("Menu_news"));
+      this.news = new MenuItem(Icon.newNewsIcon(), this.i18n.getLocalizedText("Menu_news"));
       this.moreMenuItems.appendChild(this.news);
 
-      this.sendFeedback = new MenuItem(new FeedbackIcon(new FeedbackIcon.InitParameters()),
-                                       this.i18n.getLocalizedText("Menu_feedback"));
+      this.sendFeedback = new MenuItem(Icon.newFeedbackIcon(), this.i18n.getLocalizedText("Menu_feedback"));
       this.moreMenuItems.appendChild(this.sendFeedback);
 
-      this.about = new MenuItem(new AboutIcon(new AboutIcon.InitParameters()),
-                                this.i18n.getLocalizedText("Menu_about"));
+      this.about = new MenuItem(Icon.newAboutIcon(), this.i18n.getLocalizedText("Menu_about"));
       this.moreMenuItems.appendChild(this.about);
 
    }

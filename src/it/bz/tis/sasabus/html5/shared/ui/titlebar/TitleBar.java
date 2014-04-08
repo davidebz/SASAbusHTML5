@@ -20,8 +20,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui.titlebar;
 
-import it.bz.tis.sasabus.html5.shared.ui.icon.LogoIcon;
-import it.bz.tis.sasabus.html5.shared.ui.icon.MenuIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import it.bz.tis.sasabus.html5.shared.ui.menu.Menu;
 import bz.davide.dmweb.shared.view.AnchorView;
@@ -37,10 +36,10 @@ public class TitleBar extends DivView
    {
       super(new DivView.InitParameters("title-bar"));
 
-      MenuIcon menuIcon = new MenuIcon(new MenuIcon.InitParameters());
+      Icon menuIcon = Icon.newMenuIcon();
       this.appendChild(menuIcon);
 
-      LogoIcon logoMenuIcon = new LogoIcon(new LogoIcon.InitParameters());
+      Icon logoMenuIcon = Icon.newLogoIcon();
 
       this.appendChild(logoMenuIcon);
       menuIcon.addClickHandler(new TitleBarMenuClickHandler(menu));

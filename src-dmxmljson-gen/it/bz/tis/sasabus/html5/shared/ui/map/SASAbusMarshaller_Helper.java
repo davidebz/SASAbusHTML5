@@ -59,7 +59,7 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.backend.shared.S
                structure.property("gpsIcon").nullValue();
             else
             {
-                     internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.ui.icon.GpsIcon", structure.property("gpsIcon").structure(), identities, seq, false);
+                     internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.ui.icon.Icon", structure.property("gpsIcon").structure(), identities, seq, false);
             }
             // i18n
             value = ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).i18n;

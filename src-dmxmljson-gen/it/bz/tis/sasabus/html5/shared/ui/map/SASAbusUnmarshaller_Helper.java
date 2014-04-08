@@ -127,11 +127,11 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.backend.shared
                {
                   String refid = value.structure().getRefId();    
                   if (refid != null)                              
-                     ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).gpsIcon = (it.bz.tis.sasabus.html5.shared.ui.icon.GpsIcon)identities.get(refid);
+                     ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).gpsIcon = (it.bz.tis.sasabus.html5.shared.ui.icon.Icon)identities.get(refid);
                   else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("GpsIcon"));              
+                     Object o = newInstance(value.structure().getRuntimeClassName("Icon"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).gpsIcon = (it.bz.tis.sasabus.html5.shared.ui.icon.GpsIcon)o;
+                     ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).gpsIcon = (it.bz.tis.sasabus.html5.shared.ui.icon.Icon)o;
                   }
                }
             // i18n

@@ -30,7 +30,7 @@ import it.bz.tis.sasabus.backend.shared.SASAbusDBDataReady;
 import it.bz.tis.sasabus.html5.client.SASAbusDBClientImpl;
 import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
-import it.bz.tis.sasabus.html5.shared.ui.icon.MapIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import java.util.Date;
 import bz.davide.dmweb.shared.view.ButtonView;
@@ -74,7 +74,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
 
       DivView actions = new DivView(new DivView.InitParameters("actions"));
 
-      MapIcon mapIcon = new MapIcon(new MapIcon.InitParameters());
+      Icon mapIcon = Icon.newMapIcon();
       mapIcon.addStyleName("only-mobile");
       actions.appendChild(mapIcon);
       mapIcon.addClickHandler(new DMClickHandler()

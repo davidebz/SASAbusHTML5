@@ -19,7 +19,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
-import it.bz.tis.sasabus.html5.shared.ui.icon.GoIcon;
+import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
 import bz.davide.dmweb.shared.view.DMClickHandler;
 import bz.davide.dmweb.shared.view.DivView;
 
@@ -32,7 +32,7 @@ public class RowItem extends DivView
    public RowItem(DMClickHandler clickHandler)
    {
       super(new DivView.InitParameters("row-item"));
-      GoIcon go = new GoIcon(new GoIcon.InitParameters());
+      Icon go = Icon.newGoIcon();
       go.setStyleName("go");
       this.appendChild(go);
 
