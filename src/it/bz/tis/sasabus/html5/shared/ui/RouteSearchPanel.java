@@ -62,12 +62,12 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
                            SASAbusMap map,
                            final SASAbusI18N i18n)
    {
-      super(new DivView.InitParameters("route"));
+      super("route");
       this.map = map;
       this.navigationPanel = navigationPanel;
       this.i18n = i18n;
 
-      SpanView introText = new SpanView(new SpanView.InitParameters("Route calculation"));
+      SpanView introText = new SpanView("Route calculation");
       introText.setStyleName("intro-text");
       this.appendChild(introText);
 
@@ -98,11 +98,11 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
                                                   end,
                                                   i18n));
 
-      this.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("RouteSearchPanel_when")
-                                                                + ":")));
-      this.appendChild(this.dateBox = new SASAbusDateBox(new SASAbusDateBox.InitParameters()));
+      this.appendChild(new SpanView(i18n.getLocalizedText("RouteSearchPanel_when")
+                                                                + ":"));
+      this.appendChild(this.dateBox = new SASAbusDateBox());
 
-      this.search = new ButtonView(new ButtonView.InitParameters(i18n.getLocalizedText("RouteSearchPanel_search")));
+      this.search = new ButtonView(i18n.getLocalizedText("RouteSearchPanel_search"));
       this.appendChild(this.search);
       this.search.addClickHandler(new DMClickHandler()
       {
@@ -139,7 +139,7 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
             }
          }
       });
-      this.appendChild(this.results = new DivView(new DivView.InitParameters("results")));
+      this.appendChild(this.results = new DivView("results"));
    }
 
    private void onFirstRouteReceived(ConRes data0)

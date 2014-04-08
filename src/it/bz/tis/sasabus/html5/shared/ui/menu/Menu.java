@@ -71,7 +71,7 @@ public class Menu extends DivView
                AboutPanel aboutPanel,
                BusStationCustomViewAndI18N custom)
    {
-      super(new DivView.InitParameters("menu"));
+      super("menu");
 
       this.i18n = custom.getI18n();
       this.custom = custom;
@@ -93,19 +93,19 @@ public class Menu extends DivView
       this.favourites = new MenuItem(Icon.newFavouritesActiveIcon(), "Favourite");
       this.appendChild(this.favourites);
 
-      //this.green = new MenuItem(new TreeIcon(new TreeIcon.InitParameters()), "Green");
+      //this.green = new MenuItem(new TreeIcon()), "Green";
       //this.add(this.green);
       this.parkings = new MenuItem(Icon.newParkIcon(), "Park");
       this.appendChild(this.parkings);
 
-      //this.routing = new MenuItem(new RouteIcon(new RouteIcon.InitParameters()), i18n.getLocalizedText("Menu_routing"));
+      //this.routing = new MenuItem(new RouteIcon()), i18n.getLocalizedText("Menu_routing");
       //this.add(this.routing);
 
       this.more = new MenuItem(Icon.newMoreIcon(), this.i18n.getLocalizedText("Menu_more"));
       this.more.addStyleName("more");
       this.appendChild(this.more);
 
-      this.moreMenuItems = new DivView(new DivView.InitParameters("more-menu-items"));
+      this.moreMenuItems = new DivView("more-menu-items");
       this.appendChild(this.moreMenuItems);
 
       this.train = new MenuItem(Icon.newTrainIcon(), "Train");

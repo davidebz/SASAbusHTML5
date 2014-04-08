@@ -47,7 +47,7 @@ public class AreaPanel extends DivView implements PageChangeHandler
                     final SASAbusMap map,
                     final BusStationCustomViewAndI18N custom)
    {
-      super(new DivView.InitParameters("lines"));
+      super("lines");
 
       this.area = area;
       this.map = map;
@@ -65,9 +65,9 @@ public class AreaPanel extends DivView implements PageChangeHandler
                navPanel.newPage(newPanel);
             }
          });
-         busLineRow.appendChild(new SpanView(new SpanView.InitParameters(custom.getI18n().getLocalizedText("BusLine")
+         busLineRow.appendChild(new SpanView(custom.getI18n().getLocalizedText("BusLine")
                                                                          + " "
-                                                                         + busLine.getNumber())));
+                                                                         + busLine.getNumber()));
 
          this.appendChild(busLineRow);
 

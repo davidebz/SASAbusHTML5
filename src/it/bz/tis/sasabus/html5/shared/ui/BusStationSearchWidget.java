@@ -62,20 +62,20 @@ public class BusStationSearchWidget extends DivView implements PageChangeHandler
                                  BusStation initial,
                                  final SASAbusI18N i18n)
    {
-      super(new DivView.InitParameters("bus-station-search"));
+      super("bus-station-search");
       this.map = map;
-      DivView filters = new DivView(new DivView.InitParameters("filters"));
+      DivView filters = new DivView("filters");
       String text = "";
       if (initial != null)
       {
          text = ItDeNamePanel.asOneLine(initial.getName_it(), initial.getName_de(), i18n);
       }
-      final InputView searchText = new InputView(new InputView.InitParameters(text));
+      final InputView searchText = new InputView(text);
       filters.appendChild(searchText);
 
-      final DivView results = new DivView(new DivView.InitParameters("results"));
+      final DivView results = new DivView("results");
 
-      this.appendChild(new SpanView(new SpanView.InitParameters(title)));
+      this.appendChild(new SpanView(title));
       this.appendChild(filters);
       this.appendChild(results);
 
@@ -168,7 +168,7 @@ public class BusStationSearchWidget extends DivView implements PageChangeHandler
       }
       if (count == 7)
       {
-         results.appendChild(new SpanView(new SpanView.InitParameters("...")));
+         results.appendChild(new SpanView("..."));
       }
    }
 

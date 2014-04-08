@@ -19,5 +19,9 @@
          <name>viewclass</name>
          <required>true</required>
       </attribute>
+      <attribute>
+         <name>bodyContainsParameters</name>
+         <required>false</required>
+      </attribute>
    </tag>
 </taglib> 

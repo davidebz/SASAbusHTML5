@@ -37,8 +37,8 @@ public class ParkingsPanel extends DivView
                         final SASAbusMap map,
                         final BusStationCustomViewAndI18N custom)
    {
-      super(new DivView.InitParameters());
-      this.appendChild(new SpanView(new SpanView.InitParameters("Parkings:")));
+      super();
+      this.appendChild(new SpanView("Parkings:"));
       for (final Parking park : Parking.list)
       {
          RowItem rowItem = new RowItem(new DMClickHandler()

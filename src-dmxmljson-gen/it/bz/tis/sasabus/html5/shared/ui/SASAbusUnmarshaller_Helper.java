@@ -25,13 +25,11 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             // map
             if (ret.map != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.HomePanel.map");
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.HomePanel", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.HomePanel ret = new it.bz.tis.sasabus.html5.shared.ui.HomePanel();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.HomePanel").check(ret);
             return ret;
          }
       });
@@ -109,13 +107,26 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       });
       this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.AboutPanel", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.AboutPanel>() {
          @Override public void check(it.bz.tis.sasabus.html5.shared.ui.AboutPanel  ret){
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
+            // copyrightCompanyAddress
+            if (ret.copyrightCompanyAddress != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanel.copyrightCompanyAddress");
+            // copyrightLink
+            if (ret.copyrightLink != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanel.copyrightLink");
+            // copyrightYears
+            if (ret.copyrightYears != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanel.copyrightYears");
+            // licenseLabel
+            if (ret.licenseLabel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanel.licenseLabel");
+            // licenseLink
+            if (ret.licenseLink != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanel.licenseLink");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.AboutPanel", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.AboutPanel ret = new it.bz.tis.sasabus.html5.shared.ui.AboutPanel();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.AboutPanel").check(ret);
             return ret;
          }
       });
@@ -128,6 +139,81 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            // copyrightCompanyAddress
+            if ((value = structure.property("copyrightCompanyAddress")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightCompanyAddress = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightCompanyAddress = (bz.davide.dmweb.shared.view.SpanView)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("SpanView"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightCompanyAddress = (bz.davide.dmweb.shared.view.SpanView)o;
+                  }
+               }
+            // copyrightLink
+            if ((value = structure.property("copyrightLink")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightLink = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightLink = (bz.davide.dmweb.shared.view.AnchorView)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("AnchorView"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightLink = (bz.davide.dmweb.shared.view.AnchorView)o;
+                  }
+               }
+            // copyrightYears
+            if ((value = structure.property("copyrightYears")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightYears = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightYears = (bz.davide.dmweb.shared.view.SpanView)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("SpanView"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightYears = (bz.davide.dmweb.shared.view.SpanView)o;
+                  }
+               }
+            // licenseLabel
+            if ((value = structure.property("licenseLabel")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).licenseLabel = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).licenseLabel = (bz.davide.dmweb.shared.view.SpanView)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("SpanView"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).licenseLabel = (bz.davide.dmweb.shared.view.SpanView)o;
+                  }
+               }
+            // licenseLink
+            if ((value = structure.property("licenseLink")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).licenseLink = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).licenseLink = (bz.davide.dmweb.shared.view.AnchorView)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("AnchorView"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).licenseLink = (bz.davide.dmweb.shared.view.AnchorView)o;
+                  }
+               }
             structure.close();
          }
       });
@@ -144,7 +230,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler ret = new it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.AboutPanelCloseHandler").check(ret);
             return ret;
          }
       });
@@ -199,7 +284,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses ret = new it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.AboutPanelShow3rdPartyLicenses").check(ret);
             return ret;
          }
       });
@@ -229,6 +313,104 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             structure.close();
          }
       });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.AboutInfos", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.AboutInfos>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.AboutInfos  ret){
+            // copyrightCompany
+            if (ret.copyrightCompany != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.copyrightCompany");
+            // copyrightCompanyAddress
+            if (ret.copyrightCompanyAddress != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.copyrightCompanyAddress");
+            // copyrightCompanyUrl
+            if (ret.copyrightCompanyUrl != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.copyrightCompanyUrl");
+            // copyrightYears
+            if (ret.copyrightYears != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.copyrightYears");
+            // licenseLabel
+            if (ret.licenseLabel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.licenseLabel");
+            // licenseName
+            if (ret.licenseName != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.licenseName");
+            // licenseUrl
+            if (ret.licenseUrl != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.licenseUrl");
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.AboutInfos", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            it.bz.tis.sasabus.html5.shared.ui.AboutInfos ret = new it.bz.tis.sasabus.html5.shared.ui.AboutInfos();
+            return ret;
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.AboutInfos", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+            // copyrightCompany
+            if ((value = structure.property("copyrightCompany")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightCompany = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightCompany = value.string();
+               }
+            // copyrightCompanyAddress
+            if ((value = structure.property("copyrightCompanyAddress")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightCompanyAddress = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightCompanyAddress = value.string();
+               }
+            // copyrightCompanyUrl
+            if ((value = structure.property("copyrightCompanyUrl")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightCompanyUrl = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightCompanyUrl = value.string();
+               }
+            // copyrightYears
+            if ((value = structure.property("copyrightYears")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightYears = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightYears = value.string();
+               }
+            // licenseLabel
+            if ((value = structure.property("licenseLabel")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).licenseLabel = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).licenseLabel = value.string();
+               }
+            // licenseName
+            if ((value = structure.property("licenseName")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).licenseName = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).licenseName = value.string();
+               }
+            // licenseUrl
+            if ((value = structure.property("licenseUrl")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).licenseUrl = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).licenseUrl = value.string();
+               }
+            structure.close();
+         }
+      });
       this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel>() {
          @Override public void check(it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel  ret){
             // areaList
@@ -243,13 +425,11 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             // navigationPanel
             if (ret.navigationPanel != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel.navigationPanel");
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel ret = new it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel").check(ret);
             return ret;
          }
       });

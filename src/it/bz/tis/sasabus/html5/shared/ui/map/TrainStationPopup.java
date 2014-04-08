@@ -46,7 +46,7 @@ public class TrainStationPopup extends DivView
                             SASAbusMap map,
                             final BusStationCustomViewAndI18N custom)
    {
-      super(new DivView.InitParameters("train-popup"));
+      super("train-popup");
       this.trainStation = trainStation;
       this.appendChild(new ItDeNamePanel(trainStation.getName_it(),
                                          trainStation.getName_de(),
@@ -60,7 +60,7 @@ public class TrainStationPopup extends DivView
 
    void init()
    {
-      ButtonView show = new ButtonView(new ButtonView.InitParameters("Show details"));
+      ButtonView show = new ButtonView("Show details");
       this.appendChild(show);
       show.addClickHandler(new DMClickHandler()
       {

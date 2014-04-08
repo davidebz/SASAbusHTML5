@@ -38,22 +38,22 @@ public class RouteResultDetailPanel extends DivView
 {
    public RouteResultDetailPanel(ConSectionList data, DMHashNavigationPanel navigationPanel, final SASAbusI18N i18n)
    {
-      super(new DivView.InitParameters("route-result"));
+      super("route-result");
       this.addStyleName("bus-trip-detail");
       for (ConSection conSection : data.getConSections())
       {
-         DivView busName = new DivView(new DivView.InitParameters("bus-name"));
+         DivView busName = new DivView("bus-name");
          if (conSection.getWalks().length > 0)
          {
             busName.appendChild(Icon.newWalkIcon());
-            busName.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("RouteResultDetailPanel_walk_for")
+            busName.appendChild(new SpanView(i18n.getLocalizedText("RouteResultDetailPanel_walk_for")
                                                                          + ": "
-                                                                         + RouteResultOverviewPanel.formatTime(conSection.getWalks()[0].getDuration().getTime()))));
+                                                                         + RouteResultOverviewPanel.formatTime(conSection.getWalks()[0].getDuration().getTime())));
             this.appendChild(busName);
             continue;
          }
          busName.appendChild(Icon.newBusIcon());
-         busName.appendChild(new SpanView(new SpanView.InitParameters(conSection.getJourneys()[0].getBusLineNumber())));
+         busName.appendChild(new SpanView(conSection.getJourneys()[0].getBusLineNumber()));
          this.appendChild(busName);
          final BasicStop[] basicStop = conSection.getJourneys()[0].getPassList().getBasicStops();
          String time = "";
@@ -65,7 +65,7 @@ public class RouteResultDetailPanel extends DivView
 
          if (basicStop.length > 2)
          {
-            final DivView allStopsPanel = new DivView(new DivView.InitParameters());
+            final DivView allStopsPanel = new DivView();
             this.appendChild(allStopsPanel);
             Icon downIcon = Icon.newDownIcon();
             allStopsPanel.appendChild(downIcon);
@@ -95,16 +95,16 @@ public class RouteResultDetailPanel extends DivView
          }
          this.appendChild(newRow(time, splitName(basicStop[basicStop.length - 1].getStation().getName()), i18n));
       }
-      DivView busName = new DivView(new DivView.InitParameters("bus-name"));
+      DivView busName = new DivView("bus-name");
       busName.appendChild(Icon.newRouteEndIcon());
-      busName.appendChild(new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("RouteResultDetailPanel_you_arrive"))));
+      busName.appendChild(new SpanView(i18n.getLocalizedText("RouteResultDetailPanel_you_arrive")));
       this.appendChild(busName);
    }
 
    static DivView newRow(String time, String[] names, final SASAbusI18N i18n)
    {
-      DivView row = new DivView(new DivView.InitParameters("row"));
-      SpanView timeLabel = new SpanView(new SpanView.InitParameters(time));
+      DivView row = new DivView("row");
+      SpanView timeLabel = new SpanView(time);
       timeLabel.setStyleName("time");
       row.appendChild(timeLabel);
       row.appendChild(new ItDeNamePanel(names[0], names[1], null, i18n));

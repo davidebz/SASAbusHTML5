@@ -48,7 +48,7 @@ public class BusTripPanel extends DivView implements PageChangeHandler
                        final SASAbusMap map,
                        final SASAbusI18N i18n)
    {
-      super(new DivView.InitParameters("bus-trip-detail"));
+      super("bus-trip-detail");
 
       Icon mapIcon = Icon.newMapIcon();
       mapIcon.addStyleName("only-mobile");
@@ -75,9 +75,9 @@ public class BusTripPanel extends DivView implements PageChangeHandler
       final BusTripStop[] busTripStops = busTrip.getBusTripStops();
       if (startIndex > 0)
       {
-         final DivView prevStops = new DivView(new DivView.InitParameters("prev-stops"));
+         final DivView prevStops = new DivView("prev-stops");
          this.appendChild(prevStops);
-         ButtonView prevStopsButton = new ButtonView(new ButtonView.InitParameters(i18n.getLocalizedText("BusTripPanel_show_prev_stops")));
+         ButtonView prevStopsButton = new ButtonView(i18n.getLocalizedText("BusTripPanel_show_prev_stops"));
          prevStops.appendChild(prevStopsButton);
 
          final int startIndexFinal = startIndex;
@@ -111,8 +111,8 @@ public class BusTripPanel extends DivView implements PageChangeHandler
                  final SASAbusI18N i18n)
    {
       BusStation busStation = areaList.findBusStopById(busTripStop.getBusStopId()).getBusStation();
-      DivView row = new DivView(new DivView.InitParameters("row"));
-      SpanView time = new SpanView(new SpanView.InitParameters(BusStationPanel.formatTime(busTripStop.getTimeHHMMSS())));
+      DivView row = new DivView("row");
+      SpanView time = new SpanView(BusStationPanel.formatTime(busTripStop.getTimeHHMMSS()));
       row.appendChild(time);
       time.setStyleName("time");
       row.appendChild(new ItDeBusStationNamePanel(busStation, i18n));

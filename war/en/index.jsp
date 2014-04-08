@@ -110,6 +110,16 @@
 			      icon to open the menu. Any feedback is welcome. Plese send us a feedback using the
 			      "Feedback" item in menu.</introText>
 			</homePageCustomFragment.HomePageCustomIntroText>
+			<aboutInfos>
+			    <copyrightYears>2013</copyrightYears>
+			    <copyrightCompany>TIS Innovation Park</copyrightCompany>
+			    <copyrightCompanyUrl>http://www.tis.bz.it/open</copyrightCompanyUrl>
+			    <copyrightCompanyAddress>Via Siemens 29 Strasse - Bolzano/Bozen - Italy</copyrightCompanyAddress>
+			    
+			    <licenseLabel>License</licenseLabel>
+			    <licenseName>Affero GPL</licenseName>
+			    <licenseUrl>http://www.gnu.org/licenses/agpl-3.0.html</licenseUrl>
+			</aboutInfos>
 		</initParameters>
 	</dmweb:fragment>
 

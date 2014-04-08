@@ -52,15 +52,15 @@ public class BusLinePanel extends DivView implements PageChangeHandler
                        boolean mapOpen,
                        final BusStationCustomViewAndI18N custom)
    {
-      super(new DivView.InitParameters("bus-stations"));
+      super("bus-stations");
       this.mapOpen = mapOpen;
-      this.appendChild(new SpanView(new SpanView.InitParameters(custom.getI18n().getLocalizedText("BusLine")
+      this.appendChild(new SpanView(custom.getI18n().getLocalizedText("BusLine")
                                                                 + " "
                                                                 + busLine.getNumber()
                                                                 + " "
                                                                 + ItDeNamePanel.asOneLine(busLine.getArea().getName_it(),
                                                                                           busLine.getArea().getName_de(),
-                                                                                          custom.getI18n()))));
+                                                                                          custom.getI18n())));
       this.map = map;
       this.busLine = busLine;
 
@@ -77,9 +77,9 @@ public class BusLinePanel extends DivView implements PageChangeHandler
          }
       });
 
-      this.appendChild(new SpanView(new SpanView.InitParameters(custom.getI18n().getLocalizedText("BusStations"))));
+      this.appendChild(new SpanView(custom.getI18n().getLocalizedText("BusStations")));
 
-      DivView list = new DivView(new DivView.InitParameters("bus-stations-list"));
+      DivView list = new DivView("bus-stations-list");
 
       this.appendChild(list);
 

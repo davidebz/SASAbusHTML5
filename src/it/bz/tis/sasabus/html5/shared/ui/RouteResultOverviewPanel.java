@@ -39,7 +39,7 @@ public class RouteResultOverviewPanel extends DivView
                                    final DMHashNavigationPanel navigationPanel,
                                    final SASAbusI18N i18n)
    {
-      super(new DivView.InitParameters());
+      super();
       for (final ConRes conRes : routes)
       {
          final Connection connection = conRes.getConnectionList().getConnections()[0];
@@ -57,8 +57,8 @@ public class RouteResultOverviewPanel extends DivView
          String transfers = "Transfers: " + connection.getOverview().getTransfers();
          String duration = "Duration: " + formatTime(connection.getOverview().getDuration().getTime());
          String endTime = formatTime(connection.getOverview().getArrival().getBasicStop().getArr().getTime());
-         rowItem.appendChild(new SpanView(new SpanView.InitParameters(startTime + " ---> " + endTime)));
-         rowItem.appendChild(new SpanView(new SpanView.InitParameters(transfers + " - " + duration)));
+         rowItem.appendChild(new SpanView(startTime + " ---> " + endTime));
+         rowItem.appendChild(new SpanView(transfers + " - " + duration));
          this.appendChild(rowItem);
       }
    }

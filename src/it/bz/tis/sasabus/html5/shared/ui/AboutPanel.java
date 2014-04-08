@@ -32,65 +32,51 @@ public class AboutPanel extends DivView
 
    final static String TARGET = "sasabus_licenses";
 
-   public static class InitParameters extends DivView.InitParameters
-   {
-      public InitParameters()
-      {
-         super("about");
-      }
-   }
+   SpanView            copyrightYears;
+   AnchorView          copyrightLink;
+   SpanView            copyrightCompanyAddress;
 
-   public AboutPanel(InitParameters initParameters)
+   SpanView            licenseLabel;
+   AnchorView          licenseLink;
+
+   public AboutPanel()
    {
-      super(initParameters);
-      ButtonView close = new ButtonView(new ButtonView.InitParameters("X"));
+      super("about");
+      ButtonView close = new ButtonView("X");
       close.setStyleName("close");
 
-      DivView thirdPartyLicenses = new DivView(new DivView.InitParameters("third-party-licenses"));
+      DivView thirdPartyLicenses = new DivView("third-party-licenses");
 
       close.addClickHandler(new AboutPanelCloseHandler(this, thirdPartyLicenses));
       this.appendChild(close);
-      DivView copyright = new DivView(new DivView.InitParameters("copyright"));
-      copyright.appendChild(new SpanView(new SpanView.InitParameters("(C) 2013")));
-      copyright.appendChild(new AnchorView(new AnchorView.InitParameters("http://www.tis.bz.it/open",
-                                                                         "TIS Innovation Park",
-                                                                         TARGET)));
+      DivView copyright = new DivView("copyright");
+      copyright.appendChild(new SpanView("(C)"));
+      copyright.appendChild(this.copyrightYears = new SpanView("YYYY"));
+      copyright.appendChild(this.copyrightLink = new AnchorView("#", "Company Name", TARGET));
       this.appendChild(copyright);
-      this.appendChild(new SpanView(new SpanView.InitParameters("Via Siemens 29 Strasse - Bolzano/Bozen - Italy")));
+      this.appendChild(this.copyrightCompanyAddress = new SpanView("Company Address"));
 
-      DivView license = new DivView(new DivView.InitParameters("license"));
+      DivView license = new DivView("license");
       this.appendChild(license);
-      license.appendChild(new SpanView(new SpanView.InitParameters("License:")));
-      license.appendChild(new AnchorView(new AnchorView.InitParameters("http://www.gnu.org/licenses/agpl-3.0.html",
-                                                                       "Affero GPL",
-                                                                       TARGET)));
+      license.appendChild(this.licenseLabel = new SpanView("License"));
+      license.appendChild(new SpanView(":"));
+      license.appendChild(this.licenseLink = new AnchorView("#", "License Name", TARGET));
 
-      this.appendChild(new SpanView(new SpanView.InitParameters("Developed by")));
-      this.appendChild(new AnchorView(new AnchorView.InitParameters("http://www.davide.bz",
-                                                                    "Davide Montesin",
-                                                                    TARGET)));
-      this.appendChild(new SpanView(new SpanView.InitParameters("Bolzano/Bozen - Italy")));
-      this.appendChild(new SpanView(new SpanView.InitParameters("Design by (alphabetical order)")));
-      this.appendChild(new AnchorView(new AnchorView.InitParameters("mailto:giuliarosso.rg@gmail.com",
-                                                                    "Giulia Rosso",
-                                                                    TARGET)));
-      this.appendChild(new AnchorView(new AnchorView.InitParameters("mailto:iryna_dorosh@ukr.net",
-                                                                    "Iryna Dorosh",
-                                                                    TARGET)));
-      this.appendChild(new AnchorView(new AnchorView.InitParameters("mailto:virginia.mazzocco@gmail.com",
-                                                                    "Virginia Mazzocco",
-                                                                    TARGET)));
-      this.appendChild(new SpanView(new SpanView.InitParameters("members of the")));
-      this.appendChild(new AnchorView(new AnchorView.InitParameters("http://sasabus.org/wiki",
-                                                                    "SASAbus community",
-                                                                    TARGET)));
+      this.appendChild(new SpanView("Developed by"));
+      this.appendChild(new AnchorView("http://www.davide.bz", "Davide Montesin", TARGET));
+      this.appendChild(new SpanView("Bolzano/Bozen - Italy"));
+      this.appendChild(new SpanView("Design by (alphabetical order)"));
+      this.appendChild(new AnchorView("mailto:giuliarosso.rg@gmail.com", "Giulia Rosso", TARGET));
+      this.appendChild(new AnchorView("mailto:iryna_dorosh@ukr.net", "Iryna Dorosh", TARGET));
+      this.appendChild(new AnchorView("mailto:virginia.mazzocco@gmail.com", "Virginia Mazzocco", TARGET));
+      this.appendChild(new SpanView("members of the"));
+      this.appendChild(new AnchorView("http://sasabus.org/wiki", "SASAbus community", TARGET));
 
-      AnchorView showLicenses = new AnchorView(new AnchorView.InitParameters("#",
-                                                                             "Third-party free open source software libraries"));
+      AnchorView showLicenses = new AnchorView("#", "Third-party free open source software libraries");
       showLicenses.addClickHandler(new AboutPanelShow3rdPartyLicenses(thirdPartyLicenses));
       this.appendChild(showLicenses);
 
-      thirdPartyLicenses.appendChild(new SpanView(new SpanView.InitParameters("(alphabetical order)")));
+      thirdPartyLicenses.appendChild(new SpanView("(alphabetical order)"));
 
       thirdPartyLicenses.appendChild(this.thirdParty("DM XML-JSON",
                                                      "http://www.davide.bz/en/dmxj",
@@ -130,18 +116,32 @@ public class AboutPanel extends DivView
 
    }
 
-   protected AboutPanel()
+   public AboutPanel(AboutInfos infos)
    {
+      this();
+      this.setInfos(infos);
+   }
+
+   public void setInfos(AboutInfos infos)
+   {
+      this.copyrightYears.setText(infos.copyrightYears);
+      this.copyrightLink.setText(infos.copyrightCompany);
+      this.copyrightLink.setHref(infos.copyrightCompanyUrl);
+      this.copyrightCompanyAddress.setText(infos.copyrightCompanyAddress);
+
+      this.licenseLabel.setText(infos.licenseLabel);
+      this.licenseLink.setText(infos.licenseName);
+      this.licenseLink.setHref(infos.licenseUrl);
    }
 
    private DivView thirdParty(String libName, String libUrl, String license, String licenseUrl, String owner)
    {
-      DivView row = new DivView(new DivView.InitParameters("row"));
-      row.appendChild(new AnchorView(new AnchorView.InitParameters(libUrl, libName, TARGET)));
-      row.appendChild(new SpanView(new SpanView.InitParameters("-")));
-      row.appendChild(new AnchorView(new AnchorView.InitParameters(licenseUrl, license, TARGET)));
-      row.appendChild(new SpanView(new SpanView.InitParameters("-")));
-      row.appendChild(new SpanView(new SpanView.InitParameters(owner)));
+      DivView row = new DivView("row");
+      row.appendChild(new AnchorView(libUrl, libName, TARGET));
+      row.appendChild(new SpanView("-"));
+      row.appendChild(new AnchorView(licenseUrl, license, TARGET));
+      row.appendChild(new SpanView("-"));
+      row.appendChild(new SpanView(owner));
       return row;
    }
 }

@@ -40,7 +40,7 @@ public class ParkingPanel extends DivView implements PageChangeHandler
                        final SASAbusMap map,
                        final BusStationCustomViewAndI18N custom)
    {
-      super(new DivView.InitParameters("parking-panel"));
+      super("parking-panel");
       this.map = map;
       this.parking = parking;
 

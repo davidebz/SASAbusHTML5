@@ -38,7 +38,7 @@ public class BusStationSearchRoutePanel extends DivView implements PageChangeHan
                                      BusStationSelectedEventHandler selected,
                                      final SASAbusI18N i18n)
    {
-      super(new DivView.InitParameters("bus-stations-search-route"));
+      super("bus-stations-search-route");
       this.appendChild(this.searchWidget = new BusStationSearchWidget(i18n.getLocalizedText("BusStationSearchWidget_introtext"),
                                                                       map,
                                                                       areaList,

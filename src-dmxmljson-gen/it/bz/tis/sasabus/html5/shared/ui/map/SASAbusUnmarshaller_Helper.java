@@ -40,13 +40,11 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.backend.shared
             // overwievMap
             if (ret.overwievMap != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.overwievMap");
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap ret = new it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap").check(ret);
             return ret;
          }
       });

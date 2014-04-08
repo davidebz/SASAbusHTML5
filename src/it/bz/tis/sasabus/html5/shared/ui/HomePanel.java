@@ -34,29 +34,12 @@ public class HomePanel extends DivView implements PageChangeHandler
    DivView                      favouriteContainer;
    FavouriteBusStationListPanel favouriteBusStationListPanel = null;
 
-   public static class InitParameters extends DivView.InitParameters
+   public HomePanel(HomePageCustomFragment custom)
    {
-      HomePageCustomFragment custom;
-
-      public InitParameters(HomePageCustomFragment custom)
-      {
-         super("home");
-         this.custom = custom;
-      }
-
-      protected DivView newIntroText()
-      {
-         return new DivView(new DivView.InitParameters("intro-text"));
-      }
-
-   }
-
-   public HomePanel(InitParameters initParameters)
-   {
-      super(initParameters);
-      this.favouriteContainer = new DivView(new DivView.InitParameters("favourite-container"));
+      super("home");
+      this.favouriteContainer = new DivView("favourite-container");
       this.appendChild(this.favouriteContainer);
-      this.appendChild(this.introText = initParameters.custom.createView());
+      this.appendChild(this.introText = custom.createView());
 
    }
 

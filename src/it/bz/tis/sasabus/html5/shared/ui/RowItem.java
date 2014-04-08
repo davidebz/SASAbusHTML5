@@ -31,7 +31,7 @@ public class RowItem extends DivView
 
    public RowItem(DMClickHandler clickHandler)
    {
-      super(new DivView.InitParameters("row-item"));
+      super("row-item");
       Icon go = Icon.newGoIcon();
       go.setStyleName("go");
       this.appendChild(go);

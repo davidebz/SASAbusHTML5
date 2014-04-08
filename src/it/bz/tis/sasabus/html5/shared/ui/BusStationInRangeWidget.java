@@ -42,8 +42,8 @@ public class BusStationInRangeWidget extends DivView
                                   final SASAbusMap map,
                                   final BusStationCustomViewAndI18N custom)
    {
-      super(new DivView.InitParameters("nearest-bus-stops"));
-      this.appendChild(new SpanView(new SpanView.InitParameters("Nearest bus stops: ")));
+      super("nearest-bus-stops");
+      this.appendChild(new SpanView("Nearest bus stops: "));
 
       final IdentityHashMap<BusStation, Double> weights = new IdentityHashMap<BusStation, Double>();
 

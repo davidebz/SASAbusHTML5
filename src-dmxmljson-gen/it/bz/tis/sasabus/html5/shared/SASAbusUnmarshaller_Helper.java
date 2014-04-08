@@ -13,6 +13,9 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
    {
       this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters>() {
          @Override public void check(it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters  ret){
+            // aboutInfos
+            if (ret.aboutInfos != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.aboutInfos");
             // custom
             if (ret.custom != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.custom");
@@ -24,7 +27,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters ret = new it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters").check(ret);
             return ret;
          }
       });
@@ -36,6 +38,21 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            // aboutInfos
+            if ((value = structure.property("aboutInfos")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).aboutInfos = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).aboutInfos = (it.bz.tis.sasabus.html5.shared.ui.AboutInfos)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("AboutInfos"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).aboutInfos = (it.bz.tis.sasabus.html5.shared.ui.AboutInfos)o;
+                  }
+               }
             // custom
             if ((value = structure.property("custom")) != null)
                if (value.isNull())
@@ -82,7 +99,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.SASAbusI18N", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.SASAbusI18N ret = new it.bz.tis.sasabus.html5.shared.SASAbusI18N();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.SASAbusI18N").check(ret);
             return ret;
          }
       });
@@ -144,7 +160,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText ret = new it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.HomePageCustomIntroText").check(ret);
             return ret;
          }
       });
@@ -180,7 +195,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N ret = new it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N").check(ret);
             return ret;
          }
       });
@@ -253,7 +267,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler ret = new it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler").check(ret);
             return ret;
          }
       });
@@ -386,7 +399,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText ret = new it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.SASAbusI18NKeyLocalizedText").check(ret);
             return ret;
          }
       });

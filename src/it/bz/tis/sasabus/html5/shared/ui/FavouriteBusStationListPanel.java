@@ -47,7 +47,7 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
                                        SASAbusMap map,
                                        final BusStationCustomViewAndI18N custom)
    {
-      super(new DivView.InitParameters());
+      super();
       this.areaList = areaList;
       this.navigationPanel = navigationPanel;
       this.map = map;
@@ -66,8 +66,8 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
       FavouriteBusStationList favourites = FavouriteBusStationList.getSingleton();
       BusStation[] busStations = BusLinePanel.sortByCurrentLanguage(this.areaList.getBusStations(),
                                                                     this.custom.getI18n());
-      this.appendChild(new SpanView(new SpanView.InitParameters(this.custom.getI18n().getLocalizedText("FavouriteBusStationListPanel_favourite_are")
-                                                                + ":")));
+      this.appendChild(new SpanView(this.custom.getI18n().getLocalizedText("FavouriteBusStationListPanel_favourite_are")
+                                                                + ":"));
       int count = 0;
       for (final BusStation busStation : busStations)
       {
@@ -92,7 +92,7 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
       }
       if (count == 0)
       {
-         this.appendChild(new SpanView(new SpanView.InitParameters(this.custom.getI18n().getLocalizedText("FavouriteBusStationListPanel_empty_favourite"))));
+         this.appendChild(new SpanView(this.custom.getI18n().getLocalizedText("FavouriteBusStationListPanel_empty_favourite")));
       }
 
    }

@@ -40,7 +40,7 @@ public class TrainStationPanel extends DivView implements PageChangeHandler
                             final SASAbusMap map,
                             final BusStationCustomViewAndI18N custom)
    {
-      super(new DivView.InitParameters());
+      super();
       this.map = map;
       this.trainStation = trainStation;
       this.appendChild(new ItDeNamePanel(trainStation.getName_it(),

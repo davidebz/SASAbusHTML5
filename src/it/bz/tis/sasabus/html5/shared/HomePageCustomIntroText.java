@@ -29,7 +29,7 @@ public class HomePageCustomIntroText implements HomePageCustomFragment
    @Override
    public DivView createView()
    {
-      DivView ret = new DivView(new DivView.InitParameters("intro-text"));
+      DivView ret = new DivView("intro-text");
       ret.appendChild(new TextNodeView(this.introText));
       return ret;
    }

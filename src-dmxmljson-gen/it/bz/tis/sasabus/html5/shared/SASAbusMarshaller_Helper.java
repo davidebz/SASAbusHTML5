@@ -20,6 +20,14 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
                structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
             }
             Object value;
+            // aboutInfos
+            value = ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).aboutInfos;
+            if (value == null)
+               structure.property("aboutInfos").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.ui.AboutInfos", structure.property("aboutInfos").structure(), identities, seq, false);
+            }
             // custom
             value = ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).custom;
             if (value == null)

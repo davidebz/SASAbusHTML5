@@ -60,16 +60,16 @@ public class SplashPanel extends DivView
                       final DMHashNavigationPanel navigationPanel,
                       final BusStationCustomViewAndI18N custom)
    {
-      super(new DivView.InitParameters("splash-panel"));
+      super("splash-panel");
       final SASAbusI18N i18n = custom.getI18n();
-      this.appendChild(new SpanView(new SpanView.InitParameters("SASAbus")));
+      this.appendChild(new SpanView("SASAbus"));
       this.appendChild(Icon.newHTML5Icon());
-      DivView imageContainer = new DivView(new DivView.InitParameters("image-container"));
-      final ImgView sasaImg = new ImgView(new ImgView.InitParameters("../images/bus.png"));
+      DivView imageContainer = new DivView("image-container");
+      final ImgView sasaImg = new ImgView("../images/bus.png");
       imageContainer.appendChild(sasaImg);
 
       this.appendChild(imageContainer);
-      final SpanView currentOperation = new SpanView(new SpanView.InitParameters(i18n.getLocalizedText("AboutPanel_checkingUpdates")));
+      final SpanView currentOperation = new SpanView(i18n.getLocalizedText("AboutPanel_checkingUpdates"));
       this.appendChild(currentOperation);
 
       final long startTime = System.currentTimeMillis();

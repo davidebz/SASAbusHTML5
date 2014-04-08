@@ -24,7 +24,6 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmxmljson.unmarshallin
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.AreaList", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.backend.shared.AreaList ret = new it.bz.tis.sasabus.backend.shared.AreaList();
-            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.AreaList").check(ret);
             return ret;
          }
       });
@@ -98,7 +97,6 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmxmljson.unmarshallin
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.Area", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.backend.shared.Area ret = new it.bz.tis.sasabus.backend.shared.Area();
-            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.Area").check(ret);
             return ret;
          }
       });
@@ -208,7 +206,6 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmxmljson.unmarshallin
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.LatLng", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.backend.shared.LatLng ret = new it.bz.tis.sasabus.backend.shared.LatLng();
-            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.LatLng").check(ret);
             return ret;
          }
       });
@@ -258,7 +255,6 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmxmljson.unmarshallin
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.BusLine", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.backend.shared.BusLine ret = new it.bz.tis.sasabus.backend.shared.BusLine();
-            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.BusLine").check(ret);
             return ret;
          }
       });
@@ -352,7 +348,6 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmxmljson.unmarshallin
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.BusStop", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.backend.shared.BusStop ret = new it.bz.tis.sasabus.backend.shared.BusStop();
-            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.BusStop").check(ret);
             return ret;
          }
       });
@@ -428,7 +423,6 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmxmljson.unmarshallin
       this.putInstanceFactory("it.bz.tis.sasabus.backend.shared.BusStation", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.backend.shared.BusStation ret = new it.bz.tis.sasabus.backend.shared.BusStation();
-            emptyObjectCheck.get("it.bz.tis.sasabus.backend.shared.BusStation").check(ret);
             return ret;
          }
       });

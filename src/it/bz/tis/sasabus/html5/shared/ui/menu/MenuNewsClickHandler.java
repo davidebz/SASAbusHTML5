@@ -48,7 +48,7 @@ public class MenuNewsClickHandler implements DMClickHandler
    @Override
    public void onClick(DMClickEvent event)
    {
-      this.navigationPanel.newPage(new NewsPanel(new NewsPanel.InitParameters(this.menu.i18n)));
+      this.navigationPanel.newPage(new NewsPanel(this.menu.i18n));
       this.menu.hide();
    };
 }

@@ -27,148 +27,144 @@ import bz.davide.dmweb.shared.view.ImgView;
  */
 public class Icon extends ImgView
 {
-   public static class InitParameters extends ImgView.InitParameters
-   {
-      String name;
 
-      public InitParameters(String name)
-      {
-         super("../images/layout/" + name + ".png");
-         this.name = name;
-      }
+   public Icon()
+   {
+      this("no-name");
    }
 
-   Icon(InitParameters initParameters)
+   public Icon(String name)
    {
-      super(initParameters);
-      this.setStyleName("icon");
-      this.addStyleName(initParameters.name);
+      super();
+      this.setIconName(name);
    }
 
-   protected Icon()
+   public void setIconName(String name)
    {
+      this.setStyleName("icon " + name);
+      this.setSrc("../images/layout/" + name + ".png");
    }
 
    public static Icon newAboutIcon()
    {
-      return new Icon(new Icon.InitParameters("about-icon"));
+      return new Icon("about-icon");
    }
 
    public static Icon newBusIcon()
    {
-      return new Icon(new Icon.InitParameters("bus-icon"));
+      return new Icon("bus-icon");
    }
 
    public static Icon newCalendarIcon()
    {
-      return new Icon(new Icon.InitParameters("calendar-icon"));
+      return new Icon("calendar-icon");
    }
 
    /*
    public static Icon newDirectionIcon()
    {
-      return new Icon(new Icon.InitParameters("direction-icon"));
+      return new Icon("direction-icon");
    }
    */
 
    public static Icon newDownIcon()
    {
-      return new Icon(new Icon.InitParameters("down-icon"));
+      return new Icon("down-icon");
    }
 
    public static Icon newFavouritesActiveIcon()
    {
-      return new Icon(new Icon.InitParameters("favourites-active"));
+      return new Icon("favourites-active");
    }
 
    public static Icon newFavouritesIcon()
    {
-      return new Icon(new Icon.InitParameters("favourites-icon"));
+      return new Icon("favourites-icon");
    }
 
    public static Icon newFeedbackIcon()
    {
-      return new Icon(new Icon.InitParameters("feedback-icon"));
+      return new Icon("feedback-icon");
    }
 
    public static Icon newGoIcon()
    {
-      return new Icon(new Icon.InitParameters("go-icon"));
+      return new Icon("go-icon");
    }
 
    public static Icon newGpsIcon()
    {
-      return new Icon(new Icon.InitParameters("gps-icon"));
+      return new Icon("gps-icon");
    }
 
    public static Icon newHTML5Icon()
    {
-      return new Icon(new Icon.InitParameters("html5logo"));
+      return new Icon("html5logo");
    }
 
    public static Icon newLinesIcon()
    {
-      return new Icon(new Icon.InitParameters("lines-icon"));
+      return new Icon("lines-icon");
    }
 
    public static Icon newLogoIcon()
    {
-      return new Icon(new Icon.InitParameters("logo-menu"));
+      return new Icon("logo-menu");
    }
 
    public static Icon newMapIcon()
    {
-      return new Icon(new Icon.InitParameters("map-icon"));
+      return new Icon("map-icon");
    }
 
    public static Icon newMenuIcon()
    {
-      return new Icon(new Icon.InitParameters("menu-icon"));
+      return new Icon("menu-icon");
    }
 
    public static Icon newMoreIcon()
    {
-      return new Icon(new Icon.InitParameters("more-icon"));
+      return new Icon("more-icon");
    }
 
    public static Icon newNewsIcon()
    {
-      return new Icon(new Icon.InitParameters("news-icon"));
+      return new Icon("news-icon");
    }
 
    public static Icon newParkIcon()
    {
-      return new Icon(new Icon.InitParameters("park-icon"));
+      return new Icon("park-icon");
    }
 
    public static Icon newRouteEndIcon()
    {
-      return new Icon(new Icon.InitParameters("route-end"));
+      return new Icon("route-end");
    }
 
    public static Icon newRouteIcon()
    {
-      return new Icon(new Icon.InitParameters("route-icon"));
+      return new Icon("route-icon");
    }
 
    public static Icon newSearchIcon()
    {
-      return new Icon(new Icon.InitParameters("search-icon"));
+      return new Icon("search-icon");
    }
 
    public static Icon newTrainIcon()
    {
-      return new Icon(new Icon.InitParameters("train-icon"));
+      return new Icon("train-icon");
    }
 
    public static Icon newTreeIcon()
    {
-      return new Icon(new Icon.InitParameters("tree-icon"));
+      return new Icon("tree-icon");
    }
 
    public static Icon newWalkIcon()
    {
-      return new Icon(new Icon.InitParameters("walk"));
+      return new Icon("walk");
    }
 
 }

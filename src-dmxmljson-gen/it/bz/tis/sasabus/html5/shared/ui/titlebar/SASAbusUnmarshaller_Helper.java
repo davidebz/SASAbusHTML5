@@ -21,7 +21,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMenuClickHandler").check(ret);
             return ret;
          }
       });
@@ -61,7 +60,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.titlebar.TitleBarMapClickHandler").check(ret);
             return ret;
          }
       });

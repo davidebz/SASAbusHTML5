@@ -20,6 +20,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared;
 
+import it.bz.tis.sasabus.html5.shared.ui.AboutInfos;
 import it.bz.tis.sasabus.html5.shared.ui.AboutPanel;
 import it.bz.tis.sasabus.html5.shared.ui.HomePanel;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
@@ -44,27 +45,27 @@ public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
    {
       BusStationCustomViewAndI18N custom;
       HomePageCustomFragment      homePageCustomFragment;
+      AboutInfos                  aboutInfos;
    }
 
    public SASAbusWebPage(InitParameters initParameters) throws Exception
    {
       //super(initParameters);
-      DivView wrapper = new DivView(new DivView.InitParameters("cover-wrapper"));
+      DivView wrapper = new DivView("cover-wrapper");
 
-      DivView initialCover = new DivView(new DivView.InitParameters("cover"));
+      DivView initialCover = new DivView("cover");
 
       wrapper.appendChild(initialCover);
 
-      SASAbusMap map = new SASAbusMap(new SASAbusMap.InitParameters(initParameters.custom));
-      this.homePanel = new HomePanel(new HomePanel.InitParameters(initParameters.homePageCustomFragment));
+      SASAbusMap map = new SASAbusMap(initParameters.custom);
+      this.homePanel = new HomePanel(initParameters.homePageCustomFragment);
 
       this.homePanel.setMap(map);
 
-      DMHashNavigationPanel navigationPanel = new DMHashNavigationPanel(new DMHashNavigationPanel.InitParameters("main",
-                                                                                                                 this.homePanel));
+      DMHashNavigationPanel navigationPanel = new DMHashNavigationPanel("main", this.homePanel);
       map.setNavigationPanel(navigationPanel);
 
-      AboutPanel aboutPanel = new AboutPanel(new AboutPanel.InitParameters());
+      AboutPanel aboutPanel = new AboutPanel(initParameters.aboutInfos);
 
       this.menu = new Menu(navigationPanel, null, map, aboutPanel, initParameters.custom);
 

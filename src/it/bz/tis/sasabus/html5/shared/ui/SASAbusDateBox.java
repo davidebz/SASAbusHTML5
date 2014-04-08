@@ -33,19 +33,11 @@ public class SASAbusDateBox extends DivView
 {
    DMDateBox dateBox;
 
-   public static class InitParameters extends DivView.InitParameters
+   public SASAbusDateBox()
    {
-      public InitParameters()
-      {
-         super("sasabus-date-box");
-      }
-   }
+      super("sasabus-date-box");
 
-   public SASAbusDateBox(InitParameters initParameters)
-   {
-      super(initParameters);
-
-      this.appendChild(this.dateBox = new DMDateBox(new DMDateBox.InitParameters()));
+      this.appendChild(this.dateBox = new DMDateBox());
       this.dateBox.setFormat("dd.MM.yyyy HH:mm");
       this.dateBox.setValue(new Date());
       Icon calendarIcon = Icon.newCalendarIcon();

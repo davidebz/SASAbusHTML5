@@ -21,7 +21,6 @@ public class FavouriteBusStationListUnmarshaller_Helper extends bz.davide.dmxmlj
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.FavouriteBusStationList", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.FavouriteBusStationList ret = new it.bz.tis.sasabus.html5.shared.FavouriteBusStationList();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.FavouriteBusStationList").check(ret);
             return ret;
          }
       });

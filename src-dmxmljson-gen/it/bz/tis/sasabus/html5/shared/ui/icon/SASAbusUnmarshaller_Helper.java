@@ -13,13 +13,11 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.S
    {
       this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.icon.Icon", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.icon.Icon>() {
          @Override public void check(it.bz.tis.sasabus.html5.shared.ui.icon.Icon  ret){
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.ImgView").check(ret);
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.icon.Icon", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.icon.Icon ret = new it.bz.tis.sasabus.html5.shared.ui.icon.Icon();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.icon.Icon").check(ret);
             return ret;
          }
       });

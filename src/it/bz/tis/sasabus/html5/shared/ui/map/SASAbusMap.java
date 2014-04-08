@@ -95,37 +95,25 @@ public class SASAbusMap extends DivView
    SASAbusI18N                                        i18n;
    BusStationCustomViewAndI18N                        custom;
 
-   public static class InitParameters extends DivView.InitParameters
+   public SASAbusMap(BusStationCustomViewAndI18N custom)
    {
+      super("map");
 
-      BusStationCustomViewAndI18N custom;
+      this.i18n = custom.getI18n();
 
-      public InitParameters(BusStationCustomViewAndI18N custom)
-      {
-         super("map");
-         this.custom = custom;
-      }
-   }
+      this.close = new ButtonView("X");
 
-   public SASAbusMap(InitParameters initParameters)
-   {
-      super(initParameters);
-
-      this.i18n = initParameters.custom.getI18n();
-
-      this.close = new ButtonView(new ButtonView.InitParameters("X"));
-
-      this.overwievMap = new DivView(new DivView.InitParameters("overview-map"));
-      ImgView cartina = new ImgView(new ImgView.InitParameters("../images/Cartina.png"));
+      this.overwievMap = new DivView("overview-map");
+      ImgView cartina = new ImgView("../images/Cartina.png");
       this.overwievMap.appendChild(cartina);
       this.appendChild(this.overwievMap);
 
       this.leafletMap = null;
 
-      this.controls = new DivView(new DivView.InitParameters("controls"));
+      this.controls = new DivView("controls");
       this.appendChild(this.controls);
 
-      this.mapDiv = new DivView(new DivView.InitParameters("mapdiv"));
+      this.mapDiv = new DivView("mapdiv");
       this.appendChild(this.mapDiv);
 
       this.controls.appendChild(this.close);

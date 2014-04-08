@@ -36,7 +36,7 @@ public class NewsItem extends DivView
 
    public NewsItem(String title, final String longDescr)
    {
-      super(new DivView.InitParameters("newsitem"));
+      super("newsitem");
       RowItem newsTitle = new RowItem(new DMClickHandler()
       {
          @Override
@@ -44,7 +44,7 @@ public class NewsItem extends DivView
          {
             if (NewsItem.this.descr == null)
             {
-               NewsItem.this.appendChild(NewsItem.this.descr = new DivView(new DivView.InitParameters("descr")));
+               NewsItem.this.appendChild(NewsItem.this.descr = new DivView("descr"));
                try
                {
                   Div div = new Div();
@@ -68,7 +68,7 @@ public class NewsItem extends DivView
          }
       });
 
-      newsTitle.appendChild(new SpanView(new SpanView.InitParameters(title)));
+      newsTitle.appendChild(new SpanView(title));
       this.appendChild(newsTitle);
 
    }

@@ -13,13 +13,11 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASA
    {
       this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem>() {
          @Override public void check(it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem  ret){
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem").check(ret);
             return ret;
          }
       });
@@ -48,7 +46,6 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASA
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuAboutClickHandler").check(ret);
             return ret;
          }
       });
@@ -112,7 +109,6 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASA
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuMapClickHandler").check(ret);
             return ret;
          }
       });
@@ -200,7 +196,6 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASA
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuNewsClickHandler").check(ret);
             return ret;
          }
       });
@@ -264,7 +259,6 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASA
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuAreaLinesClickHandler").check(ret);
             return ret;
          }
       });
@@ -352,7 +346,6 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASA
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuSettingsClickHandler").check(ret);
             return ret;
          }
       });
@@ -453,13 +446,11 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASA
             // train
             if (ret.train != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.train");
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.Menu", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.menu.Menu ret = new it.bz.tis.sasabus.html5.shared.ui.menu.Menu();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.Menu").check(ret);
             return ret;
          }
       });
@@ -751,7 +742,6 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASA
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler ret = new it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler();
-            emptyObjectCheck.get("it.bz.tis.sasabus.html5.shared.ui.menu.MenuMoreClickHandler").check(ret);
             return ret;
          }
       });

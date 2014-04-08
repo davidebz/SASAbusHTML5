@@ -44,7 +44,7 @@ public class AreasPanel extends DivView implements PageChangeHandler
                      boolean mapOpen,
                      final BusStationCustomViewAndI18N custom)
    {
-      super(new DivView.InitParameters("areas"));
+      super("areas");
       this.map = map;
       this.mapOpen = mapOpen;
       for (final Area area : areaList.getAreas())

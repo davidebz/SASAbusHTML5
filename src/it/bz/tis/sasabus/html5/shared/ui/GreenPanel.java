@@ -25,23 +25,15 @@ import bz.davide.dmweb.shared.view.ImgView;
 public class GreenPanel extends DivView
 {
 
-   public static class InitParameters extends DivView.InitParameters
+   public GreenPanel()
    {
-      public InitParameters()
-      {
-         super("green-panel");
-      }
-   }
-
-   public GreenPanel(InitParameters initParameters)
-   {
-      super(initParameters);
-      ImgView tree = new ImgView(new ImgView.InitParameters("../images/layout/tree.gif"));
+      super("green-panel");
+      ImgView tree = new ImgView("../images/layout/tree.gif");
       tree.setStyleName("tree");
 
       this.appendChild(tree);
 
-      ImgView suedtirolPass = new ImgView(new ImgView.InitParameters("../images/layout/suedtirol-pass.png"));
+      ImgView suedtirolPass = new ImgView("../images/layout/suedtirol-pass.png");
       suedtirolPass.setStyleName("suedtirol-pass");
       this.appendChild(suedtirolPass);
 

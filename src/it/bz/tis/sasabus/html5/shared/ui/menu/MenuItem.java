@@ -30,8 +30,8 @@ public class MenuItem extends DivView
 {
    public MenuItem(ImgView menuIcon, String text)
    {
-      super(new DivView.InitParameters("menu-item"));
-      SpanView label = new SpanView(new SpanView.InitParameters(text));
+      super("menu-item");
+      SpanView label = new SpanView(text);
       label.setStyleName("menu-text");
       this.appendChild(menuIcon);
       this.appendChild(label);

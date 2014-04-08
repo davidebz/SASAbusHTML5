@@ -27,7 +27,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DMWidgetSerializationData", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             bz.davide.dmweb.shared.view.DMWidgetSerializationData ret = new bz.davide.dmweb.shared.view.DMWidgetSerializationData();
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DMWidgetSerializationData").check(ret);
             return ret;
          }
       });
@@ -116,7 +115,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler ret = new bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler();
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DMWidgetEventAttachHandler").check(ret);
             return ret;
          }
       });
@@ -159,7 +157,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler ret = new bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler();
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DMGwtWidgetHostAttachHandler").check(ret);
             return ret;
          }
       });
@@ -206,13 +203,11 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       });
       this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.SpanView", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.SpanView>() {
          @Override public void check(bz.davide.dmweb.shared.view.SpanView  ret){
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.AbstractHtmlElementView").check(ret);
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.SpanView", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             bz.davide.dmweb.shared.view.SpanView ret = new bz.davide.dmweb.shared.view.SpanView();
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.SpanView").check(ret);
             return ret;
          }
       });
@@ -230,13 +225,11 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       });
       this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.AnchorView", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.AnchorView>() {
          @Override public void check(bz.davide.dmweb.shared.view.AnchorView  ret){
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.AbstractHtmlElementView").check(ret);
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.AnchorView", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             bz.davide.dmweb.shared.view.AnchorView ret = new bz.davide.dmweb.shared.view.AnchorView();
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.AnchorView").check(ret);
             return ret;
          }
       });
@@ -254,13 +247,11 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       });
       this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.ButtonView", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.ButtonView>() {
          @Override public void check(bz.davide.dmweb.shared.view.ButtonView  ret){
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.AbstractHtmlElementView").check(ret);
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.ButtonView", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             bz.davide.dmweb.shared.view.ButtonView ret = new bz.davide.dmweb.shared.view.ButtonView();
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.ButtonView").check(ret);
             return ret;
          }
       });
@@ -286,7 +277,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler ret = new bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler();
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DMHashNavigationPanelAttachHandler").check(ret);
             return ret;
          }
       });
@@ -462,13 +452,11 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             // pages
             if (ret.pages != null)
                throw new RuntimeException("The constructor initialized the field bz.davide.dmweb.shared.view.DMHashNavigationPanel.pages");
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DMHashNavigationPanel", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             bz.davide.dmweb.shared.view.DMHashNavigationPanel ret = new bz.davide.dmweb.shared.view.DMHashNavigationPanel();
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DMHashNavigationPanel").check(ret);
             return ret;
          }
       });
@@ -550,13 +538,11 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       });
       this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.DivView", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.DivView>() {
          @Override public void check(bz.davide.dmweb.shared.view.DivView  ret){
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.AbstractHtmlElementView").check(ret);
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.DivView", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             bz.davide.dmweb.shared.view.DivView ret = new bz.davide.dmweb.shared.view.DivView();
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.DivView").check(ret);
             return ret;
          }
       });
@@ -574,13 +560,11 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       });
       this.emptyObjectCheck.put("bz.davide.dmweb.shared.view.ImgView", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<bz.davide.dmweb.shared.view.ImgView>() {
          @Override public void check(bz.davide.dmweb.shared.view.ImgView  ret){
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.AbstractHtmlElementView").check(ret);
          }
       });
       this.putInstanceFactory("bz.davide.dmweb.shared.view.ImgView", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
          @Override public Object newInstance() throws Exception {
             bz.davide.dmweb.shared.view.ImgView ret = new bz.davide.dmweb.shared.view.ImgView();
-            emptyObjectCheck.get("bz.davide.dmweb.shared.view.ImgView").check(ret);
             return ret;
          }
       });

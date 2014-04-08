@@ -67,6 +67,46 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             }
             internalMarschall(obj, "bz.davide.dmweb.shared.view.DivView", "N/A",structure, identities, seq, true);
             Object value;
+            // copyrightCompanyAddress
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightCompanyAddress;
+            if (value == null)
+               structure.property("copyrightCompanyAddress").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.SpanView", structure.property("copyrightCompanyAddress").structure(), identities, seq, false);
+            }
+            // copyrightLink
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightLink;
+            if (value == null)
+               structure.property("copyrightLink").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.AnchorView", structure.property("copyrightLink").structure(), identities, seq, false);
+            }
+            // copyrightYears
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightYears;
+            if (value == null)
+               structure.property("copyrightYears").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.SpanView", structure.property("copyrightYears").structure(), identities, seq, false);
+            }
+            // licenseLabel
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).licenseLabel;
+            if (value == null)
+               structure.property("licenseLabel").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.SpanView", structure.property("licenseLabel").structure(), identities, seq, false);
+            }
+            // licenseLink
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).licenseLink;
+            if (value == null)
+               structure.property("licenseLink").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.AnchorView", structure.property("licenseLink").structure(), identities, seq, false);
+            }
             if (!superClass)
                structure.close();
          }
@@ -116,6 +156,75 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             else
             {
                      internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("licensesPanel").structure(), identities, seq, false);
+            }
+            if (!superClass)
+               structure.close();
+         }
+      });
+      this.putClassMarshaller("it.bz.tis.sasabus.html5.shared.ui.AboutInfos", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
+         @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
+            if (!superClass) {
+               if (isReference(structure, obj, identities, seq))
+                  return;
+               identities.put(obj, structure);
+               structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
+            }
+            Object value;
+            // copyrightCompany
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightCompany;
+            if (value == null)
+               structure.property("copyrightCompany").nullValue();
+            else
+            {
+                    structure.property("copyrightCompany").string((String)value);                          
+            }
+            // copyrightCompanyAddress
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightCompanyAddress;
+            if (value == null)
+               structure.property("copyrightCompanyAddress").nullValue();
+            else
+            {
+                    structure.property("copyrightCompanyAddress").string((String)value);                          
+            }
+            // copyrightCompanyUrl
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightCompanyUrl;
+            if (value == null)
+               structure.property("copyrightCompanyUrl").nullValue();
+            else
+            {
+                    structure.property("copyrightCompanyUrl").string((String)value);                          
+            }
+            // copyrightYears
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightYears;
+            if (value == null)
+               structure.property("copyrightYears").nullValue();
+            else
+            {
+                    structure.property("copyrightYears").string((String)value);                          
+            }
+            // licenseLabel
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).licenseLabel;
+            if (value == null)
+               structure.property("licenseLabel").nullValue();
+            else
+            {
+                    structure.property("licenseLabel").string((String)value);                          
+            }
+            // licenseName
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).licenseName;
+            if (value == null)
+               structure.property("licenseName").nullValue();
+            else
+            {
+                    structure.property("licenseName").string((String)value);                          
+            }
+            // licenseUrl
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).licenseUrl;
+            if (value == null)
+               structure.property("licenseUrl").nullValue();
+            else
+            {
+                    structure.property("licenseUrl").string((String)value);                          
             }
             if (!superClass)
                structure.close();

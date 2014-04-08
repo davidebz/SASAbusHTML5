@@ -63,7 +63,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
                           final SASAbusMap map,
                           final BusStationCustomViewAndI18N customAndI18n)
    {
-      super(new DivView.InitParameters("bus-station-detail"));
+      super("bus-station-detail");
       this.busStation = busStation;
       this.areaList = areaList;
       this.content = navPanel;
@@ -72,7 +72,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
 
       this.appendChild(new ItDeBusStationNamePanel(busStation, this.i18n));
 
-      DivView actions = new DivView(new DivView.InitParameters("actions"));
+      DivView actions = new DivView("actions");
 
       Icon mapIcon = Icon.newMapIcon();
       mapIcon.addStyleName("only-mobile");
@@ -88,16 +88,16 @@ public class BusStationPanel extends DivView implements PageChangeHandler
 
       this.appendChild(actions);
 
-      DivView lines = new DivView(new DivView.InitParameters("lines"));
+      DivView lines = new DivView("lines");
 
-      lines.appendChild(new SpanView(new SpanView.InitParameters(this.i18n.getLocalizedText("BusLines") + ":")));
+      lines.appendChild(new SpanView(this.i18n.getLocalizedText("BusLines") + ":"));
 
       BusLine[] busLines = busStation.getBusLines();
       BusLine.sortByNumber(busLines);
       for (int i = 0; i < busLines.length; i++)
       {
          final BusLine busLine = busStation.getBusLines()[i];
-         ButtonView showLine = new ButtonView(new ButtonView.InitParameters(busLine.getNumber()));
+         ButtonView showLine = new ButtonView(busLine.getNumber());
          lines.appendChild(showLine);
          showLine.addClickHandler(new DMClickHandler()
          {
@@ -112,9 +112,9 @@ public class BusStationPanel extends DivView implements PageChangeHandler
 
       //this.add(new DMLabel(i18n.getLocalizedText("BusStationPanel_directions") + ":"));
 
-      ButtonView nextDepartures = new ButtonView(new ButtonView.InitParameters(this.i18n.getLocalizedText("BusStationPanel_refresh_departures")));
-      ButtonView asStart = new ButtonView(new ButtonView.InitParameters(this.i18n.getLocalizedText("BusStationPanel_use_as_start_routing")));
-      ButtonView asEnd = new ButtonView(new ButtonView.InitParameters(this.i18n.getLocalizedText("BusStationPanel_use_as_end_routing")));
+      ButtonView nextDepartures = new ButtonView(this.i18n.getLocalizedText("BusStationPanel_refresh_departures"));
+      ButtonView asStart = new ButtonView(this.i18n.getLocalizedText("BusStationPanel_use_as_start_routing"));
+      ButtonView asEnd = new ButtonView(this.i18n.getLocalizedText("BusStationPanel_use_as_end_routing"));
       this.appendChild(asStart);
       this.appendChild(asEnd);
 
@@ -123,10 +123,10 @@ public class BusStationPanel extends DivView implements PageChangeHandler
          this.appendChild(customAndI18n.getBusStationCustomView().createView());
       }
 
-      DivView departureInputPanel = new DivView(new DivView.InitParameters("departure-input"));
+      DivView departureInputPanel = new DivView("departure-input");
       this.appendChild(departureInputPanel);
 
-      departureInputPanel.appendChild(new SpanView(new SpanView.InitParameters("Next departures")));
+      departureInputPanel.appendChild(new SpanView("Next departures"));
 
       asStart.addClickHandler(new DMClickHandler()
       {
@@ -167,9 +167,9 @@ public class BusStationPanel extends DivView implements PageChangeHandler
       };
       nextDepartures.addClickHandler(retrieveNextDepartureHandler);
 
-      this.appendChild(this.departures = new DivView(new DivView.InitParameters("departures")));
+      this.appendChild(this.departures = new DivView("departures"));
 
-      this.dateBox = new SASAbusDateBox(new SASAbusDateBox.InitParameters());
+      this.dateBox = new SASAbusDateBox();
       departureInputPanel.appendChild(this.dateBox);
 
       departureInputPanel.appendChild(nextDepartures);
@@ -181,7 +181,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
    public void findBusStationDepartures()
    {
       this.departures.clear();
-      this.departures.appendChild(new SpanView(new SpanView.InitParameters(this.i18n.getLocalizedText("BusStationPanel_calculating_departures"))));
+      this.departures.appendChild(new SpanView(this.i18n.getLocalizedText("BusStationPanel_calculating_departures")));
 
       Date date = this.dateBox.getValue();
 
@@ -241,7 +241,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
             }
          });
 
-         rowItem.appendChild(new SpanView(new SpanView.InitParameters(formatBusTripStop(busLine, busTripStop, i18n))));
+         rowItem.appendChild(new SpanView(formatBusTripStop(busLine, busTripStop, i18n)));
          departures.appendChild(rowItem);
 
       }

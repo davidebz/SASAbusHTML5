@@ -8,8 +8,8 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/dm-web-lib-1.0.20140329.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/dm-xml-json-lib-1.0.20140329.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/sasabus-backend-lib-1.0.20140329.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/dm-xml-json-lib-1.0.20140408.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/dm-web-lib-1.0.20140410.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
