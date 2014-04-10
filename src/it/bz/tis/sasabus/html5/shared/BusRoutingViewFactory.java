@@ -19,24 +19,15 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared;
 
-public class BusStationCustomViewAndI18N
+import it.bz.tis.sasabus.backend.shared.AreaList;
+import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivViewChild;
+
+public interface BusRoutingViewFactory
 {
-   SASAbusI18N           i18n;
-   BusStationCustomView  busStationCustomView;
-   BusRoutingViewFactory busRoutingViewFactory;
-
-   public SASAbusI18N getI18n()
-   {
-      return this.i18n;
-   }
-
-   public BusStationCustomView getBusStationCustomView()
-   {
-      return this.busStationCustomView;
-   }
-
-   public BusRoutingViewFactory getBusRoutingViewFactory()
-   {
-      return this.busRoutingViewFactory;
-   }
+   public DivViewChild createView(AreaList areaList,
+                                  DMHashNavigationPanel navigationPanel,
+                                  SASAbusMap map,
+                                  SASAbusI18N i18n);
 }

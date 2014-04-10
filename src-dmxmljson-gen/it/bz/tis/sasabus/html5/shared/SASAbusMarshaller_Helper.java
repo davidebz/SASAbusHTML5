@@ -121,6 +121,14 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
                structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
             }
             Object value;
+            // busRoutingViewFactory
+            value = ((it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)obj).busRoutingViewFactory;
+            if (value == null)
+               structure.property("busRoutingViewFactory").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.BusRoutingViewFactory", structure.property("busRoutingViewFactory").structure(), identities, seq, false);
+            }
             // busStationCustomView
             value = ((it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)obj).busStationCustomView;
             if (value == null)

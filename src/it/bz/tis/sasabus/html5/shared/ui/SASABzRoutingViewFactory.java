@@ -17,26 +17,23 @@ You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-package it.bz.tis.sasabus.html5.shared;
+package it.bz.tis.sasabus.html5.shared.ui;
 
-public class BusStationCustomViewAndI18N
+import it.bz.tis.sasabus.backend.shared.AreaList;
+import it.bz.tis.sasabus.html5.shared.BusRoutingViewFactory;
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
+import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
+import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
+import bz.davide.dmweb.shared.view.DivViewChild;
+
+public class SASABzRoutingViewFactory implements BusRoutingViewFactory
 {
-   SASAbusI18N           i18n;
-   BusStationCustomView  busStationCustomView;
-   BusRoutingViewFactory busRoutingViewFactory;
-
-   public SASAbusI18N getI18n()
+   @Override
+   public DivViewChild createView(AreaList areaList,
+                                  DMHashNavigationPanel navigationPanel,
+                                  SASAbusMap map,
+                                  SASAbusI18N i18n)
    {
-      return this.i18n;
-   }
-
-   public BusStationCustomView getBusStationCustomView()
-   {
-      return this.busStationCustomView;
-   }
-
-   public BusRoutingViewFactory getBusRoutingViewFactory()
-   {
-      return this.busRoutingViewFactory;
+      return new RouteSearchPanel(areaList, navigationPanel, map, i18n);
    }
 }

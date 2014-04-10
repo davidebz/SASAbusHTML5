@@ -195,6 +195,9 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       });
       this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N>() {
          @Override public void check(it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N  ret){
+            // busRoutingViewFactory
+            if (ret.busRoutingViewFactory != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N.busRoutingViewFactory");
             // busStationCustomView
             if (ret.busStationCustomView != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N.busStationCustomView");
@@ -217,6 +220,21 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            // busRoutingViewFactory
+            if ((value = structure.property("busRoutingViewFactory")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)obj).busRoutingViewFactory = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)obj).busRoutingViewFactory = (it.bz.tis.sasabus.html5.shared.BusRoutingViewFactory)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("BusRoutingViewFactory"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N)obj).busRoutingViewFactory = (it.bz.tis.sasabus.html5.shared.BusRoutingViewFactory)o;
+                  }
+               }
             // busStationCustomView
             if ((value = structure.property("busStationCustomView")) != null)
                if (value.isNull())

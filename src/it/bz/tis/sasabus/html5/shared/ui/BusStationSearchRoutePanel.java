@@ -21,6 +21,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
+import it.bz.tis.sasabus.html5.shared.BusRoutingViewFactory;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
 import bz.davide.dmweb.shared.view.DMHashNavigationPanel;
@@ -30,13 +31,13 @@ import bz.davide.dmweb.shared.view.PageChangeHandler;
 public class BusStationSearchRoutePanel extends DivView implements PageChangeHandler
 {
    BusStationSearchWidget searchWidget;
-   RouteSearchPanel       routeSearchPanel;
 
    public BusStationSearchRoutePanel(AreaList areaList,
                                      SASAbusMap map,
                                      DMHashNavigationPanel navigationPanel,
                                      BusStationSelectedEventHandler selected,
-                                     final SASAbusI18N i18n)
+                                     final SASAbusI18N i18n,
+                                     BusRoutingViewFactory factory)
    {
       super("bus-stations-search-route");
       this.appendChild(this.searchWidget = new BusStationSearchWidget(i18n.getLocalizedText("BusStationSearchWidget_introtext"),
@@ -44,7 +45,7 @@ public class BusStationSearchRoutePanel extends DivView implements PageChangeHan
                                                                       areaList,
                                                                       selected,
                                                                       i18n));
-      this.appendChild(this.routeSearchPanel = new RouteSearchPanel(areaList, navigationPanel, map, i18n));
+      this.appendChild(factory.createView(areaList, navigationPanel, map, i18n));
    }
 
    @Override

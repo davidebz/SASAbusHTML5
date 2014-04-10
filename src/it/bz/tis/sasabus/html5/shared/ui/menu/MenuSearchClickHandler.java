@@ -76,7 +76,8 @@ public class MenuSearchClickHandler implements DMClickHandler
                                                                                                                                                 MenuSearchClickHandler.this.menu.custom));
                                                                      }
                                                                   },
-                                                                  this.menu.i18n));
+                                                                  this.menu.i18n,
+                                                                  this.menu.custom.getBusRoutingViewFactory()));
       this.menu.hide();
    };
 }

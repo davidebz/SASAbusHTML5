@@ -138,7 +138,8 @@ public class BusStationPanel extends DivView implements PageChangeHandler
                                                             map,
                                                             navPanel,
                                                             null,
-                                                            BusStationPanel.this.i18n));
+                                                            BusStationPanel.this.i18n,
+                                                            customAndI18n.getBusRoutingViewFactory()));
          }
       });
 
@@ -152,7 +153,8 @@ public class BusStationPanel extends DivView implements PageChangeHandler
                                                             map,
                                                             navPanel,
                                                             null,
-                                                            BusStationPanel.this.i18n));
+                                                            BusStationPanel.this.i18n,
+                                                            customAndI18n.getBusRoutingViewFactory()));
          }
       });
 

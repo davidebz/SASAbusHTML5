@@ -313,6 +313,27 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             structure.close();
          }
       });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.SASABzRoutingViewFactory", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.SASABzRoutingViewFactory>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.SASABzRoutingViewFactory  ret){
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.SASABzRoutingViewFactory", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            it.bz.tis.sasabus.html5.shared.ui.SASABzRoutingViewFactory ret = new it.bz.tis.sasabus.html5.shared.ui.SASABzRoutingViewFactory();
+            return ret;
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.SASABzRoutingViewFactory", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+            structure.close();
+         }
+      });
       this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.AboutInfos", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.AboutInfos>() {
          @Override public void check(it.bz.tis.sasabus.html5.shared.ui.AboutInfos  ret){
             // copyrightCompany

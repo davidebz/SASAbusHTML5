@@ -66,6 +66,7 @@
 		<initParameters>
 		<appTitle>SASAbus</appTitle>
 		<custom.BusStationCustomViewAndI18N>
+			<busRoutingViewFactory.SASABzRoutingViewFactory/>
 			<i18n>
 				<language>en</language>
 					<translations><key>AboutPanel_checkingUpdates</key><text>checking updates ...</text></translations>
