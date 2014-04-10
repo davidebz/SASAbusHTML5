@@ -45,11 +45,11 @@ public class TitleBar extends DivView
       menuIcon.addClickHandler(new TitleBarMenuClickHandler(menu));
 
       DivView flags = new DivView("flags");
-      AnchorView it = new AnchorView("/it", "IT");
+      AnchorView it = new AnchorView("../it/", "IT");
       it.setStyleName("it");
-      AnchorView de = new AnchorView("/de", "DE");
+      AnchorView de = new AnchorView("../de/", "DE");
       de.setStyleName("de");
-      AnchorView en = new AnchorView("/en", "EN");
+      AnchorView en = new AnchorView("../en/", "EN");
       en.setStyleName("en");
 
       flags.appendChild(it);
