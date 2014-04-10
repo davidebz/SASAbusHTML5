@@ -17,7 +17,7 @@ rsync -acO --exclude "/WEB-INF" ../war/ tmp/META-INF/resources/
 
 cd tmp
 
-zip -r --filesync --no-dir-entries ../$LIB_VERSION .
+zip -r --filesync ../$LIB_VERSION .
 
 cd ..
 
