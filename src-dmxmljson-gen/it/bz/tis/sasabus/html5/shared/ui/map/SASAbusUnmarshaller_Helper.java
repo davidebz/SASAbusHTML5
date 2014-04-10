@@ -28,9 +28,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.backend.shared
             // gpsIcon
             if (ret.gpsIcon != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.gpsIcon");
-            // i18n
-            if (ret.i18n != null)
-               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.i18n");
             // mapDiv
             if (ret.mapDiv != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap.mapDiv");
@@ -130,21 +127,6 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.backend.shared
                      Object o = newInstance(value.structure().getRuntimeClassName("Icon"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).gpsIcon = (it.bz.tis.sasabus.html5.shared.ui.icon.Icon)o;
-                  }
-               }
-            // i18n
-            if ((value = structure.property("i18n")) != null)
-               if (value.isNull())
-                  ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).i18n = null;
-               else
-               {
-                  String refid = value.structure().getRefId();    
-                  if (refid != null)                              
-                     ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).i18n = (it.bz.tis.sasabus.html5.shared.SASAbusI18N)identities.get(refid);
-                  else {
-                     Object o = newInstance(value.structure().getRuntimeClassName("SASAbusI18N"));              
-                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
-                     ((it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap)obj).i18n = (it.bz.tis.sasabus.html5.shared.SASAbusI18N)o;
                   }
                }
             // mapDiv

@@ -28,7 +28,6 @@ import it.bz.tis.sasabus.backend.shared.BusStop;
 import it.bz.tis.sasabus.backend.shared.BusTrip;
 import it.bz.tis.sasabus.backend.shared.BusTripStop;
 import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
-import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.data.Parking;
 import it.bz.tis.sasabus.html5.shared.data.TrainStation;
 import it.bz.tis.sasabus.html5.shared.ui.AreaPanel;
@@ -92,14 +91,13 @@ public class SASAbusMap extends DivView
 
    DivView                                            overwievMap;
 
-   SASAbusI18N                                        i18n;
    BusStationCustomViewAndI18N                        custom;
 
    public SASAbusMap(BusStationCustomViewAndI18N custom)
    {
       super("map");
 
-      this.i18n = custom.getI18n();
+      this.custom = custom;
 
       this.close = new ButtonView("X");
 
@@ -219,7 +217,7 @@ public class SASAbusMap extends DivView
             @Override
             public void onEvent()
             {
-               ParkingPopup parkingPopup = new ParkingPopup(parking, SASAbusMap.this.i18n);
+               ParkingPopup parkingPopup = new ParkingPopup(parking, SASAbusMap.this.custom.getI18n());
                SASAbusMap.this.leafletMap.openPopup(parkingPopup.getElement(), latLng);
                parkingPopup.init();
             }
