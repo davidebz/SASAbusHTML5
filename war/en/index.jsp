@@ -64,6 +64,7 @@
 	
 	<dmweb:fragment viewclass="it.bz.tis.sasabus.html5.shared.SASAbusWebPage">
 		<initParameters>
+		<appTitle>SASAbus</appTitle>
 		<custom.BusStationCustomViewAndI18N>
 			<i18n>
 				<language>en</language>

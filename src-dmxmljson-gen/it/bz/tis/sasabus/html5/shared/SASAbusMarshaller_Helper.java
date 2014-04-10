@@ -28,6 +28,14 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             {
                      internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.ui.AboutInfos", structure.property("aboutInfos").structure(), identities, seq, false);
             }
+            // appTitle
+            value = ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).appTitle;
+            if (value == null)
+               structure.property("appTitle").nullValue();
+            else
+            {
+                    structure.property("appTitle").string((String)value);                          
+            }
             // custom
             value = ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).custom;
             if (value == null)
@@ -142,6 +150,14 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
                structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
             }
             Object value;
+            // appTitle
+            value = ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).appTitle;
+            if (value == null)
+               structure.property("appTitle").nullValue();
+            else
+            {
+                    structure.property("appTitle").string((String)value);                          
+            }
             // cover
             value = ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).cover;
             if (value == null)

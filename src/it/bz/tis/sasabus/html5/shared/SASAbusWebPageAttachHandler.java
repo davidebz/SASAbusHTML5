@@ -44,13 +44,16 @@ public class SASAbusWebPageAttachHandler implements AttachListener
 
    BusStationCustomViewAndI18N custom;
 
+   String                      appTitle;
+
    public SASAbusWebPageAttachHandler(DivView cover,
                                       DivView wrapper,
                                       SASAbusMap map,
                                       Menu menu,
                                       HomePanel homePanel,
                                       DMHashNavigationPanel navigationPanel,
-                                      final BusStationCustomViewAndI18N custom)
+                                      final BusStationCustomViewAndI18N custom,
+                                      String appTitle)
    {
       this.cover = cover;
       this.wrapper = wrapper;
@@ -59,6 +62,7 @@ public class SASAbusWebPageAttachHandler implements AttachListener
       this.homePanel = homePanel;
       this.navigationPanel = navigationPanel;
       this.custom = custom;
+      this.appTitle = appTitle;
    }
 
    SASAbusWebPageAttachHandler()
@@ -78,7 +82,8 @@ public class SASAbusWebPageAttachHandler implements AttachListener
                                                                             SASAbusWebPageAttachHandler.this.menu,
                                                                             this.homePanel,
                                                                             this.navigationPanel,
-                                                                            this.custom));
+                                                                            this.custom,
+                                                                            this.appTitle));
       }
    }
 }

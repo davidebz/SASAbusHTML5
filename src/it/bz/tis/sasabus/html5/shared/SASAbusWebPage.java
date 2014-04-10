@@ -43,6 +43,7 @@ public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
 
    public static class InitParameters
    {
+      String                      appTitle;
       BusStationCustomViewAndI18N custom;
       HomePageCustomFragment      homePageCustomFragment;
       AboutInfos                  aboutInfos;
@@ -75,7 +76,8 @@ public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
                                                                  this.menu,
                                                                  this.homePanel,
                                                                  navigationPanel,
-                                                                 initParameters.custom));
+                                                                 initParameters.custom,
+                                                                 initParameters.appTitle));
 
       this.titleBar = new TitleBar(this.menu, map, null);
 

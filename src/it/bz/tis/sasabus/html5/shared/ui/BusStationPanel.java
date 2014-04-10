@@ -120,7 +120,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
 
       if (customAndI18n.getBusStationCustomView() != null)
       {
-         this.appendChild(customAndI18n.getBusStationCustomView().createView());
+         this.appendChild(customAndI18n.getBusStationCustomView().createView(busStation));
       }
 
       DivView departureInputPanel = new DivView("departure-input");

@@ -58,11 +58,12 @@ public class SplashPanel extends DivView
                       final Menu menu,
                       final HomePanel homePage,
                       final DMHashNavigationPanel navigationPanel,
-                      final BusStationCustomViewAndI18N custom)
+                      final BusStationCustomViewAndI18N custom,
+                      String appTitle)
    {
       super("splash-panel");
       final SASAbusI18N i18n = custom.getI18n();
-      this.appendChild(new SpanView("SASAbus"));
+      this.appendChild(new SpanView(appTitle));
       this.appendChild(Icon.newHTML5Icon());
       DivView imageContainer = new DivView("image-container");
       final ImgView sasaImg = new ImgView("../images/bus.png");

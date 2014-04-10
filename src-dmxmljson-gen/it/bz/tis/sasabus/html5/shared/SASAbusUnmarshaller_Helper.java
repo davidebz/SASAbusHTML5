@@ -16,6 +16,9 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             // aboutInfos
             if (ret.aboutInfos != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.aboutInfos");
+            // appTitle
+            if (ret.appTitle != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.appTitle");
             // custom
             if (ret.custom != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.custom");
@@ -52,6 +55,14 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).aboutInfos = (it.bz.tis.sasabus.html5.shared.ui.AboutInfos)o;
                   }
+               }
+            // appTitle
+            if ((value = structure.property("appTitle")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).appTitle = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).appTitle = value.string();
                }
             // custom
             if ((value = structure.property("custom")) != null)
@@ -241,6 +252,9 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
       });
       this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler>() {
          @Override public void check(it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler  ret){
+            // appTitle
+            if (ret.appTitle != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.appTitle");
             // cover
             if (ret.cover != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler.cover");
@@ -278,6 +292,14 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             if (id != null)
                identities.put(id, obj);
             bz.davide.dmxmljson.unmarshalling.Value value;
+            // appTitle
+            if ((value = structure.property("appTitle")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).appTitle = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPageAttachHandler)obj).appTitle = value.string();
+               }
             // cover
             if ((value = structure.property("cover")) != null)
                if (value.isNull())

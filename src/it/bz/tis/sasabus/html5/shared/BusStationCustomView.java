@@ -19,9 +19,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared;
 
+import it.bz.tis.sasabus.backend.shared.BusStation;
 import bz.davide.dmweb.shared.view.DivView;
 
 public interface BusStationCustomView
 {
-   DivView createView();
+   DivView createView(BusStation busStation);
 }
