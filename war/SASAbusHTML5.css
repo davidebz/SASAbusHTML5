@@ -259,7 +259,7 @@ body {
 
 .bus-stations .bus-stations-list
 {
-   background-image:url('images/layout/stops-line.png');
+   /*background-image:url('images/layout/stops-line.png');*/
    background-repeat:no-repeat;
 }
 
