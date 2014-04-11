@@ -65,13 +65,18 @@ public class Menu extends DivView
    SASAbusI18N                 i18n;
    BusStationCustomViewAndI18N custom;
 
+   String                      supportEmail;
+
    public Menu(final DMHashNavigationPanel navigationPanel,
                final AreaList areaList,
                final SASAbusMap map,
                AboutPanel aboutPanel,
-               BusStationCustomViewAndI18N custom)
+               BusStationCustomViewAndI18N custom,
+               String supportEmail)
    {
       super("menu");
+
+      this.supportEmail = supportEmail;
 
       this.i18n = custom.getI18n();
       this.custom = custom;

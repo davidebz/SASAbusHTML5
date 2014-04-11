@@ -52,6 +52,14 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             {
                      internalMarschall(value, value.getClass().getName(),"it.bz.tis.sasabus.html5.shared.HomePageCustomFragment", structure.property("homePageCustomFragment").structure(), identities, seq, false);
             }
+            // supportEmail
+            value = ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).supportEmail;
+            if (value == null)
+               structure.property("supportEmail").nullValue();
+            else
+            {
+                    structure.property("supportEmail").string((String)value);                          
+            }
             if (!superClass)
                structure.close();
          }

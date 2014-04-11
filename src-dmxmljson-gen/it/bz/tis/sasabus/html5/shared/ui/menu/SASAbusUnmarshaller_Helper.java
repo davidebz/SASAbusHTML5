@@ -443,6 +443,9 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASA
             // sendFeedback
             if (ret.sendFeedback != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.sendFeedback");
+            // supportEmail
+            if (ret.supportEmail != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.supportEmail");
             // train
             if (ret.train != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.train");
@@ -710,6 +713,14 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASA
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).sendFeedback = (it.bz.tis.sasabus.html5.shared.ui.menu.MenuItem)o;
                   }
+               }
+            // supportEmail
+            if ((value = structure.property("supportEmail")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).supportEmail = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).supportEmail = value.string();
                }
             // train
             if ((value = structure.property("train")) != null)

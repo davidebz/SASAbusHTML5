@@ -22,7 +22,6 @@ package it.bz.tis.sasabus.html5.shared.ui.menu;
 import bz.davide.dmweb.shared.view.AbstractHtmlElementView;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
-
 import com.google.gwt.user.client.Window;
 
 /**
@@ -48,10 +47,10 @@ public class MenuFeedbackClickHandler implements DMClickHandler
    {
       this.menu.hide();
       String subjectEncoded = AbstractHtmlElementView.escapeText4url("SASAbus html5 feedback");
-      String bodyEncoded = AbstractHtmlElementView.escapeText4url("Your feedback here...\r\n\r\nMy browser is: " +
-                                                   Window.Navigator.getUserAgent() +
-                                                   "\r\n");
-      String mailto = "mailto:community@sasabus.org?subject=" + subjectEncoded + "&body=" + bodyEncoded;
+      String bodyEncoded = AbstractHtmlElementView.escapeText4url("Your feedback here...\r\n\r\nMy browser is: "
+                                                                  + Window.Navigator.getUserAgent()
+                                                                  + "\r\n");
+      String mailto = "mailto:" + this.menu.supportEmail + "?subject=" + subjectEncoded + "&body=" + bodyEncoded;
       Window.Location.assign(mailto);
 
    }

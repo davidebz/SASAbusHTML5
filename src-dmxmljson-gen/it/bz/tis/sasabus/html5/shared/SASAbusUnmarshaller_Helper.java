@@ -25,6 +25,9 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             // homePageCustomFragment
             if (ret.homePageCustomFragment != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.homePageCustomFragment");
+            // supportEmail
+            if (ret.supportEmail != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters.supportEmail");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.SASAbusWebPage$InitParameters", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
@@ -93,6 +96,14 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).homePageCustomFragment = (it.bz.tis.sasabus.html5.shared.HomePageCustomFragment)o;
                   }
+               }
+            // supportEmail
+            if ((value = structure.property("supportEmail")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).supportEmail = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.SASAbusWebPage.InitParameters)obj).supportEmail = value.string();
                }
             structure.close();
          }

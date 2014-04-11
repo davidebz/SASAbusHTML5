@@ -124,6 +124,7 @@
 			    <licenseName>Affero GPL</licenseName>
 			    <licenseUrl>http://www.gnu.org/licenses/agpl-3.0.html</licenseUrl>
 			</aboutInfos>
+			<supportEmail>community@sasabus.org</supportEmail>
 		</initParameters>
 	</dmweb:fragment>
 

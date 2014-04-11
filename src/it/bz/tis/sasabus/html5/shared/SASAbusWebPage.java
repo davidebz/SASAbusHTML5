@@ -47,6 +47,7 @@ public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
       BusStationCustomViewAndI18N custom;
       HomePageCustomFragment      homePageCustomFragment;
       AboutInfos                  aboutInfos;
+      String                      supportEmail;
    }
 
    public SASAbusWebPage(InitParameters initParameters) throws Exception
@@ -68,7 +69,12 @@ public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
 
       AboutPanel aboutPanel = new AboutPanel(initParameters.aboutInfos);
 
-      this.menu = new Menu(navigationPanel, null, map, aboutPanel, initParameters.custom);
+      this.menu = new Menu(navigationPanel,
+                           null,
+                           map,
+                           aboutPanel,
+                           initParameters.custom,
+                           initParameters.supportEmail);
 
       this.menu.addAttachHandler(new SASAbusWebPageAttachHandler(initialCover,
                                                                  wrapper,
