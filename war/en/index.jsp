@@ -121,6 +121,79 @@
 			    <licenseLabel>License</licenseLabel>
 			    <licenseName>Affero GPL</licenseName>
 			    <licenseUrl>http://www.gnu.org/licenses/agpl-3.0.html</licenseUrl>
+			    
+			    <teamName>SASAbus community</teamName>
+			    <teamUrl>http://sasabus.org/wiki</teamUrl>
+			    
+			    <teamMembers>
+			      <name>Davide Montesin</name>
+			      <url>http://www.davide.bz</url>
+			      <role>Main developer</role>
+			    </teamMembers>
+			    <teamMembers>
+			      <name>Giulia Rosso</name>
+			      <url>mailto:giuliarosso.rg@gmail.com</url>
+			      <role>Design</role>
+			    </teamMembers>
+			    <teamMembers>
+			      <name>Iryna Dorosh</name>
+			      <url>mailto:iryna_dorosh@ukr.net</url>
+			      <role>Design</role>
+			    </teamMembers>
+			    <teamMembers>
+			      <name>Virginia Mazzocco</name>
+			      <url>mailto:virginia.mazzocco@gmail.com</url>
+			      <role>Design</role>
+			    </teamMembers>
+			    
+			    <libraries>
+			       <name>DM XML-JSON</name>
+			       <url>http://www.davide.bz/en/dmxj</url>
+			       <owner>Davide Montesin</owner>
+			       <license>LGPL3</license>
+			       <licenseUrl>http://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License</licenseUrl>
+			    </libraries>
+			    
+			    <libraries>
+			       <name>DM Web</name>
+			       <url>http://www.davide.bz/en/dmweb</url>
+			       <owner>Davide Montesin</owner>
+			       <license>LGPL3</license>
+			       <licenseUrl>http://en.wikipedia.org/wiki/GNU_Lesser_General_Public_License</licenseUrl>
+			    </libraries>
+			    
+			    <libraries>
+			       <name>Flag Icons - Europe</name>
+			       <url>http://antibakteriell.deviantart.com/art/Flag-Icons-Europe-166536006</url>
+			       <owner>antibakteriell</owner>
+			       <license>CC BY 3.0</license>
+			       <licenseUrl>http://creativecommons.org/licenses/by/3.0/</licenseUrl>
+			    </libraries>
+			    
+			    <libraries>
+			       <name>Visualization: Gauge</name>
+			       <url>https://developers.google.com/chart/interactive/docs/gallery/gauge</url>
+			       <owner>Google</owner>
+			       <license>API</license>
+			       <licenseUrl>https://developers.google.com/chart/terms</licenseUrl>
+			    </libraries>
+			    
+			    <libraries>
+			       <name>GWT</name>
+			       <url>http://www.gwtproject.org</url>
+			       <owner>Google</owner>
+			       <license>Apache 2.0</license>
+			       <licenseUrl>http://www.gwtproject.org/terms.html</licenseUrl>
+			    </libraries>
+			    
+			    <libraries>
+			       <name>Leaflet</name>
+			       <url>http://leafletjs.com</url>
+			       <owner>Vladimir Agafonkin, CloudMade</owner>
+			       <license>BSD</license>
+			       <licenseUrl>http://github.com/Leaflet/Leaflet/blob/master/LICENSE</licenseUrl>
+			    </libraries>
+			    
 			</aboutInfos>
 			<supportEmail>community@sasabus.org</supportEmail>
 		</initParameters>

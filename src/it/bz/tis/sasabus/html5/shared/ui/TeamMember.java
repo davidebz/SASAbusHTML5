@@ -19,22 +19,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
-public class AboutInfos
+public class TeamMember
 {
-   String              copyrightYears;
-   String              copyrightCompany;
-   String              copyrightCompanyUrl;
-   String              copyrightCompanyAddress;
-
-   String              licenseLabel;
-   String              licenseName;
-   String              licenseUrl;
-
-   String              teamName;
-   String              teamUrl;
-
-   TeamMember[]        teamMembers;
-
-   ThirdPartyLibrary[] libraries;
-
+   String name;
+   String url;
+   String role;
 }

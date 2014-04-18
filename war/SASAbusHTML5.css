@@ -315,6 +315,11 @@ body>.about>button {
    display: block;
    margin-bottom: 8px;
 }
+.about .team .members .member
+{
+	padding-top:6px;
+	padding-left:10px;
+}
 
 .about>.copyright>* {
    display: inline-block;

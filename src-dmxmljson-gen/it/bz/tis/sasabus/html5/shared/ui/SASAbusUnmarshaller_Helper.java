@@ -122,6 +122,15 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             // licenseLink
             if (ret.licenseLink != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanel.licenseLink");
+            // teamLink
+            if (ret.teamLink != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanel.teamLink");
+            // teamMembers
+            if (ret.teamMembers != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanel.teamMembers");
+            // thirdPartyLicenses
+            if (ret.thirdPartyLicenses != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanel.thirdPartyLicenses");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.AboutPanel", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
@@ -212,6 +221,51 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                      Object o = newInstance(value.structure().getRuntimeClassName("AnchorView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).licenseLink = (bz.davide.dmweb.shared.view.AnchorView)o;
+                  }
+               }
+            // teamLink
+            if ((value = structure.property("teamLink")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).teamLink = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).teamLink = (bz.davide.dmweb.shared.view.AnchorView)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("AnchorView"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).teamLink = (bz.davide.dmweb.shared.view.AnchorView)o;
+                  }
+               }
+            // teamMembers
+            if ((value = structure.property("teamMembers")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).teamMembers = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).teamMembers = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).teamMembers = (bz.davide.dmweb.shared.view.DivView)o;
+                  }
+               }
+            // thirdPartyLicenses
+            if ((value = structure.property("thirdPartyLicenses")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).thirdPartyLicenses = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).thirdPartyLicenses = (bz.davide.dmweb.shared.view.DivView)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("DivView"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).thirdPartyLicenses = (bz.davide.dmweb.shared.view.DivView)o;
                   }
                }
             structure.close();
@@ -348,6 +402,9 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             // copyrightYears
             if (ret.copyrightYears != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.copyrightYears");
+            // libraries
+            if (ret.libraries != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.libraries");
             // licenseLabel
             if (ret.licenseLabel != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.licenseLabel");
@@ -357,6 +414,15 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             // licenseUrl
             if (ret.licenseUrl != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.licenseUrl");
+            // teamMembers
+            if (ret.teamMembers != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.teamMembers");
+            // teamName
+            if (ret.teamName != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.teamName");
+            // teamUrl
+            if (ret.teamUrl != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.teamUrl");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.AboutInfos", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
@@ -405,6 +471,35 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                {
                   ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightYears = value.string();
                }
+            // libraries
+            if ((value = structure.property("libraries")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).libraries = null;
+               else
+               {
+                  bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
+                  arr.open();        
+                  it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary[] arrayList = new it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
+                     if (value.isNull())                                           
+                        arrayList[i] = null;                                       
+                     else                                                          
+                     {                                                                   
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
+                        if (refid != null)                              
+                           arrayList[i] = (it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)(identities.get(refid));                                                
+                        else {
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("ThirdPartyLibrary"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)(o);                                                
+                        }
+                     }                                                                   
+                  }                                                                   
+                  arr.close();        
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).libraries = arrayList;
+               }
             // licenseLabel
             if ((value = structure.property("licenseLabel")) != null)
                if (value.isNull())
@@ -428,6 +523,51 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                else
                {
                   ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).licenseUrl = value.string();
+               }
+            // teamMembers
+            if ((value = structure.property("teamMembers")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).teamMembers = null;
+               else
+               {
+                  bz.davide.dmxmljson.unmarshalling.Array arr = value.array();        
+                  arr.open();        
+                  it.bz.tis.sasabus.html5.shared.ui.TeamMember[] arrayList = new it.bz.tis.sasabus.html5.shared.ui.TeamMember[arr.length()];       
+                  for (int i = 0; i < arrayList.length; i++) {                       
+                     value = arr.nextItem();                                       
+                     if (value.isNull())                                           
+                        arrayList[i] = null;                                       
+                     else                                                          
+                     {                                                                   
+                        bz.davide.dmxmljson.unmarshalling.Structure tmpStructure = value.structure();
+                        String refid = tmpStructure.getRefId();    
+                        if (refid != null)                              
+                           arrayList[i] = (it.bz.tis.sasabus.html5.shared.ui.TeamMember)(identities.get(refid));                                                
+                        else {
+                           Object o = newInstance(tmpStructure.getRuntimeClassName("TeamMember"));              
+                           internalUnmarschall(tmpStructure, o.getClass().getName(), o, identities); 
+                           arrayList[i] = (it.bz.tis.sasabus.html5.shared.ui.TeamMember)(o);                                                
+                        }
+                     }                                                                   
+                  }                                                                   
+                  arr.close();        
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).teamMembers = arrayList;
+               }
+            // teamName
+            if ((value = structure.property("teamName")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).teamName = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).teamName = value.string();
+               }
+            // teamUrl
+            if ((value = structure.property("teamUrl")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).teamUrl = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).teamUrl = value.string();
                }
             structure.close();
          }
@@ -522,6 +662,136 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
+               }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary  ret){
+            // license
+            if (ret.license != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary.license");
+            // licenseUrl
+            if (ret.licenseUrl != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary.licenseUrl");
+            // name
+            if (ret.name != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary.name");
+            // owner
+            if (ret.owner != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary.owner");
+            // url
+            if (ret.url != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary.url");
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary ret = new it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary();
+            return ret;
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+            // license
+            if ((value = structure.property("license")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).license = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).license = value.string();
+               }
+            // licenseUrl
+            if ((value = structure.property("licenseUrl")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).licenseUrl = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).licenseUrl = value.string();
+               }
+            // name
+            if ((value = structure.property("name")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).name = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).name = value.string();
+               }
+            // owner
+            if ((value = structure.property("owner")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).owner = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).owner = value.string();
+               }
+            // url
+            if ((value = structure.property("url")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).url = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).url = value.string();
+               }
+            structure.close();
+         }
+      });
+      this.emptyObjectCheck.put("it.bz.tis.sasabus.html5.shared.ui.TeamMember", new bz.davide.dmxmljson.unmarshalling.EmptyFieldChecker<it.bz.tis.sasabus.html5.shared.ui.TeamMember>() {
+         @Override public void check(it.bz.tis.sasabus.html5.shared.ui.TeamMember  ret){
+            // name
+            if (ret.name != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.TeamMember.name");
+            // role
+            if (ret.role != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.TeamMember.role");
+            // url
+            if (ret.url != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.TeamMember.url");
+         }
+      });
+      this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.TeamMember", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
+         @Override public Object newInstance() throws Exception {
+            it.bz.tis.sasabus.html5.shared.ui.TeamMember ret = new it.bz.tis.sasabus.html5.shared.ui.TeamMember();
+            return ret;
+         }
+      });
+
+      this.putClassUnmarshaller("it.bz.tis.sasabus.html5.shared.ui.TeamMember", new bz.davide.dmxmljson.unmarshalling.ClassUnmarshaller() {
+         @Override public void unmarshall(bz.davide.dmxmljson.unmarshalling.Structure structure, Object obj, java.util.HashMap<String, Object> identities) throws Exception {
+            structure.open();
+            String id = structure.getId();
+            if (id != null)
+               identities.put(id, obj);
+            bz.davide.dmxmljson.unmarshalling.Value value;
+            // name
+            if ((value = structure.property("name")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.TeamMember)obj).name = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.TeamMember)obj).name = value.string();
+               }
+            // role
+            if ((value = structure.property("role")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.TeamMember)obj).role = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.TeamMember)obj).role = value.string();
+               }
+            // url
+            if ((value = structure.property("url")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.TeamMember)obj).url = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.TeamMember)obj).url = value.string();
                }
             structure.close();
          }

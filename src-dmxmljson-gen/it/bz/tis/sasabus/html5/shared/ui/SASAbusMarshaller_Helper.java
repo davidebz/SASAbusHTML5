@@ -107,6 +107,30 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             {
                      internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.AnchorView", structure.property("licenseLink").structure(), identities, seq, false);
             }
+            // teamLink
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).teamLink;
+            if (value == null)
+               structure.property("teamLink").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.AnchorView", structure.property("teamLink").structure(), identities, seq, false);
+            }
+            // teamMembers
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).teamMembers;
+            if (value == null)
+               structure.property("teamMembers").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("teamMembers").structure(), identities, seq, false);
+            }
+            // thirdPartyLicenses
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).thirdPartyLicenses;
+            if (value == null)
+               structure.property("thirdPartyLicenses").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DivView", structure.property("thirdPartyLicenses").structure(), identities, seq, false);
+            }
             if (!superClass)
                structure.close();
          }
@@ -215,6 +239,20 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             {
                     structure.property("copyrightYears").string((String)value);                          
             }
+            // libraries
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).libraries;
+            if (value == null)
+               structure.property("libraries").nullValue();
+            else
+            {
+               it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary[] rawarray = (it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary[])value;                        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("libraries").array(rawarray.length);        
+               for (Object o: rawarray) {                                    
+                  if (o == null)                                              
+                     array.item().nullValue();                                
+                     internalMarschall(o, o.getClass().getName(), "it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary", array.item().structure(), identities, seq, false);
+               }                                                              
+            }
             // licenseLabel
             value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).licenseLabel;
             if (value == null)
@@ -238,6 +276,36 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             else
             {
                     structure.property("licenseUrl").string((String)value);                          
+            }
+            // teamMembers
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).teamMembers;
+            if (value == null)
+               structure.property("teamMembers").nullValue();
+            else
+            {
+               it.bz.tis.sasabus.html5.shared.ui.TeamMember[] rawarray = (it.bz.tis.sasabus.html5.shared.ui.TeamMember[])value;                        
+               bz.davide.dmxmljson.marshalling.Array array = structure.property("teamMembers").array(rawarray.length);        
+               for (Object o: rawarray) {                                    
+                  if (o == null)                                              
+                     array.item().nullValue();                                
+                     internalMarschall(o, o.getClass().getName(), "it.bz.tis.sasabus.html5.shared.ui.TeamMember", array.item().structure(), identities, seq, false);
+               }                                                              
+            }
+            // teamName
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).teamName;
+            if (value == null)
+               structure.property("teamName").nullValue();
+            else
+            {
+                    structure.property("teamName").string((String)value);                          
+            }
+            // teamUrl
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).teamUrl;
+            if (value == null)
+               structure.property("teamUrl").nullValue();
+            else
+            {
+                    structure.property("teamUrl").string((String)value);                          
             }
             if (!superClass)
                structure.close();
@@ -284,6 +352,96 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             else
             {
                      internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DMHashNavigationPanel", structure.property("navigationPanel").structure(), identities, seq, false);
+            }
+            if (!superClass)
+               structure.close();
+         }
+      });
+      this.putClassMarshaller("it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
+         @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
+            if (!superClass) {
+               if (isReference(structure, obj, identities, seq))
+                  return;
+               identities.put(obj, structure);
+               structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
+            }
+            Object value;
+            // license
+            value = ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).license;
+            if (value == null)
+               structure.property("license").nullValue();
+            else
+            {
+                    structure.property("license").string((String)value);                          
+            }
+            // licenseUrl
+            value = ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).licenseUrl;
+            if (value == null)
+               structure.property("licenseUrl").nullValue();
+            else
+            {
+                    structure.property("licenseUrl").string((String)value);                          
+            }
+            // name
+            value = ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).name;
+            if (value == null)
+               structure.property("name").nullValue();
+            else
+            {
+                    structure.property("name").string((String)value);                          
+            }
+            // owner
+            value = ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).owner;
+            if (value == null)
+               structure.property("owner").nullValue();
+            else
+            {
+                    structure.property("owner").string((String)value);                          
+            }
+            // url
+            value = ((it.bz.tis.sasabus.html5.shared.ui.ThirdPartyLibrary)obj).url;
+            if (value == null)
+               structure.property("url").nullValue();
+            else
+            {
+                    structure.property("url").string((String)value);                          
+            }
+            if (!superClass)
+               structure.close();
+         }
+      });
+      this.putClassMarshaller("it.bz.tis.sasabus.html5.shared.ui.TeamMember", new bz.davide.dmxmljson.marshalling.ClassMarshaller() {
+         @Override public void marshall(Object obj, String compileTimeClassName, bz.davide.dmxmljson.marshalling.Structure structure, java.util.IdentityHashMap<Object, bz.davide.dmxmljson.marshalling.Structure> identities, long[] seq, boolean superClass) throws Exception {
+            if (!superClass) {
+               if (isReference(structure, obj, identities, seq))
+                  return;
+               identities.put(obj, structure);
+               structure.open(shortName(compileTimeClassName), shortName(obj.getClass().getName()), null);
+            }
+            Object value;
+            // name
+            value = ((it.bz.tis.sasabus.html5.shared.ui.TeamMember)obj).name;
+            if (value == null)
+               structure.property("name").nullValue();
+            else
+            {
+                    structure.property("name").string((String)value);                          
+            }
+            // role
+            value = ((it.bz.tis.sasabus.html5.shared.ui.TeamMember)obj).role;
+            if (value == null)
+               structure.property("role").nullValue();
+            else
+            {
+                    structure.property("role").string((String)value);                          
+            }
+            // url
+            value = ((it.bz.tis.sasabus.html5.shared.ui.TeamMember)obj).url;
+            if (value == null)
+               structure.property("url").nullValue();
+            else
+            {
+                    structure.property("url").string((String)value);                          
             }
             if (!superClass)
                structure.close();
