@@ -29,12 +29,14 @@ import com.google.gwt.user.client.Window;
  */
 public class MenuFeedbackClickHandler implements DMClickHandler
 {
-   Menu menu;
+   Menu   menu;
+   String appTitle;
 
-   public MenuFeedbackClickHandler(Menu menu)
+   public MenuFeedbackClickHandler(Menu menu, String appTitle)
    {
       super();
       this.menu = menu;
+      this.appTitle = appTitle;
    }
 
    MenuFeedbackClickHandler()
@@ -46,7 +48,7 @@ public class MenuFeedbackClickHandler implements DMClickHandler
    public void onClick(DMClickEvent event)
    {
       this.menu.hide();
-      String subjectEncoded = AbstractHtmlElementView.escapeText4url("SASAbus html5 feedback");
+      String subjectEncoded = AbstractHtmlElementView.escapeText4url(this.appTitle + " feedback");
       String bodyEncoded = AbstractHtmlElementView.escapeText4url("Your feedback here...\r\n\r\nMy browser is: "
                                                                   + Window.Navigator.getUserAgent()
                                                                   + "\r\n");

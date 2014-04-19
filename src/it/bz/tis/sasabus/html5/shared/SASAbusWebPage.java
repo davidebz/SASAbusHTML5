@@ -74,7 +74,8 @@ public class SASAbusWebPage extends ArrayList<AbstractHtmlElementView>
                            map,
                            aboutPanel,
                            initParameters.custom,
-                           initParameters.supportEmail);
+                           initParameters.supportEmail,
+                           initParameters.appTitle);
 
       this.menu.addAttachHandler(new SASAbusWebPageAttachHandler(initialCover,
                                                                  wrapper,

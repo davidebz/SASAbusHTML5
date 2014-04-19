@@ -67,17 +67,20 @@ public class Menu extends DivView
 
    String                      supportEmail;
 
+   String                      appTitle;
+
    public Menu(final DMHashNavigationPanel navigationPanel,
                final AreaList areaList,
                final SASAbusMap map,
                AboutPanel aboutPanel,
                BusStationCustomViewAndI18N custom,
-               String supportEmail)
+               String supportEmail,
+               String appTitle)
    {
       super("menu");
 
       this.supportEmail = supportEmail;
-
+      this.appTitle = appTitle;
       this.i18n = custom.getI18n();
       this.custom = custom;
 
@@ -143,7 +146,7 @@ public class Menu extends DivView
       //this.routing.addClickHandler(new MenuRouteClickHandler(this.navigationPanel, this, areaList, this.map));
       this.moreClickHandler = new MenuMoreClickHandler(this.moreMenuItems);
       this.more.addClickHandler(this.moreClickHandler);
-      this.sendFeedback.addClickHandler(new MenuFeedbackClickHandler(this));
+      this.sendFeedback.addClickHandler(new MenuFeedbackClickHandler(this, this.appTitle));
       this.about.addClickHandler(new MenuAboutClickHandler(this.aboutPanel, this));
       this.favourites.addClickHandler(new MenuFavouritesClickHandler(this.navigationPanel,
                                                                      this,

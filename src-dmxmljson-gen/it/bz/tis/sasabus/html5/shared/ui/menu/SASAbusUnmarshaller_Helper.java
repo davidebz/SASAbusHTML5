@@ -398,6 +398,9 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASA
             // aboutPanel
             if (ret.aboutPanel != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.aboutPanel");
+            // appTitle
+            if (ret.appTitle != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.appTitle");
             // areasAndLine
             if (ret.areasAndLine != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.menu.Menu.areasAndLine");
@@ -495,6 +498,14 @@ public class SASAbusUnmarshaller_Helper extends bz.davide.dmweb.shared.view.SASA
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).aboutPanel = (it.bz.tis.sasabus.html5.shared.ui.AboutPanel)o;
                   }
+               }
+            // appTitle
+            if ((value = structure.property("appTitle")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).appTitle = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.menu.Menu)obj).appTitle = value.string();
                }
             // areasAndLine
             if ((value = structure.property("areasAndLine")) != null)
