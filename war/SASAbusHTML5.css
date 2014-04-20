@@ -266,7 +266,7 @@ body {
 .bus-stations-list>.row-item
 {
    height:32px;
-   margin-left:20px;
+   /*margin-left:20px;*/
 }
 
 .bus-stations .favourites-icon
@@ -384,9 +384,18 @@ body>.about>button {
    background-image: url('images/UnitedKingsom.png')
 }
 
-.it-de-name>.first {
-   
+
+.it-de-name .first.single
+{
+	height:28px;
 }
+
+.it-de-name .first.single span
+{
+	display:block;
+	padding-top:6px;
+}
+
 
  /* #E134 {
 	color: #ed1c24;

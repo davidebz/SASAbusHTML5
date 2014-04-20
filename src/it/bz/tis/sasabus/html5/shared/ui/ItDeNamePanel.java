@@ -43,6 +43,10 @@ public class ItDeNamePanel extends DivView
       SpanView de = new SpanView(deText);
       de.setStyleName("de");
       DivView first = new DivView("first");
+      if (itText.equals(deText))
+      {
+         first.addStyleName("single");
+      }
       this.appendChild(first);
       if (icon != null)
       {
@@ -51,14 +55,20 @@ public class ItDeNamePanel extends DivView
       if (i18n.getLanguage().equals("de"))
       {
          first.appendChild(de);
-         this.appendChild(it);
-         it.addStyleName("second");
+         if (!itText.equals(deText))
+         {
+            this.appendChild(it);
+            it.addStyleName("second");
+         }
       }
       else
       {
          first.appendChild(it);
-         this.appendChild(de);
-         de.addStyleName("second");
+         if (!itText.equals(deText))
+         {
+            this.appendChild(de);
+            de.addStyleName("second");
+         }
       }
    }
 
