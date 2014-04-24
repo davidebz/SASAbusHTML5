@@ -20,12 +20,9 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 package it.bz.tis.sasabus.html5.shared;
 
 import it.bz.tis.sasabus.html5.client.SASAbusHTML5;
-
 import java.util.HashMap;
-
 import bz.davide.dmxmljson.marshalling.json.JSONStructure;
 import bz.davide.dmxmljson.unmarshalling.json.gwt.GWTStructure;
-
 import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.json.client.JSONParser;
 import com.google.gwt.storage.client.Storage;
@@ -35,7 +32,7 @@ import com.google.gwt.storage.client.Storage;
  */
 public class FavouriteBusStationList
 {
-   static final String                    SASAbusHTML5_FAVOURITES = "SASAbusHTML5_FAVOURITES";
+   public static String                   SASAbusHTML5_FAVOURITES = "SASAbusHTML5_FAVOURITES";
 
    private static FavouriteBusStationList singleton               = null;
 

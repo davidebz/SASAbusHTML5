@@ -49,8 +49,8 @@ import com.google.gwt.user.client.Timer;
  */
 public class SplashPanel extends DivView
 {
-   private static final String SASABUS_DB_LAST_MODIFIED = "SASAbusDBLastModified";
-   private static final String SASABUS_DB_DATA          = "SASAbusDBData";
+   public static String SASABUS_DB_LAST_MODIFIED = "SASAbusDBLastModified";
+   public static String SASABUS_DB_DATA          = "SASAbusDBData";
 
    public SplashPanel(final DivView cover,
                       final DivView wrapper,
@@ -127,7 +127,7 @@ public class SplashPanel extends DivView
             if (localStorage != null)
             {
 
-               String tmp = localStorage.getItem(SASABUS_DB_LAST_MODIFIED);
+               String tmp = localStorage.getItem(SplashPanel.this.SASABUS_DB_LAST_MODIFIED);
                if (tmp != null)
                {
                   long localLastModified = Long.parseLong(tmp);
@@ -143,7 +143,7 @@ public class SplashPanel extends DivView
                         {
 
                            SASAbusBackendUnmarshaller unmarshaller = new SASAbusBackendUnmarshaller();
-                           String txt = localStorage.getItem(SASABUS_DB_DATA);
+                           String txt = localStorage.getItem(SplashPanel.this.SASABUS_DB_DATA);
                            JSONObject jsonObject = (JSONObject) JSONParser.parse(txt);
                            GWTStructure gwtStructure = new GWTStructure(jsonObject);
                            try
@@ -199,9 +199,9 @@ public class SplashPanel extends DivView
                               times[i++] = System.currentTimeMillis();
                               String txt = jsonStructure.toString();
                               times[i++] = System.currentTimeMillis();
-                              localStorage.setItem(SASABUS_DB_DATA, txt);
+                              localStorage.setItem(SplashPanel.this.SASABUS_DB_DATA, txt);
                               times[i++] = System.currentTimeMillis();
-                              localStorage.setItem(SASABUS_DB_LAST_MODIFIED,
+                              localStorage.setItem(SplashPanel.this.SASABUS_DB_LAST_MODIFIED,
                                                    String.valueOf(data.getLastModified()));
                               times[i++] = System.currentTimeMillis();
 
