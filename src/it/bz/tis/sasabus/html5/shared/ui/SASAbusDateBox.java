@@ -56,4 +56,9 @@ public class SASAbusDateBox extends DivView
    {
       return this.dateBox.getValue();
    }
+
+   public DMDateBox getDateBox()
+   {
+      return this.dateBox;
+   }
 }
