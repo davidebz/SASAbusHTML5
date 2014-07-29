@@ -171,7 +171,7 @@ public class BusStationPanel extends DivView implements PageChangeHandler
 
       this.appendChild(this.departures = new DivView("departures"));
 
-      this.dateBox = new SASAbusDateBox();
+      this.dateBox = new SASAbusDateBox(this.i18n);
       departureInputPanel.appendChild(this.dateBox);
 
       departureInputPanel.appendChild(nextDepartures);

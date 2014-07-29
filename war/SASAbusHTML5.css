@@ -561,3 +561,8 @@ body>.about>button {
 {
    margin-top:30px;
 }
+
+.gwt-DatePicker
+{
+	color:black;
+}

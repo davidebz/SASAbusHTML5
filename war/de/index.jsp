@@ -103,7 +103,8 @@
 				<translations><key>RouteSearchPanel_search</key><text>Berechnen</text></translations>
 				<translations><key>RouteSearchPanel_start_station</key><text>Start</text></translations>
 				<translations><key>RouteSearchPanel_when</key><text>Wann</text></translations>
-				
+				<translations><key>SASAbusDateBox_prevHour</key><text>Std früher</text></translations>
+				<translations><key>SASAbusDateBox_nextHour</key><text>Std später</text></translations>				
 				</i18n>
 			</custom.BusStationCustomViewAndI18N>
 			<homePageCustomFragment.HomePageCustomIntroText>

@@ -103,7 +103,8 @@
 					<translations><key>RouteSearchPanel_search</key><text>Calcola</text></translations>
 					<translations><key>RouteSearchPanel_start_station</key><text>Partenza</text></translations>
 					<translations><key>RouteSearchPanel_when</key><text>Quando</text></translations>
-					
+					<translations><key>SASAbusDateBox_prevHour</key><text>Ora prec.</text></translations>
+					<translations><key>SASAbusDateBox_nextHour</key><text>Ora succ.</text></translations>
 			</i18n>
 			</custom.BusStationCustomViewAndI18N>
 			<homePageCustomFragment.HomePageCustomIntroText>

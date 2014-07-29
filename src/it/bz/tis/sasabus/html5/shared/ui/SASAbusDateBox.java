@@ -19,8 +19,10 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared.ui;
 
+import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
 import java.util.Date;
+import bz.davide.dmweb.shared.view.ButtonView;
 import bz.davide.dmweb.shared.view.DMClickEvent;
 import bz.davide.dmweb.shared.view.DMClickHandler;
 import bz.davide.dmweb.shared.view.DMDateBox;
@@ -33,7 +35,7 @@ public class SASAbusDateBox extends DivView
 {
    DMDateBox dateBox;
 
-   public SASAbusDateBox()
+   public SASAbusDateBox(final SASAbusI18N i18n)
    {
       super("sasabus-date-box");
 
@@ -48,6 +50,34 @@ public class SASAbusDateBox extends DivView
          public void onClick(DMClickEvent event)
          {
             SASAbusDateBox.this.dateBox.getGwtDateBox().showDatePicker();
+         }
+      });
+      ButtonView prevHour = new ButtonView(i18n.getLocalizedText("SASAbusDateBox_prevHour"));
+      this.appendChild(prevHour);
+      prevHour.addClickHandler(new DMClickHandler()
+      {
+         @Override
+         public void onClick(DMClickEvent event)
+         {
+            Date current = SASAbusDateBox.this.getValue();
+            long millis = current.getTime();
+            millis -= 1000L * 60 * 60;
+            Date prevHour = new Date(millis);
+            SASAbusDateBox.this.dateBox.setValue(prevHour);
+         }
+      });
+      ButtonView nextHour = new ButtonView(i18n.getLocalizedText("SASAbusDateBox_nextHour"));
+      this.appendChild(nextHour);
+      nextHour.addClickHandler(new DMClickHandler()
+      {
+         @Override
+         public void onClick(DMClickEvent event)
+         {
+            Date current = SASAbusDateBox.this.getValue();
+            long millis = current.getTime();
+            millis += 1000L * 60 * 60;
+            Date nextHour = new Date(millis);
+            SASAbusDateBox.this.dateBox.setValue(nextHour);
          }
       });
    }

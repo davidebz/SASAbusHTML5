@@ -98,9 +98,8 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
                                                   end,
                                                   i18n));
 
-      this.appendChild(new SpanView(i18n.getLocalizedText("RouteSearchPanel_when")
-                                                                + ":"));
-      this.appendChild(this.dateBox = new SASAbusDateBox());
+      this.appendChild(new SpanView(i18n.getLocalizedText("RouteSearchPanel_when") + ":"));
+      this.appendChild(this.dateBox = new SASAbusDateBox(i18n));
 
       this.search = new ButtonView(i18n.getLocalizedText("RouteSearchPanel_search"));
       this.appendChild(this.search);
