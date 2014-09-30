@@ -1,5 +1,3 @@
 /gwt-unitCache
-/deploy/ROOT.war
-/deploy/v1/
-/deploy/v2/
-/deploy/v4/
+/deploy/
+!/deploy/war.sh
