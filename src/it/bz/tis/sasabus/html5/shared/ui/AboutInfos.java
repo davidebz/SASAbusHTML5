@@ -37,4 +37,6 @@ public class AboutInfos
 
    ThirdPartyLibrary[] libraries;
 
+   String              infos;
+
 }

@@ -98,7 +98,7 @@ public class Menu extends DivView
       this.search = new MenuItem(Icon.newSearchIcon(), this.i18n.getLocalizedText("Menu_search"));
       this.appendChild(this.search);
 
-      this.favourites = new MenuItem(Icon.newFavouritesActiveIcon(), "Favourite");
+      this.favourites = new MenuItem(Icon.newFavouritesActiveIcon(), this.i18n.getLocalizedText("Menu_favourites"));
       this.appendChild(this.favourites);
 
       //this.green = new MenuItem(new TreeIcon()), "Green";
@@ -116,7 +116,7 @@ public class Menu extends DivView
       this.moreMenuItems = new DivView("more-menu-items");
       this.appendChild(this.moreMenuItems);
 
-      this.train = new MenuItem(Icon.newTrainIcon(), "Train");
+      this.train = new MenuItem(Icon.newTrainIcon(), this.i18n.getLocalizedText("Menu_train"));
       this.moreMenuItems.appendChild(this.train);
 
       this.news = new MenuItem(Icon.newNewsIcon(), this.i18n.getLocalizedText("Menu_news"));

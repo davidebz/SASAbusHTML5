@@ -295,6 +295,7 @@ body {
 }
 
 body>.about {
+   color:#333333;
    display: none;
    position: absolute;
    top: 32px;

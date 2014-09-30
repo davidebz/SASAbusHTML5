@@ -54,8 +54,12 @@ public class RouteResultOverviewPanel extends DivView
             }
          });
          String startTime = formatTime(connection.getOverview().getDeparture().getBasicStop().getDep().getTime());
-         String transfers = "Transfers: " + connection.getOverview().getTransfers();
-         String duration = "Duration: " + formatTime(connection.getOverview().getDuration().getTime());
+         String transfers = i18n.getLocalizedText("RouteResultOverviewPanel_transfers")
+                            + ": "
+                            + connection.getOverview().getTransfers();
+         String duration = i18n.getLocalizedText("RouteResultOverviewPanel_duration")
+                           + ": "
+                           + formatTime(connection.getOverview().getDuration().getTime());
          String endTime = formatTime(connection.getOverview().getArrival().getBasicStop().getArr().getTime());
          rowItem.appendChild(new SpanView(startTime + " ---> " + endTime));
          rowItem.appendChild(new SpanView(transfers + " - " + duration));

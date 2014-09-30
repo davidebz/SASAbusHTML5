@@ -22,6 +22,7 @@ package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusStation;
+import it.bz.tis.sasabus.html5.client.SASAbusHTML5;
 import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.FavouriteBusStationList;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
@@ -41,17 +42,20 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
    DMHashNavigationPanel       navigationPanel;
    SASAbusMap                  map;
    BusStationCustomViewAndI18N custom;
+   String                      parentPanel;
 
    public FavouriteBusStationListPanel(AreaList areaList,
                                        DMHashNavigationPanel navigationPanel,
                                        SASAbusMap map,
-                                       final BusStationCustomViewAndI18N custom)
+                                       final BusStationCustomViewAndI18N custom,
+                                       String parentPanel)
    {
       super();
       this.areaList = areaList;
       this.navigationPanel = navigationPanel;
       this.map = map;
       this.custom = custom;
+      this.parentPanel = parentPanel;
       this.refresh();
    }
 
@@ -67,7 +71,7 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
       BusStation[] busStations = BusLinePanel.sortByCurrentLanguage(this.areaList.getBusStations(),
                                                                     this.custom.getI18n());
       this.appendChild(new SpanView(this.custom.getI18n().getLocalizedText("FavouriteBusStationListPanel_favourite_are")
-                                                                + ":"));
+                                    + ":"));
       int count = 0;
       for (final BusStation busStation : busStations)
       {
@@ -78,6 +82,9 @@ public class FavouriteBusStationListPanel extends DivView implements PageChangeH
                @Override
                public void onClick(DMClickEvent event)
                {
+                  SASAbusHTML5.trackUsage(FavouriteBusStationListPanel.this.parentPanel + "-favourite",
+                                          busStation.getId());
+
                   FavouriteBusStationListPanel.this.navigationPanel.newPage(new BusStationPanel(busStation,
                                                                                                 FavouriteBusStationListPanel.this.areaList,
                                                                                                 FavouriteBusStationListPanel.this.navigationPanel,

@@ -38,7 +38,7 @@ public class ParkingsPanel extends DivView
                         final BusStationCustomViewAndI18N custom)
    {
       super();
-      this.appendChild(new SpanView("Parkings:"));
+      this.appendChild(new SpanView(custom.getI18n().getLocalizedText("ParkingsPanel_title") + ":"));
       for (final Parking park : Parking.list)
       {
          RowItem rowItem = new RowItem(new DMClickHandler()

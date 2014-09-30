@@ -44,6 +44,8 @@ public class AboutPanel extends DivView
 
    DivView             thirdPartyLicenses;
 
+   SpanView            infoText;
+
    public AboutPanel()
    {
       super("about");
@@ -66,6 +68,10 @@ public class AboutPanel extends DivView
       license.appendChild(this.licenseLabel = new SpanView("License"));
       license.appendChild(new SpanView(":"));
       license.appendChild(this.licenseLink = new AnchorView("#", "License Name", TARGET));
+
+      DivView infos = new DivView("infos");
+      this.appendChild(infos);
+      infos.appendChild(this.infoText = new SpanView("I"));
 
       DivView teamView = new DivView("team");
       this.appendChild(teamView);
@@ -136,6 +142,8 @@ public class AboutPanel extends DivView
       this.licenseLink.setText(infos.licenseName);
       this.licenseLink.setHref(infos.licenseUrl);
 
+      this.infoText.setText(infos.infos);
+
       this.teamMembers.clear();
 
       this.teamLink.setHref(infos.teamUrl);
@@ -147,7 +155,10 @@ public class AboutPanel extends DivView
          for (TeamMember member : teamMembers)
          {
             DivView memberView = new DivView("member");
-            memberView.appendChild(new AnchorView(member.url, member.name, TARGET));
+            if (member.url != null)
+            {
+               memberView.appendChild(new AnchorView(member.url, member.name, TARGET));
+            }
             memberView.appendChild(new SpanView(member.role));
             this.teamMembers.appendChild(memberView);
          }

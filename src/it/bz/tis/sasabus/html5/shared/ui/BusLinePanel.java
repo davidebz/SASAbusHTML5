@@ -23,6 +23,7 @@ package it.bz.tis.sasabus.html5.shared.ui;
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusLine;
 import it.bz.tis.sasabus.backend.shared.BusStation;
+import it.bz.tis.sasabus.html5.client.SASAbusHTML5;
 import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.icon.Icon;
@@ -55,12 +56,12 @@ public class BusLinePanel extends DivView implements PageChangeHandler
       super("bus-stations");
       this.mapOpen = mapOpen;
       this.appendChild(new SpanView(custom.getI18n().getLocalizedText("BusLine")
-                                                                + " "
-                                                                + busLine.getNumber()
-                                                                + " "
-                                                                + ItDeNamePanel.asOneLine(busLine.getArea().getName_it(),
-                                                                                          busLine.getArea().getName_de(),
-                                                                                          custom.getI18n())));
+                                    + " "
+                                    + busLine.getNumber()
+                                    + " "
+                                    + ItDeNamePanel.asOneLine(busLine.getArea().getName_it(),
+                                                              busLine.getArea().getName_de(),
+                                                              custom.getI18n())));
       this.map = map;
       this.busLine = busLine;
 
@@ -92,6 +93,7 @@ public class BusLinePanel extends DivView implements PageChangeHandler
             {
                BusStationPanel newPanel = new BusStationPanel(busStation, areaList, navPanel, map, custom);
                navPanel.newPage(newPanel);
+               SASAbusHTML5.trackUsage("busline_select_station", busStation.getId());
             }
          };
          RowItem busStationLabel = new RowItem(busStationClick);

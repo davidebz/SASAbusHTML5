@@ -112,7 +112,8 @@ public class SplashPanel extends DivView
             FavouriteBusStationListPanel favouriteBusStationListPanel = new FavouriteBusStationListPanel(data,
                                                                                                          navigationPanel,
                                                                                                          map,
-                                                                                                         custom);
+                                                                                                         custom,
+                                                                                                         "home");
             homePage.favouriteContainer.appendChild(favouriteBusStationListPanel);
             homePage.favouriteBusStationListPanel = favouriteBusStationListPanel;
          }

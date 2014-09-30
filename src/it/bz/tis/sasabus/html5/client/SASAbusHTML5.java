@@ -44,7 +44,7 @@ public class SASAbusHTML5 implements EntryPoint
                             || hostName.equals("127.0.1.1")
                             || hostName.equals("10.0.0.10");
 
-      String serviceBaseUrl = (development ? "http://" + hostName + ":8080" : "") + "/backend/";
+      String serviceBaseUrl = (development ? "http://" + hostName + ":8080" : "") + "/backend2/";
 
       SASAbusDBClientImpl.singleton = new SASAbusDBClientImpl(serviceBaseUrl);
 
@@ -58,4 +58,9 @@ public class SASAbusHTML5 implements EntryPoint
       exxx.printStackTrace();
       Window.alert("Err " + exxx.getClass().getName() + ": " + exxx.getMessage());
    }
+
+   public native static void trackUsage(String operation, String parameter)/*-{
+		$wnd._gaq.push([ '_trackEvent', 'usage', operation, parameter ]);
+   }-*/;
+
 }

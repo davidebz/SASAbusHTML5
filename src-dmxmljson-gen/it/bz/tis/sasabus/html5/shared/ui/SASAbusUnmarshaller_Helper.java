@@ -116,6 +116,9 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             // copyrightYears
             if (ret.copyrightYears != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanel.copyrightYears");
+            // infoText
+            if (ret.infoText != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanel.infoText");
             // licenseLabel
             if (ret.licenseLabel != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutPanel.licenseLabel");
@@ -191,6 +194,21 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                      Object o = newInstance(value.structure().getRuntimeClassName("SpanView"));              
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).copyrightYears = (bz.davide.dmweb.shared.view.SpanView)o;
+                  }
+               }
+            // infoText
+            if ((value = structure.property("infoText")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).infoText = null;
+               else
+               {
+                  String refid = value.structure().getRefId();    
+                  if (refid != null)                              
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).infoText = (bz.davide.dmweb.shared.view.SpanView)identities.get(refid);
+                  else {
+                     Object o = newInstance(value.structure().getRuntimeClassName("SpanView"));              
+                     internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
+                     ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).infoText = (bz.davide.dmweb.shared.view.SpanView)o;
                   }
                }
             // licenseLabel
@@ -402,6 +420,9 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             // copyrightYears
             if (ret.copyrightYears != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.copyrightYears");
+            // infos
+            if (ret.infos != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.infos");
             // libraries
             if (ret.libraries != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.AboutInfos.libraries");
@@ -470,6 +491,14 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                else
                {
                   ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).copyrightYears = value.string();
+               }
+            // infos
+            if ((value = structure.property("infos")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).infos = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).infos = value.string();
                }
             // libraries
             if ((value = structure.property("libraries")) != null)
@@ -586,6 +615,9 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
             // navigationPanel
             if (ret.navigationPanel != null)
                throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel.navigationPanel");
+            // parentPanel
+            if (ret.parentPanel != null)
+               throw new RuntimeException("The constructor initialized the field it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel.parentPanel");
          }
       });
       this.putInstanceFactory("it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel", new bz.davide.dmxmljson.unmarshalling.InstanceFactory() {
@@ -662,6 +694,14 @@ public class SASAbusUnmarshaller_Helper extends it.bz.tis.sasabus.html5.shared.u
                      internalUnmarschall(value.structure(), o.getClass().getName(), o, identities); 
                      ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).navigationPanel = (bz.davide.dmweb.shared.view.DMHashNavigationPanel)o;
                   }
+               }
+            // parentPanel
+            if ((value = structure.property("parentPanel")) != null)
+               if (value.isNull())
+                  ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).parentPanel = null;
+               else
+               {
+                  ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).parentPanel = value.string();
                }
             structure.close();
          }

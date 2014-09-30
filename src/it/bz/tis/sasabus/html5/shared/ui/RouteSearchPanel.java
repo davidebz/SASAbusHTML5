@@ -37,6 +37,7 @@ import bz.davide.dmweb.shared.view.DivView;
 import bz.davide.dmweb.shared.view.PageChangeHandler;
 import bz.davide.dmweb.shared.view.SpanView;
 import com.google.gwt.i18n.client.DateTimeFormat;
+import com.google.gwt.user.client.Window;
 
 /**
  * @author Davide Montesin <d@vide.bz>
@@ -67,7 +68,7 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
       this.navigationPanel = navigationPanel;
       this.i18n = i18n;
 
-      SpanView introText = new SpanView("Route calculation");
+      SpanView introText = new SpanView(i18n.getLocalizedText("RouteSearchPanel_title"));
       introText.setStyleName("intro-text");
       this.appendChild(introText);
 
@@ -99,7 +100,7 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
                                                   i18n));
 
       this.appendChild(new SpanView(i18n.getLocalizedText("RouteSearchPanel_when") + ":"));
-      this.appendChild(this.dateBox = new SASAbusDateBox(i18n));
+      this.appendChild(this.dateBox = new SASAbusDateBox(i18n, null));
 
       this.search = new ButtonView(i18n.getLocalizedText("RouteSearchPanel_search"));
       this.appendChild(this.search);
@@ -109,9 +110,7 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
          @Override
          public void onClick(DMClickEvent event)
          {
-            RouteSearchPanel.this.search.setLabel(i18n.getLocalizedText("RouteSearchPanel_calculating_routing"));
-            RouteSearchPanel.this.results.clear();
-
+            
             Date date = RouteSearchPanel.this.dateBox.getValue();
             DateTimeFormat dtf = DateTimeFormat.getFormat("yyyyMMddHHmm");
 
@@ -120,17 +119,37 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
             try
             {
 
-               SASAbusDBClientImpl.singleton.calcRoute(RouteSearchPanel.start.getId(),
-                                                       RouteSearchPanel.end.getId(),
-                                                       yyyymmddhhmm,
-                                                       new SASAbusDBDataReady<ConRes>()
-                                                       {
-                                                          @Override
-                                                          public void ready(ConRes data)
+               if (RouteSearchPanel.start == null || RouteSearchPanel.end == null)
+               {
+                  console_log(i18n);
+                  String localizedText = i18n.getLocalizedText("RouteSearchPanel_no_start_or_stop");
+                  console_log(localizedText);
+                  Window.alert(localizedText);
+               }
+               else
+               {
+               
+                  RouteSearchPanel.this.search.setLabel(i18n.getLocalizedText("RouteSearchPanel_calculating_routing"));
+                  RouteSearchPanel.this.search.getElement().setAttribute("disabled", "disabled");
+                  RouteSearchPanel.this.results.clear();
+
+                  String startId = RouteSearchPanel.start.getId();
+                  String endId = RouteSearchPanel.end.getId();
+                  
+                  SASAbusHTML5.trackUsage("route", "");
+
+                  SASAbusDBClientImpl.singleton.calcRoute(startId,
+                                                          endId,
+                                                          yyyymmddhhmm,
+                                                          new SASAbusDBDataReady<ConRes>()
                                                           {
-                                                             RouteSearchPanel.this.onFirstRouteReceived(data);
-                                                          }
-                                                       });
+                                                             @Override
+                                                             public void ready(ConRes data)
+                                                             {
+                                                                RouteSearchPanel.this.onFirstRouteReceived(data);
+                                                             }
+                                                          });
+               }
             }
             catch (Exception exxx)
             {
@@ -169,7 +188,8 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
                                                                 RouteSearchPanel.this.results.appendChild(new RouteResultOverviewPanel(routes,
                                                                                                                                        RouteSearchPanel.this.navigationPanel,
                                                                                                                                        RouteSearchPanel.this.i18n));
-                                                                RouteSearchPanel.this.search.setLabel("Search");
+                                                                RouteSearchPanel.this.search.setLabel(RouteSearchPanel.this.i18n.getLocalizedText("RouteSearchPanel_search"));
+                                                                RouteSearchPanel.this.search.getElement().removeAttribute("disabled");
                                                              }
                                                           });
                }
@@ -200,5 +220,9 @@ public class RouteSearchPanel extends DivView implements PageChangeHandler
    {
 
    }
+
+   static native void console_log(Object obj)/*-{
+		console.log(obj)
+   }-*/;
 
 }

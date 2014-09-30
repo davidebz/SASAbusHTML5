@@ -35,7 +35,7 @@ public class SASAbusDateBox extends DivView
 {
    DMDateBox dateBox;
 
-   public SASAbusDateBox(final SASAbusI18N i18n)
+   public SASAbusDateBox(final SASAbusI18N i18n, final DMClickHandler retrieveNextDepartureHandler)
    {
       super("sasabus-date-box");
 
@@ -64,6 +64,10 @@ public class SASAbusDateBox extends DivView
             millis -= 1000L * 60 * 60;
             Date prevHour = new Date(millis);
             SASAbusDateBox.this.dateBox.setValue(prevHour);
+            if (retrieveNextDepartureHandler != null)
+            {
+               retrieveNextDepartureHandler.onClick(null);
+            }
          }
       });
       ButtonView nextHour = new ButtonView(i18n.getLocalizedText("SASAbusDateBox_nextHour"));
@@ -78,6 +82,10 @@ public class SASAbusDateBox extends DivView
             millis += 1000L * 60 * 60;
             Date nextHour = new Date(millis);
             SASAbusDateBox.this.dateBox.setValue(nextHour);
+            if (retrieveNextDepartureHandler != null)
+            {
+               retrieveNextDepartureHandler.onClick(null);
+            }
          }
       });
    }

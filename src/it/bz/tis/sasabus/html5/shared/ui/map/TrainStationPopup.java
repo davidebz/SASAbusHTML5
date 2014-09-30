@@ -60,7 +60,7 @@ public class TrainStationPopup extends DivView
 
    void init()
    {
-      ButtonView show = new ButtonView("Show details");
+      ButtonView show = new ButtonView(this.custom.getI18n().getLocalizedText("BusTrainPopup_show_details"));
       this.appendChild(show);
       show.addClickHandler(new DMClickHandler()
       {

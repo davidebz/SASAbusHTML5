@@ -27,6 +27,7 @@ import it.bz.tis.sasabus.backend.shared.BusStation;
 import it.bz.tis.sasabus.backend.shared.BusStop;
 import it.bz.tis.sasabus.backend.shared.BusTrip;
 import it.bz.tis.sasabus.backend.shared.BusTripStop;
+import it.bz.tis.sasabus.html5.client.SASAbusHTML5;
 import it.bz.tis.sasabus.html5.shared.BusStationCustomViewAndI18N;
 import it.bz.tis.sasabus.html5.shared.data.Parking;
 import it.bz.tis.sasabus.html5.shared.data.TrainStation;
@@ -310,6 +311,8 @@ public class SASAbusMap extends DivView
                                                      this.custom);
       this.leafletMap.openPopup(mapPopup.getElement(), latLng);
       mapPopup.init();
+      SASAbusHTML5.trackUsage("map-popup", busStation.getId());
+
    }
 
    private void initAreasPolygon(final AreaList areaList)

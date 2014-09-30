@@ -38,7 +38,7 @@ public class TrainStationsPanel extends DivView
                              final BusStationCustomViewAndI18N custom)
    {
       super();
-      this.appendChild(new SpanView("Train stations:"));
+      this.appendChild(new SpanView(custom.getI18n().getLocalizedText("TrainStationsPanel_title") + ":"));
       for (final TrainStation trainStation : TrainStation.list)
       {
          RowItem rowItem = new RowItem(new DMClickHandler()

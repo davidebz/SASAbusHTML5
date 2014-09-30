@@ -20,6 +20,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 package it.bz.tis.sasabus.html5.shared;
 
+import it.bz.tis.sasabus.html5.client.SASAbusHTML5;
 import it.bz.tis.sasabus.html5.shared.ui.HomePanel;
 import it.bz.tis.sasabus.html5.shared.ui.SplashPanel;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
@@ -74,6 +75,7 @@ public class SASAbusWebPageAttachHandler implements AttachListener
    {
       if (event.isAttached())
       {
+         SASAbusHTML5.trackUsage("app-started", "");
          History.newItem("0", false);
 
          SASAbusWebPageAttachHandler.this.cover.appendChild(new SplashPanel(SASAbusWebPageAttachHandler.this.cover,

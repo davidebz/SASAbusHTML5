@@ -43,7 +43,7 @@ public class BusStationInRangeWidget extends DivView
                                   final BusStationCustomViewAndI18N custom)
    {
       super("nearest-bus-stops");
-      this.appendChild(new SpanView("Nearest bus stops: "));
+      this.appendChild(new SpanView(custom.getI18n().getLocalizedText("BusStationInRangeWidget_title") + ":"));
 
       final IdentityHashMap<BusStation, Double> weights = new IdentityHashMap<BusStation, Double>();
 

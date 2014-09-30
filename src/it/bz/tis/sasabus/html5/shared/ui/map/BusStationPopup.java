@@ -65,7 +65,7 @@ public class BusStationPopup extends DivView
    void init()
    {
       this.appendChild(new ItDeBusStationNamePanel(this.busStation, this.i18n));
-      ButtonView details = new ButtonView("Show details");
+      ButtonView details = new ButtonView(this.i18n.getLocalizedText("BusTrainPopup_show_details"));
       this.appendChild(details);
       details.addClickHandler(new DMClickHandler()
       {

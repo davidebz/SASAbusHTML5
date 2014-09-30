@@ -91,6 +91,14 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             {
                      internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.SpanView", structure.property("copyrightYears").structure(), identities, seq, false);
             }
+            // infoText
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).infoText;
+            if (value == null)
+               structure.property("infoText").nullValue();
+            else
+            {
+                     internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.SpanView", structure.property("infoText").structure(), identities, seq, false);
+            }
             // licenseLabel
             value = ((it.bz.tis.sasabus.html5.shared.ui.AboutPanel)obj).licenseLabel;
             if (value == null)
@@ -239,6 +247,14 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             {
                     structure.property("copyrightYears").string((String)value);                          
             }
+            // infos
+            value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).infos;
+            if (value == null)
+               structure.property("infos").nullValue();
+            else
+            {
+                    structure.property("infos").string((String)value);                          
+            }
             // libraries
             value = ((it.bz.tis.sasabus.html5.shared.ui.AboutInfos)obj).libraries;
             if (value == null)
@@ -352,6 +368,14 @@ public class SASAbusMarshaller_Helper extends it.bz.tis.sasabus.html5.shared.ui.
             else
             {
                      internalMarschall(value, value.getClass().getName(),"bz.davide.dmweb.shared.view.DMHashNavigationPanel", structure.property("navigationPanel").structure(), identities, seq, false);
+            }
+            // parentPanel
+            value = ((it.bz.tis.sasabus.html5.shared.ui.FavouriteBusStationListPanel)obj).parentPanel;
+            if (value == null)
+               structure.property("parentPanel").nullValue();
+            else
+            {
+                    structure.property("parentPanel").string((String)value);                          
             }
             if (!superClass)
                structure.close();

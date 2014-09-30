@@ -22,6 +22,7 @@ package it.bz.tis.sasabus.html5.shared.ui;
 
 import it.bz.tis.sasabus.backend.shared.AreaList;
 import it.bz.tis.sasabus.backend.shared.BusStation;
+import it.bz.tis.sasabus.html5.client.SASAbusHTML5;
 import it.bz.tis.sasabus.html5.shared.FavouriteBusStationList;
 import it.bz.tis.sasabus.html5.shared.SASAbusI18N;
 import it.bz.tis.sasabus.html5.shared.ui.map.SASAbusMap;
@@ -186,6 +187,7 @@ public class BusStationSearchWidget extends DivView implements PageChangeHandler
             searchText.setText(ItDeNamePanel.asOneLine(busStation.getName_it(), busStation.getName_de(), i18n));
             results.clear();
             selected.selected(busStation);
+            SASAbusHTML5.trackUsage("search", busStation.getId());
          }
       });
       rowItem.appendChild(new ItDeBusStationNamePanel(busStation, i18n));
