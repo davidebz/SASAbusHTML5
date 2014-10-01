@@ -127,7 +127,7 @@
                   "Feedback" item in menu.</introText>
             </homePageCustomFragment.HomePageCustomIntroText>
             <aboutInfos>
-                <copyrightYears>2013</copyrightYears>
+                <copyrightYears>2013-2014</copyrightYears>
                 <copyrightCompany>TIS Innovation Park</copyrightCompany>
                 <copyrightCompanyUrl>http://www.tis.bz.it/open</copyrightCompanyUrl>
                 <copyrightCompanyAddress>Via Siemens 29 Strasse - Bolzano/Bozen - Italy</copyrightCompanyAddress>
