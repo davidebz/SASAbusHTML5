@@ -91,7 +91,7 @@
                 <translations><key>BusTripPanel_show_prev_stops</key><text>Mostra fermate precedenti</text></translations>
                 <translations><key>FavouriteBusStationListPanel_empty_favourite</key><text>Non hai ancora selezionato dei preferiti. Premi sul cuore delle fermate per aggiungerle a questa lista.</text></translations>
                 <translations><key>FavouriteBusStationListPanel_favourite_are</key><text>Le tue fermate favorite sono</text></translations>
-                <translations><key>Menu_about</key><text>About</text></translations>
+                <translations><key>Menu_about</key><text>Info</text></translations>
                 <translations><key>Menu_areasLines</key><text>Linee</text></translations>
                 <translations><key>Menu_feedback</key><text>Feedback</text></translations>
                 <translations><key>Menu_favourites</key><text>Favoriti</text></translations>
@@ -121,7 +121,7 @@
             </i18n>
             </custom.BusStationCustomViewAndI18N>
             <homePageCustomFragment.HomePageCustomIntroText>
-            <introText>Benvenuto beta-tester nell'applicazione SASAbusHTML5. Questa app ti permette
+            <introText>Benvenuto nell'applicazione SASAbus HTML5. Questa app ti permette
       di scoprire i servizi SASA: linee dei bus, fermate, partenze e calcolo del percorso
       delle aree/bacini di Merano/Meran e Bolzano/Bozen. Se stai usando l'applicazione su
       un dispositivo con schermo piccolo puoi cliccare sull'icona in alto a sinistra per

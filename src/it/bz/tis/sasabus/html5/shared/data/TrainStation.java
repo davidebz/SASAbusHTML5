@@ -25,9 +25,17 @@ public class TrainStation
                                                                              11.35799,
                                                                              "Bolzano",
                                                                              "Bozen"),
-            new TrainStation(46.47334, 11.32658, "Bolzano sud", "Bozen sud"),
-            new TrainStation(46.40506, 11.31625, "Bronzolo", "Branzoll"),
-            new TrainStation(46.52841, 11.24833, "Terlano", "Terlan"),
+
+         new TrainStation(46.47334, 11.32658, "Bolzano sud", "Bozen Süd"),
+         new TrainStation(46.48029, 11.31504, "Bolzano Casanova", "Bozen Kaiserau"),
+         new TrainStation(46.48585, 11.29658, "Ponte Adige", "Sigmundskron"),
+         new TrainStation(46.52841, 11.24833, "Terlano", "Terlan"),
+         new TrainStation(46.60780, 11.18257, "Lana-Postal", "Lana-Burgstall"),
+         new TrainStation(46.65570, 11.14886, "Merano-Maia Bassa", "Meran-Untermais"),
+         new TrainStation(46.67277, 11.14980, "Merano", "Meran"),
+
+         new TrainStation(46.43450, 11.32354, "Laives", "Leifers"),
+         new TrainStation(46.40506, 11.31625, "Bronzolo", "Branzoll"),
 
                                      };
 

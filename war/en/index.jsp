@@ -91,7 +91,7 @@
                     <translations><key>BusTripPanel_show_prev_stops</key><text>Show prev. bus stops</text></translations>
                     <translations><key>FavouriteBusStationListPanel_empty_favourite</key><text>Favourites are empty. Please select the heart icon to add bus stations here!</text></translations>
                     <translations><key>FavouriteBusStationListPanel_favourite_are</key><text>You favourites stations are</text></translations>
-                    <translations><key>Menu_about</key><text>About</text></translations>
+                    <translations><key>Menu_about</key><text>Info</text></translations>
                     <translations><key>Menu_areasLines</key><text>Lines</text></translations>
                     <translations><key>Menu_feedback</key><text>Feedback</text></translations>
                     <translations><key>Menu_favourites</key><text>Favourite</text></translations>
@@ -122,11 +122,11 @@
                 </i18n>
             </custom.BusStationCustomViewAndI18N>
             <homePageCustomFragment.HomePageCustomIntroText>
-                <introText>Welcome beta-tester to sasabus html5! This app let you discover the SASA
+                <introText>Welcome to SASAbus HTML5! This app lets you discover the SASA
                   services: bus lines, bus stops, departures, routing of area Merano/Meran and
-                  Bolzano/Bozen. If you are using the web-app on a small screen click the top-left
+                  Bolzano/Bozen. If you are using the web-app on a small screen please click on the top-left
                   icon to open the menu. Any feedback is welcome. Plese send us a feedback using the
-                  "Feedback" item in menu.</introText>
+                  "Feedback" item in the menu.</introText>
             </homePageCustomFragment.HomePageCustomIntroText>
             <aboutInfos>
                 <copyrightYears>2013-2014</copyrightYears>

@@ -91,7 +91,7 @@
                 <translations><key>BusTripPanel_show_prev_stops</key><text>Vorherige Haltestellen anzeigen</text></translations>
                 <translations><key>FavouriteBusStationListPanel_empty_favourite</key><text>Sie haben keine Favoriten ausgewählt. Herz anklicken, um Haltestellen zu den Favoriten hinzuzufügen.</text></translations>
                 <translations><key>FavouriteBusStationListPanel_favourite_are</key><text>Ihre bevorzugten Haltestellen sind</text></translations>
-                <translations><key>Menu_about</key><text>About</text></translations>
+                <translations><key>Menu_about</key><text>Info</text></translations>
                 <translations><key>Menu_areasLines</key><text>Linien</text></translations>
                 <translations><key>Menu_feedback</key><text>Feedback</text></translations>
                 <translations><key>Menu_favourites</key><text>Favoriten</text></translations>
@@ -121,7 +121,7 @@
                 </i18n>
             </custom.BusStationCustomViewAndI18N>
             <homePageCustomFragment.HomePageCustomIntroText>
-            <introText>Liebe Betatester, willkommen bei SASAbus HTML5. Mit dieser App können Sie
+            <introText>Willkommen bei SASAbus HTML5. Mit dieser App können Sie
       Informationen zu allen Diensten der SASA abrufen: Buslinien, Haltestellen, Fahrpläne
       und Routenplanung in den Einzugsgebieten Meran und Bozen. Falls Sie die Anwendung
       auf einem Gerät mit kleinem Bildschirm verwenden, können Sie das Menü mit einem
