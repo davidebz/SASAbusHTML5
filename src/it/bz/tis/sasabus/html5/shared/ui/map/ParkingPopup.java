@@ -44,14 +44,14 @@ public class ParkingPopup extends DivView
       super("parking-popup");
       this.parking = parking;
       this.appendChild(new ItDeNamePanel(parking.getName_it(), parking.getName_de(), null, i18n));
-      this.appendChild(new SpanView("Free parkings:"));
+      this.appendChild(new SpanView(i18n.getLocalizedText("MapParkingPopup_msg") + ":"));
       this.appendChild(this.freeParkingsData = new DivView("free-data"));
 
    }
 
-   void init()
+   void init(SASAbusI18N i18n)
    {
-      ButtonView refresh = new ButtonView("refresh");
+      ButtonView refresh = new ButtonView(i18n.getLocalizedText("MapParkingPopup_refresh"));
       this.appendChild(refresh);
       DMClickHandler refreshHandler = new DMClickHandler()
       {

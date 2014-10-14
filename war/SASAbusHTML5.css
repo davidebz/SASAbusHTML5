@@ -229,14 +229,17 @@ body {
 
 .sasabus-popup {
    width: 200px;
+   color:black;
 }
 
 .train-popup {
    width: 200px;
+   color:black;
 }
 
 .parking-popup {
    width: 200px;
+   color:black;
 }
 
 .departure-input {

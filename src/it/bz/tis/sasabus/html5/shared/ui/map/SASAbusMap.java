@@ -220,7 +220,7 @@ public class SASAbusMap extends DivView
             {
                ParkingPopup parkingPopup = new ParkingPopup(parking, SASAbusMap.this.custom.getI18n());
                SASAbusMap.this.leafletMap.openPopup(parkingPopup.getElement(), latLng);
-               parkingPopup.init();
+               parkingPopup.init(SASAbusMap.this.custom.getI18n());
             }
          });
       }

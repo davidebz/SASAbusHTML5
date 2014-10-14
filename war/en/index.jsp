@@ -85,7 +85,9 @@
                     <translations><key>BusStationPanel_use_as_start_routing</key><text>Start of routing</text></translations>
                     <translations><key>BusStations</key><text>Bus stations</text></translations>
                     <translations><key>BusStationSearchWidget_introtext</key><text>Insert bus name</text></translations>
-                    <translations><key>BusTrainPopup_show_details</key><text>Show details</text></translations>
+                    <translations><key>BusTrainPopup_show_details</key><text>Details</text></translations>
+                    <translations><key>MapParkingPopup_msg</key><text>Occupied parking slots</text></translations>
+                    <translations><key>MapParkingPopup_refresh</key><text>Refresh</text></translations>
                     <translations><key>BusTripPanel_show_prev_stops</key><text>Show prev. bus stops</text></translations>
                     <translations><key>FavouriteBusStationListPanel_empty_favourite</key><text>Favourites are empty. Please select the heart icon to add bus stations here!</text></translations>
                     <translations><key>FavouriteBusStationListPanel_favourite_are</key><text>You favourites stations are</text></translations>

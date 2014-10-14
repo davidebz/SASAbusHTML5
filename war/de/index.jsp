@@ -85,7 +85,9 @@
                 <translations><key>BusStationPanel_use_as_start_routing</key><text>Startpunkt</text></translations>
                 <translations><key>BusStations</key><text>Haltestellen</text></translations>
                 <translations><key>BusStationSearchWidget_introtext</key><text>Bezeichnung der Haltestelle</text></translations>
-                <translations><key>BusTrainPopup_show_details</key><text>Zeige Details</text></translations>
+                <translations><key>BusTrainPopup_show_details</key><text>Details</text></translations>
+                <translations><key>MapParkingPopup_msg</key><text>Besetzte Parkplätze</text></translations>
+                <translations><key>MapParkingPopup_refresh</key><text>Aktualisieren</text></translations>
                 <translations><key>BusTripPanel_show_prev_stops</key><text>Vorherige Haltestellen anzeigen</text></translations>
                 <translations><key>FavouriteBusStationListPanel_empty_favourite</key><text>Sie haben keine Favoriten ausgewählt. Herz anklicken, um Haltestellen zu den Favoriten hinzuzufügen.</text></translations>
                 <translations><key>FavouriteBusStationListPanel_favourite_are</key><text>Ihre bevorzugten Haltestellen sind</text></translations>

@@ -21,17 +21,13 @@ package it.bz.tis.sasabus.html5.shared.data;
 
 public class Parking
 {
-   public static Parking[] list = new Parking[] { new Parking(46.49420,
-                                                              11.35678,
-                                                              "Bz Centro",
-                                                              "Bz Mitte",
-                                                              "108"),
-
-            new Parking(46.4964486, 11.35630450, "City parking", "City parking   ", "102"),
-            new Parking(46.49780, 11.3551147, "Piazza Walther", "Walther Platz", "103"),
-            new Parking(46.498174, 11.3572551, "Laurin", "Laurin", "105"),
-
-                                };
+   public static Parking[] list = new Parking[] { new Parking(46.49420, 11.35678, "Bz Centro", "Bz Mitte", "108"),
+         new Parking(46.4964486, 11.35630450, "City parking", "City parking   ", "102"),
+         new Parking(46.49780, 11.3551147, "Piazza Walther", "Walther Platz", "103"),
+         new Parking(46.498174, 11.3572551, "Laurin", "Laurin", "105"),
+         new Parking(46.472249, 11.327065, "Fiera", "Messe", "116"),
+         new Parking(46.497134, 11.358906, "Central Parking", "Central Parking", "106"),
+         new Parking(46.500550, 11.358216, "Luna", "Mondschein", "104"), };
 
    double                  lat;
    double                  lon;
