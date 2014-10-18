@@ -38,13 +38,7 @@ public class SASAbusHTML5 implements EntryPoint
    @Override
    public void onModuleLoad()
    {
-      String hostName = Window.Location.getHostName();
-      boolean development = hostName.equals("localhost")
-                            || hostName.equals("127.0.0.1")
-                            || hostName.equals("127.0.1.1")
-                            || hostName.equals("10.0.0.10");
-
-      String serviceBaseUrl = (development ? "http://" + hostName + ":8080" : "") + "/backend2/";
+      String serviceBaseUrl = "../";
 
       SASAbusDBClientImpl.singleton = new SASAbusDBClientImpl(serviceBaseUrl);
 

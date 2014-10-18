@@ -14,6 +14,40 @@
       <url-pattern>/*</url-pattern>
    </filter-mapping>
 
+  <servlet>
+    <servlet-name>NewsServlet</servlet-name>
+    <servlet-class>it.bz.tis.sasabus.backend.server.NewsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewsServlet</servlet-name>
+    <url-pattern>/news</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ParkingServlet</servlet-name>
+    <servlet-class>it.bz.tis.sasabus.backend.server.ParkingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ParkingServlet</servlet-name>
+    <url-pattern>/parking/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ParkingFreeSlotsServlet</servlet-name>
+    <servlet-class>it.bz.tis.sasabus.backend.server.ParkingFreeSlotsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ParkingFreeSlotsServlet</servlet-name>
+    <url-pattern>/parkingfreeslots/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DB2JSONP</servlet-name>
+    <servlet-class>it.bz.tis.sasabus.backend.server.SASAbusDB2JSONPServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DB2JSONP</servlet-name>
+    <url-pattern>/sasabusdb/*</url-pattern>
+  </servlet-mapping>
+
 
    <!-- Default page to serve -->
    <welcome-file-list>
